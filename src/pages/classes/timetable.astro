@@ -1,0 +1,242 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+type ClassType = 'pilates' | 'yoga' | 'barre' | 'express' | 'breathwork' | 'other';
+
+interface ClassEntry {
+  name: string;
+  type: ClassType;
+  note?: string;
+  time?: string;
+}
+
+const typeStyles: Record<ClassType, { bg: string; text: string; note: string }> = {
+  pilates:    { bg: 'bg-limber-cream',     text: 'text-limber-brown',  note: 'text-limber-brown/50'  },
+  yoga:       { bg: 'bg-limber-vibe',      text: 'text-limber-brown',  note: 'text-limber-brown/60'  },
+  barre:      { bg: 'bg-limber-tericotta', text: 'text-limber-cream',  note: 'text-limber-cream/60'  },
+  express:    { bg: 'bg-limber-green',     text: 'text-limber-cream',  note: 'text-limber-cream/60'  },
+  breathwork: { bg: 'bg-neutral-900',      text: 'text-limber-vibe',   note: 'text-limber-cream/50'  },
+  other:      { bg: 'bg-limber-cream-bg',  text: 'text-limber-brown',  note: 'text-limber-brown/50'  },
+};
+
+// Columns: [Mon, Tue, Wed, Thu, Fri, Sat, Sun]
+// Sat/Sun entries include their actual time in the `time` field so it shows inside the card.
+const allDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+const allSlots: Array<{ time: string; classes: (ClassEntry | null)[] }> = [
+  { time: '6am', classes: [
+    { name: 'Strength pilates',  type: 'pilates' },
+    { name: 'Chair pilates',     type: 'pilates' },
+    { name: 'Strength pilates',  type: 'pilates' },
+    { name: 'Limbarre',          type: 'barre'   },
+    { name: 'Signature pilates', type: 'pilates' },
+    { name: 'Signature pilates', type: 'pilates', time: '6:30am' },
+    null,
+  ]},
+  { time: '7am', classes: [
+    { name: 'Power yoga',        type: 'yoga'    },
+    { name: 'Strength pilates',  type: 'pilates' },
+    { name: 'Signature pilates', type: 'pilates' },
+    { name: 'Signature pilates', type: 'pilates' },
+    { name: 'Limbarre',          type: 'barre'   },
+    { name: 'Strength pilates',  type: 'pilates', time: '7:30am' },
+    { name: 'Signature pilates', type: 'pilates', time: '7:30am' },
+  ]},
+  { time: '8am', classes: [
+    { name: 'Strength pilates',  type: 'pilates' },
+    { name: 'Signature pilates', type: 'pilates' },
+    { name: 'Limber up',         type: 'other'   },
+    { name: 'Strength pilates',  type: 'pilates' },
+    { name: 'Chair pilates',     type: 'pilates' },
+    { name: 'Chair pilates',     type: 'pilates', time: '8:30am' },
+    { name: 'Limbarre',          type: 'barre',   time: '8:30am' },
+  ]},
+  { time: '9:15am', classes: [
+    { name: 'Signature pilates', type: 'pilates' },
+    { name: 'Chair pilates',     type: 'pilates' },
+    { name: 'Strength pilates',  type: 'pilates' },
+    { name: 'Limbarre',          type: 'barre'   },
+    { name: 'Strength pilates',  type: 'pilates' },
+    { name: 'Power yoga',        type: 'yoga',    time: '9:30am' },
+    { name: 'Strength pilates',  type: 'pilates', time: '9:30am' },
+  ]},
+  { time: '10:15am', classes: [
+    { name: 'Power flow',        type: 'pilates', note: 'babies welcome 👶' },
+    { name: 'Limbarre',          type: 'barre'                              },
+    { name: 'Signature pilates', type: 'pilates', note: 'babies welcome 👶' },
+    { name: 'Chair pilates',     type: 'pilates'                            },
+    { name: 'Limboogie',         type: 'other',   note: 'dance cardio'      },
+    null,
+    { name: 'Power yoga',        type: 'yoga',    time: '10:30am'           },
+  ]},
+  { time: '12:15pm', classes: [
+    { name: 'Signature pilates', type: 'express', note: 'express · 30 min' },
+    null,
+    { name: 'Power yoga',        type: 'express', note: 'express · 30 min' },
+    null,
+    { name: 'Limbarre',          type: 'express', note: 'express · 30 min' },
+    null, null,
+  ]},
+  { time: '4:30pm', classes: [
+    { name: 'Limbarre',          type: 'barre'                                },
+    { name: 'Welcome induction', type: 'other'                                },
+    { name: 'Chair pilates',     type: 'pilates'                              },
+    null,
+    { name: 'Power yoga',        type: 'yoga',    time: '5pm'                 },
+    { name: 'Vin to yin yoga',   type: 'yoga',    time: '4pm'                 },
+    null,
+  ]},
+  { time: '5:30pm', classes: [
+    { name: 'Chair pilates',     type: 'pilates'                },
+    { name: 'Signature pilates', type: 'pilates'                },
+    { name: 'Signature pilates', type: 'pilates'                },
+    { name: 'Strength pilates',  type: 'pilates'                },
+    { name: 'Yin yoga',          type: 'yoga',    time: '6pm'  },
+    null,
+    { name: 'Yin yoga',          type: 'yoga',    time: '5pm'  },
+  ]},
+  { time: '6:30pm', classes: [
+    { name: 'Signature pilates', type: 'pilates'                                               },
+    { name: 'Limber up',         type: 'other'                                                 },
+    { name: 'Strength pilates',  type: 'pilates'                                               },
+    { name: 'Signature pilates', type: 'pilates'                                               },
+    { name: 'Breathwork',        type: 'breathwork', time: '7:15pm', note: '2nd fri · Alice'  },
+    null, null,
+  ]},
+  { time: '7:30pm', classes: [
+    { name: 'Limber up',         type: 'other'                                                         },
+    { name: 'Yin yoga',          type: 'yoga'                                                          },
+    { name: 'Limber up',         type: 'other'                                                         },
+    { name: 'Yin yoga',          type: 'yoga'                                                          },
+    { name: 'Breathwork',        type: 'breathwork', time: '7:15pm', note: 'last fri · Jackson or Sam' },
+    null, null,
+  ]},
+];
+
+const legendItems: Array<{ label: string; type: ClassType }> = [
+  { label: 'Pilates',    type: 'pilates'    },
+  { label: 'Yoga',       type: 'yoga'       },
+  { label: 'Barre',      type: 'barre'      },
+  { label: 'Express',    type: 'express'    },
+  { label: 'Breathwork', type: 'breathwork' },
+  { label: 'Other',      type: 'other'      },
+];
+---
+
+<BaseLayout
+  title="Timetable"
+  description="View the Limber weekly class schedule — pilates, yoga, barre and more, 7 days a week. Find your class and book your spot."
+>
+
+  <!-- ── HERO ── -->
+  <section class="bg-limber-cream border-b-2 border-neutral-900 px-8 lg:px-14 py-16 lg:py-24">
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+      <h1>
+        <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-green block leading-none mb-1">timetable</span>
+        <em class="font-display uppercase not-italic italic font-medium text-6xl md:text-7xl lg:text-8xl text-limber-tericotta block leading-none">find your class</em>
+      </h1>
+      <div class="lg:pb-2 space-y-4 max-w-sm">
+        <p class="font-sans text-limber-brown/70 leading-relaxed">
+          7 days a week. pilates, yoga, barre and more. find a time that works for you and book your spot in seconds.
+        </p>
+        <a
+          href="/book-now"
+          class="inline-flex items-center px-8 py-4 font-headline text-sm text-limber-cream bg-limber-tericotta hover:bg-limber-brown border-2 border-neutral-900 rounded-full transition-colors"
+        >
+          book now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TIMETABLE ── -->
+  <section class="bg-limber-cream-bg py-16 lg:py-24 border-b-2 border-neutral-900">
+    <div class="px-4 sm:px-6 lg:px-8">
+
+      <!-- Legend -->
+      <div class="flex flex-wrap gap-2 mb-12">
+        {legendItems.map((item) => (
+          <div class:list={['inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-900/10', typeStyles[item.type].bg]}>
+            <span class:list={['font-headline text-xs', typeStyles[item.type].text]}>{item.label}</span>
+          </div>
+        ))}
+      </div>
+
+      <!-- ── ALL 7 DAYS ── -->
+      <div class="overflow-x-auto -mx-4 sm:-mx-6 lg:mx-0 px-4 sm:px-6 lg:px-0" style="scrollbar-width: none;">
+        <div style="min-width: 900px;">
+
+          <!-- Day headers -->
+          <div class="grid gap-2 mb-2" style="grid-template-columns: 76px repeat(7, 1fr);">
+            <div></div>
+            {allDays.map((day, i) => (
+              <div class:list={[
+                'font-headline text-xs uppercase tracking-wide px-3',
+                i >= 5 ? 'text-limber-tericotta/70' : 'text-limber-green/50',
+              ]}>{day}</div>
+            ))}
+          </div>
+
+          <!-- Rows -->
+          {allSlots.map((slot) => (
+            <div class="grid gap-2 mb-2" style="grid-template-columns: 76px repeat(7, 1fr);">
+              <div class="flex items-start pt-3.5 pr-2">
+                <span class="font-headline text-xs text-limber-brown/40 whitespace-nowrap">{slot.time}</span>
+              </div>
+              {slot.classes.map((entry) => (
+                <div style="min-height: 80px;">
+                  {entry ? (
+                    <div class:list={['h-full rounded-xl px-3 py-3 flex flex-col border border-neutral-900/[0.07]', typeStyles[entry.type].bg]}>
+                      {entry.time && (
+                        <span class:list={['font-headline text-xs leading-none mb-1 opacity-60', typeStyles[entry.type].text]}>{entry.time}</span>
+                      )}
+                      <p class:list={['font-headline text-sm leading-snug flex-1', typeStyles[entry.type].text]}>{entry.name}</p>
+                      {entry.note && (
+                        <p class:list={['font-sans text-xs leading-snug mt-1.5', typeStyles[entry.type].note]}>{entry.note}</p>
+                      )}
+                    </div>
+                  ) : (
+                    <div class="h-full rounded-xl border border-dashed border-neutral-900/10" style="min-height: 80px;"></div>
+                  )}
+                </div>
+              ))}
+            </div>
+          ))}
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── GOOD TO KNOW ── -->
+  <section class="bg-limber-cream py-16 lg:py-24">
+    <div class="px-4 sm:px-6 lg:px-8">
+
+      <h2 class="mb-10">
+        <span class="font-headline uppercase text-3xl md:text-4xl lg:text-5xl text-limber-green block leading-none mb-1">good to</span>
+        <em class="font-display uppercase not-italic italic font-medium text-4xl md:text-5xl lg:text-6xl text-limber-tericotta block leading-none">know</em>
+      </h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {[
+          { title: 'booking', body: 'Classes can be booked up to [X] days in advance. We recommend booking early — spots fill fast.', link: null },
+          { title: 'cancellations', body: 'Cancel up to [X] hours before class to avoid a late cancel fee. See our full policy in the T&Cs.', link: null },
+          { title: 'new to limber?', body: 'First time? Start with The Limber Way — 21 days of unlimited classes, a personalised plan, and a real human in your corner. $99.', link: { label: 'learn more', href: '/pricing/trial' } },
+        ].map(({ title, body, link }) => (
+          <div class="p-6 rounded-2xl bg-limber-cream-bg border-2 border-neutral-900 flex flex-col">
+            <p class="font-headline text-sm text-limber-green mb-3">{title}</p>
+            <p class="font-sans text-base text-limber-brown/70 leading-relaxed flex-1">{body}</p>
+            {link && (
+              <a href={link.href} class="font-headline text-xs text-limber-tericotta hover:text-limber-brown transition-colors mt-4">
+                {link.label} →
+              </a>
+            )}
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>

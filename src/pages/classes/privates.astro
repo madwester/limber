@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PrivatesContactForm from '../../components/PrivatesContactForm.astro';
+
+const serviceSchema = {
+ '@context': 'https://schema.org',
+ '@type': 'Service',
+ name: 'Private Sessions — Limber',
+ description: 'One-on-one private Pilates and movement sessions tailored to your individual goals at Limber',
+ provider: { '@type': 'LocalBusiness', name: 'Limber', url: 'https://limberco.com.au' },
+};
+---
+
+<BaseLayout
+ title="Private Sessions"
+ description="Book a private Pilates or movement session at Limber One-on-one attention tailored to your goals, body, and schedule."
+ schema={serviceSchema}
+>
+ <section class="bg-limber-brown py-24 lg:py-36">
+ <div class=" px-4 sm:px-6 lg:px-8">
+ <a href="/classes" class="inline-flex items-center gap-2 font-headline text-xs text-limber-cream/60 hover:text-limber-cream transition-colors mb-10">
+ <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+ Classes
+ </a>
+ <p class="font-headline text-xs text-limber-bright mb-4">Classes</p>
+ <h1 class="font-headline text-5xl md:text-6xl lg:text-7xl text-limber-cream leading-tight mb-6">
+ Private Sessions
+ </h1>
+ <p class="font-sans text-lg text-limber-cream/80 leading-relaxed">
+ The fastest way to make progress. Undivided attention, a program built around you, and results you can actually feel.
+ </p>
+ </div>
+ </section>
+
+ <section class="py-16 bg-limber-cream-bg">
+ <div class=" px-4 sm:px-6 lg:px-8">
+ <h2 class="font-headline text-4xl text-limber-green mb-10">Why choose a private?</h2>
+ <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+ {
+ [
+ { title: 'Tailored to you', body: 'Every session is programmed around your body, goals, history, and how you feel on the day.', bg: 'bg-limber-green text-limber-cream' },
+ { title: 'Faster progress', body: 'One-on-one coaching means better form, better feedback, and results that compound.', bg: 'bg-limber-tericotta text-limber-cream' },
+ { title: 'Injury rehab', body: 'Working around existing injuries or managing chronic pain? We\'ve got you.', bg: 'bg-limber-vibe text-limber-brown' },
+ { title: 'Flexible scheduling', body: 'Book around your life — sessions available mornings, evenings, and weekends.', bg: 'bg-limber-cream border-2 border-limber-green/20 text-limber-brown' },
+ { title: 'Build confidence', body: 'Great for beginners who want to build their foundation before joining group classes.', bg: 'bg-limber-cream border-2 border-limber-green/20 text-limber-brown' },
+ { title: 'Sport-specific', body: 'Pilates for runners, cyclists, golfers — we target what matters for your sport.', bg: 'bg-limber-brown text-limber-cream' },
+ ].map(({ title, body, bg }) => (
+ <div class:list={['p-8 rounded-2xl', bg]}>
+ <h3 class="font-headline text-xl mb-2">{title}</h3>
+ <p class="font-sans text-sm leading-relaxed opacity-80">{body}</p>
+ </div>
+ ))
+ }
+ </div>
+ </div>
+ </section>
+
+ <section class="py-20 bg-limber-cream" id="enquire">
+ <div class=" px-4 sm:px-6 lg:px-8">
+ <div class="mb-10">
+ <h2 class="font-headline text-4xl text-limber-green mb-3">Enquire about privates</h2>
+ <p class="font-sans text-sm text-limber-brown/80">
+ Tell us a little about what you're looking for and we'll be in touch within 1–2 business days.
+ Prefer to email directly?
+ <a href="mailto:privates@limberco.com.au" class="text-limber-tericotta hover:underline font-medium">
+ privates@limberco.com.au
+ </a>
+ </p>
+ </div>
+ <PrivatesContactForm />
+ </div>
+ </section>
+</BaseLayout>

@@ -1,0 +1,405 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const classes = [
+  {
+    id: 'limber-signature',
+    name: 'Limber Signature',
+    tags: ['Mat Pilates', 'Flowing', 'Fiery', 'Full Body', 'Fun', 'Leaves You Feeling Brand New'],
+    spotlight: 'full body strength + core',
+    energyGuide: 'medium — high 🔥',
+    soundsLike: '#',
+    description: [
+      'Our signature mat pilates class built around deep core connection and full body movement that flows seamlessly from one thing to the next. It pulls you into the present and sends you straight into flow state.',
+      'It builds slowly, and intentionally, towards a full body peak that leaves you humbled — not destroyed. Think less "collapsed on the floor" and more "walking out with an after flow glow".',
+    ],
+    classNotes: 'all levels welcome · modifications available throughout',
+    images: ['/images/classes/signature.jpg'],
+  },
+  {
+    id: 'limbarre',
+    name: 'Limbarre',
+    tags: ['Barre', 'Beat-Driven', 'Cardio', 'Genuinely The Most Fun Your Body Has Had All Week'],
+    spotlight: 'full body strength + cardio',
+    energyGuide: 'high 🔥🔥',
+    soundsLike: '#',
+    description: [
+      "beat-driven, cardio-infused, and fiery on the legs. so fun you'll forget they're burning. think pliés, pulses, and pirouttes (joking).",
+    ],
+    classNotes: 'all levels welcome · pre-natal friendly · modifications available throughout',
+    images: ['/images/classes/limbarre_1.jpg', '/images/classes/limbarre_2.jpg'],
+  },
+  {
+    id: 'limber-strength',
+    name: 'Limber Strength',
+    tags: ['Pilates Meets Strength Training', 'Full Body'],
+    spotlight: 'full body strength + conditioning',
+    energyGuide: 'high 🔥🔥',
+    soundsLike: '#',
+    description: [
+      'pilates met strength training and honestly? power couple of the century.',
+      "limber strength takes everything you love about pilates — the intention, the precision, the mind-body connection — and adds dumbbells. you'll move through circuits and be encouraged to work your whole body close to its max rep.",
+      "weights are always your choice — but we will absolutely encourage you to pick up the heavier ones when you're ready.",
+    ],
+    classNotes: 'all levels welcome · pre-natal friendly · modifications available throughout',
+    images: ['/images/classes/strength.jpg'],
+  },
+  {
+    id: 'limber-chair',
+    name: 'Limber Chair',
+    tags: ['Pilates Apparatus', 'Full Body', 'Precise', 'Playful'],
+    spotlight: 'balance, stability, strength + mobility',
+    energyGuide: 'medium 🔥',
+    soundsLike: '#',
+    description: [
+      "a small but mighty machine. not quite a reformer, not quite anything else — just its own brilliant thing. springs that support, assist and offer up some seriously juicy and fiery movement.",
+      "sounds complicated. it isn't. your teacher will be there to assist every step of the way.",
+    ],
+    classNotes: 'all levels welcome · pre-natal friendly · grip socks required',
+    images: ['/images/classes/chair_1.jpg', '/images/classes/chair_2.jpg'],
+  },
+  {
+    id: 'limber-up',
+    name: 'Limber Up',
+    tags: ['Mobility', 'Stretch', 'Release', 'The Permission Slip Your Body Has Been Waiting For'],
+    spotlight: 'mobility, flexibility + recovery',
+    energyGuide: 'low 🌿',
+    soundsLike: '#',
+    description: [
+      "it's giving spa day meets deep tissue massage. might hurt a little, but it's absolutely worth it.",
+      "class starts with a dynamic mobility and exploratory warm-up, then melts into long, deeply myo release work. perfect for those seeking recovery and mobility, and ideal if you're hitting higher impact classes during the week.",
+    ],
+    classNotes: 'all levels welcome · pre-natal friendly · modifications available throughout',
+    images: ['/images/classes/recovery_classes_limber_up_1.jpg', '/images/classes/recovery_classes_limber_up_2.jpg'],
+  },
+  {
+    id: 'limber-power-flow',
+    name: 'Limber Power Flow',
+    tags: ['Vinyasa Yoga', 'Strength + Flexibility'],
+    spotlight: 'strength, flexibility + breath',
+    energyGuide: 'medium — high 🔥',
+    soundsLike: '#',
+    description: [
+      "sequences build, fire arrives, and somewhere in the middle you'll find yourself completely in flow state.",
+    ],
+    classNotes: 'all levels welcome · pre-natal friendly · warm room',
+    images: ['/images/classes/power_yoga_1.jpg', '/images/classes/power_yoga_2.jpg'],
+  },
+  {
+    id: 'limber-unfurl',
+    name: 'Limber Unfurl',
+    tags: ['Yin + Somatic Movement', 'Deeply Restorative', 'The Quietest Hour Of Your Week'],
+    spotlight: 'deep release, connective tissue + nervous system',
+    energyGuide: 'low 🌿',
+    soundsLike: '#',
+    description: [
+      "this is the one people don't know they need until they try it. and then they're hooked.",
+      "limber unfurl is our deeply restorative yin and somatic movement class. long passive holds that target the deep connective tissue in ways that flowing classes simply can't reach. one of the most powerful classes you can do for your body.",
+    ],
+    classNotes: 'all levels welcome · pre-natal friendly · warm room',
+    images: ['/images/classes/unfurel_yin_yoga.jpg'],
+  },
+  {
+    id: 'limber-mammas',
+    name: 'Limber Mammas',
+    tags: ['Pilates + Yoga', 'Postnatal', 'Bring The Baby', 'Bring The Chaos', "You're So Welcome Here"],
+    spotlight: 'core reconnection, strength + restoration',
+    energyGuide: 'medium 🌿',
+    soundsLike: '#',
+    description: [
+      'for mums with bubs from 6 weeks to 2 years old. naps, cries, giggles — all welcome. this is a session where motherhood in all its beautiful, messy, unpredictable glory is not just tolerated but genuinely celebrated.',
+      "we'll guide you through gentle, strengthening pilates and yoga-inspired movement to rebuild your core, reconnect with your body, and release the tension that comes with keeping a small human alive.",
+    ],
+    classNotes: 'medical clearance required from 6 weeks',
+    images: ['/images/classes/mammas.jpg'],
+  },
+  {
+    id: 'limboogie',
+    name: 'Limboogie',
+    tags: ['Dance', 'Movement', 'Pure Joy', 'No Experience Required', 'Just Bring Yourself'],
+    spotlight: 'joyful expression + full body movement',
+    energyGuide: 'medium — high 🔥',
+    soundsLike: '#',
+    description: [
+      'remember dancing around your bedroom as a kid with absolutely zero self-consciousness? well, introducing limboogie.',
+      "our dance-inspired movement class and it is exactly as fun as it sounds. no right or wrong way to move — just music, movement, and the kind of joy that makes you forget you're exercising.",
+    ],
+    classNotes: 'all levels welcome · pre-natal friendly · modifications available throughout',
+    images: ['/images/classes/limboogie.jpg'],
+  },
+];
+---
+
+<BaseLayout
+  title="Our Classes"
+  description="Explore every class at Limber — from mat Pilates to yin yoga, strength, barre, dance, and more."
+>
+
+  <!-- ── INTRO ── -->
+  <section class="bg-limber-cream py-16 lg:py-20 border-b-2 border-neutral-900">
+    <div class="px-4 sm:px-6 lg:px-8">
+
+      <!-- Centered heading -->
+      <div class="text-center mb-10">
+        <h1>
+          <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-green block leading-none mb-1">the way we</span>
+          <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-tericotta block leading-none">move at limber</em>
+        </h1>
+      </div>
+
+      <!-- Photo -->
+      <div class="mb-12">
+        <img
+          src="/images/Limber_April26_102.jpg"
+          alt="Limber studio"
+          class="w-full h-64 lg:h-96 object-cover rounded-2xl border-2 border-neutral-900"
+        />
+      </div>
+
+      <!-- Body copy + first timer note -->
+      <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-start">
+        <div class="space-y-4">
+          <p class="font-sans text-limber-brown/80 leading-relaxed">
+            every class we offer is built around the same belief — that movement should feel genuinely good. not punishing. not performative. not something you have to earn or justify.
+          </p>
+          <p class="font-display italic text-xl text-limber-tericotta leading-snug">
+            burn calories? we'd rather burn a playlist.
+          </p>
+          <p class="font-sans text-limber-brown/80 leading-relaxed">
+            we follow the principles of pilates and yoga, but we've also built our own approach on top of that — what we like to call our secret limber sauce. <span class="text-limber-brown/40 italic">(we can't tell you. but you'll feel it.)</span>
+          </p>
+          <p class="font-sans text-limber-brown/80 leading-relaxed">
+            but as always — listen to your body. take it up, take it down. we're just here to guide you.
+          </p>
+        </div>
+        <div class="mt-8 lg:mt-0">
+          <div class="bg-limber-cream-bg rounded-2xl border-2 border-neutral-900 p-6">
+            <p class="font-headline text-xs text-limber-tericotta mb-2">getting ready for your first class?</p>
+            <p class="font-sans text-sm text-limber-brown/80 leading-relaxed mb-4">
+              have a quick read of our community guidelines before you come in. the vibe is chill, the people are friendly, and grip socks are your new best friend.
+            </p>
+            <a href="/about/our-community" class="font-headline text-xs text-limber-green hover:text-limber-tericotta transition-colors">
+              read the community guidelines →
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CLASSES ── -->
+
+  <!-- Mobile: sticky tab bar -->
+  <div class="lg:hidden sticky top-16 z-10 bg-limber-cream border-b-2 border-neutral-900 overflow-x-auto">
+    <nav class="flex min-w-max" aria-label="Class list">
+      {classes.map((cls, i) => (
+        <button
+          type="button"
+          data-nav-btn={cls.id}
+          class:list={[
+            'px-5 py-3 font-headline text-xs whitespace-nowrap border-r border-neutral-900/10 transition-colors hover:bg-neutral-900 hover:text-limber-cream cursor-pointer',
+            i === 0 ? 'bg-neutral-900 text-limber-cream' : 'text-neutral-900 bg-transparent',
+          ]}
+        >
+          {cls.name}
+        </button>
+      ))}
+    </nav>
+  </div>
+
+  <!-- Flex wrapper: desktop sticky sidebar + shared sections -->
+  <div class="lg:flex items-start border-b-2 border-neutral-900">
+
+    <!-- Desktop sticky sidebar -->
+    <aside class="hidden lg:flex flex-col w-64 xl:w-72 flex-shrink-0 border-r-2 border-neutral-900 bg-limber-cream sticky top-20 h-[calc(100vh-5rem)]">
+      <div class="px-6 py-5 border-b-2 border-neutral-900 flex-shrink-0">
+        <p class="font-headline text-xl xl:text-2xl text-neutral-900">Our Classes</p>
+      </div>
+      <nav class="flex-1 overflow-y-auto" aria-label="Class list">
+        {classes.map((cls, i) => (
+          <button
+            type="button"
+            data-nav-btn={cls.id}
+            class:list={[
+              'w-full text-left px-6 py-4 font-headline text-sm border-b border-neutral-900/10 transition-colors hover:bg-neutral-900 hover:text-limber-cream cursor-pointer',
+              i === 0 ? 'bg-neutral-900 text-limber-cream' : 'text-neutral-900 bg-transparent',
+            ]}
+          >
+            {cls.name}
+          </button>
+        ))}
+      </nav>
+    </aside>
+
+    <!-- Shared class sections -->
+    <div class="flex-1 bg-limber-cream-bg divide-y-2 divide-neutral-900">
+      {classes.map((cls) => (
+        <section id={cls.id} data-class-section class="p-5 sm:p-6 lg:p-10 xl:p-12 scroll-mt-16 lg:scroll-mt-20">
+
+          <!-- Heading + book -->
+          <div class="flex items-start justify-between gap-4 mb-4">
+            <h2 class="font-headline text-2xl lg:text-4xl xl:text-5xl text-neutral-900">{cls.name}</h2>
+            <a
+              href="/book-now"
+              class="flex-shrink-0 inline-flex items-center px-4 lg:px-6 py-2.5 lg:py-3 font-headline text-xs text-limber-cream bg-limber-tericotta hover:bg-limber-brown border-2 border-neutral-900 rounded-full transition-colors"
+            >
+              book this class
+            </a>
+          </div>
+
+          <!-- Tags -->
+          <div class="flex flex-wrap gap-2 mb-6">
+            {cls.tags.map(tag => (
+              <span class="font-headline text-[10px] uppercase tracking-wide text-limber-tericotta bg-limber-tericotta/10 border border-limber-tericotta/20 px-2.5 py-1 rounded-full">{tag}</span>
+            ))}
+          </div>
+
+          <!-- Image + content -->
+          <div class="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-12 items-start">
+
+            <!-- Image(s) -->
+            <div class="mb-6 lg:mb-0">
+              {cls.images.length === 1 ? (
+                <img
+                  src={cls.images[0]}
+                  alt={cls.name}
+                  class="w-full h-56 lg:h-72 object-cover rounded-2xl border-2 border-neutral-900"
+                />
+              ) : (
+                <div class="grid grid-cols-2 gap-3">
+                  {cls.images.map((img, idx) => (
+                    <img
+                      src={img}
+                      alt={`${cls.name} — photo ${idx + 1}`}
+                      class="w-full h-40 lg:h-56 object-cover rounded-2xl border-2 border-neutral-900"
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <!-- Meta + description -->
+            <div>
+              <!-- Meta card -->
+              <div class="grid grid-cols-3 gap-px bg-neutral-900/10 rounded-2xl overflow-hidden border-2 border-neutral-900 mb-5">
+                <div class="bg-limber-cream p-4">
+                  <p class="font-headline text-xs text-limber-tericotta mb-1">spotlight on</p>
+                  <p class="font-sans text-xs text-limber-brown/80 leading-snug">{cls.spotlight}</p>
+                </div>
+                <div class="bg-limber-cream p-4">
+                  <p class="font-headline text-xs text-limber-tericotta mb-1">energy</p>
+                  <p class="font-sans text-xs text-limber-brown/80">{cls.energyGuide}</p>
+                </div>
+                <div class="bg-limber-cream p-4">
+                  <p class="font-headline text-xs text-limber-tericotta mb-1">sounds like</p>
+                  <a href={cls.soundsLike} class="font-sans text-xs text-limber-tericotta hover:text-limber-brown transition-colors">playlist →</a>
+                </div>
+              </div>
+
+              <!-- Description -->
+              <div class="space-y-3 mb-3">
+                {cls.description.map(p => (
+                  <p class="font-sans text-sm text-limber-brown/80 leading-relaxed">{p}</p>
+                ))}
+              </div>
+              <p class="font-sans text-xs italic text-limber-brown/50">{cls.classNotes}</p>
+            </div>
+
+          </div>
+        </section>
+      ))}
+    </div>
+
+  </div>
+
+  <!-- ── BOTTOM NOTE ── -->
+  <section class="bg-limber-green py-16 lg:py-20 border-t-2 border-neutral-900">
+    <div class="px-4 sm:px-6 lg:px-8">
+      <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+        <div>
+          <h2 class="mb-6 lg:mb-0">
+            <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-cream block leading-none mb-1">a note on injuries,</span>
+            <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-vibe block leading-none">niggles + pregnancy</em>
+          </h2>
+        </div>
+        <div class="space-y-4">
+          <p class="font-sans text-limber-cream/80 leading-relaxed">
+            got something going on in your body? always let your teacher know before class. we're trained, we care, and we will absolutely sort you out with modifications — no awkward conversations required.
+          </p>
+          <p class="font-sans text-limber-cream/80 leading-relaxed">
+            pregnant or postnatal? wonderful. please email us at <a href="mailto:hello@limberco.com.au" class="text-limber-vibe hover:text-limber-cream transition-colors">hello@limberco.com.au</a> before booking so we can make sure you're in the right class and properly looked after.
+          </p>
+          <p class="font-sans text-limber-cream/80 leading-relaxed">
+            all our teachers are fully qualified and committed to ongoing education. you're in good hands.
+          </p>
+          <div class="pt-4">
+            <a
+              href="/contact"
+              class="inline-flex items-center px-8 py-4 font-headline text-sm text-limber-green bg-limber-vibe hover:bg-limber-bright border-2 border-neutral-900 rounded-full transition-colors"
+            >
+              get in touch
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<script>
+  const navBtns = document.querySelectorAll('[data-nav-btn]');
+  const sections = document.querySelectorAll('[data-class-section]');
+
+  function setActive(id: string) {
+    navBtns.forEach((b) => {
+      const isActive = b.getAttribute('data-nav-btn') === id;
+      b.classList.toggle('bg-neutral-900', isActive);
+      b.classList.toggle('text-limber-cream', isActive);
+      b.classList.toggle('text-neutral-900', !isActive);
+      b.classList.toggle('bg-transparent', !isActive);
+    });
+    // Keep active sidebar item in view
+    const activeBtn = document.querySelector(`[data-nav-btn="${id}"]`);
+    activeBtn?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  }
+
+  // Click to scroll to section
+  navBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const id = btn.getAttribute('data-nav-btn');
+      if (!id) return;
+      const section = document.getElementById(id);
+      section?.scrollIntoView({ behavior: 'smooth' });
+      setActive(id);
+    });
+  });
+
+  // Scrollspy — highlight sidebar item as sections scroll into view
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActive(entry.target.id);
+        }
+      });
+    },
+    {
+      rootMargin: '-20% 0px -70% 0px',
+      threshold: 0,
+    }
+  );
+
+  sections.forEach((s) => observer.observe(s));
+
+  // Activate from URL hash on load
+  const hash = window.location.hash.replace('#', '');
+  if (hash) {
+    const el = document.getElementById(hash);
+    if (el) {
+      el.scrollIntoView();
+      setActive(hash);
+    }
+  }
+</script>

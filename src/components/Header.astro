@@ -1,0 +1,260 @@
+---
+import Logo from './Logo.astro';
+
+const navItems = [
+ {
+ label: 'About',
+ href: '/about',
+ image: '/images/dropdown_about.jpg',
+ children: [
+ { label: 'Our Vibe', href: '/about/our-vibe' },
+ { label: 'Our Tribe', href: '/about/our-tribe' },
+ { label: 'Our Community', href: '/about/our-community' },
+ ],
+ },
+ {
+ label: 'Classes',
+ href: '/classes',
+ image: '/images/dropdown_classes.jpg',
+ children: [
+ { label: 'Our Classes', href: '/classes/our-classes' },
+ { label: 'Timetable', href: '/classes/timetable' },
+ { label: 'Privates', href: '/classes/privates' },
+ { label: 'Corporates', href: '/classes/corporates' },
+ ],
+ },
+ {
+ label: 'Pricing',
+ href: '/pricing',
+ image: '/images/dropdown_pricing.jpg',
+ children: [
+ { label: 'Trial', href: '/pricing/trial' },
+ { label: 'Memberships', href: '/pricing/memberships' },
+ { label: 'Packs & Gift Cards', href: '/pricing/packs-and-gift-cards' },
+ ],
+ },
+ { label: 'Journal', href: '/journal' },
+ { label: 'Love Wall', href: '/reviews' },
+ { label: 'Contact', href: '/contact' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-limber-cream border-b-2 border-neutral-900">
+ <div class="px-4 sm:px-6 lg:px-8">
+ <div class="flex items-center h-16 lg:h-20">
+
+ <!-- Logo — left aligned -->
+ <a href="/" class="flex-shrink-0" aria-label="Limber — home">
+    <Logo class="h-9 lg:h-12 w-auto" color="var(--color-limber-green)" />
+ </a>
+
+ <!-- Desktop nav — right-aligned -->
+ <div class="hidden lg:flex items-center gap-7 ml-auto" data-nav-bar>
+ <nav class="flex items-center gap-7" aria-label="Main navigation">
+ {
+ navItems.map((item) =>
+ item.children ? (
+ <div data-dropdown-group>
+ <button
+ type="button"
+ data-dropdown-trigger
+ class:list={[
+ 'font-headline text-sm transition-colors hover:text-limber-tericotta cursor-pointer',
+ currentPath.startsWith(item.href)
+ ? 'text-limber-tericotta'
+ : 'text-neutral-900',
+ ]}
+ >
+ {item.label}
+ </button>
+ <!-- Full-width dropdown -->
+ <div
+ data-dropdown-panel
+ class="hidden absolute left-0 right-0 top-full -mt-[2px] bg-limber-cream border-b-2 border-neutral-900"
+ style="height: 200px;"
+ >
+ <div class="relative h-full flex items-center py-5 px-8">
+ <!-- Links — left offset set via JS to align exactly under trigger -->
+ <div data-links-col class="flex flex-col gap-1">
+ {item.children.map((child) => (
+ <a
+ href={child.href}
+ class:list={[
+ 'block px-3 py-2 font-headline text-sm transition-colors hover:text-limber-tericotta',
+ currentPath === child.href
+ ? 'text-limber-tericotta'
+ : 'text-neutral-900',
+ ]}
+ >
+ {child.label}
+ </a>
+ ))}
+ </div>
+ <!-- Image — right side -->
+ <img
+ src={item.image}
+ alt={item.label}
+ class="h-40 w-64 object-cover rounded-2xl border-2 border-neutral-900 flex-shrink-0 ml-auto"
+ />
+ </div>
+ </div>
+ </div>
+ ) : (
+ <a
+ href={item.href}
+ data-plain-link
+ class:list={[
+ 'font-headline text-sm transition-colors hover:text-limber-tericotta',
+ currentPath.startsWith(item.href)
+ ? 'text-limber-tericotta'
+ : 'text-neutral-900',
+ ]}
+ >
+ {item.label}
+ </a>
+ )
+ )
+ }
+ </nav>
+
+ <a
+ href="/book-now"
+ data-plain-link
+ class="font-headline text-sm text-neutral-900 border-2 border-neutral-900 rounded-full px-5 py-2 hover:bg-neutral-900 hover:text-limber-cream transition-colors"
+ >
+ Book Now
+ </a>
+ </div>
+
+ <!-- Mobile toggle -->
+ <div class="flex items-center ml-auto lg:hidden">
+ <button
+ id="mobile-menu-btn"
+ class="p-2 rounded-md text-limber-green hover:bg-limber-green hover:text-limber-cream transition-colors"
+ aria-label="Open menu"
+ aria-expanded="false"
+ aria-controls="mobile-menu"
+ >
+ <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+ </svg>
+ </button>
+ </div>
+
+ </div>
+ </div>
+
+ <!-- Mobile menu -->
+ <div id="mobile-menu" class="hidden lg:hidden border-t-2 border-neutral-900 bg-limber-cream">
+ <div class="px-4 py-4 space-y-0.5">
+ <a href="/" class="block px-3 py-2.5 font-headline text-xs text-limber-green hover:text-limber-cream hover:bg-limber-green rounded-lg transition-colors">
+ Home
+ </a>
+ {
+ navItems.map((item) => (
+ <div>
+ {item.children ? (
+ <p class="block px-3 py-2.5 font-headline text-xs text-limber-green/50">
+ {item.label}
+ </p>
+ ) : (
+ <a
+ href={item.href}
+ class="block px-3 py-2.5 font-headline text-xs text-limber-green hover:text-limber-cream hover:bg-limber-green rounded-lg transition-colors"
+ >
+ {item.label}
+ </a>
+ )}
+ {item.children && (
+ <div class="pl-4 space-y-0.5 mb-1">
+ {item.children.map((child) => (
+ <a
+ href={child.href}
+ class="block px-3 py-2 font-headline text-xs text-limber-green/70 hover:text-limber-cream hover:bg-limber-green rounded-lg transition-colors"
+ >
+ {child.label}
+ </a>
+ ))}
+ </div>
+ )}
+ </div>
+ ))
+ }
+ <div class="pt-3 pb-2">
+ <a
+ href="/book-now"
+ class="block w-full text-center px-5 py-3 font-headline text-xs text-limber-cream bg-limber-tericotta hover:bg-limber-brown border-2 border-neutral-900 rounded-full transition-colors"
+ >
+ Book Now
+ </a>
+ </div>
+ </div>
+ </div>
+</header>
+
+<!-- Fixed header offset -->
+<div class="h-16 lg:h-20" aria-hidden="true"></div>
+
+<script>
+ // ── Mobile menu ──
+ const mobileBtn = document.getElementById('mobile-menu-btn');
+ const mobileMenu = document.getElementById('mobile-menu');
+ mobileBtn?.addEventListener('click', () => {
+ const nowHidden = mobileMenu?.classList.toggle('hidden');
+ mobileBtn.setAttribute('aria-expanded', String(!nowHidden));
+ mobileBtn.setAttribute('aria-label', nowHidden ? 'Open menu' : 'Close menu');
+ });
+
+ // ── Desktop dropdowns ──
+ // Uses a short timeout so the mouse can travel from the trigger down into the
+ // panel without the panel vanishing during the gap.
+ const navBar = document.querySelector('[data-nav-bar]');
+ const groups = document.querySelectorAll('[data-dropdown-group]');
+ let hideTimer: ReturnType<typeof setTimeout> | null = null;
+
+ function scheduleHide() {
+ hideTimer = setTimeout(hideAll, 120);
+ }
+ function cancelHide() {
+ if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
+ }
+ function hideAll() {
+ groups.forEach((g) => g.querySelector('[data-dropdown-panel]')?.classList.add('hidden'));
+ }
+
+ groups.forEach((group) => {
+ const trigger = group.querySelector('[data-dropdown-trigger]');
+ const panel = group.querySelector('[data-dropdown-panel]');
+ const linksCol = panel?.querySelector('[data-links-col]') as HTMLElement | null;
+
+ // Show on trigger hover, cancel any pending hide
+ trigger?.addEventListener('mouseenter', () => {
+ cancelHide();
+ hideAll();
+ // Align links column under the trigger's x position
+ if (trigger && linksCol) {
+   const triggerRect = (trigger as HTMLElement).getBoundingClientRect();
+   // Panel is fixed left-0, has px-8 (32px) padding — offset links to sit under trigger
+   (linksCol as HTMLElement).style.marginLeft = Math.max(0, triggerRect.left - 32) + 'px';
+ }
+ panel?.classList.remove('hidden');
+ });
+
+ // Keep open while inside the panel; close when leaving it
+ panel?.addEventListener('mouseenter', () => cancelHide());
+ panel?.addEventListener('mouseleave', () => scheduleHide());
+ });
+
+ // Plain links close immediately
+ document.querySelectorAll('[data-plain-link]').forEach((link) => {
+ link.addEventListener('mouseenter', () => { cancelHide(); hideAll(); });
+ });
+
+ // Leaving the whole nav bar schedules a hide (panel mouseleave handles the rest)
+ navBar?.addEventListener('mouseleave', () => scheduleHide());
+ document.addEventListener('click', (e) => {
+ if (!navBar?.contains(e.target as Node)) hideAll();
+ });
+</script>

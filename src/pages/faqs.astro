@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// TODO: Replace with real FAQs
+const faqs = [
+ { q: 'Do I need experience to join a class?', a: 'Not at all. Most of our classes are suitable for complete beginners. If you\'re unsure, start with our intro trial or reach out and we\'ll point you in the right direction.' },
+ { q: 'What should I wear?', a: 'Comfortable, form-fitting activewear works best. Grip socks are recommended for reformer classes — we sell them in studio if you don\'t have a pair.' },
+ { q: 'What should I bring?', a: 'Just yourself and a water bottle. We provide all equipment including reformers, mats, and props.' },
+ { q: 'How do I book a class?', a: 'All bookings are made online via Momence — use the Book Now page on this site or download the Momence app. New members can start with our intro trial.' },
+ { q: 'What is your cancellation policy?', a: 'You can cancel or reschedule up to [X] hours before your class without charge. Late cancellations and no-shows may incur a fee. See our full Terms & Conditions.' },
+ { q: 'Can I pause or cancel my membership?', a: 'Yes. Memberships can be paused or cancelled with [X] days notice. See our Terms & Conditions for the full membership policy.' },
+ { q: 'Do you offer privates for injury rehab?', a: 'Absolutely. Our instructors are experienced in working with a wide range of injuries and conditions. Enquire via our Private Sessions page.' },
+ { q: 'Do you offer corporate wellness programs?', a: 'Yes — we offer both in-studio and on-site corporate wellness programs. Head to our Corporates page or get in touch.' },
+ { q: 'Is parking available?', a: '[Parking details — e.g. street parking available on X Street, or paid carpark at X.]' },
+ { q: 'Where can I buy a gift card?', a: 'Gift cards can be purchased online via our Packs & Gift Cards page. They\'re delivered instantly by email and never expire.' },
+];
+
+const faqSchema = {
+ '@context': 'https://schema.org',
+ '@type': 'FAQPage',
+ mainEntity: faqs.map(({ q, a }) => ({
+ '@type': 'Question',
+ name: q,
+ acceptedAnswer: { '@type': 'Answer', text: a },
+ })),
+};
+---
+
+<BaseLayout
+ title="FAQs"
+ description="Frequently asked questions about Limber — bookings, cancellations, what to wear, memberships, and more."
+ schema={faqSchema}
+>
+ <section class="bg-limber-green py-24 lg:py-36">
+ <div class=" px-4 sm:px-6 lg:px-8">
+ <p class="font-headline text-xs text-limber-vibe mb-4">Help</p>
+ <h1 class="font-headline text-5xl md:text-6xl text-limber-cream leading-tight mb-6">
+ FAQs
+ </h1>
+ <p class="font-sans text-lg text-limber-cream/80">
+ Everything you need to know. Can't find what you're looking for?
+ <a href="/contact" class="text-limber-vibe hover:underline">Get in touch</a>.
+ </p>
+ </div>
+ </section>
+
+ <section class="py-16 bg-limber-cream-bg">
+ <div class=" px-4 sm:px-6 lg:px-8">
+ <dl class="space-y-3">
+ {
+ faqs.map(({ q, a }, i) => (
+ <div class="rounded-2xl bg-limber-cream border-2 border-limber-green/20 overflow-hidden">
+ <dt>
+ <button
+ type="button"
+ class="w-full flex items-center justify-between gap-4 px-6 py-5 text-left hover:bg-limber-green/5 transition-colors"
+ aria-expanded="false"
+ aria-controls={`faq-answer-${i}`}
+ data-faq-toggle
+ >
+ <span class="font-headline text-base text-limber-green">{q}</span>
+ <svg
+ class="w-5 h-5 text-limber-tericotta flex-shrink-0 transition-transform duration-200"
+ fill="none" viewBox="0 0 24 24" stroke="currentColor"
+ aria-hidden="true" data-faq-icon
+ >
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+ </svg>
+ </button>
+ </dt>
+ <dd id={`faq-answer-${i}`} class="hidden px-6 pb-5 font-sans text-sm text-limber-brown/80 leading-relaxed">
+ {a}
+ </dd>
+ </div>
+ ))
+ }
+ </dl>
+ </div>
+ </section>
+
+ <section class="bg-limber-tericotta py-20">
+ <div class=" px-4 sm:px-6 text-center">
+ <h2 class="font-headline text-4xl text-limber-cream mb-3">Still have questions?</h2>
+ <p class="font-sans text-limber-cream/80 mb-8">We're happy to help — reach out and we'll get back to you quickly.</p>
+ <a href="/contact" class="inline-flex items-center px-7 py-3.5 font-headline text-sm text-limber-tericotta bg-limber-cream hover:bg-limber-bright border-2 border-neutral-900 rounded-full transition-colors">
+ Contact Us
+ </a>
+ </div>
+ </section>
+</BaseLayout>
+
+<script>
+ document.querySelectorAll('[data-faq-toggle]').forEach((btn) => {
+ btn.addEventListener('click', () => {
+ const expanded = btn.getAttribute('aria-expanded') === 'true';
+ const answerId = btn.getAttribute('aria-controls')!;
+ const answer = document.getElementById(answerId);
+ const icon = btn.querySelector('[data-faq-icon]');
+ btn.setAttribute('aria-expanded', String(!expanded));
+ answer?.classList.toggle('hidden', expanded);
+ icon?.classList.toggle('rotate-180', !expanded);
+ });
+ });
+</script>

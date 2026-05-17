@@ -1,0 +1,168 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  post: CollectionEntry<'journal'>;
+}
+
+const { post } = Astro.props;
+const { title, description, pubDate, author, image, tags } = post.data;
+
+// Split title roughly in half — first half in font-headline, second half in font-display
+const titleWords = title.split(' ');
+const splitIndex = Math.ceil(titleWords.length / 2);
+const titleMain = titleWords.slice(0, splitIndex).join(' ');
+const titleAccent = titleWords.slice(splitIndex).join(' ');
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: title,
+  description,
+  datePublished: pubDate.toISOString(),
+  author: { '@type': 'Person', name: author ?? 'Limber' },
+  publisher: { '@type': 'Organization', name: 'Limber', url: 'https://limberco.com.au' },
+  ...(image && { image: `https://limberco.com.au${image.src}` }),
+};
+
+const formattedDate = pubDate.toLocaleDateString('en-AU', {
+  day: 'numeric', month: 'long', year: 'numeric',
+});
+---
+
+<BaseLayout title={title} description={description} schema={articleSchema}>
+  <article>
+
+    <!-- ── BODY ── -->
+    <section class="bg-limber-cream-bg py-16 lg:py-24 border-b-2 border-neutral-900">
+      <div class="px-4 sm:px-8 lg:px-14">
+        <!-- Back link -->
+        <a
+          href="/journal"
+          class="inline-flex items-center gap-2 font-headline text-xs text-neutral-900/70 hover:text-neutral-900 transition-colors mb-8"
+        >
+          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          back to journal
+        </a>
+
+        <!-- Title -->
+        <h1 class="mb-5">
+          {titleMain && (
+            <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-green block leading-none mb-1">
+              {titleMain}
+            </span>
+          )}
+          <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-brown block leading-none">
+            {titleAccent}
+          </em>
+        </h1>
+
+        <!-- Meta -->
+        <div class="flex items-center gap-2 font-sans text-base text-limber-brown/50 mb-12">
+          <time datetime={pubDate.toISOString()}>{formattedDate}</time>
+          {author && <><span>·</span><span>{author}</span></>}
+        </div>
+
+        <!-- Article body -->
+        <div class="max-w-2xl journal-prose">
+          <!-- Cover image at top of content -->
+          {image && (
+            <img
+              src={image.src}
+              alt={image.alt}
+              class="w-full h-[480px] lg:h-[680px] object-cover object-top rounded-2xl border-2 border-neutral-900 mb-12"
+            />
+          )}
+          <slot />
+        </div>
+
+        <!-- Footer -->
+        <div class="max-w-2xl mt-16 pt-8 border-t border-neutral-900/10">
+          <a
+            href="/journal"
+            class="inline-flex items-center gap-2 font-headline text-sm text-limber-tericotta hover:text-limber-brown transition-colors"
+          >
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+            back to journal
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </article>
+</BaseLayout>
+
+<style>
+  .journal-prose :global(p) {
+    font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif);
+    color: rgb(var(--color-limber-brown) / 0.8);
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+  }
+
+  .journal-prose :global(em) {
+    font-family: var(--font-display, serif);
+    font-style: italic;
+    color: var(--color-limber-tericotta, #b85c3a);
+    font-size: 1.2rem;
+  }
+
+  .journal-prose :global(strong) {
+    font-family: var(--font-headline, sans-serif);
+    color: var(--color-limber-green, #666333);
+    font-weight: 600;
+  }
+
+  .journal-prose :global(h2),
+  .journal-prose :global(h3) {
+    font-family: var(--font-headline, sans-serif);
+    color: var(--color-limber-green, #666333);
+    text-transform: uppercase;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .journal-prose :global(blockquote) {
+    border-left: 3px solid var(--color-limber-tericotta, #b85c3a);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .journal-prose :global(blockquote p) {
+    font-family: var(--font-display, serif);
+    font-style: italic;
+    font-size: 1.25rem;
+    color: rgb(var(--color-limber-brown) / 0.7);
+    margin-bottom: 0;
+  }
+
+  .journal-prose :global(hr) {
+    border: none;
+    border-top: 1px solid rgb(11 2 4 / 0.1);
+    margin: 2.5rem 0;
+  }
+
+  .journal-prose :global(img) {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 1rem;
+    border: 2px solid rgb(11 2 4 / 0.9);
+    margin: 2rem 0;
+  }
+
+  .journal-prose :global(a) {
+    color: var(--color-limber-tericotta, #b85c3a);
+    text-decoration: none;
+  }
+
+  .journal-prose :global(a:hover) {
+    text-decoration: underline;
+  }
+</style>

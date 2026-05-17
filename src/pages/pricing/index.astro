@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const options = [
+ { label: 'Intro Trial', href: '/pricing/trial', desc: 'Special pricing for new members. The best way to start.', badge: 'Start here', bg: 'bg-limber-vibe', text: 'text-limber-brown' },
+ { label: 'Memberships', href: '/pricing/memberships', desc: 'Unlimited or weekly options for regular movers.', bg: 'bg-limber-green', text: 'text-limber-cream' },
+ { label: 'Packs & Gift Cards', href: '/pricing/packs-and-gift-cards', desc: 'Flexible class packs and gift the joy of movement.', bg: 'bg-limber-tericotta', text: 'text-limber-cream' },
+];
+---
+
+<BaseLayout
+ title="Pricing"
+ description="Limber pricing — intro trial, memberships, class packs, and gift cards. Transparent pricing, no lock-in contracts."
+>
+ <section class="bg-limber-brown py-24 lg:py-36">
+ <div class=" px-4 sm:px-6 lg:px-8">
+ <p class="font-headline text-xs text-limber-bright mb-4">Pricing</p>
+ <h1 class="font-headline text-5xl md:text-6xl lg:text-7xl text-limber-cream leading-tight mb-6">
+ Simple, honest pricing
+ </h1>
+ <p class="font-sans text-lg text-limber-cream/80 leading-relaxed">
+ No lock-in contracts. No hidden fees. Just good value for great movement.
+ </p>
+ </div>
+ </section>
+
+ <section class="py-16 bg-limber-cream-bg">
+ <div class=" px-4 sm:px-6 lg:px-8">
+ <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+ {
+ options.map((opt) => (
+ <a
+ href={opt.href}
+ class:list={['group relative block p-12 rounded-2xl hover:-translate-y-1 transition-transform', opt.bg]}
+ >
+ {opt.badge && (
+ <span class="absolute top-4 right-4 font-headline text-xs text-limber-brown bg-limber-cream px-3 py-1 rounded-full">
+ {opt.badge}
+ </span>
+ )}
+ <h2 class:list={['font-headline text-3xl mb-2', opt.text]}>{opt.label}</h2>
+ <p class:list={['font-sans text-sm leading-relaxed mb-5 opacity-80', opt.text]}>{opt.desc}</p>
+ <span class:list={['font-headline text-xs opacity-70', opt.text]}>See options →</span>
+ </a>
+ ))
+ }
+ </div>
+ </div>
+ </section>
+</BaseLayout>

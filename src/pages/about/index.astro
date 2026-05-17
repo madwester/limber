@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+ title="About"
+ description="Learn about Limber — our philosophy, our space, and the people behind it."
+>
+ <section class="bg-limber-green py-24 lg:py-36">
+ <div class=" px-4 sm:px-6 lg:px-8">
+ <p class="font-headline text-xs text-limber-vibe mb-4">About Us</p>
+ <h1 class="font-headline text-5xl md:text-6xl lg:text-7xl text-limber-cream leading-tight mb-6">
+ We built the studio<br />
+ <em class="font-display italic not-italic text-limber-vibe">we always wanted</em><br />
+ to go to.
+ </h1>
+ <p class="font-sans text-lg text-limber-cream/80 leading-relaxed">
+ <!-- TODO: studio origin story -->
+ Limber was born out of a love for movement and a belief that everyone deserves access to high-quality, welcoming, expert-led classes.
+ </p>
+ </div>
+ </section>
+
+ <section class="py-20 bg-limber-cream-bg">
+ <div class=" px-4 sm:px-6 lg:px-8">
+ <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+ <a href="/about/our-vibe" class="group block bg-limber-tericotta p-12 rounded-2xl hover:-translate-y-1 transition-transform">
+ <h2 class="font-headline text-4xl text-limber-cream mb-3 group-hover:text-limber-bright transition-colors">
+ Our Vibe
+ </h2>
+ <p class="font-sans text-limber-cream/80 leading-relaxed mb-6">
+ The energy, the ethos, and what you can expect when you walk through our doors.
+ </p>
+ <span class="font-headline text-xs text-limber-cream/70 group-hover:text-limber-cream transition-colors">Read more →</span>
+ </a>
+
+ <a href="/about/our-tribe" class="group block bg-limber-vibe p-12 rounded-2xl hover:-translate-y-1 transition-transform">
+ <h2 class="font-headline text-4xl text-limber-brown mb-3 group-hover:text-limber-green transition-colors">
+ Our Tribe
+ </h2>
+ <p class="font-sans text-limber-brown/80 leading-relaxed mb-6">
+ Meet the instructors and the community that makes Limber what it is.
+ </p>
+ <span class="font-headline text-xs text-limber-brown/70 group-hover:text-limber-brown transition-colors">Meet the team →</span>
+ </a>
+ </div>
+ </div>
+ </section>
+</BaseLayout>

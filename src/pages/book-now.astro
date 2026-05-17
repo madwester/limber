@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Book Now"
+  description="Book a Limber class online — pilates, yoga, barre and more. View the full timetable and reserve your spot instantly."
+>
+
+  <!-- ── HERO ── -->
+  <section class="bg-limber-cream border-b-2 border-neutral-900 px-8 lg:px-14 py-16 lg:py-24">
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+      <h1 class="mb-0">
+        <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-green block leading-none mb-1">book a</span>
+        <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-tericotta block leading-none">class</em>
+      </h1>
+      <div class="lg:pb-2 space-y-4 max-w-sm">
+        <p class="font-sans text-limber-brown/70 leading-relaxed">
+          find a session that works for you and reserve your spot in seconds.
+        </p>
+        <a
+          href="/pricing/trial"
+          class="inline-flex items-center px-6 py-3 font-headline text-sm text-limber-cream bg-limber-tericotta hover:bg-limber-brown border-2 border-neutral-900 rounded-full transition-colors"
+        >
+          new? start with the limber way — $99
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SCHEDULE WIDGET ── -->
+  <section class="bg-limber-cream-bg py-12 lg:py-16 border-b-2 border-neutral-900">
+    <div class="px-4 sm:px-6 lg:px-8">
+
+      <div id="ribbon-schedule"></div>
+      <script
+        async
+        type="module"
+        host_id="46474"
+        teacher_ids="[]"
+        location_ids="[]"
+        tag_ids="[]"
+        default_filter="show-all"
+        locale="en"
+        src="https://momence.com/plugin/host-schedule/host-schedule.js"
+      ></script>
+
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* ── Momence CSS variables ── */
+  :root {
+    --momenceColorBackground: #F7F4EE;  /* limber-cream-bg */
+    --momenceColorPrimary: 102, 99, 51; /* limber-green */
+    --momenceColorBlack: 11, 2, 4;      /* neutral-900 */
+  }
+
+  /* ── Font + base overrides ── */
+  /* The widget injects directly into the DOM so these cascade in */
+  #ribbon-schedule,
+  #ribbon-schedule * {
+    font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif) !important;
+    letter-spacing: 0 !important;
+  }
+
+  /* Buttons inside the widget */
+  #ribbon-schedule button,
+  #ribbon-schedule a[role="button"],
+  #ribbon-schedule [class*="button"],
+  #ribbon-schedule [class*="Button"] {
+    border-radius: 999px !important;
+    font-family: var(--font-headline, ui-sans-serif, system-ui, sans-serif) !important;
+  }
+
+  /* Card / container rounding */
+  #ribbon-schedule [class*="card"],
+  #ribbon-schedule [class*="Card"],
+  #ribbon-schedule [class*="container"],
+  #ribbon-schedule [class*="Container"] {
+    border-radius: 16px !important;
+  }
+</style>

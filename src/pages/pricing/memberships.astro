@@ -1,0 +1,252 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CtaSlice from '../../components/CtaSlice.astro';
+
+const memberships = [
+  {
+    id: 'chill',
+    name: 'Limber Chill',
+    freq: '1 class per week',
+    price: '$25',
+    period: 'per week',
+    note: 'that\'s one marg. we know which one your body will thank you for.',
+    description: 'for when you want to dip your toes in and find your rhythm.',
+    details: [
+      '1 class per week',
+      'credits don\'t roll over',
+      'auto-renewed weekly',
+      '12 week minimum commitment',
+    ],
+    cta: 'join limber chill',
+    bg: 'bg-limber-cream-bg',
+    textColor: 'text-limber-green',
+    subColor: 'text-limber-brown/70',
+    descColor: 'text-limber-brown/80',
+    ctaClass: 'text-limber-cream bg-neutral-900 hover:bg-limber-green',
+  },
+  {
+    id: 'compact',
+    name: 'Limber Compact',
+    freq: '2 classes per week + 1 lunch/limber up',
+    price: '$48',
+    period: 'per week',
+    note: '$16 per class. a steal.',
+    description: 'for the regular mover who likes a little variety.',
+    details: [
+      '2 group classes per week',
+      'plus 1 lunch express or limber up class',
+      'credits last 7 days and don\'t roll over',
+      'auto-renewed weekly',
+      '12 week minimum commitment',
+    ],
+    cta: 'join compact',
+    bg: 'bg-limber-vibe',
+    textColor: 'text-limber-green',
+    subColor: 'text-limber-green/80',
+    descColor: 'text-limber-green/90',
+    ctaClass: 'text-limber-cream bg-neutral-900 hover:bg-limber-green',
+  },
+  {
+    id: 'combo',
+    name: 'Limber Combo',
+    freq: 'semi-private + group + stretch weekly',
+    price: '$60',
+    period: 'per week',
+    note: 'one drop in class costs the same. have we gone mad?!',
+    description: 'for the person who wants a little more personalised attention alongside their group classes.',
+    details: [
+      '1-on-1 needed first',
+      '1 semi-private session per week',
+      '1 group class per week',
+      '1 lunch express or limber up class per week',
+      'auto-renewed fortnightly',
+      '12 week minimum commitment',
+    ],
+    cta: 'join combo',
+    bg: 'bg-limber-tericotta',
+    textColor: 'text-limber-cream',
+    subColor: 'text-limber-cream/80',
+    descColor: 'text-limber-cream/90',
+    ctaClass: 'text-limber-cream bg-neutral-900 hover:bg-limber-green',
+  },
+  {
+    id: 'club',
+    name: 'Limber Club',
+    freq: 'the whole studio is yours',
+    price: '$60',
+    period: 'per week',
+    note: '$8.50 a day. unlimited classes. we\'ll let you do the maths.',
+    description: 'for the limber devotee who wants to show up as much as they want, whenever they want.',
+    details: [
+      'unlimited classes',
+      'up to 2 classes per day (1 pilates/barre + 1 yoga)',
+      'weekends: 1 class per day',
+      'auto-renewed fortnightly',
+      '12 week minimum commitment',
+      '20% off your first aura sweat session 💦',
+    ],
+    cta: 'join unlimited',
+    bg: 'bg-limber-green',
+    textColor: 'text-limber-cream',
+    subColor: 'text-limber-cream/80',
+    descColor: 'text-limber-cream/90',
+    ctaClass: 'text-limber-cream bg-neutral-900 hover:bg-limber-green',
+  },
+];
+
+const perks = [
+  { icon: '🎁', title: 'welcome bag', body: 'tea, incense, a limber sticker and a few other good things to get you started.' },
+  { icon: '👯', title: 'bring a friend', body: 'one free guest pass per month. share the love.' },
+  { icon: '🌿', title: 'community events', body: 'book club, hiking club, craft club and more. all free. all yours.' },
+  { icon: '🏷️', title: 'workshop discounts', body: 'members get discounted access to special events and workshops.' },
+  { icon: '💦', title: 'aura sweat', body: 'unlimited members get 20% off your first session. code sent via email after joining.' },
+  { icon: '📱', title: 'limber app access', body: 'timetable, bookings, member perks — all in your pocket.' },
+  { icon: '💬', title: 'limber community whatsapp', body: 'the moment you join you\'re added to our member community. real conversations, real people, zero spam.' },
+  { icon: '👀', title: 'we notice when you\'re not here', body: 'if we haven\'t seen you in a while, we\'ll reach out. not to guilt trip — just because we genuinely care.' },
+];
+---
+
+<BaseLayout
+  title="Memberships"
+  description="Find your Limber membership — from 1 class a week to unlimited. Real support, real community, no pushy sales."
+>
+
+  <!-- ── HERO ── -->
+  <section class="bg-limber-green border-b-2 border-neutral-900 px-8 lg:px-14 py-16 lg:py-24">
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12">
+      <h1 class="mb-0">
+        <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none mb-1">memberships</span>
+        <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-vibe block leading-none">ready to make limber your thing?</em>
+      </h1>
+      <div class="flex-shrink-0 lg:mb-2 self-start lg:self-auto">
+        <img
+          src="/images/Limber_April26_151.jpg"
+          alt="Limber studio"
+          class="w-full lg:w-64 xl:w-80 h-56 object-cover object-top rounded-2xl border-2 border-limber-cream/20"
+        />
+      </div>
+    </div>
+    <div class="border-t border-limber-cream/10 pt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+      <p class="font-sans text-limber-cream/80 leading-relaxed max-w-md">
+        we don't just take your membership fee and hope for the best. if you're stuck, overwhelmed, or just haven't found your groove yet — we'll help you get unstuck. that's what we're here for.
+      </p>
+      <a
+        href="#memberships"
+        class="inline-flex items-center px-8 py-4 font-headline text-sm text-limber-green bg-limber-vibe hover:bg-limber-bright border-2 border-neutral-900 rounded-full transition-colors flex-shrink-0"
+      >
+        find your membership
+      </a>
+    </div>
+  </section>
+
+  <!-- ── WHAT EVERY MEMBER GETS ── -->
+  <section class="bg-limber-cream py-20 lg:py-28 border-b-2 border-neutral-900">
+    <div class="px-4 sm:px-6 lg:px-8">
+
+      <h2 class="mb-4">
+        <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-green block leading-none mb-1">what every</span>
+        <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-tericotta block leading-none">member gets</em>
+      </h2>
+      <p class="font-sans text-limber-brown/60 leading-relaxed mb-14 max-w-lg">
+        because being part of limber is more than just classes.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {perks.map((perk) => (
+          <div class="bg-limber-cream-bg rounded-2xl border-2 border-neutral-900 p-6">
+            <span class="text-2xl block mb-4">{perk.icon}</span>
+            <p class="font-headline text-sm text-limber-green mb-2">{perk.title}</p>
+            <p class="font-sans text-sm text-limber-brown/70 leading-relaxed">{perk.body}</p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── MEMBERSHIPS ── -->
+  <section id="memberships" class="bg-limber-cream-bg py-20 lg:py-28 border-b-2 border-neutral-900">
+    <div class="px-4 sm:px-6 lg:px-8">
+
+      <h2 class="mb-14">
+        <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-green block leading-none mb-1">find your</span>
+        <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-tericotta block leading-none">membership</em>
+      </h2>
+
+      <!-- CSS subgrid: all 4 cards share the same 5 row tracks so every section aligns -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-x-4 lg:gap-y-0 lg:[grid-template-rows:auto_auto_auto_1fr_auto]">
+        {memberships.map((m) => (
+          <div class:list={['rounded-2xl border-2 border-neutral-900 overflow-hidden flex flex-col lg:grid lg:[grid-row:1_/_span_5] lg:[grid-template-rows:subgrid]', m.bg]}>
+
+            <!-- 1: name + freq -->
+            <div class="px-7 pt-7 pb-6">
+              <p class:list={['font-headline text-2xl leading-tight mb-2', m.textColor]}>{m.name}</p>
+              <p class:list={['font-headline text-xs', m.subColor]}>{m.freq}</p>
+            </div>
+
+            <!-- 2: price + note — inset border at top -->
+            <div class="px-7 pb-6">
+              <div class="border-t border-neutral-900/10 mb-6"></div>
+              <div class="flex items-baseline gap-2 mb-1">
+                <span class:list={['font-headline text-5xl', m.textColor]}>{m.price}</span>
+                <span class:list={['font-sans text-sm', m.subColor]}>{m.period}</span>
+              </div>
+              <p class:list={['font-display italic text-base leading-snug', m.subColor]}>{m.note}</p>
+            </div>
+
+            <!-- 3: description — inset border at top -->
+            <div class="px-7 pb-6">
+              <div class="border-t border-neutral-900/10 mb-6"></div>
+              <p class:list={['font-sans text-base leading-relaxed', m.descColor]}>{m.description}</p>
+            </div>
+
+            <!-- 4: details — 1fr row, inset border at top -->
+            <ul class="px-7 pb-6">
+              <div class="border-t border-neutral-900/10 mb-6"></div>
+              {m.details.map((d) => (
+                <li class:list={['flex items-start gap-3 font-sans text-base leading-relaxed mb-2.5 last:mb-0', m.subColor]}>
+                  <span class="mt-2 w-1 h-1 rounded-full bg-current flex-shrink-0"></span>
+                  {d}
+                </li>
+              ))}
+            </ul>
+
+            <!-- 5: CTA — inset border at top -->
+            <div class="px-7 pb-7">
+              <div class="border-t border-neutral-900/10 mb-6"></div>
+              <a
+                href="/book-now"
+                class:list={[
+                  'block w-full text-center px-6 py-3.5 font-headline text-sm border-2 border-neutral-900 rounded-full transition-colors',
+                  m.ctaClass,
+                ]}
+              >
+                {m.cta}
+              </a>
+            </div>
+
+          </div>
+        ))}
+      </div>
+
+      <p class="mt-8 font-sans text-xs text-limber-brown/50 max-w-2xl">
+        all memberships are billed via direct debit and auto-renew as noted above. a 12 week minimum commitment applies to all memberships. see our <a href="/terms-and-conditions" class="underline hover:text-limber-brown/80 transition-colors">terms & conditions</a> for full details.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ── NOT SURE ── -->
+  <CtaSlice
+    headingLine1="not sure which"
+    headingLine2="membership is right for you?"
+    body="we're genuinely happy to help. no pushy sales chat — just an honest conversation about what works for you."
+    image="/images/Limber_April26_137.jpg"
+    imageAlt="Limber community"
+    buttons={[
+      { label: 'get in touch', href: '/contact' },
+      { label: 'start with the limber way — $99', href: '/pricing/trial', variant: 'outline' },
+    ]}
+  />
+
+</BaseLayout>

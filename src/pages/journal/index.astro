@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('journal', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const blogSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  name: 'Limber Journal',
+  description: 'Stories, thoughts, and updates from inside the Limber studio.',
+  url: 'https://limberco.com.au/journal',
+  publisher: { '@type': 'Organization', name: 'Limber', url: 'https://limberco.com.au' },
+};
+---
+
+<BaseLayout
+  title="Journal"
+  description="Stories, thoughts, and updates from inside the Limber studio."
+  schema={blogSchema}
+>
+
+  <!-- ── HERO ── -->
+  <section class="bg-limber-cream border-b-2 border-neutral-900 px-8 lg:px-14 py-16 lg:py-24">
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+      <h1 class="mb-0">
+        <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-green block leading-none mb-1">limber</span>
+        <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-tericotta block leading-none">journal</em>
+      </h1>
+      <p class="font-sans text-limber-brown/70 leading-relaxed max-w-sm lg:pb-2">
+        stories, thoughts, and updates from inside the studio.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── POSTS ── -->
+  <section class="bg-limber-cream-bg py-16 lg:py-24 border-b-2 border-neutral-900">
+    <div class="px-4 sm:px-6 lg:px-8">
+      {posts.length === 0 ? (
+        <div class="text-center py-24">
+          <p class="font-headline text-2xl text-limber-green mb-2">nothing here yet</p>
+          <p class="font-sans text-sm text-limber-brown/60">check back soon — we're working on it.</p>
+        </div>
+      ) : (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {posts.map((post, i) => {
+            const { title, description, pubDate, image, tags } = post.data;
+            const formattedDate = pubDate.toLocaleDateString('en-AU', { month: 'short', year: 'numeric' });
+            const bgs = ['bg-limber-cream', 'bg-limber-vibe', 'bg-limber-tericotta'];
+            const bg = bgs[i % bgs.length];
+            const isDark = bg === 'bg-limber-tericotta';
+            return (
+              <a
+                href={`/journal/${post.slug}`}
+                class:list={['group p-7 rounded-2xl border-2 border-neutral-900 flex flex-col gap-5 hover:shadow-md transition-shadow', bg]}
+              >
+                {image && (
+                  <div class="rounded-xl overflow-hidden border border-neutral-900/10 aspect-[4/3]">
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                )}
+                <div class="flex flex-col gap-3 flex-1">
+                  {tags && tags.length > 0 && (
+                    <div class="flex flex-wrap gap-2">
+                      {tags.slice(0, 2).map((tag) => (
+                        <span class:list={['font-headline text-xs', isDark ? 'text-limber-cream/60' : 'text-limber-tericotta']}>
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                  <h2 class:list={['font-headline text-xl leading-snug group-hover:opacity-70 transition-opacity', isDark ? 'text-limber-cream' : 'text-limber-green']}>
+                    {title}
+                  </h2>
+                  <p class:list={['font-sans text-sm leading-relaxed flex-1', isDark ? 'text-limber-cream/70' : 'text-limber-brown/70']}>
+                    {description}
+                  </p>
+                  <time class:list={['font-sans text-xs', isDark ? 'text-limber-cream/40' : 'text-limber-brown/40']} datetime={pubDate.toISOString()}>
+                    {formattedDate}
+                  </time>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  </section>
+
+</BaseLayout>

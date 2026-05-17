@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const updatedDate = '1 January 2025'; // TODO: Update when T&Cs are finalised
+---
+
+<BaseLayout
+ title="Terms & Conditions"
+ description="Limber terms and conditions — membership, cancellation policy, class bookings, and more."
+ noindex={true}
+>
+ <section class="bg-limber-brown py-24 lg:py-36">
+ <div class=" px-4 sm:px-6 lg:px-8">
+ <p class="font-headline text-xs text-limber-vibe mb-4">Legal</p>
+ <h1 class="font-headline text-5xl md:text-6xl text-limber-cream leading-tight mb-3">
+ Terms &amp; Conditions
+ </h1>
+ <p class="font-sans text-sm text-limber-cream/60">Last updated: {updatedDate}</p>
+ </div>
+ </section>
+
+ <section class="py-16 bg-limber-cream-bg">
+ <div class=" px-4 sm:px-6 lg:px-8">
+ <!--
+ TODO: Replace all sections below with your actual Terms & Conditions.
+ We recommend having a legal professional review before publishing.
+ -->
+
+ <div class="space-y-10 font-sans text-sm text-limber-brown/80 leading-relaxed">
+
+ <div>
+ <h2 class="font-headline text-base text-limber-green mb-3">1. Introduction</h2>
+ <p>
+ These Terms and Conditions govern your use of Limber services, including class bookings,
+ memberships, and the limberco.com.au website. By purchasing a membership, class pack, or
+ booking a class, you agree to these terms.
+ </p>
+ </div>
+
+ <div>
+ <h2 class="font-headline text-base text-limber-green mb-3">2. Bookings</h2>
+ <p>
+ All class bookings are made online via Momence. A booking is only confirmed once payment has
+ been received and a confirmation email has been sent.
+ </p>
+ </div>
+
+ <div>
+ <h2 class="font-headline text-base text-limber-green mb-3">3. Cancellation Policy</h2>
+ <p>
+ Classes may be cancelled up to [X] hours before the scheduled start time for a full credit.
+ Cancellations made within [X] hours of class start time, or failure to attend without notice,
+ will result in the loss of that class credit.
+ </p>
+ </div>
+
+ <div>
+ <h2 class="font-headline text-base text-limber-green mb-3">4. Memberships</h2>
+ <p>
+ Memberships are billed [weekly/fortnightly] via direct debit. Memberships may be paused for a
+ minimum of [X] weeks with [X] days notice. To cancel a membership, [X] days written notice is
+ required via email to <a href="mailto:hello@limberco.com.au" class="text-limber-tericotta hover:underline">hello@limberco.com.au</a>.
+ </p>
+ </div>
+
+ <div>
+ <h2 class="font-headline text-base text-limber-green mb-3">5. Class Packs</h2>
+ <p>
+ Class packs are non-refundable. Each pack has a validity period as stated at time of purchase.
+ Classes not used within the validity period will be forfeited.
+ </p>
+ </div>
+
+ <div>
+ <h2 class="font-headline text-base text-limber-green mb-3">6. Health &amp; Safety</h2>
+ <p>
+ Clients are responsible for disclosing any injuries, medical conditions, or pregnancy to their
+ instructor prior to class. Limber accepts no liability for injury arising from failure to
+ disclose relevant health information.
+ </p>
+ </div>
+
+ <div>
+ <h2 class="font-headline text-base text-limber-green mb-3">7. Liability</h2>
+ <p>
+ Participation in classes is at your own risk. Limber is not liable for any loss, injury,
+ or damage to persons or property occurring on the premises or during classes, except where
+ required by law.
+ </p>
+ </div>
+
+ <div>
+ <h2 class="font-headline text-base text-limber-green mb-3">8. Intro Trial</h2>
+ <p>
+ The intro trial offer is available to new Limber members only and may only be purchased
+ once per person. Any attempt to purchase the trial more than once will result in cancellation
+ of the duplicate order.
+ </p>
+ </div>
+
+ <div>
+ <h2 class="font-headline text-base text-limber-green mb-3">9. Changes to Terms</h2>
+ <p>
+ Limber reserves the right to update these Terms and Conditions at any time. Continued use
+ of our services following any changes constitutes acceptance of the updated terms.
+ </p>
+ </div>
+
+ <div>
+ <h2 class="font-headline text-base text-limber-green mb-3">10. Contact</h2>
+ <p>
+ Questions about these Terms? Email us at <a href="mailto:hello@limberco.com.au" class="text-limber-tericotta hover:underline">hello@limberco.com.au</a>.
+ </p>
+ </div>
+
+ </div>
+ </div>
+ </section>
+</BaseLayout>

@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+ title="Packs & Gift Cards"
+ description="Limber class packs and gift cards — flexible options for those who prefer to pay as they go, or gift the joy of movement."
+>
+ <section class="bg-limber-bright py-24 lg:py-36">
+ <div class=" px-4 sm:px-6 lg:px-8">
+ <a href="/pricing" class="inline-flex items-center gap-2 font-headline text-xs text-limber-brown/60 hover:text-limber-brown transition-colors mb-10">
+ <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+ Pricing
+ </a>
+ <p class="font-headline text-xs text-limber-brown/60 mb-4">Pricing</p>
+ <h1 class="font-headline text-5xl md:text-6xl lg:text-7xl text-limber-brown leading-tight mb-6">
+ Packs &amp; Gift Cards
+ </h1>
+ <p class="font-sans text-lg text-limber-brown/80 leading-relaxed">
+ Flexibility without the commitment — or give someone the gift of feeling good.
+ </p>
+ </div>
+ </section>
+
+ <section class="py-16 bg-limber-cream-bg">
+ <div class=" px-4 sm:px-6 lg:px-8">
+ <h2 class="font-headline text-4xl text-limber-green mb-10">Class Packs</h2>
+
+ <!-- TODO: Replace with real pack options and prices -->
+ <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+ {
+ [
+ { classes: '5', price: '$XXX', validity: 'Valid for 8 weeks', bg: 'bg-limber-green text-limber-cream' },
+ { classes: '10', price: '$XXX', validity: 'Valid for 12 weeks', bg: 'bg-limber-tericotta text-limber-cream' },
+ { classes: '20', price: '$XXX', validity: 'Valid for 20 weeks', bg: 'bg-limber-brown text-limber-cream' },
+ { classes: 'Casual', price: '$XX', validity: 'Single class', bg: 'bg-limber-vibe text-limber-brown' },
+ ].map(({ classes, price, validity, bg }) => (
+ <div class:list={['p-8 rounded-2xl text-center hover:-translate-y-1 transition-transform', bg]}>
+ <p class="font-headline text-5xl mb-1">{classes}</p>
+ <p class="font-headline text-xs opacity-60 mb-4">{classes === 'Casual' ? 'class' : 'classes'}</p>
+ <p class="font-headline text-3xl mb-2">{price}</p>
+ <p class="font-sans text-xs opacity-60 mb-6">{validity}</p>
+ <a href="/book-now" class="block w-full text-center px-5 py-2.5 font-headline text-xs bg-white/20 hover:bg-white/30 border-2 border-neutral-900 rounded-full transition-colors">
+ Purchase
+ </a>
+ </div>
+ ))
+ }
+ </div>
+
+ <p class="mt-6 font-sans text-xs text-limber-brown/50">
+ Class packs are non-refundable and non-transferable. See <a href="/terms-and-conditions" class="underline hover:text-limber-brown/80">Terms & Conditions</a> for expiry policy.
+ </p>
+ </div>
+ </section>
+
+ <section class="bg-limber-green py-20">
+ <div class=" px-4 sm:px-6 lg:px-8">
+ <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+ <div>
+ <p class="font-headline text-xs text-limber-vibe mb-3">Gift Cards</p>
+ <h2 class="font-headline text-4xl md:text-5xl text-limber-cream mb-4">Give the gift<br /> of movement</h2>
+ <p class="font-sans text-limber-cream/80 leading-relaxed mb-6">
+ Limber gift cards are delivered digitally and can be used for any class, pack, or membership purchase.
+ </p>
+ <ul class="space-y-3 mb-8">
+ {
+ [
+ 'Available in any denomination',
+ 'Sent instantly by email',
+ 'Redeemable for any class or product',
+ 'No expiry date',
+ ].map((item) => (
+ <li class="flex items-center gap-3 font-sans text-sm text-limber-cream/80">
+ <svg class="w-4 h-4 text-limber-vibe flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+ </svg>
+ {item}
+ </li>
+ ))
+ }
+ </ul>
+ <a href="/book-now" class="inline-flex items-center px-7 py-3.5 font-headline text-sm text-limber-green bg-limber-vibe hover:bg-limber-bright border-2 border-neutral-900 rounded-full transition-colors">
+ Buy a Gift Card
+ </a>
+ </div>
+ <!-- TODO: Add gift card image -->
+ <div class="rounded-2xl bg-limber-cream/10 border-2 border-limber-cream/20 aspect-video flex items-center justify-center">
+ <p class="font-headline text-xs text-limber-cream/30">Gift card image</p>
+ </div>
+ </div>
+ </div>
+ </section>
+</BaseLayout>

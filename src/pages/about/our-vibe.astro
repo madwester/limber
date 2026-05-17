@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CtaSlice from '../../components/CtaSlice.astro';
+---
+
+<BaseLayout
+  title="Our Vibe"
+  description="What Limber is really about — joyful movement, real community, and a place to feel at home in your body."
+>
+
+  <!-- ── OUR VIBE — split hero ── -->
+  <section class="border-b-2 border-neutral-900 lg:flex" style="min-height: 80vh;">
+
+    <!-- Left: heading + copy + pillars -->
+    <div class="lg:w-1/2 bg-limber-green flex flex-col justify-center px-8 lg:px-14 py-16 lg:py-20">
+      <h1 class="leading-tight mb-10">
+        <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-cream">our </span><em class="font-display uppercase not-italic italic font-medium text-4xl md:text-5xl lg:text-6xl text-limber-vibe">vibe.</em>
+      </h1>
+
+      <p class="font-display italic text-xl text-limber-vibe leading-snug mb-4">
+        looking for a place that genuinely knows you, celebrates the wins big and small embarrassingly loud, and where community actually means something?
+      </p>
+      <p class="font-headline text-xl text-limber-cream mb-6">you just found your people…</p>
+
+      <div class="space-y-4 mb-8">
+        <p class="font-sans text-limber-cream/70 leading-relaxed">
+          when we opened limber, we wanted to bring movement back to what it should be — something you love, not a chore, not a thing to always measure or a tool to punish.
+        </p>
+        <p class="font-sans text-limber-cream/70 leading-relaxed">
+          a place where community is genuinely valued and not just a word on a website.
+        </p>
+        <p class="font-sans text-limber-cream/70 leading-relaxed">
+          no pressure. no expectations. just space to move in a way that feels good for you.
+        </p>
+        <p class="font-sans text-limber-cream/70 leading-relaxed">
+          because movement isn't just exercise — it's a moment of joy, connection, and a gift.
+        </p>
+      </div>
+
+      <div class="mb-8 border-t border-limber-cream/20">
+        {['Belonging.', 'Joyful movement.', 'Embodied wellbeing.'].map((pillar) => (
+          <p class="font-display italic text-xl text-limber-cream/80 py-4 border-b border-limber-cream/20">{pillar}</p>
+        ))}
+      </div>
+
+      <p class="font-sans text-xs text-limber-cream/40 uppercase tracking-widest mb-1">our mission</p>
+      <p class="font-display italic text-lg text-limber-vibe leading-snug">
+        to help people feel at home in their bodies.
+      </p>
+    </div>
+
+    <!-- Right: image -->
+    <div class="lg:w-1/2 flex-shrink-0">
+      <img
+        src="/images/Limber_April26_102.jpg"
+        alt="Limber studio"
+        class="w-full h-64 lg:h-full object-cover border-t-2 lg:border-t-0 lg:border-l-2 border-neutral-900"
+      />
+    </div>
+
+  </section>
+
+  <!-- ── THE STARTING POINT ── -->
+  <section class="bg-limber-cream py-20 lg:py-28 border-b-2 border-neutral-900">
+    <div class="px-4 sm:px-6 lg:px-8">
+
+      <!-- Heading -->
+      <h2 class="mb-12">
+        <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-green block leading-none mb-1">the starting</span>
+        <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-tericotta block leading-none">point</em>
+      </h2>
+
+      <!-- Letter + photo -->
+      <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-start">
+
+        <!-- Letter -->
+        <div class="space-y-5">
+          <p class="font-sans text-limber-brown/80 leading-relaxed">
+            before this studio had walls, it had a pub. a surf club. a library. a railway hall. honestly, the list goes on.
+          </p>
+          <p class="font-sans text-limber-brown/80 leading-relaxed">
+            for two years i taught as limber with lily across whatever spaces would have me — building from one class to fifteen, person by person. i was new to the area, still finding my feet. and if i'm really honest, i was trying to build a community for myself just as much as anyone else.
+          </p>
+          <p class="font-sans text-limber-brown/80 leading-relaxed">
+            in 2024 a spot came up in thirroul plaza. a little old, a little tired, with a bit of a reputation.
+          </p>
+          <p class="font-display italic text-xl text-limber-tericotta leading-snug">
+            i saw potential. was i crazy? maybe. my gut said otherwise. boy, i'm glad i listened.
+          </p>
+          <p class="font-sans text-limber-brown/80 leading-relaxed">
+            i danced professionally for years. and honestly — it made me fall completely out of love with movement. i spent so long measuring myself, competing, being judged. my body became something to manage, not something to live in.
+          </p>
+          <p class="font-sans text-limber-brown/80 leading-relaxed">
+            when i found pilates i fell back in love with movement. properly. it healed me. but it also gave me a completely different lens — movement stopped being something to compete with or be judged on. it became simply mine.
+          </p>
+          <p class="font-sans text-limber-brown/80 leading-relaxed">
+            i looked at the fitness industry around me and saw the same patterns playing out. people comparing, picking themselves apart, chasing an aesthetic that — trust me, i know from personal experience — won't make them happy when they reach it.
+          </p>
+          <p class="font-display italic text-xl text-limber-tericotta leading-snug">
+            i never wanted to create a studio that did that. if i had, i would have failed.
+          </p>
+          <p class="font-sans text-limber-brown/80 leading-relaxed">
+            limber exists to give people back what movement is actually supposed to be — joyful, healing, freeing. a place to stop the head noise. to be present. to stop wasting energy tearing yourself down.
+          </p>
+
+          <!-- Sign-off -->
+          <p class="font-headline text-sm text-limber-tericotta pt-4">lily, founder 🖤</p>
+        </div>
+
+        <!-- Lily photo -->
+        <div class="mt-12 lg:mt-0 lg:sticky lg:top-28">
+          <img
+            src="/images/Limber_April26_168.jpg"
+            alt="Lily, founder of Limber"
+            class="w-full h-[480px] lg:h-[600px] object-cover rounded-2xl border-2 border-neutral-900"
+          />
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <CtaSlice
+    headingLine1="ready to"
+    headingLine2="find your people?"
+    body="come say hi, book a class, or just have a nosy around. we'd love to have you."
+    image="/images/Limber_April26_176.jpg"
+    imageAlt="Limber community"
+    buttons={[
+      { label: 'meet our tribe', href: '/about/our-tribe' },
+      { label: 'see our classes', href: '/classes/our-classes', variant: 'outline' },
+    ]}
+  />
+
+</BaseLayout>

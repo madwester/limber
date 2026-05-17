@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const links = [
+ { label: 'Our Classes', href: '/classes/our-classes', desc: 'Browse all the class types we offer.', bg: 'bg-limber-green', text: 'text-limber-cream', accent: 'text-limber-vibe' },
+ { label: 'Timetable', href: '/classes/timetable', desc: 'View the weekly schedule and book your spot.', bg: 'bg-limber-tericotta', text: 'text-limber-cream', accent: 'text-limber-cream/60' },
+ { label: 'Privates', href: '/classes/privates', desc: 'One-on-one sessions tailored to you.', bg: 'bg-limber-vibe', text: 'text-limber-brown', accent: 'text-limber-brown/60' },
+ { label: 'Corporates', href: '/classes/corporates', desc: 'Bring the studio to your workplace.', bg: 'bg-limber-brown', text: 'text-limber-cream', accent: 'text-limber-cream/60' },
+];
+---
+
+<BaseLayout
+ title="Classes"
+ description="Explore Limber classes — reformer Pilates, mat classes, private sessions, and corporate wellness. Book online via Momence."
+>
+ <section class="bg-limber-green py-24 lg:py-36">
+ <div class=" px-4 sm:px-6 lg:px-8">
+ <p class="font-headline text-xs text-limber-vibe mb-4">Classes</p>
+ <h1 class="font-headline text-5xl md:text-6xl lg:text-7xl text-limber-cream leading-tight mb-6">
+ Find your class
+ </h1>
+ <p class="font-sans text-lg text-limber-cream/80 leading-relaxed">
+ Whether you're brand new to movement or a regular mover, we have something for you.
+ </p>
+ </div>
+ </section>
+
+ <section class="py-16 bg-limber-cream-bg">
+ <div class=" px-4 sm:px-6 lg:px-8">
+ <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+ {
+ links.map((link) => (
+ <a
+ href={link.href}
+ class:list={[
+ 'group block p-12 rounded-2xl hover:-translate-y-1 transition-transform',
+ link.bg,
+ ]}
+ >
+ <h2 class:list={['font-headline text-3xl mb-2', link.text]}>{link.label}</h2>
+ <p class:list={['font-sans text-sm leading-relaxed mb-5', link.text, 'opacity-80']}>{link.desc}</p>
+ <span class:list={['font-headline text-xs', link.accent]}>Explore →</span>
+ </a>
+ ))
+ }
+ </div>
+ </div>
+ </section>
+</BaseLayout>

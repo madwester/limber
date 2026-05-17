@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const updatedDate = '1 January 2025'; // TODO: Update when Privacy Policy is finalised
+---
+
+<BaseLayout
+ title="Privacy Policy"
+ description="Limber privacy policy — how we collect, use, and protect your personal information."
+ noindex={true}
+>
+ <section class="bg-limber-brown py-24 lg:py-36">
+ <div class=" px-4 sm:px-6 lg:px-8">
+ <p class="font-headline text-xs text-limber-vibe mb-4">Legal</p>
+ <h1 class="font-headline text-5xl md:text-6xl text-limber-cream leading-tight mb-3">
+ Privacy Policy
+ </h1>
+ <p class="font-sans text-sm text-limber-cream/60">Last updated: {updatedDate}</p>
+ </div>
+ </section>
+
+ <section class="py-16 bg-limber-cream-bg">
+ <div class=" px-4 sm:px-6 lg:px-8">
+ <!--
+ TODO: Replace all sections below with your actual Privacy Policy.
+ Australian businesses must comply with the Privacy Act 1988 (Cth) and the
+ Australian Privacy Principles (APPs). We recommend legal review before publishing.
+ -->
+
+ <div class="space-y-10 font-sans text-sm text-limber-brown/80 leading-relaxed">
+
+ <div>
+ <h2 class="font-headline text-base text-limber-green mb-3">1. About This Policy</h2>
+ <p>
+ Limber ("we", "us", "our") is committed to protecting your privacy in accordance with the
+ Privacy Act 1988 (Cth) and the Australian Privacy Principles. This policy explains how we
+ collect, use, and disclose personal information.
+ </p>
+ </div>
+
+ <div>
+ <h2 class="font-headline text-base text-limber-green mb-3">2. Information We Collect</h2>
+ <p>We may collect the following types of personal information:</p>
+ <ul class="list-disc list-inside mt-2 space-y-1">
+ <li>Name, email address, phone number, and postal address</li>
+ <li>Health information relevant to your participation in classes</li>
+ <li>Payment information (processed securely via our payment provider)</li>
+ <li>Class booking history and membership details</li>
+ <li>Website usage data via analytics tools</li>
+ </ul>
+ </div>
+
+ <div>
+ <h2 class="font-headline text-base text-limber-green mb-3">3. How We Use Your Information</h2>
+ <p>We use your personal information to:</p>
+ <ul class="list-disc list-inside mt-2 space-y-1">
+ <li>Process bookings and membership payments</li>
+ <li>Communicate with you about your bookings and our services</li>
+ <li>Send you marketing communications (where you have opted in)</li>
+ <li>Improve our website and services</li>
+ <li>Comply with legal obligations</li>
+ </ul>
+ </div>
+
+ <div>
+ <h2 class="font-headline text-base text-limber-green mb-3">4. Disclosure of Information</h2>
+ <p>
+ We do not sell your personal information. We may share your information with third-party
+ service providers who assist in operating our business (e.g. Momence for booking management,
+ payment processors), subject to confidentiality obligations.
+ </p>
+ </div>
+
+ <div>
+ <h2 class="font-headline text-base text-limber-green mb-3">5. Data Security</h2>
+ <p>
+ We take reasonable steps to protect your personal information from misuse, interference, loss,
+ and unauthorised access. Payment information is processed via [payment provider] and is not
+ stored on our servers.
+ </p>
+ </div>
+
+ <div>
+ <h2 class="font-headline text-base text-limber-green mb-3">6. Cookies &amp; Analytics</h2>
+ <p>
+ Our website uses cookies and analytics tools to understand how visitors use the site. You can
+ disable cookies in your browser settings, though this may affect some site functionality.
+ </p>
+ </div>
+
+ <div>
+ <h2 class="font-headline text-base text-limber-green mb-3">7. Access &amp; Correction</h2>
+ <p>
+ You have the right to access and correct personal information we hold about you. To make a
+ request, email us at <a href="mailto:hello@limberco.com.au" class="text-limber-tericotta hover:underline">hello@limberco.com.au</a>.
+ </p>
+ </div>
+
+ <div>
+ <h2 class="font-headline text-base text-limber-green mb-3">8. Marketing Communications</h2>
+ <p>
+ You may opt out of marketing emails at any time by clicking the unsubscribe link in any email
+ we send, or by emailing us directly.
+ </p>
+ </div>
+
+ <div>
+ <h2 class="font-headline text-base text-limber-green mb-3">9. Changes to This Policy</h2>
+ <p>
+ We may update this policy from time to time. The current version will always be available on
+ this page.
+ </p>
+ </div>
+
+ <div>
+ <h2 class="font-headline text-base text-limber-green mb-3">10. Contact</h2>
+ <p>
+ Privacy questions or complaints? Contact us at <a href="mailto:hello@limberco.com.au" class="text-limber-tericotta hover:underline">hello@limberco.com.au</a>.
+ </p>
+ </div>
+
+ </div>
+ </div>
+ </section>
+</BaseLayout>

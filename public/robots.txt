@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://limberco.com.au/sitemap-index.xml

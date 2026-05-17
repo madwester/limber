@@ -1,0 +1,373 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { reviews } from '../data/reviews';
+
+const schema = {
+ '@context': 'https://schema.org',
+ '@type': 'WebSite',
+ name: 'Limber',
+ url: 'https://limberco.com.au',
+};
+
+const classesTaster = [
+ { name: 'Limber Signature', description: 'flowing, fiery, full body mat pilates. the one that started it all.', image: '/images/classes/signature.jpg' },
+ { name: 'Limbarre', description: 'move to the beat, work the whole body, leave absolutely buzzing.', image: '/images/classes/limbarre_1.jpg' },
+ { name: 'Limber Strength', description: 'pilates met strength training and honestly? power couple of the century.', image: '/images/classes/strength.jpg' },
+ { name: 'Limber Chair', description: 'small and mighty machine. springs that support and then quietly bring the fire when you\'re least expecting it.', image: '/images/classes/chair_1.jpg' },
+ { name: 'Limber Up', description: 'it\'s giving spa day meets deep tissue massage. feels incredible, might hurt a little, but absolutely worth it.', image: '/images/classes/recovery_classes_limber_up_1.jpg' },
+ { name: 'Limber Power Flow', description: 'vinyasa flow that works the whole body and mind. powerful, and explorative.', image: '/images/classes/power_yoga_1.jpg' },
+ { name: 'Limber Unfurl', description: 'the art of doing less to go deeper. long holds, deep connective tissue work and an hour to unwind.', image: '/images/classes/unfurel_yin_yoga.jpg' },
+ { name: 'Limboogie', description: 'cardio so disguised in fun you won\'t even notice you\'re working out. the most joy you\'ll have exercising. no experience needed. coordination optional.', image: '/images/classes/limbarre_2.jpg' },
+];
+---
+
+<BaseLayout
+ title="Home"
+ description="Limber is a movement studio offering Pilates, yoga, and mobility classes. Authentic movement, real community, zero pretension."
+ schema={schema}
+>
+
+ <!-- ── HERO IMAGE — right under nav ── -->
+ <div class="px-8 pt-8 pb-0 bg-limber-cream">
+  <div class="relative rounded-[32px] overflow-hidden border-2 border-neutral-900 w-full h-[520px] lg:h-[680px]">
+   <img
+    src="/images/home_page_hero.jpg"
+    alt="Limber studio"
+    class="w-full h-full object-cover object-[center_25%]"
+   />
+   <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+    <img src="/images/LIMBERCo-logo.webp" alt="Limber" class="w-64 lg:w-96 h-auto" />
+   </div>
+  </div>
+ </div>
+
+ <!-- ── SECTION 1 — HERO TEXT ── -->
+ <section class="bg-limber-cream pt-16 pb-20 lg:pt-20 lg:pb-28">
+  <div class="px-4 sm:px-6 lg:px-8 text-center">
+   <h1 class="leading-none mb-8">
+    <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-green block leading-none">
+     movement that
+    </span>
+    <em class="font-display uppercase not-italic font-medium italic text-5xl md:text-6xl lg:text-7xl text-limber-tericotta block leading-none">
+     makes you feel
+    </em>
+    <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-green block leading-none">
+     like this.
+    </span>
+   </h1>
+
+   <p class="font-sans text-lg text-limber-brown/80 leading-relaxed mb-3 mx-auto max-w-xl">
+    remember when exercise was actually fun? before it became something you had to earn, track, justify, or suffer through?
+   </p>
+   <p class="font-sans text-lg text-limber-brown/80 leading-relaxed mb-10">
+    yeah. we're bringing that back.
+   </p>
+
+   <div class="flex flex-wrap gap-4 justify-center mb-12">
+    <a
+     href="/pricing/trial"
+     class="inline-flex items-center px-8 py-4 font-headline text-sm text-limber-cream bg-limber-tericotta hover:bg-limber-brown border-2 border-neutral-900 rounded-full transition-colors"
+    >
+     start with the limber way — $99
+    </a>
+    <a
+     href="/classes/our-classes"
+     class="inline-flex items-center px-8 py-4 font-headline text-sm text-limber-green border-2 border-neutral-900 rounded-full transition-colors"
+    >
+     have a nosy — browse classes first
+    </a>
+   </div>
+   <img
+    src="/images/Limber_April26_176.jpg"
+    alt="Limber studio"
+    class="w-full lg:w-2/3 h-96 lg:h-[560px] object-cover rounded-2xl border-2 border-neutral-900 mx-auto"
+   />
+  </div>
+ </section>
+
+ <!-- ── SECTION 2 — THE LIMBER WAY ── -->
+ <section class="bg-limber-green py-20 lg:py-28 border-t-2 border-neutral-900">
+  <div class="px-4 sm:px-6 lg:px-8">
+   <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-start">
+
+    <!-- Left: copy -->
+    <div>
+     <h2 class="leading-tight mb-6">
+      <span class="block text-4xl md:text-5xl lg:text-6xl">
+       <span class="font-headline uppercase text-limber-vibe">new around here? </span><em class="font-display uppercase not-italic italic font-medium text-limber-cream">we've got</em>
+      </span>
+      <em class="font-display uppercase not-italic italic font-medium text-4xl md:text-5xl lg:text-6xl text-limber-cream block">something for you</em>
+     </h2>
+     <p class="font-display text-xl italic text-limber-vibe mb-6">
+      the limber way — $99 · 21 days · unlimited classes
+     </p>
+     <p class="font-sans text-limber-cream/80 leading-relaxed mb-4">
+      pilates obsessed, a yoga devotee, a total movement newbie, or someone who's been watching from afar and finally thought — yeah ok, let's do this — (hi. we've been waiting for you 😉)
+     </p>
+     <p class="font-sans text-limber-cream/80 leading-relaxed mb-4">
+      the limber way is your guided first 21 days. unlimited classes, a personalised plan, and a real human checking in on you the whole way.
+     </p>
+     <p class="font-sans text-limber-cream/80 leading-relaxed mb-10">
+      this is how the limber love story begins.
+     </p>
+     <div class="flex flex-wrap gap-4">
+      <a
+       href="/pricing/trial"
+       class="inline-flex items-center px-8 py-4 font-headline text-sm text-limber-green bg-limber-vibe hover:bg-limber-bright border-2 border-neutral-900 rounded-full transition-colors"
+      >
+       start here — $99
+      </a>
+      <a
+       href="/pricing/trial"
+       class="inline-flex items-center px-8 py-4 font-headline text-sm text-limber-cream border-2 border-neutral-900 rounded-full transition-colors"
+      >
+       tell me more first
+      </a>
+     </div>
+    </div>
+
+    <!-- Right: image + specs card -->
+    <div class="mt-12 lg:mt-0 space-y-4">
+     <img
+      src="/images/Limber_April26_134.jpg"
+      alt="Limber class in session"
+      class="w-full h-64 lg:h-72 object-cover rounded-2xl border-2 border-neutral-900"
+     />
+     <div class="bg-limber-cream rounded-2xl border-2 border-neutral-900 p-8">
+      <p class="font-headline text-xs text-limber-tericotta mb-6">what's included</p>
+      <ul class="space-y-3">
+       {['unlimited classes', 'personalised plan', 'regular check-ins', '21 days'].map((spec) => (
+        <li class="flex items-center gap-3 border-b border-neutral-900/10 pb-3 last:border-0 last:pb-0">
+         <span class="w-1.5 h-1.5 rounded-full bg-limber-tericotta flex-shrink-0"></span>
+         <p class="font-headline text-sm text-limber-green">{spec}</p>
+        </li>
+       ))}
+      </ul>
+     </div>
+    </div>
+
+   </div>
+  </div>
+ </section>
+
+ <!-- ── SECTION 3 — WHAT IS LIMBER ── -->
+ <section class="bg-limber-cream py-20 lg:py-28 border-t-2 border-neutral-900">
+  <div class="px-4 sm:px-6 lg:px-8">
+
+
+   <!-- Full-width image -->
+   <div class="mb-10">
+    <img
+     src="/images/Limber_April26_102.jpg"
+     alt="Limber studio"
+     class="w-full h-64 lg:h-96 object-cover rounded-2xl border-2 border-neutral-900"
+    />
+   </div>
+
+   <!-- Heading below image -->
+   <div class="mb-14">
+    <h2>
+     <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-green block leading-none mb-1">a movement studio</span>
+     <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-tericotta block leading-none">with a simple mission</em>
+    </h2>
+   </div>
+
+   <!-- Body copy + three pillars -->
+   <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-start mb-14">
+    <div class="space-y-4">
+     <p class="font-display italic text-xl text-limber-tericotta leading-snug mb-2">To help people feel at home in their bodies.</p>
+     <p class="font-sans text-limber-brown/80 leading-relaxed">
+      every class we offer is built around the same belief — that movement should feel genuinely good. not punishing. not something you have to earn or justify.
+     </p>
+     <p class="font-sans text-limber-brown/80 leading-relaxed">
+      we follow the principles of pilates and yoga, but we've also built our own on top of that — what we like to call our secret limber sauce. <span class="text-limber-brown/40 italic">(we can't tell you. but you'll feel it.)</span>
+     </p>
+    </div>
+    <div class="mt-8 lg:mt-0">
+     {[
+      'classes that challenge you without destroying you.',
+      'teachers who genuinely know their stuff.',
+      'a space where you can drop in, tune out, and feel everything.',
+     ].map((line) => (
+      <p class="font-display italic text-xl text-limber-brown/80 leading-snug py-5 border-b border-neutral-900/10 last:border-0">{line}</p>
+     ))}
+    </div>
+   </div>
+
+   <!-- CTA -->
+   <div>
+    <a
+     href="/about/our-vibe"
+     class="inline-flex items-center px-8 py-4 font-headline text-sm text-limber-cream bg-limber-tericotta hover:bg-limber-brown border-2 border-neutral-900 rounded-full transition-colors"
+    >
+     learn what we're actually about
+    </a>
+   </div>
+
+  </div>
+ </section>
+
+ <!-- ── SECTION 4 — CLASSES CAROUSEL ── -->
+ <section class="py-20 lg:py-28 bg-limber-cream border-t-2 border-neutral-900">
+  <div class="px-4 sm:px-6 lg:px-8">
+
+   <!-- Header row -->
+   <div class="flex items-end justify-between mb-10">
+    <h2>
+     <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-green block leading-none mb-1">so what actually</span>
+     <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-tericotta block leading-none">happens in here?</em>
+    </h2>
+    <!-- Arrows -->
+    <div class="flex gap-2 flex-shrink-0 ml-6">
+     <button id="carousel-prev" type="button" aria-label="Previous class"
+      class="w-10 h-10 rounded-full border-2 border-neutral-900 flex items-center justify-center text-neutral-900 hover:bg-neutral-900 hover:text-limber-cream transition-colors cursor-pointer">
+      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+     </button>
+     <button id="carousel-next" type="button" aria-label="Next class"
+      class="w-10 h-10 rounded-full border-2 border-neutral-900 flex items-center justify-center text-neutral-900 hover:bg-neutral-900 hover:text-limber-cream transition-colors cursor-pointer">
+      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+     </button>
+    </div>
+   </div>
+
+   <!-- Carousel track -->
+   <div id="carousel-track"
+    class="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4"
+    style="scrollbar-width: none;"
+   >
+    {classesTaster.map((cls) => (
+     <a
+      href={`/classes/our-classes#${cls.name.toLowerCase().replace(/\s+/g, '-')}`}
+      class="snap-start flex-shrink-0 w-[80vw] sm:w-[45vw] lg:w-[30vw] bg-limber-cream rounded-2xl border-2 border-neutral-900 overflow-hidden hover:border-limber-tericotta transition-colors group"
+     >
+      <div class="overflow-hidden">
+       <img
+        src={cls.image}
+        alt={cls.name}
+        class="w-full h-52 object-cover border-b-2 border-neutral-900 group-hover:scale-105 transition-transform duration-300"
+       />
+      </div>
+      <div class="p-6">
+       <h3 class="font-headline text-lg text-limber-green mb-2 group-hover:text-limber-tericotta transition-colors">{cls.name}</h3>
+       <p class="font-sans text-sm text-limber-brown/70 leading-relaxed">{cls.description}</p>
+      </div>
+     </a>
+    ))}
+   </div>
+
+  </div>
+ </section>
+
+ <!-- ── SECTION 5 — APP DOWNLOAD ── -->
+ <section class="bg-limber-green py-20 lg:py-28 border-t-2 border-neutral-900">
+  <div class="px-4 sm:px-6 lg:px-8">
+   <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+
+    <!-- Left: image -->
+    <div class="hidden lg:block">
+     <img
+      src="/images/Limber_April26_170.jpg"
+      alt="Limber app"
+      class="w-full h-80 object-cover rounded-2xl border-2 border-neutral-900"
+     />
+    </div>
+
+    <!-- Right: copy + buttons -->
+    <div>
+     <h2 class="mb-4">
+      <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-cream block leading-none mb-1">your studio</span>
+      <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-vibe block leading-none">in your pocket</em>
+     </h2>
+     <p class="font-sans text-limber-cream/70 leading-relaxed mb-10">
+      book classes, manage your membership, and check the timetable — all from your phone.
+     </p>
+
+     <div class="flex flex-col sm:flex-row gap-4">
+      <!-- Apple App Store -->
+      <a href="#"
+       class="inline-flex items-center gap-4 px-6 py-4 bg-limber-cream hover:bg-limber-bright border-2 border-neutral-900 text-neutral-900 rounded-2xl transition-colors group"
+      >
+       <svg class="w-7 h-7 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+       </svg>
+       <div class="text-left">
+        <p class="font-sans text-xs text-neutral-900/50 leading-none mb-1">download on the</p>
+        <p class="font-headline text-base leading-none">App Store</p>
+       </div>
+      </a>
+      <!-- Google Play -->
+      <a href="#"
+       class="inline-flex items-center gap-4 px-6 py-4 bg-limber-cream hover:bg-limber-bright border-2 border-neutral-900 text-neutral-900 rounded-2xl transition-colors group"
+      >
+       <svg class="w-7 h-7 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M3.18 23.76c.3.17.64.24.99.2L15.77 12 12 8.23 3.18 23.76zM20.7 10.56l-2.6-1.49-3.7 3.7 3.7 3.7 2.63-1.51c.75-.43.75-1.47-.03-1.9zM2.18.44C2.07.6 2 .8 2 1.04V22.96c0 .24.07.45.18.61L14.4 12 2.18.44zM12.23 12.77L3.18.24c-.01 0-.01 0 0 0L12 8.23l.23.54z"/>
+       </svg>
+       <div class="text-left">
+        <p class="font-sans text-xs text-neutral-900/50 leading-none mb-1">get it on</p>
+        <p class="font-headline text-base leading-none">Google Play</p>
+       </div>
+      </a>
+     </div>
+    </div>
+
+   </div>
+  </div>
+ </section>
+
+ <!-- ── TESTIMONIALS ── -->
+ <section class="py-20 lg:py-28 bg-limber-cream border-t-2 border-neutral-900">
+  <div class="px-4 sm:px-6 lg:px-8">
+   <div class="mb-12">
+    <h2>
+     <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-green block leading-none mb-1">what the</span>
+     <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-tericotta block leading-none">community says</em>
+    </h2>
+   </div>
+
+   <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {
+     reviews.slice(0, 3).map((r) => (
+      <blockquote class="p-8 rounded-2xl bg-limber-cream-bg border-2 border-neutral-900/10">
+       <div class="flex gap-1 mb-5">
+        {Array.from({ length: r.rating }).map(() => (
+         <svg class="w-4 h-4 text-limber-tericotta" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+         </svg>
+        ))}
+       </div>
+       <p class="font-display text-lg italic text-limber-brown leading-relaxed mb-5">"{r.body}"</p>
+       <footer class="font-headline text-xs text-limber-tericotta">{r.name}</footer>
+      </blockquote>
+     ))
+    }
+   </div>
+
+   <div class="text-center mt-10">
+    <a href="/reviews" class="font-headline text-sm text-limber-tericotta hover:text-limber-brown transition-colors">
+     read all the love →
+    </a>
+   </div>
+  </div>
+ </section>
+
+
+</BaseLayout>
+
+<script>
+  const track = document.getElementById('carousel-track');
+  const prevBtn = document.getElementById('carousel-prev');
+  const nextBtn = document.getElementById('carousel-next');
+
+  function getCardWidth() {
+    const first = track?.querySelector(':scope > div') as HTMLElement | null;
+    if (!first) return 0;
+    return first.offsetWidth + 16; // card width + gap-4
+  }
+
+  prevBtn?.addEventListener('click', () => {
+    track?.scrollBy({ left: -getCardWidth(), behavior: 'smooth' });
+  });
+  nextBtn?.addEventListener('click', () => {
+    track?.scrollBy({ left: getCardWidth(), behavior: 'smooth' });
+  });
+</script>
