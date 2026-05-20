@@ -1,73 +1,165 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PrivatesContactForm from '../../components/PrivatesContactForm.astro';
+import CtaSlice from '../../components/CtaSlice.astro';
 
 const serviceSchema = {
- '@context': 'https://schema.org',
- '@type': 'Service',
- name: 'Private Sessions — Limber',
- description: 'One-on-one private Pilates and movement sessions tailored to your individual goals at Limber',
- provider: { '@type': 'LocalBusiness', name: 'Limber', url: 'https://limberco.com.au' },
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Private Sessions — Limber',
+  description: 'One-on-one and semi-private Pilates sessions tailored to your individual goals at Limber.',
+  provider: { '@type': 'LocalBusiness', name: 'Limber', url: 'https://limberco.com.au' },
 };
 ---
 
 <BaseLayout
- title="Private Sessions"
- description="Book a private Pilates or movement session at Limber One-on-one attention tailored to your goals, body, and schedule."
- schema={serviceSchema}
+  title="Privates + Semi-Privates"
+  description="Private and semi-private Pilates sessions at Limber. Expert attention, your pace, your goals — whether you're recovering from injury, navigating pregnancy, or just want more personalised movement."
+  schema={serviceSchema}
 >
- <section class="bg-limber-brown py-24 lg:py-36">
- <div class=" px-4 sm:px-6 lg:px-8">
- <a href="/classes" class="inline-flex items-center gap-2 font-headline text-xs text-limber-cream/60 hover:text-limber-cream transition-colors mb-10">
- <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
- Classes
- </a>
- <p class="font-headline text-xs text-limber-bright mb-4">Classes</p>
- <h1 class="font-headline text-5xl md:text-6xl lg:text-7xl text-limber-cream leading-tight mb-6">
- Private Sessions
- </h1>
- <p class="font-sans text-lg text-limber-cream/80 leading-relaxed">
- The fastest way to make progress. Undivided attention, a program built around you, and results you can actually feel.
- </p>
- </div>
- </section>
 
- <section class="py-16 bg-limber-cream-bg">
- <div class=" px-4 sm:px-6 lg:px-8">
- <h2 class="font-headline text-4xl text-limber-green mb-10">Why choose a private?</h2>
- <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
- {
- [
- { title: 'Tailored to you', body: 'Every session is programmed around your body, goals, history, and how you feel on the day.', bg: 'bg-limber-green text-limber-cream' },
- { title: 'Faster progress', body: 'One-on-one coaching means better form, better feedback, and results that compound.', bg: 'bg-limber-tericotta text-limber-cream' },
- { title: 'Injury rehab', body: 'Working around existing injuries or managing chronic pain? We\'ve got you.', bg: 'bg-limber-vibe text-limber-brown' },
- { title: 'Flexible scheduling', body: 'Book around your life — sessions available mornings, evenings, and weekends.', bg: 'bg-limber-cream border-2 border-limber-green/20 text-limber-brown' },
- { title: 'Build confidence', body: 'Great for beginners who want to build their foundation before joining group classes.', bg: 'bg-limber-cream border-2 border-limber-green/20 text-limber-brown' },
- { title: 'Sport-specific', body: 'Pilates for runners, cyclists, golfers — we target what matters for your sport.', bg: 'bg-limber-brown text-limber-cream' },
- ].map(({ title, body, bg }) => (
- <div class:list={['p-8 rounded-2xl', bg]}>
- <h3 class="font-headline text-xl mb-2">{title}</h3>
- <p class="font-sans text-sm leading-relaxed opacity-80">{body}</p>
- </div>
- ))
- }
- </div>
- </div>
- </section>
+  <!-- ── INTRO ── -->
+  <section class="bg-limber-cream py-16 lg:py-20 border-b-2 border-neutral-900">
+    <div class="px-4 sm:px-6 lg:px-8">
 
- <section class="py-20 bg-limber-cream" id="enquire">
- <div class=" px-4 sm:px-6 lg:px-8">
- <div class="mb-10">
- <h2 class="font-headline text-4xl text-limber-green mb-3">Enquire about privates</h2>
- <p class="font-sans text-sm text-limber-brown/80">
- Tell us a little about what you're looking for and we'll be in touch within 1–2 business days.
- Prefer to email directly?
- <a href="mailto:privates@limberco.com.au" class="text-limber-tericotta hover:underline font-medium">
- privates@limberco.com.au
- </a>
- </p>
- </div>
- <PrivatesContactForm />
- </div>
- </section>
+      <!-- Centered heading -->
+      <div class="text-center mb-10">
+        <h1>
+          <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-green block leading-none mb-1">privates +</span>
+          <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-tericotta block leading-none">semi-privates</em>
+        </h1>
+      </div>
+
+      <!-- Photo -->
+      <div class="mb-12">
+        <img
+          src="/images/Limber_April26_79.jpg"
+          alt="Limber private session"
+          class="w-full h-80 lg:h-[520px] object-cover rounded-2xl border-2 border-neutral-900"
+        />
+      </div>
+
+      <!-- Body copy -->
+      <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-start">
+        <div class="space-y-4">
+          <p class="font-sans text-limber-brown/80 leading-relaxed">
+            whether you're recovering from injury, navigating pregnancy or the postnatal period, working through something specific, or just want to go more personalised than a group class allows — our private and semi-private sessions are built for exactly that.
+          </p>
+          <p class="font-display italic text-xl text-limber-tericotta leading-snug">
+            expert attention. your pace. your goals.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── ONE-ON-ONE ── -->
+  <section class="bg-limber-cream-bg py-16 lg:py-24 border-b-2 border-neutral-900">
+    <div class="px-4 sm:px-6 lg:px-8">
+      <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-start">
+
+        <div>
+          <h2 class="mb-6">
+            <span class="font-headline uppercase text-4xl md:text-5xl text-limber-green block leading-none mb-1">one-on-one</span>
+            <em class="font-display uppercase not-italic italic font-medium text-4xl md:text-5xl text-limber-tericotta block leading-none">privates</em>
+          </h2>
+          <p class="font-sans text-limber-brown/80 leading-relaxed mb-6">
+            the most personalised experience we offer. just you and one of our highly trained teachers — 55 minutes designed entirely around what your body needs right now.
+          </p>
+          <p class="font-headline text-xs text-limber-tericotta mb-3">perfect for</p>
+          <ul class="space-y-3 mb-8">
+            {[
+              'post-injury recovery',
+              'pre and postnatal care',
+              'building foundations before joining group classes',
+              'anyone who wants focused, individual attention',
+            ].map((item) => (
+              <li class="font-sans text-base text-limber-brown/80 flex gap-3">
+                <span class="text-limber-tericotta flex-shrink-0">—</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p class="font-sans text-sm text-limber-brown/60 leading-relaxed italic">
+            our teachers are diploma-trained with a minimum of a comprehensive year-long program behind them, years of hands-on experience, and a genuine commitment to ongoing education. you're in excellent hands.
+          </p>
+        </div>
+
+        <!-- Pricing card -->
+        <div class="mt-10 lg:mt-0 self-start">
+          <div class="p-8 lg:p-10 rounded-2xl bg-limber-cream border-2 border-neutral-900">
+            <p class="font-headline text-xs text-limber-tericotta mb-2">initial consult</p>
+            <p class="font-headline text-5xl text-limber-green mb-1">$120</p>
+            <p class="font-sans text-sm text-limber-brown/60 italic mb-6">55 minutes</p>
+            <p class="font-sans text-sm text-limber-brown/80 leading-relaxed mb-8">
+              your first session is your introduction to limber. we'll get to know your body, your history and your goals — and work out the best path forward together. we will chat, move and set you up for success.
+            </p>
+            <div class="space-y-3">
+              <a
+                href="mailto:hello@limberco.com.au"
+                class="flex items-center gap-2 font-headline text-sm text-limber-brown hover:text-limber-tericotta transition-colors"
+              >
+                → book your first session — hello@limberco.com.au
+              </a>
+              <a
+                href="tel:0475779651"
+                class="flex items-center gap-2 font-headline text-sm text-limber-brown hover:text-limber-tericotta transition-colors"
+              >
+                → or call us — 0475 779 651
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SEMI-PRIVATES ── -->
+  <section class="bg-limber-green py-16 lg:py-24 border-b-2 border-neutral-900">
+    <div class="px-4 sm:px-6 lg:px-8">
+      <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-start">
+
+        <div>
+          <h2 class="mb-6">
+            <span class="font-headline uppercase text-4xl md:text-5xl text-limber-cream block leading-none mb-1">ongoing</span>
+            <em class="font-display uppercase not-italic italic font-medium text-4xl md:text-5xl text-limber-vibe block leading-none">semi-privates</em>
+          </h2>
+          <p class="font-sans text-limber-cream/80 leading-relaxed mb-4">
+            all the benefits of personalised attention — in a small, intimate group of up to four people.
+          </p>
+          <p class="font-sans text-limber-cream/80 leading-relaxed mb-4">
+            semi-privates are our most focused group experience. small enough that your teacher genuinely knows what you need. supportive enough that you're not doing it alone.
+          </p>
+          <p class="font-sans text-limber-cream/80 leading-relaxed">
+            you will work individually on your own programme which will progress and adapt each season depending on your needs and goals.
+          </p>
+          <p class="font-display italic text-xl text-limber-vibe leading-snug mt-8">55 minutes.</p>
+        </div>
+
+        <div class="mt-10 lg:mt-0">
+          <img
+            src="/images/Limber_April26_140.jpg"
+            alt="Limber semi-private session"
+            class="w-full h-64 lg:h-80 object-cover rounded-2xl border-2 border-neutral-900"
+          />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA SLICE ── -->
+  <CtaSlice
+    headingLine1="ready to get"
+    headingLine2="started?"
+    body="get in touch and we'll match you with the right teacher and format for where you're at right now."
+    buttons={[
+      { label: 'email us', href: 'mailto:hello@limberco.com.au', variant: 'primary' },
+      { label: 'call us — 0475 779 651', href: 'tel:0475779651', variant: 'outline' },
+    ]}
+    image="/images/Limber_April26_151.jpg"
+    imageAlt="Limber private session"
+  />
+
 </BaseLayout>

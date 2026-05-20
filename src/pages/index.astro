@@ -129,7 +129,7 @@ const classesTaster = [
     <!-- Right: image + specs card -->
     <div class="mt-12 lg:mt-0 space-y-4">
      <img
-      src="/images/Limber_April26_134.jpg"
+      src="/images/limber_in_studio_2025.webp"
       alt="Limber class in session"
       class="w-full h-64 lg:h-72 object-cover rounded-2xl border-2 border-neutral-900"
      />
@@ -359,7 +359,7 @@ const classesTaster = [
   const nextBtn = document.getElementById('carousel-next');
 
   function getCardWidth() {
-    const first = track?.querySelector(':scope > div') as HTMLElement | null;
+    const first = track?.querySelector(':scope > a') as HTMLElement | null;
     if (!first) return 0;
     return first.offsetWidth + 16; // card width + gap-4
   }

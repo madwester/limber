@@ -259,6 +259,13 @@ export const reviews: Review[] = [
     date: '2024-05-17',
     class: '',
   },
+  {
+    name: 'Selen Sen',
+    body: "I LOVE this Pilates studio — the atmosphere is so warm and welcoming. All instructors are amazing and attentive. I look forward to every class and always feel amazing afterwards. Most amazing Pilates studio in Thirroul 🥰",
+    rating: 5,
+    date: '2025-05-17',
+    class: '',
+  },
 ];
 
 // Convenience filter — use on the trial page

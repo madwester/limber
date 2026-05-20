@@ -14,7 +14,8 @@ import CtaSlice from '../../components/CtaSlice.astro';
     <!-- Left: heading + copy + pillars -->
     <div class="lg:w-1/2 bg-limber-green flex flex-col justify-center px-8 lg:px-14 py-16 lg:py-20">
       <h1 class="leading-tight mb-10">
-        <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-cream">our </span><em class="font-display uppercase not-italic italic font-medium text-4xl md:text-5xl lg:text-6xl text-limber-vibe">vibe.</em>
+        <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-cream block leading-none mb-1">our</span>
+        <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-vibe block leading-none">vibe.</em>
       </h1>
 
       <p class="font-display italic text-xl text-limber-vibe leading-snug mb-4">
@@ -37,16 +38,19 @@ import CtaSlice from '../../components/CtaSlice.astro';
         </p>
       </div>
 
-      <div class="mb-8 border-t border-limber-cream/20">
-        {['Belonging.', 'Joyful movement.', 'Embodied wellbeing.'].map((pillar) => (
-          <p class="font-display italic text-xl text-limber-cream/80 py-4 border-b border-limber-cream/20">{pillar}</p>
+      <div class="flex flex-wrap gap-6 items-center pt-6 border-t border-limber-cream/20 mb-8">
+        {[
+          { sticker: 'sticker-1.svg', text: 'Belonging.', rotate: '-rotate-6' },
+          { sticker: 'sticker-2.svg', text: 'Joyful movement.', rotate: 'rotate-6' },
+          { sticker: 'sticker-3.svg', text: 'Embodied wellbeing.', rotate: '-rotate-3' },
+        ].map((item) => (
+          <div class="flex items-center gap-3">
+            <img src={`/images/stickers/${item.sticker}`} alt={item.text} class:list={['w-14 h-14 flex-shrink-0', item.rotate]} />
+            <p class="font-display italic text-xl text-limber-cream/80">{item.text}</p>
+          </div>
         ))}
       </div>
 
-      <p class="font-sans text-xs text-limber-cream/40 uppercase tracking-widest mb-1">our mission</p>
-      <p class="font-display italic text-lg text-limber-vibe leading-snug">
-        to help people feel at home in their bodies.
-      </p>
     </div>
 
     <!-- Right: image -->

@@ -1,56 +1,32 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CtaSlice from '../../components/CtaSlice.astro';
+import PricingHero from '../../components/PricingHero.astro';
 import { trialReviews } from '../../data/reviews';
 ---
 
 <BaseLayout
   title="The Limber Way — Intro Trial"
   description="New to Limber? The Limber Way is 21 days of unlimited classes, a personalised plan, and a real human in your corner. $99 for new members."
+  hideBanner={true}
 >
 
   <!-- ── HERO ── -->
-  <section class="bg-limber-green border-b-2 border-neutral-900 px-8 lg:px-14 py-16 lg:py-24">
-
-    <!-- Heading row -->
-    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12">
-      <h1 class="mb-0">
-        <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none mb-1">the limber</span>
-        <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-vibe block leading-none">way</em>
-      </h1>
-
-      <!-- Image -->
-      <div class="flex-shrink-0 lg:mb-2 self-start lg:self-auto">
-        <img
-          src="/images/Limber_April26_106.jpg"
-          alt="Limber studio"
-          class="w-full lg:w-64 xl:w-80 h-56 object-cover object-top rounded-2xl border-2 border-limber-cream/20"
-        />
-      </div>
-    </div>
-
-    <!-- Bottom row -->
-    <div class="border-t border-limber-cream/10 pt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
-      <p class="font-display italic text-xl text-limber-cream/80">
-        new here? this is for you.
-      </p>
-      <div class="flex flex-wrap gap-3">
-        <a
-          href="/book-now"
-          class="inline-flex items-center px-8 py-4 font-headline text-sm text-limber-green bg-limber-vibe hover:bg-limber-bright border-2 border-neutral-900 rounded-full transition-colors"
-        >
-          claim your limber way — $99
-        </a>
-        <a
-          href="#how-it-works"
-          class="inline-flex items-center px-8 py-4 font-headline text-sm text-limber-cream border-2 border-neutral-900 rounded-full transition-colors hover:bg-neutral-900"
-        >
-          tell me more first
-        </a>
-      </div>
-    </div>
-
-  </section>
+  <PricingHero
+    body="new here? this is for you."
+    bodyItalic={true}
+    buttons={[
+      { label: 'claim your limber way — $99', href: '/book-now' },
+      { label: 'tell me more first', href: '#how-it-works', variant: 'outline' },
+    ]}
+    image="/images/Limber_April26_106.jpg"
+    imageAlt="Limber studio"
+  >
+    <h1 class="mb-0">
+      <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none mb-1">the limber</span>
+      <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-vibe block leading-none">way trial</em>
+    </h1>
+  </PricingHero>
 
   <!-- ── TICKER BANNER ── -->
   <div class="bg-limber-vibe border-b-2 border-neutral-900 overflow-hidden py-4">
@@ -205,8 +181,8 @@ import { trialReviews } from '../../data/reviews';
     <div class="px-4 sm:px-6 lg:px-8">
 
       <h2 class="mb-12">
-        <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-green block leading-none mb-1">a few things</span>
-        <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-tericotta block leading-none">worth knowing</em>
+        <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-green block leading-none mb-1">frequently</span>
+        <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-tericotta block leading-none">asked questions</em>
       </h2>
 
       <div class="max-w-2xl space-y-0">

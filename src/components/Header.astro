@@ -1,11 +1,16 @@
 ---
 import Logo from './Logo.astro';
 
+interface Props {
+ showBanner?: boolean;
+}
+const { showBanner = false } = Astro.props;
+
 const navItems = [
  {
  label: 'About',
  href: '/about',
- image: '/images/dropdown_about.jpg',
+ image: '/images/limber_studio_3_dancing.jpg',
  children: [
  { label: 'Our Vibe', href: '/about/our-vibe' },
  { label: 'Our Tribe', href: '/about/our-tribe' },
@@ -41,7 +46,18 @@ const navItems = [
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-limber-cream border-b-2 border-neutral-900">
+<div class="fixed top-0 left-0 right-0 z-50">
+ {showBanner && (
+  <a
+   href="/pricing/trial"
+   class="block bg-limber-tericotta border-b-2 border-neutral-900 px-4 py-2.5 text-center hover:bg-limber-brown transition-colors"
+  >
+   <span class="font-sans text-sm text-limber-cream">new here? </span>
+   <span class="font-headline text-sm text-limber-cream">the limber way — 21 days unlimited for $99</span>
+   <span class="font-sans text-sm text-limber-cream ml-2">→</span>
+  </a>
+ )}
+<header class="bg-limber-cream border-b-2 border-neutral-900">
  <div class="px-4 sm:px-6 lg:px-8">
  <div class="flex items-center h-16 lg:h-20">
 
@@ -56,7 +72,7 @@ const currentPath = Astro.url.pathname;
  {
  navItems.map((item) =>
  item.children ? (
- <div data-dropdown-group>
+ <div class="relative" data-dropdown-group>
  <button
  type="button"
  data-dropdown-trigger
@@ -69,15 +85,14 @@ const currentPath = Astro.url.pathname;
  >
  {item.label}
  </button>
- <!-- Full-width dropdown -->
+ <!-- Full-width panel: links on the left at page padding, image on the right -->
  <div
  data-dropdown-panel
- class="hidden absolute left-0 right-0 top-full -mt-[2px] bg-limber-cream border-b-2 border-neutral-900"
+ class:list={["hidden fixed left-0 right-0 -mt-[2px] bg-limber-cream border-b-2 border-neutral-900 z-[51]", showBanner ? "top-[106px] lg:top-[122px]" : "top-16 lg:top-20"]}
  style="height: 200px;"
  >
- <div class="relative h-full flex items-center py-5 px-8">
- <!-- Links — left offset set via JS to align exactly under trigger -->
- <div data-links-col class="flex flex-col gap-1">
+ <div class="h-full flex items-center justify-between px-4 sm:px-6 lg:px-8 py-5">
+ <div class="flex flex-col gap-1">
  {item.children.map((child) => (
  <a
  href={child.href}
@@ -92,11 +107,10 @@ const currentPath = Astro.url.pathname;
  </a>
  ))}
  </div>
- <!-- Image — right side -->
  <img
  src={item.image}
  alt={item.label}
- class="h-40 w-64 object-cover rounded-2xl border-2 border-neutral-900 flex-shrink-0 ml-auto"
+ class="h-40 w-64 object-cover rounded-2xl border-2 border-neutral-900 flex-shrink-0"
  />
  </div>
  </div>
@@ -193,9 +207,10 @@ const currentPath = Astro.url.pathname;
  </div>
  </div>
 </header>
+</div>
 
-<!-- Fixed header offset -->
-<div class="h-16 lg:h-20" aria-hidden="true"></div>
+<!-- Fixed header offset — extra height when banner is showing -->
+<div class:list={[showBanner ? 'h-[106px] lg:h-[122px]' : 'h-16 lg:h-20']} aria-hidden="true"></div>
 
 <script>
  // ── Mobile menu ──
@@ -221,28 +236,21 @@ const currentPath = Astro.url.pathname;
  if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
  }
  function hideAll() {
- groups.forEach((g) => g.querySelector('[data-dropdown-panel]')?.classList.add('hidden'));
+ groups.forEach((g) => {
+ g.querySelector('[data-dropdown-panel]')?.classList.add('hidden');
+ });
  }
 
  groups.forEach((group) => {
  const trigger = group.querySelector('[data-dropdown-trigger]');
  const panel = group.querySelector('[data-dropdown-panel]');
- const linksCol = panel?.querySelector('[data-links-col]') as HTMLElement | null;
 
- // Show on trigger hover, cancel any pending hide
  trigger?.addEventListener('mouseenter', () => {
  cancelHide();
  hideAll();
- // Align links column under the trigger's x position
- if (trigger && linksCol) {
-   const triggerRect = (trigger as HTMLElement).getBoundingClientRect();
-   // Panel is fixed left-0, has px-8 (32px) padding — offset links to sit under trigger
-   (linksCol as HTMLElement).style.marginLeft = Math.max(0, triggerRect.left - 32) + 'px';
- }
  panel?.classList.remove('hidden');
  });
 
- // Keep open while inside the panel; close when leaving it
  panel?.addEventListener('mouseenter', () => cancelHide());
  panel?.addEventListener('mouseleave', () => scheduleHide());
  });

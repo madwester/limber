@@ -1,0 +1,38 @@
+---
+interface Props {
+  image: string;
+  imageAlt: string;
+  bgColor?: string;
+}
+
+const { image, imageAlt, bgColor = 'bg-limber-cream' } = Astro.props;
+---
+
+<section class:list={['split-hero border-b-2 border-neutral-900 lg:flex', bgColor]}>
+
+  <!-- Left: content via slot -->
+  <div class:list={['lg:w-1/2 flex flex-col justify-start px-8 lg:px-14 py-16 lg:py-20', bgColor]}>
+    <slot />
+  </div>
+
+  <!-- Right: image -->
+  <div class="lg:w-1/2 flex-shrink-0">
+    <img
+      src={image}
+      alt={imageAlt}
+      class="w-full h-64 lg:h-full object-cover object-center border-t-2 lg:border-t-0 lg:border-l-2 border-neutral-900"
+    />
+  </div>
+
+</section>
+
+<style>
+  .split-hero {
+    height: calc(100vh - 4rem);
+  }
+  @media (min-width: 1024px) {
+    .split-hero {
+      height: calc(100vh - 5rem);
+    }
+  }
+</style>

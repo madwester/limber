@@ -1,93 +1,163 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import CtaSlice from '../../components/CtaSlice.astro';
 
 const serviceSchema = {
- '@context': 'https://schema.org',
- '@type': 'Service',
- name: 'Corporate Wellness — Limber',
- description: 'Limber offers corporate wellness programs including on-site and in-studio Pilates and movement classes for teams.',
- provider: { '@type': 'LocalBusiness', name: 'Limber', url: 'https://limberco.com.au' },
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Corporate Wellness — Limber',
+  description: 'The Workplace Reset — a professionally facilitated movement experience designed specifically for modern workplaces.',
+  provider: { '@type': 'LocalBusiness', name: 'Limber', url: 'https://limberco.com.au' },
 };
 ---
 
 <BaseLayout
- title="Corporate Wellness"
- description="Bring the benefits of Pilates and movement to your workplace with Limber's corporate wellness programs. On-site or in-studio."
- schema={serviceSchema}
+  title="Corporate Wellness"
+  description="The Workplace Reset — a professionally facilitated movement experience designed specifically for modern workplaces."
+  schema={serviceSchema}
 >
- <section class="bg-limber-vibe py-24 lg:py-36">
- <div class=" px-4 sm:px-6 lg:px-8">
- <a href="/classes" class="inline-flex items-center gap-2 font-headline text-xs text-limber-brown/60 hover:text-limber-brown transition-colors mb-10">
- <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
- Classes
- </a>
- <p class="font-headline text-xs text-limber-brown/60 mb-4">Classes</p>
- <h1 class="font-headline text-5xl md:text-6xl lg:text-7xl text-limber-brown leading-tight mb-6">
- Corporate Wellness
- </h1>
- <p class="font-sans text-lg text-limber-brown/80 leading-relaxed">
- Move your team well. Whether you're bringing us to the office or bringing your team to us, we make workplace wellness actually work.
- </p>
- </div>
- </section>
 
- <section class="py-20 bg-limber-cream-bg">
- <div class=" px-4 sm:px-6 lg:px-8">
- <h2 class="font-headline text-4xl text-limber-green mb-4">Why movement at work?</h2>
- <p class="font-sans text-limber-brown/80 mb-12">
- The research is clear — teams that move together perform better, feel better, and stick around longer.
- </p>
- <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
- {
- [
- { stat: '↑ Focus', body: 'Regular movement sessions improve concentration, creativity, and cognitive function.' },
- { stat: '↓ Sick days', body: 'Improved physical health means fewer absences and reduced healthcare costs.' },
- { stat: '↑ Retention', body: 'Wellness perks are consistently ranked among the top employee benefits.' },
- { stat: 'Stress relief', body: 'Pilates and mindful movement are evidence-backed tools for managing workplace stress.' },
- { stat: 'Team culture', body: 'Shared movement builds rapport, breaks down silos, and boosts morale.' },
- { stat: 'Flexibility', body: 'We work around your schedule — lunchtime, before work, or end of day.' },
- ].map(({ stat, body }) => (
- <div class="p-6 rounded-xl bg-limber-cream border-2 border-limber-green/20">
- <p class="font-headline text-xl text-limber-tericotta mb-2">{stat}</p>
- <p class="font-sans text-sm text-limber-brown/80 leading-relaxed">{body}</p>
- </div>
- ))
- }
- </div>
- </div>
- </section>
+  <!-- ── INTRO ── -->
+  <section class="bg-limber-cream py-16 lg:py-20 border-b-2 border-neutral-900">
+    <div class="px-4 sm:px-6 lg:px-8">
 
- <section class="py-16 bg-limber-green">
- <div class=" px-4 sm:px-6 lg:px-8">
- <h2 class="font-headline text-4xl text-limber-cream mb-10">How it works</h2>
- <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
- <div class="p-10 rounded-2xl bg-limber-cream/10 border-2 border-limber-cream/20">
- <h3 class="font-headline text-2xl text-limber-cream mb-3">In-studio sessions</h3>
- <p class="font-sans text-limber-cream/80 leading-relaxed">
- Bring your team to Limber for a dedicated class or series. We schedule exclusive timeslots for your group.
- </p>
- </div>
- <div class="p-10 rounded-2xl bg-limber-cream/10 border-2 border-limber-cream/20">
- <h3 class="font-headline text-2xl text-limber-cream mb-3">On-site classes</h3>
- <p class="font-sans text-limber-cream/80 leading-relaxed">
- We come to you. Our instructors travel to your workplace and set up a mat-based class in whatever space you have.
- </p>
- </div>
- </div>
- </div>
- </section>
+      <!-- Centered heading -->
+      <div class="text-center mb-10">
+        <h1>
+          <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-green block leading-none mb-1">your team is</span>
+          <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-tericotta block leading-none">running on empty.</em>
+        </h1>
+      </div>
 
- <section class="py-20 bg-limber-tericotta">
- <div class=" px-4 sm:px-6 text-center">
- <h2 class="font-headline text-4xl md:text-5xl text-limber-cream mb-4">
- Let's build something for your team
- </h2>
- <p class="font-sans text-limber-cream/80 mb-8">
- Get in touch and we'll put together a proposal tailored to your team size, goals, and budget.
- </p>
- <a href="/contact" class="inline-flex items-center px-8 py-4 font-headline text-sm text-limber-tericotta bg-limber-cream hover:bg-limber-bright border-2 border-neutral-900 rounded-full transition-colors">
- Get in Touch
- </a>
- </div>
- </section>
+      <!-- Photo -->
+      <div class="mb-12">
+        <img
+          src="/images/limber_studio_3_girls.jpg"
+          alt="Limber team session"
+          class="w-full h-80 lg:h-[520px] object-cover rounded-2xl border-2 border-neutral-900"
+        />
+      </div>
+
+      <!-- Body copy -->
+      <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-start">
+        <div class="space-y-4">
+          <p class="font-sans text-limber-brown/80 leading-relaxed">
+            long hours, high cognitive load, nervous systems stuck on "on." it shows up as tight shoulders and stiff hips — but over time it becomes fatigue, irritability, reduced focus and disconnected teams.
+          </p>
+          <p class="font-display italic text-xl text-limber-tericotta leading-snug">
+            the workplace reset is limber's answer to that.
+          </p>
+          <p class="font-sans text-limber-brown/80 leading-relaxed">
+            a professionally facilitated movement experience designed specifically for modern workplaces. not a generic fitness class. just a guided session that brings your team back into their bodies — and back into the room.
+          </p>
+        </div>
+        <div class="mt-8 lg:mt-0">
+          <p class="font-display italic text-xl text-limber-tericotta leading-snug py-5 border-b border-neutral-900/10">
+            physically lighter, mentally clearer, more regulated.
+          </p>
+          <p class="font-display italic text-xl text-limber-tericotta leading-snug py-5 border-b border-neutral-900/10">
+            more connected to each other.
+          </p>
+          <p class="font-display italic text-xl text-limber-tericotta leading-snug py-5">
+            after just one session.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── WHAT IS IT + WHAT'S INCLUDED ── -->
+  <section class="bg-limber-cream-bg py-16 lg:py-24 border-b-2 border-neutral-900">
+    <div class="px-4 sm:px-6 lg:px-8">
+      <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-start">
+
+        <div>
+          <h2 class="mb-6">
+            <span class="font-headline uppercase text-4xl md:text-5xl text-limber-green block leading-none mb-1">what is the</span>
+            <em class="font-display uppercase not-italic italic font-medium text-4xl md:text-5xl text-limber-tericotta block leading-none">workplace reset?</em>
+          </h2>
+          <p class="font-sans text-limber-brown/80 leading-relaxed mb-6">
+            a blend of pilates foundations, mobility flow, gentle strength activation and breathwork. designed to:
+          </p>
+          <ul class="space-y-3 mb-8">
+            {[
+              'release desk-bound tension',
+              'improve posture and mobility',
+              'activate underused muscles',
+              'support spinal health',
+              'regulate the nervous system',
+            ].map((item) => (
+              <li class="font-sans text-base text-limber-brown/80 flex gap-3">
+                <span class="text-limber-tericotta flex-shrink-0">—</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="p-8 lg:p-10 rounded-2xl bg-limber-cream border-2 border-neutral-900 self-start mt-8 lg:mt-0">
+          <h3 class="font-headline uppercase text-2xl text-limber-brown mb-6">what's included.</h3>
+          <ul class="space-y-4">
+            {[
+              'professionally facilitated session',
+              'mats and equipment provided',
+              'designed for mixed ability levels',
+              '14 days of complimentary access to three short limber reset videos for your team to use at their desks',
+            ].map((item) => (
+              <li class="font-sans text-base text-limber-brown/80 flex gap-3">
+                <span class="text-limber-tericotta flex-shrink-0">—</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHY LIMBER ── -->
+  <section class="bg-limber-green py-16 lg:py-24 border-b-2 border-neutral-900">
+    <div class="px-4 sm:px-6 lg:px-8">
+      <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-start">
+        <div>
+          <h2 class="mb-6">
+            <span class="font-headline uppercase text-4xl md:text-5xl text-limber-cream block leading-none mb-1">why</span>
+            <em class="font-display uppercase not-italic italic font-medium text-4xl md:text-5xl text-limber-vibe block leading-none">limber?</em>
+          </h2>
+          <p class="font-sans text-limber-cream/80 leading-relaxed mb-4">
+            at limber, we started with a simple belief — movement should genuinely feel good.
+          </p>
+          <p class="font-sans text-limber-cream/80 leading-relaxed mb-4">
+            so much of traditional fitness is built on pressure. pushing harder, doing more, fixing yourself. that never felt aligned for us.
+          </p>
+          <p class="font-sans text-limber-cream/80 leading-relaxed">
+            we care about joyful movement. a more holistic approach. spaces where people can slow down, breathe and reconnect. in the workplace, that matters. because when people feel supported rather than pushed, they show up clearer, calmer and more connected.
+          </p>
+        </div>
+        <div class="mt-10 lg:mt-0">
+          <img
+            src="/images/Limber_April26_100.jpg"
+            alt="Limber studio"
+            class="w-full h-64 lg:h-80 object-cover rounded-2xl border-2 border-neutral-900"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA SLICE ── -->
+  <CtaSlice
+    headingLine1="ready to reset"
+    headingLine2="your team?"
+    body="we'd love to learn more about your team and tailor the experience to your workplace. get in touch and we'll send through our full information pack."
+    buttons={[
+      { label: 'enquire now', href: 'mailto:limber.collab@gmail.com', variant: 'primary' },
+      { label: 'call us — 0452 610 210', href: 'tel:0452610210', variant: 'outline' },
+    ]}
+    image="/images/Limber_April26_106.jpg"
+    imageAlt="Limber team session"
+  />
+
 </BaseLayout>

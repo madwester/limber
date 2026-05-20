@@ -1,0 +1,222 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaSlice from '../components/CtaSlice.astro';
+import SplitHero from '../components/SplitHero.astro';
+---
+
+<BaseLayout
+  title="Community Guidelines"
+  description="The house rules at Limber — how we take care of each other and keep the space feeling good for everyone."
+>
+
+  <!-- ── HERO ── -->
+  <section class="bg-limber-green border-b-2 border-neutral-900">
+    <div class="px-8 lg:px-14 pt-16 lg:pt-20 pb-10 lg:pb-12">
+      <p class="font-display italic text-xl text-limber-vibe mb-4">very reasonable. we promise.</p>
+      <h1 class="mb-6">
+        <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-cream block leading-none mb-1">our house</span>
+        <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-vibe block leading-none">rules.</em>
+      </h1>
+      <p class="font-sans text-limber-cream/80 leading-relaxed max-w-xl">
+        no one is in trouble. these are simply the things that help everyone feel good here — and help us protect the space we've all built together. we trust you and appreciate you more than you know. 🖤
+      </p>
+    </div>
+    <div class="px-8 lg:px-14 pb-12 lg:pb-16">
+      <img
+        src="/images/limber_in_studio_2025.webp"
+        alt="Limber studio"
+        class="w-full h-[45vh] lg:h-[55vh] object-cover object-center rounded-2xl border-2 border-neutral-900"
+      />
+    </div>
+  </section>
+
+  <!-- ── CONTENT ── -->
+  <section class="bg-limber-cream-bg py-20 lg:py-28 border-b-2 border-neutral-900">
+    <div class="px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl divide-y divide-neutral-900/10">
+
+        <!-- Before you arrive -->
+        <div class="py-10">
+          <h2 class="font-headline uppercase text-2xl text-limber-green mb-3">before you arrive.</h2>
+          <div class="space-y-3 font-sans text-limber-brown/80 leading-relaxed">
+            <p>book via the limber co app up to 14 days in advance.</p>
+            <p>bring with you:</p>
+            <ul class="space-y-2 pl-1">
+              {[
+                'your own sweat towel',
+                'a water bottle',
+                "grip socks for chair pilates (don't have any? we sell them in studio)",
+              ].map(item => (
+                <li class="flex gap-3"><span class="text-limber-tericotta flex-shrink-0">—</span>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <!-- Arriving at the studio -->
+        <div class="py-10">
+          <h2 class="font-headline uppercase text-2xl text-limber-green mb-3">arriving at the studio.</h2>
+          <div class="space-y-4 font-sans text-limber-brown/80 leading-relaxed">
+            <p>please wait until 15 minutes before your class begins before entering the studio. if there's a session running before yours, the cool-down is intentional and precious — walking in during that time disrupts the experience for everyone finishing up.</p>
+            <p>aim to be on your mat 5–10 minutes before class starts. empty mats will be offered to waitlisted clients or walk-ins if you haven't arrived by the time class begins.</p>
+            <p>if you're waiting, soft voices on the couches please. same energy you'd want when you're the one winding down.</p>
+          </div>
+        </div>
+
+        <!-- On being on time -->
+        <div class="py-10">
+          <h2 class="font-headline uppercase text-2xl text-limber-green mb-3">on being on time.</h2>
+          <div class="space-y-4 font-sans text-limber-brown/80 leading-relaxed">
+            <p>the occasional late arrival — we completely understand. life happens.</p>
+            <p>that said, we'd love for us all to be a little more mindful of making it a habit. the opening of class matters, for you and for everyone around you.</p>
+            <p>running late? message us and we'll let you know if you can slip in. we'll even leave the very noisy front door slightly ajar so you don't have to announce your arrival to the entire studio.</p>
+            <p class="text-limber-brown/50 italic">(no promises it won't creak anyway.)</p>
+            <p>please note — arriving after class has begun may be treated as a no-show.</p>
+          </div>
+        </div>
+
+        <!-- Phone free -->
+        <div class="py-10">
+          <h2 class="font-headline uppercase text-2xl text-limber-green mb-3">the studio is a phone-free space.</h2>
+          <div class="space-y-4 font-sans text-limber-brown/80 leading-relaxed">
+            <p>phone in your bag please. we want you to get the most out of your practice — to truly unwind, stay present with your movement, and actually arrive in the room. that hour is yours. protect it.</p>
+            <p>accidental ring? happens to us all. emergency? just let your teacher know before class.</p>
+          </div>
+        </div>
+
+        <!-- Class cancellations -->
+        <div class="py-10">
+          <h2 class="font-headline uppercase text-2xl text-limber-green mb-3">class cancellations.</h2>
+          <div class="space-y-4 font-sans text-limber-brown/80 leading-relaxed">
+            <p>our 3 hour cancellation policy exists so every member has a fair chance to get into class. cancel the same way you booked — via the app or website. we can't accept cancellations via email, phone or social media.</p>
+            <ul class="space-y-2 pl-1">
+              {[
+                'cancellations made more than 3 hours before class — session returned to your account',
+                'cancellations made less than 3 hours before class — session forfeited',
+                'no shows and absences — session forfeited',
+                'arriving after class has begun — may be treated as a no show',
+              ].map(item => (
+                <li class="flex gap-3"><span class="text-limber-tericotta flex-shrink-0">—</span>{item}</li>
+              ))}
+            </ul>
+            <p class="font-headline text-xs text-limber-tericotta pt-2">for club members:</p>
+            <ul class="space-y-2 pl-1">
+              {[
+                'no shows incur a $10 fee',
+                'late cancellations incur a $5 fee',
+                'one fee waived per calendar month',
+                'fees charged to card on file 48 hours after',
+              ].map(item => (
+                <li class="flex gap-3"><span class="text-limber-tericotta flex-shrink-0">—</span>{item}</li>
+              ))}
+            </ul>
+            <p>for public holidays, 12 hours notice is required.</p>
+          </div>
+        </div>
+
+        <!-- Waitlists -->
+        <div class="py-10">
+          <h2 class="font-headline uppercase text-2xl text-limber-green mb-3">waitlists.</h2>
+          <div class="space-y-4 font-sans text-limber-brown/80 leading-relaxed">
+            <p>if a class is full, jump on the waitlist. you'll be notified via the app or email if a spot opens up. if you don't reply we'll assume you're coming — so only join the waitlist if you genuinely want to attend.</p>
+            <p>you can be added from the waitlist up to 1 hour before class starts. the 3 hour cancellation policy applies to waitlisted spots too — if you can no longer make it, please cancel your waitlist spot so someone else can grab it.</p>
+          </div>
+        </div>
+
+        <!-- Tell your teacher -->
+        <div class="py-10">
+          <h2 class="font-headline uppercase text-2xl text-limber-green mb-3">tell your teacher before class.</h2>
+          <div class="space-y-4 font-sans text-limber-brown/80 leading-relaxed">
+            <p>if there's something we need to know about your body — an injury, a niggle, how you're feeling today, advice from a doctor or specialist — please tell your teacher before class begins. we'll note it in our system and make sure you're offered appropriate options throughout.</p>
+            <p>we respect your privacy completely. this is purely so we can look after you properly.</p>
+          </div>
+        </div>
+
+        <!-- Pregnancy -->
+        <div class="py-10">
+          <h2 class="font-headline uppercase text-2xl text-limber-green mb-3">pregnancy.</h2>
+          <div class="space-y-4 font-sans text-limber-brown/80 leading-relaxed">
+            <p>if your pregnancy is uncomplicated and you feel well enough to exercise, you're welcome in our classes throughout your pregnancy. our teachers fully understand the guidelines around exercise during pregnancy and will always offer modifications and alternatives. we have wedges in studio to support you during class.</p>
+            <p>if you have any concerns or a more complex pregnancy, please check with your GP or midwife before attending and let us know at <a href="mailto:hello@limberco.com.au" class="text-limber-tericotta hover:text-limber-brown transition-colors">hello@limberco.com.au</a>.</p>
+          </div>
+        </div>
+
+        <!-- Studio facilities -->
+        <div class="py-10">
+          <h2 class="font-headline uppercase text-2xl text-limber-green mb-3">studio facilities.</h2>
+          <ul class="space-y-2 font-sans text-limber-brown/80 leading-relaxed pl-1">
+            {[
+              'secure storage for your belongings',
+              'gender-neutral bathroom and change rooms',
+              'drinking water provided',
+            ].map(item => (
+              <li class="flex gap-3"><span class="text-limber-tericotta flex-shrink-0">—</span>{item}</li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Our community -->
+        <div class="py-10">
+          <h2 class="font-headline uppercase text-2xl text-limber-green mb-3">our community.</h2>
+          <div class="space-y-4 font-sans text-limber-brown/80 leading-relaxed">
+            <p>limber is an inclusive, welcoming space for every body — regardless of age, size, ability, gender identity, sexuality, background or experience level.</p>
+            <p>every person who walks through our door has the right to feel safe, respected and completely at home. we do not tolerate discrimination, judgment or oppressive behaviour of any kind.</p>
+            <p>anyone acting in defiance of this will be asked to leave, their sessions refunded and their account closed.</p>
+            <p class="font-display italic text-xl text-limber-tericotta">this is a space built on kindness. let's keep it that way.</p>
+          </div>
+        </div>
+
+        <!-- Age policy -->
+        <div class="py-10">
+          <h2 class="font-headline uppercase text-2xl text-limber-green mb-3">age policy.</h2>
+          <div class="space-y-4 font-sans text-limber-brown/80 leading-relaxed">
+            <p>we welcome members from age 14 without a parent or guardian present. members under 18 can only attend classes where the teacher holds a current Working with Children Check — this will be noted on the teacher's bio at booking.</p>
+            <p>babies and toddlers are welcome at limber mammas classes only. no children in yin yoga or limber up classes. parents are responsible for their child's safety at all times.</p>
+          </div>
+        </div>
+
+        <!-- Discounts -->
+        <div class="py-10">
+          <h2 class="font-headline uppercase text-2xl text-limber-green mb-3">discounts.</h2>
+          <p class="font-sans text-limber-brown/80 leading-relaxed">full-time students and health care card holders are eligible for a 10% discount on all class packs and memberships. email <a href="mailto:hello@limberco.com.au" class="text-limber-tericotta hover:text-limber-brown transition-colors">hello@limberco.com.au</a> with proof to get set up. seniors aged 60 and over also receive 10% off.</p>
+        </div>
+
+        <!-- Refunds -->
+        <div class="py-10">
+          <h2 class="font-headline uppercase text-2xl text-limber-green mb-3">refunds.</h2>
+          <p class="font-sans text-limber-brown/80 leading-relaxed">refunds are not available for change of mind, unused sessions, or circumstances unforeseen by or external to the business, in line with NSW consumer policy. sessions cannot be transferred to another person. all members must hold their own account for safety and insurance purposes.</p>
+        </div>
+
+        <!-- Lost property -->
+        <div class="py-10">
+          <h2 class="font-headline uppercase text-2xl text-limber-green mb-3">lost property.</h2>
+          <p class="font-sans text-limber-brown/80 leading-relaxed">socks. scrunchies. five water bottles we're considering naming. we clear lost property at the end of each month — come rescue your things before they get rehomed. we'll always give you a heads up first.</p>
+        </div>
+
+        <!-- Footer links -->
+        <div class="py-10 flex flex-wrap gap-6">
+          <a href="/classes/timetable" class="font-headline text-sm text-limber-green hover:text-limber-tericotta transition-colors">
+            see our timetable →
+          </a>
+          <a href="mailto:hello@limberco.com.au" class="font-headline text-sm text-limber-green hover:text-limber-tericotta transition-colors">
+            questions? hello@limberco.com.au →
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <CtaSlice
+    headingLine1="ready to"
+    headingLine2="find your people?"
+    body="come say hi, book a class, or just have a nosy around. we'd love to have you."
+    image="/images/Limber_April26_176.jpg"
+    imageAlt="Limber community"
+    buttons={[
+      { label: 'book a class', href: '/book-now' },
+      { label: 'see our classes', href: '/classes/our-classes', variant: 'outline' },
+    ]}
+  />
+
+</BaseLayout>

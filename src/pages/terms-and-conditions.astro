@@ -1,118 +1,254 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const updatedDate = '1 January 2025'; // TODO: Update when T&Cs are finalised
 ---
 
 <BaseLayout
- title="Terms & Conditions"
- description="Limber terms and conditions — membership, cancellation policy, class bookings, and more."
- noindex={true}
+  title="Terms & Conditions"
+  description="Limber terms and conditions — memberships, class packs, cancellation policy, bookings, and more."
+  noindex={true}
 >
- <section class="bg-limber-brown py-24 lg:py-36">
- <div class=" px-4 sm:px-6 lg:px-8">
- <p class="font-headline text-xs text-limber-vibe mb-4">Legal</p>
- <h1 class="font-headline text-5xl md:text-6xl text-limber-cream leading-tight mb-3">
- Terms &amp; Conditions
- </h1>
- <p class="font-sans text-sm text-limber-cream/60">Last updated: {updatedDate}</p>
- </div>
- </section>
 
- <section class="py-16 bg-limber-cream-bg">
- <div class=" px-4 sm:px-6 lg:px-8">
- <!--
- TODO: Replace all sections below with your actual Terms & Conditions.
- We recommend having a legal professional review before publishing.
- -->
+  <!-- ── HERO ── -->
+  <section class="bg-limber-green border-b-2 border-neutral-900 px-8 lg:px-14 py-16 lg:py-24">
+    <h1 class="mb-4">
+      <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-cream block leading-none mb-1">terms +</span>
+      <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-vibe block leading-none">conditions.</em>
+    </h1>
+    <p class="font-sans text-sm text-limber-cream/50">Last updated: 2026</p>
+  </section>
 
- <div class="space-y-10 font-sans text-sm text-limber-brown/80 leading-relaxed">
+  <!-- ── CONTENT ── -->
+  <section class="bg-limber-cream-bg py-20 lg:py-28 border-b-2 border-neutral-900">
+    <div class="px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl space-y-12 font-sans text-sm text-limber-brown/80 leading-relaxed">
 
- <div>
- <h2 class="font-headline text-base text-limber-green mb-3">1. Introduction</h2>
- <p>
- These Terms and Conditions govern your use of Limber services, including class bookings,
- memberships, and the limberco.com.au website. By purchasing a membership, class pack, or
- booking a class, you agree to these terms.
- </p>
- </div>
+        <!-- 1. Intro Offers -->
+        <div>
+          <h2 class="font-headline uppercase text-2xl text-limber-green mb-4">1. intro offers</h2>
+          <div class="space-y-3">
+            <p>the limber way intro offer is for new clients only. valid for 21 days from your first booking. non-refundable and non-transferable.</p>
+            <p>clients found purchasing the intro offer more than once will have their account suspended and will be charged for any additional sessions used.</p>
+          </div>
+        </div>
 
- <div>
- <h2 class="font-headline text-base text-limber-green mb-3">2. Bookings</h2>
- <p>
- All class bookings are made online via Momence. A booking is only confirmed once payment has
- been received and a confirmation email has been sent.
- </p>
- </div>
+        <!-- 2. Class Packs -->
+        <div>
+          <h2 class="font-headline uppercase text-2xl text-limber-green mb-4">2. class packs</h2>
+          <div class="space-y-3">
+            <ul class="space-y-2 pl-1">
+              {[
+                '5 Class Pack — valid for 3 months from purchase date',
+                '10 Class Pack — valid for 6 months from purchase date',
+                'Lunch Express 10 Class Pack — valid for 6 months from purchase date',
+                'Semi-Private 5 Pack — valid for 3 months from purchase date',
+              ].map(item => (
+                <li class="flex gap-3"><span class="text-limber-tericotta flex-shrink-0">—</span>{item}</li>
+              ))}
+            </ul>
+            <p>packs activate on the date of purchase and are not auto-renewable. you'll be prompted to repurchase when your pack runs low.</p>
+            <p>extensions are available for injury or illness only, with a medical certificate from a GP or physiotherapist. extension requests must be made before the expiry date.</p>
+            <p>all packs are non-refundable, non-transferable and for single client use only.</p>
+            <p>credits are returned if class is cancelled at least 3 hours before start time (12 hours on weekends and public holidays).</p>
+          </div>
+        </div>
 
- <div>
- <h2 class="font-headline text-base text-limber-green mb-3">3. Cancellation Policy</h2>
- <p>
- Classes may be cancelled up to [X] hours before the scheduled start time for a full credit.
- Cancellations made within [X] hours of class start time, or failure to attend without notice,
- will result in the loss of that class credit.
- </p>
- </div>
+        <!-- 3. Memberships -->
+        <div>
+          <h2 class="font-headline uppercase text-2xl text-limber-green mb-4">3. memberships</h2>
+          <div class="space-y-4">
+            <p>all memberships have a minimum 12 week commitment period. cancellations and pauses are only available after this period.</p>
 
- <div>
- <h2 class="font-headline text-base text-limber-green mb-3">4. Memberships</h2>
- <p>
- Memberships are billed [weekly/fortnightly] via direct debit. Memberships may be paused for a
- minimum of [X] weeks with [X] days notice. To cancel a membership, [X] days written notice is
- required via email to <a href="mailto:hello@limberco.com.au" class="text-limber-tericotta hover:underline">hello@limberco.com.au</a>.
- </p>
- </div>
+            <div>
+              <p class="font-headline text-xs text-limber-tericotta mb-2">limber club (unlimited)</p>
+              <ul class="space-y-1 pl-1">
+                {[
+                  'auto-renewed and charged fortnightly',
+                  'up to 2 classes per day: 1 Pilates/Barre + 1 Yoga',
+                  '1 class per day on Saturdays and Sundays',
+                  'non-refundable, non-transferable, single client use only',
+                ].map(item => (
+                  <li class="flex gap-3"><span class="text-limber-tericotta flex-shrink-0">—</span>{item}</li>
+                ))}
+              </ul>
+            </div>
 
- <div>
- <h2 class="font-headline text-base text-limber-green mb-3">5. Class Packs</h2>
- <p>
- Class packs are non-refundable. Each pack has a validity period as stated at time of purchase.
- Classes not used within the validity period will be forfeited.
- </p>
- </div>
+            <div>
+              <p class="font-headline text-xs text-limber-tericotta mb-2">limber compact</p>
+              <ul class="space-y-1 pl-1">
+                {[
+                  '2 group classes per week plus 1 Lunch Express or Limber Up class',
+                  'credits last 7 days and do not roll over',
+                  'auto-renewed and charged weekly',
+                  'non-refundable, non-transferable, single client use only',
+                ].map(item => (
+                  <li class="flex gap-3"><span class="text-limber-tericotta flex-shrink-0">—</span>{item}</li>
+                ))}
+              </ul>
+            </div>
 
- <div>
- <h2 class="font-headline text-base text-limber-green mb-3">6. Health &amp; Safety</h2>
- <p>
- Clients are responsible for disclosing any injuries, medical conditions, or pregnancy to their
- instructor prior to class. Limber accepts no liability for injury arising from failure to
- disclose relevant health information.
- </p>
- </div>
+            <div>
+              <p class="font-headline text-xs text-limber-tericotta mb-2">limber combo</p>
+              <ul class="space-y-1 pl-1">
+                {[
+                  '1 semi-private, 1 group class and 1 Lunch Express or Limber Up class per week',
+                  'auto-renewed and charged fortnightly',
+                  'non-refundable, non-transferable, single client use only',
+                ].map(item => (
+                  <li class="flex gap-3"><span class="text-limber-tericotta flex-shrink-0">—</span>{item}</li>
+                ))}
+              </ul>
+            </div>
 
- <div>
- <h2 class="font-headline text-base text-limber-green mb-3">7. Liability</h2>
- <p>
- Participation in classes is at your own risk. Limber is not liable for any loss, injury,
- or damage to persons or property occurring on the premises or during classes, except where
- required by law.
- </p>
- </div>
+            <div>
+              <p class="font-headline text-xs text-limber-tericotta mb-2">limber chill</p>
+              <ul class="space-y-1 pl-1">
+                {[
+                  '1 class per week',
+                  'credits do not roll over',
+                  'auto-renewed and charged weekly',
+                  'non-refundable, non-transferable, single client use only',
+                ].map(item => (
+                  <li class="flex gap-3"><span class="text-limber-tericotta flex-shrink-0">—</span>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
 
- <div>
- <h2 class="font-headline text-base text-limber-green mb-3">8. Intro Trial</h2>
- <p>
- The intro trial offer is available to new Limber members only and may only be purchased
- once per person. Any attempt to purchase the trial more than once will result in cancellation
- of the duplicate order.
- </p>
- </div>
+        <!-- 4. Pausing -->
+        <div>
+          <h2 class="font-headline uppercase text-2xl text-limber-green mb-4">4. pausing your membership</h2>
+          <div class="space-y-3">
+            <p>you can pause your membership after your 12 week minimum commitment period for holidays, long-term illness or injury.</p>
+            <ul class="space-y-2 pl-1">
+              {[
+                'minimum pause: 7 days',
+                'maximum pause: 8 weeks per year, free of charge',
+                "a doctor's note may be required for illness or injury pauses",
+                'pausing mid-cycle is fine — your billing will be prorated on your return',
+                'request via the Limber Co app with at least 7 days notice',
+              ].map(item => (
+                <li class="flex gap-3"><span class="text-limber-tericotta flex-shrink-0">—</span>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
 
- <div>
- <h2 class="font-headline text-base text-limber-green mb-3">9. Changes to Terms</h2>
- <p>
- Limber reserves the right to update these Terms and Conditions at any time. Continued use
- of our services following any changes constitutes acceptance of the updated terms.
- </p>
- </div>
+        <!-- 5. Cancelling -->
+        <div>
+          <h2 class="font-headline uppercase text-2xl text-limber-green mb-4">5. cancelling your membership</h2>
+          <div class="space-y-3">
+            <p>to cancel your membership email <a href="mailto:hello@limberco.com.au" class="text-limber-tericotta hover:text-limber-brown transition-colors">hello@limberco.com.au</a>. we'll call you to process the cancellation.</p>
+            <ul class="space-y-2 pl-1">
+              {[
+                'cancellations can only be processed after your 12 week commitment period',
+                '2 weeks written notice required',
+                'this equates to 1 fortnightly payment or 2 weekly payments after notice is given',
+                'you can continue to attend classes during that notice period',
+              ].map(item => (
+                <li class="flex gap-3"><span class="text-limber-tericotta flex-shrink-0">—</span>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
 
- <div>
- <h2 class="font-headline text-base text-limber-green mb-3">10. Contact</h2>
- <p>
- Questions about these Terms? Email us at <a href="mailto:hello@limberco.com.au" class="text-limber-tericotta hover:underline">hello@limberco.com.au</a>.
- </p>
- </div>
+        <!-- 6. Late cancellations -->
+        <div>
+          <h2 class="font-headline uppercase text-2xl text-limber-green mb-4">6. late cancellations + no shows</h2>
+          <div class="space-y-3">
+            <p>cancel at least 3 hours before class to retain your credit. weekends and public holidays require 12 hours notice.</p>
+            <p>two late cancels or no shows within a 7 day period will result in a $10 fee and a temporary account block.</p>
+          </div>
+        </div>
 
- </div>
- </div>
- </section>
+        <!-- 7. Courses + Workshops -->
+        <div>
+          <h2 class="font-headline uppercase text-2xl text-limber-green mb-4">7. courses + workshops</h2>
+          <div class="space-y-3">
+            <p>cancel at least 24 hours before start time to receive a credit or refund.</p>
+            <p>for multi-week courses such as limber mammas, missed sessions can be made up by attending a regular class. credits are non-transferable and cannot be refunded for change of mind, illness or other personal reasons.</p>
+          </div>
+        </div>
+
+        <!-- 8. Bookings -->
+        <div>
+          <h2 class="font-headline uppercase text-2xl text-limber-green mb-4">8. bookings</h2>
+          <div class="space-y-3">
+            <p>book via the limber co app or website up to 14 days in advance.</p>
+            <p>late arrivals of 5 or more minutes may be refused entry and will forfeit their session.</p>
+          </div>
+        </div>
+
+        <!-- 9. Waitlists -->
+        <div>
+          <h2 class="font-headline uppercase text-2xl text-limber-green mb-4">9. waitlists</h2>
+          <div class="space-y-3">
+            <p>up to 4 clients per waitlist. notifications sent via the app and email. the first person on the waitlist is automatically added when a spot becomes available. you may be added up to 1 hour before class start. standard cancellation rules apply to all waitlist bookings.</p>
+          </div>
+        </div>
+
+        <!-- 10. Transactions -->
+        <div>
+          <h2 class="font-headline uppercase text-2xl text-limber-green mb-4">10. transactions</h2>
+          <div class="space-y-3">
+            <p>memberships are billed by direct debit fortnightly or weekly depending on membership type.</p>
+            <p>failed payments will be retried up to 3 times. if unsuccessful your account will be restricted.</p>
+            <p>transaction fees: 2% for direct debit, 3.5% for credit card. all prices include GST.</p>
+          </div>
+        </div>
+
+        <!-- 11. Discounts -->
+        <div>
+          <h2 class="font-headline uppercase text-2xl text-limber-green mb-4">11. discounts</h2>
+          <p>a 10% discount is available for full-time students, health care card holders and clients aged 60 and over. valid ID or proof required. email <a href="mailto:hello@limberco.com.au" class="text-limber-tericotta hover:text-limber-brown transition-colors">hello@limberco.com.au</a> to get set up.</p>
+        </div>
+
+        <!-- 12. Refunds -->
+        <div>
+          <h2 class="font-headline uppercase text-2xl text-limber-green mb-4">12. refunds</h2>
+          <p>refunds are not available for change of mind, unused sessions, or circumstances unforeseen by or external to the business, in line with NSW consumer policy. sessions cannot be transferred to another person. all members must hold their own account for safety and insurance purposes.</p>
+        </div>
+
+        <!-- 13. Photography + Communications -->
+        <div>
+          <h2 class="font-headline uppercase text-2xl text-limber-green mb-4">13. photography + communications</h2>
+          <div class="space-y-3">
+            <p>by signing up you agree to receive limber co emails and updates. you can unsubscribe at any time.</p>
+            <p>please let us know if you do not wish to be featured in studio photography or video content.</p>
+          </div>
+        </div>
+
+        <!-- 14. Health Declaration -->
+        <div>
+          <h2 class="font-headline uppercase text-2xl text-limber-green mb-4">14. health declaration</h2>
+          <div class="space-y-3">
+            <p>by booking a class at limber co you confirm that you are in good health and have disclosed any injuries, health conditions, pregnancy or postnatal recovery prior to attending.</p>
+            <p>limber co and its teachers take all reasonable care to provide safe, appropriate instruction. participation is at your own risk. we strongly recommend consulting your GP or treating practitioner before commencing any new exercise program.</p>
+          </div>
+        </div>
+
+        <!-- 15. General Terms -->
+        <div>
+          <h2 class="font-headline uppercase text-2xl text-limber-green mb-4">15. general terms</h2>
+          <div class="space-y-3">
+            <p>limber co reserves the right to change teachers, classes, timetables and events without notice.</p>
+            <p>these terms may be updated at any time. continued participation implies agreement with the current terms.</p>
+          </div>
+        </div>
+
+        <!-- 16. Privacy -->
+        <div>
+          <h2 class="font-headline uppercase text-2xl text-limber-green mb-4">16. privacy</h2>
+          <p>your personal information is stored securely and will not be shared with third parties without your consent. for our full privacy policy see <a href="/privacy" class="text-limber-tericotta hover:text-limber-brown transition-colors">limberco.com.au/privacy</a>.</p>
+        </div>
+
+        <!-- Acknowledgement -->
+        <div class="pt-6 border-t border-neutral-900/10">
+          <p class="text-limber-brown/50 italic">we acknowledge the dharawal people as the traditional custodians of this land. we pay respect to elders past, present and emerging.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
 </BaseLayout>

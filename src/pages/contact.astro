@@ -8,7 +8,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 >
 
   <!-- ── HERO ── -->
-  <section class="bg-limber-cream border-b-2 border-neutral-900 px-8 lg:px-14 pt-8 lg:pt-14">
+  <section class="bg-limber-cream border-b-2 border-neutral-900 px-8 lg:px-14 pt-8 lg:pt-14 pb-8 lg:pb-14">
     <div class="relative overflow-hidden rounded-2xl border-2 border-neutral-900" style="height: 480px;">
       <img
         src="/images/Limber_April26_176.jpg"
@@ -18,7 +18,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <!-- overlay -->
       <div class="absolute inset-0 bg-neutral-900/30"></div>
       <!-- text -->
-      <div class="relative h-full flex flex-col justify-end px-8 lg:px-12 pb-10">
+      <div class="relative h-full flex flex-col items-center justify-center text-center">
         <h1 class="mb-0">
           <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none mb-1">get in</span>
           <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-vibe block leading-none">touch</em>
@@ -60,15 +60,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </table>
           </div>
 
-          <!-- Map placeholder -->
-          <div class="rounded-2xl bg-limber-cream border-2 border-neutral-900 aspect-video flex items-center justify-center">
-            <p class="font-headline text-xs text-limber-brown/30">map coming soon</p>
-          </div>
 
         </div>
 
         <!-- Right: form -->
-        <div>
+        <div class="sticky top-24 lg:top-28 self-start">
 
           <form id="contact-form" novalidate class="space-y-5">
 

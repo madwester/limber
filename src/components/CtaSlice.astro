@@ -8,6 +8,7 @@ interface Button {
 interface Props {
   headingLine1: string;
   headingLine2: string;
+  headingLine3?: string;
   body: string;
   buttons: Button[];
   image: string;
@@ -17,6 +18,7 @@ interface Props {
 const {
   headingLine1,
   headingLine2,
+  headingLine3,
   body,
   buttons,
   image,
@@ -26,13 +28,14 @@ const {
 
 <section class="bg-limber-cream py-12 lg:py-16 border-t-2 border-neutral-900">
   <div class="px-4 sm:px-6 lg:px-8">
-    <div class="bg-limber-green rounded-2xl border-2 border-neutral-900 overflow-hidden lg:flex items-stretch">
+    <div class="bg-limber-tericotta rounded-2xl border-2 border-neutral-900 overflow-hidden lg:flex items-stretch">
 
       <!-- Left: content -->
       <div class="flex flex-col justify-center px-8 lg:px-12 py-12 lg:py-14 flex-1">
         <h2 class="mb-3">
           <span class="font-headline uppercase text-3xl md:text-4xl lg:text-5xl text-limber-cream block leading-none mb-1">{headingLine1}</span>
-          <em class="font-display uppercase not-italic italic font-medium text-4xl md:text-5xl lg:text-6xl text-limber-vibe block leading-none">{headingLine2}</em>
+          <em class="font-display uppercase not-italic italic font-medium text-4xl md:text-5xl lg:text-6xl text-limber-cream block leading-none" class:list={[headingLine3 ? 'mb-1' : '']}>{headingLine2}</em>
+          {headingLine3 && <em class="font-display uppercase not-italic italic font-medium text-4xl md:text-5xl lg:text-6xl text-limber-cream block leading-none">{headingLine3}</em>}
         </h2>
         <p class="font-sans text-limber-cream/70 leading-relaxed mb-8 max-w-sm">{body}</p>
         <div class="flex flex-wrap gap-3">

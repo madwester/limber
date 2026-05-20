@@ -1,0 +1,76 @@
+---
+interface Button {
+  label: string;
+  href: string;
+  variant?: 'primary' | 'outline';
+  target?: string;
+}
+
+interface Props {
+  image: string;
+  imageAlt: string;
+  imagePosition?: string;
+  body: string;
+  bodyItalic?: boolean;
+  buttons: Button[];
+  bgColor?: string;
+  onDark?: boolean;
+}
+
+const {
+  image,
+  imageAlt,
+  imagePosition = 'object-top',
+  body,
+  bodyItalic = false,
+  buttons,
+  bgColor = 'bg-limber-green',
+  onDark = true,
+} = Astro.props;
+
+const bodyClass = bodyItalic
+  ? `font-display italic text-xl leading-snug ${onDark ? 'text-limber-cream/80' : 'text-limber-brown/80'}`
+  : `font-sans leading-relaxed ${onDark ? 'text-limber-cream/80' : 'text-limber-brown/80'}`;
+---
+
+<section class:list={[bgColor, 'border-b-2 border-neutral-900 px-8 lg:px-14 py-16 lg:py-24']}>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+
+    <!-- Left: heading + body + buttons -->
+    <div class="flex flex-col">
+      <div class="mb-6">
+        <slot />
+      </div>
+      <p class:list={['mb-8 max-w-md', bodyClass]}>
+        {body}
+      </p>
+      <div class="flex flex-wrap gap-3">
+        {buttons.map((btn) => (
+          <a
+            class:list={[
+              'inline-flex items-center px-8 py-4 font-headline text-sm border-2 border-neutral-900 rounded-full transition-colors flex-shrink-0',
+              btn.variant === 'outline'
+                ? onDark ? 'text-limber-cream hover:bg-neutral-900' : 'text-limber-brown hover:bg-neutral-900 hover:text-limber-cream'
+                : 'text-limber-green bg-limber-vibe hover:bg-limber-bright',
+            ]}
+            href={btn.href}
+            target={btn.target}
+            rel={btn.target === '_blank' ? 'noopener noreferrer' : undefined}
+          >
+            {btn.label}
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Right: image -->
+    <div>
+      <img
+        alt={imageAlt}
+        class:list={['w-full h-72 lg:h-[420px] object-cover rounded-2xl border-2 border-neutral-900', imagePosition]}
+        src={image}
+      />
+    </div>
+
+  </div>
+</section>

@@ -1,14 +1,5 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { reviews } from '../../data/reviews';
-
-// Map reviews to loveNotes shape; add placeholder slots for future notes
-const loveNotes = [
-  ...reviews.map(r => ({ note: r.body, name: r.name })),
-  { note: '[Replace with real love note from the community.]', name: '' },
-  { note: '[Replace with real love note from the community.]', name: '' },
-  { note: '[Replace with real love note from the community.]', name: '' },
-];
 ---
 
 <BaseLayout
@@ -51,72 +42,6 @@ const loveNotes = [
         </div>
 
       </div>
-    </div>
-  </section>
-
-  <!-- ── LOVE CLUB NOTES ── -->
-  <section class="bg-limber-green py-20 lg:py-28 border-b-2 border-neutral-900">
-    <div class="px-4 sm:px-6 lg:px-8">
-
-      <!-- Heading + intro -->
-      <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-end mb-14">
-        <div>
-          <h2>
-            <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-cream block leading-none mb-1">love club</span>
-            <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-vibe block leading-none">notes</em>
-          </h2>
-        </div>
-        <div class="mt-6 lg:mt-0 space-y-4">
-          <p class="font-sans text-limber-cream/80 leading-relaxed">
-            real words from real humans who just wanted to tell us how they felt.
-          </p>
-          <p class="font-sans text-limber-cream/70 leading-relaxed">
-            in the studio we write love notes to our community and they write them back to us. it's a very wholesome thing.
-          </p>
-          <div class="pt-2">
-            <a
-              href="/contact"
-              class="font-headline text-sm text-limber-vibe hover:text-limber-cream transition-colors"
-            >
-              → leave a love note
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Notes grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {loveNotes.map((item, i) => (
-          <div class:list={[
-            'p-7 rounded-2xl border-2 border-neutral-900',
-            i % 3 === 0 ? 'bg-limber-cream' : i % 3 === 1 ? 'bg-limber-vibe' : 'bg-limber-tericotta',
-          ]}>
-            <p class:list={[
-              'font-display italic text-lg leading-relaxed mb-5',
-              i % 3 === 2 ? 'text-limber-cream/90' : 'text-limber-brown/80',
-            ]}>
-              "{item.note}"
-            </p>
-            <p class:list={[
-              'font-headline text-xs',
-              i % 3 === 2 ? 'text-limber-cream/60' : 'text-limber-brown/50',
-            ]}>
-              — {item.name}
-            </p>
-          </div>
-        ))}
-      </div>
-
-      <!-- Leave a note CTA -->
-      <div class="text-center mt-12">
-        <a
-          href="/contact"
-          class="inline-flex items-center px-8 py-4 font-headline text-sm text-limber-green bg-limber-vibe hover:bg-limber-bright border-2 border-neutral-900 rounded-full transition-colors"
-        >
-          want to leave one? we'd love that
-        </a>
-      </div>
-
     </div>
   </section>
 
