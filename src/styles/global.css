@@ -105,6 +105,14 @@ h3 .font-display {
     text-align: center;
   }
 
+  /* Journal post cards stay left-aligned */
+  .journal-card h2,
+  .journal-card p,
+  .journal-card span,
+  .journal-card time {
+    text-align: left;
+  }
+
   /* Keep card/blockquote content left-aligned */
   blockquote p,
   blockquote li,

@@ -22,6 +22,7 @@ const memberships = [
       '20% off your first Aura Sweat session 💦',
     ],
     cta: 'Join unlimited',
+    href: 'https://momence.com/m/405108',
     bg: 'bg-limber-brown',
     textColor: 'text-limber-cream',
     subColor: 'text-limber-bright/80',
@@ -44,6 +45,7 @@ const memberships = [
       '12 week minimum commitment',
     ],
     cta: 'Join compact',
+    href: 'https://momence.com/m/405112',
     bg: 'bg-limber-cream',
     textColor: 'text-limber-green',
     subColor: 'text-limber-brown/70',
@@ -65,6 +67,7 @@ const memberships = [
       '12 week minimum commitment',
     ],
     cta: 'Join Limber chill',
+    href: 'https://momence.com/m/405116',
     bg: 'bg-limber-cream',
     textColor: 'text-limber-green',
     subColor: 'text-limber-brown/70',
@@ -88,6 +91,7 @@ const memberships = [
       '12 week minimum commitment',
     ],
     cta: 'Join combo',
+    href: 'https://momence.com/m/405114',
     bg: 'bg-limber-cream',
     textColor: 'text-limber-green',
     subColor: 'text-limber-brown/70',
@@ -116,7 +120,7 @@ const perks = [
   <!-- ── HERO ── -->
   <PricingHero
     body="We don't just take your membership fee and hope for the best. If you're stuck, overwhelmed, or just haven't found your groove yet, we'll help you get unstuck. That's what we're here for."
-    buttons={[{ label: 'Find yours', href: '#memberships' }]}
+    buttons={[{ label: 'Find yours', href: '#memberships' }, { label: 'New? Start for $99', href: '/pricing/trial', variant: 'outline' }]}
     image="/images/turn-around.jpg"
     imageAlt="Limber studio"
     imagePosition="object-center"
@@ -190,7 +194,9 @@ const perks = [
               ))}
             </ul>
             <a
-              href="/book-now"
+              href={(m as any).href || '/book-now'}
+              target="_blank"
+              rel="noopener noreferrer"
               class:list={[
                 'block text-center px-5 py-3 font-headline text-xs border-2 rounded-full transition-colors',
                 m.ctaClass,
