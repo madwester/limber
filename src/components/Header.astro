@@ -82,7 +82,7 @@ const currentPath = Astro.url.pathname;
  class:list={[
  'font-display not-italic text-xl capitalize transition-colors hover:text-limber-vibe cursor-pointer',
  currentPath.startsWith(item.href)
- ? 'text-limber-vibe'
+ ? 'text-limber-vibe underline underline-offset-4 decoration-limber-vibe/50'
  : 'text-limber-cream',
  ]}
  >
@@ -102,7 +102,7 @@ const currentPath = Astro.url.pathname;
  class:list={[
  'block px-3 py-2 font-display not-italic text-xl capitalize transition-colors hover:text-limber-vibe',
  currentPath === child.href
- ? 'text-limber-vibe'
+ ? 'text-limber-vibe underline underline-offset-4 decoration-limber-vibe/50'
  : 'text-limber-cream',
  ]}
  >
@@ -125,7 +125,7 @@ const currentPath = Astro.url.pathname;
  class:list={[
  'font-display not-italic text-xl capitalize transition-colors hover:text-limber-vibe',
  currentPath.startsWith(item.href)
- ? 'text-limber-vibe'
+ ? 'text-limber-vibe underline underline-offset-4 decoration-limber-vibe/50'
  : 'text-limber-cream',
  ]}
  >

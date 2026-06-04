@@ -342,12 +342,12 @@ const classes = [
                   <p class="font-headline text-xs text-limber-tericotta mb-1">Energy</p>
                   <p class="font-sans text-xs text-limber-brown/80">{cls.energyGuide}</p>
                 </div>
-                <div class="bg-limber-cream p-4">
-                  <p class="font-headline text-xs text-limber-tericotta mb-1">Sounds like</p>
-                  {cls.soundsLike && cls.soundsLike !== '#' && (
+                {cls.soundsLike && cls.soundsLike !== '#' && (
+                  <div class="bg-limber-cream p-4">
+                    <p class="font-headline text-xs text-limber-tericotta mb-1">Sounds like</p>
                     <a href={cls.soundsLike} target="_blank" rel="noopener noreferrer" class="font-sans text-xs text-limber-tericotta hover:text-limber-brown transition-colors">playlist →</a>
-                  )}
-                </div>
+                  </div>
+                )}
               </div>
 
               <!-- Description -->
