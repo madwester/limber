@@ -8,7 +8,9 @@
 @font-face {
   font-family: 'Candu';
   src: url('/fonts/Candu-Regular.woff2') format('woff2'),
-       url('/fonts/Candu-Regular.woff') format('woff');
+       url('/fonts/Candu-Regular.woff') format('woff'),
+       url('/fonts/Candu-Regular.ttf') format('truetype'),
+       url('/fonts/Candu-Regular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
