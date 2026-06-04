@@ -182,7 +182,7 @@ const classes = [
     <!-- Heading -->
     <div class="mb-10">
       <h1 class="mb-0">
-        <span class="flex items-end gap-[0.2em] leading-none">
+        <span class="flex items-end justify-center lg:justify-start gap-[0.2em] leading-none">
           <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-bright">move</span>
           <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream">your way</span>
         </span>
@@ -208,7 +208,7 @@ const classes = [
           <p class="font-sans text-sm text-limber-brown/80 leading-relaxed mb-4">
             Take a look at our community guidelines.
           </p>
-          <a href="/community-guidelines" class="font-headline text-xs text-limber-brown hover:text-limber-bright transition-colors">
+          <a href="/community-guidelines" class="font-headline text-xs text-limber-brown hover:text-limber-bright transition-colors text-left block">
             Community guidelines →
           </a>
         </div>
@@ -220,18 +220,28 @@ const classes = [
   <!-- ── CLASSES ── -->
 
   <!-- Mobile: sticky tab bar -->
-  <div class="lg:hidden sticky top-[106px] z-10 bg-limber-vibe border-b-2 border-limber-green overflow-x-auto">
+  <div class="lg:hidden sticky top-[106px] z-10 bg-limber-tericotta border-b-2 border-limber-green overflow-x-auto" style="scrollbar-width: none;">
     <nav class="flex min-w-max" aria-label="Class list">
       {classes.map((cls, i) => (
         <button
           type="button"
           data-nav-btn={cls.id}
           class:list={[
-            'px-5 py-3 font-headline text-xs whitespace-nowrap border-r border-limber-green/10 transition-colors hover:bg-limber-green hover:text-limber-vibe cursor-pointer',
-            i === 0 ? 'bg-limber-green text-limber-vibe' : 'text-limber-green bg-transparent',
+            'px-5 py-4 whitespace-nowrap border-r border-limber-brown/20 transition-colors hover:bg-limber-brown cursor-pointer',
+            i === 0 ? 'bg-limber-brown' : 'bg-transparent',
           ]}
         >
-          {cls.name}
+          {(() => {
+            const [first, rest] = cls.nameSplit
+              ? cls.nameSplit
+              : (() => { const idx = cls.name.indexOf(' '); return idx === -1 ? [cls.name, ''] : [cls.name.slice(0, idx), cls.name.slice(idx + 1)]; })();
+            return (
+              <>
+                <span class="font-headline uppercase text-lg text-limber-cream">{first}</span>
+                {rest && <span class="font-display italic text-2xl text-limber-cream ml-[0.05em]">{rest}</span>}
+              </>
+            );
+          })()}
         </button>
       ))}
     </nav>
@@ -333,7 +343,7 @@ const classes = [
             <!-- Meta + description -->
             <div>
               <!-- Meta card -->
-              <div class="grid grid-cols-3 gap-px bg-limber-green/10 rounded-2xl overflow-hidden border-2 border-limber-green mb-5">
+              <div class:list={['grid gap-px bg-limber-green/10 rounded-2xl overflow-hidden border-2 border-limber-green mb-5', cls.soundsLike && cls.soundsLike !== '#' ? 'grid-cols-3' : 'grid-cols-2']}>
                 <div class="bg-limber-cream p-4">
                   <p class="font-headline text-xs text-limber-tericotta mb-1">Spotlight on</p>
                   <p class="font-sans text-xs text-limber-brown/80 leading-snug">{cls.spotlight}</p>
@@ -386,7 +396,7 @@ const classes = [
           <p class="font-sans text-limber-cream/80 leading-relaxed">
             All our teachers are fully qualified and committed to ongoing education. You're in good hands.
           </p>
-          <div class="pt-4">
+          <div class="pt-4 flex justify-center lg:justify-start">
             <a
               href="/contact"
               class="inline-flex items-center px-8 py-4 font-headline text-sm text-limber-green bg-limber-vibe hover:bg-limber-bright border-2 border-limber-green rounded-full transition-colors"

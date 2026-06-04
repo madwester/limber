@@ -40,17 +40,26 @@ const {
 
 <section class:list={[sectionBg, 'py-12 lg:py-16', showBorder && 'border-t-2 border-limber-green']}>
   <div class="px-4 sm:px-6 lg:px-8">
-    <div class:list={['rounded-2xl border-2 overflow-hidden lg:flex items-stretch', cardBg]}>
+    <div class:list={['cta-card rounded-2xl border-2 overflow-hidden lg:flex items-stretch', cardBg]}>
 
-      <!-- Left: content -->
-      <div class="flex flex-col justify-center px-6 lg:px-8 py-8 lg:py-10 flex-1">
-        <h2 class="mb-3">
+      <!-- Image first on mobile -->
+      <div class="lg:hidden px-6 pt-8 pb-0">
+        <img
+          src={image}
+          alt={imageAlt}
+          class:list={['w-full h-56 object-cover rounded-xl border-2 border-limber-vibe', imagePosition]}
+        />
+      </div>
+
+      <!-- Content -->
+      <div class="flex flex-col items-center lg:items-start justify-center px-6 lg:px-8 py-8 lg:py-10 flex-1 text-center lg:text-left">
+        <h2 class="mb-3 cta-heading">
           <span class:list={['font-headline uppercase text-3xl md:text-4xl lg:text-5xl block leading-none -mb-1', accentColor]}>{headingLine1}</span>
           <span class="font-display italic font-medium text-4xl md:text-5xl lg:text-6xl text-limber-cream block leading-none" class:list={[headingLine3 ? 'mb-1' : '']}>{headingLine2}</span>
           {headingLine3 && <span class="font-display italic font-medium text-4xl md:text-5xl lg:text-6xl text-limber-cream block leading-none">{headingLine3}</span>}
         </h2>
         <p class="font-sans text-limber-cream/70 leading-relaxed mb-8 max-w-sm">{body}</p>
-        <div class="flex flex-wrap gap-3">
+        <div class="flex flex-wrap justify-center lg:justify-start gap-3">
           {buttons.map((btn) => (
             <a
               href={btn.href}
@@ -67,8 +76,8 @@ const {
         </div>
       </div>
 
-      <!-- Right: image -->
-      <div class="lg:w-2/5 flex-shrink-0 flex items-center px-6 lg:px-8 py-8 lg:py-10 lg:pl-0">
+      <!-- Image on desktop (right side) -->
+      <div class="hidden lg:flex lg:w-2/5 flex-shrink-0 items-center px-8 py-10 lg:pl-0">
         <img
           src={image}
           alt={imageAlt}

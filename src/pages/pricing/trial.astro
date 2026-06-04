@@ -35,8 +35,8 @@ import { trialReviews } from '../../data/reviews';
             <p class="font-sans text-limber-cream/80 leading-relaxed">No wandering in and hoping for the best. No guessing which class to try first. No "good luck in there."</p>
             <p class="font-display italic text-xl text-limber-vibe leading-snug">Just a genuinely supported start: the Limber way.</p>
           </div>
-          <div class="flex flex-wrap gap-3">
-            <a href="https://momence.com/Limber-Co/membership/The-Limber-way-reset---21-day-programme-/411175" class="inline-flex items-center px-8 py-4 font-headline text-sm text-limber-green bg-limber-vibe hover:bg-limber-bright border-2 border-limber-vibe rounded-full transition-colors">
+          <div class="flex flex-wrap justify-center lg:justify-start gap-3">
+            <a href="https://momence.com/Limber-Co/membership/The-Limber-way-reset---21-day-programme-/411175" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-8 py-4 font-headline text-sm text-limber-green bg-limber-vibe hover:bg-limber-bright border-2 border-limber-vibe rounded-full transition-colors">
               Start for $99
             </a>
             <a href="#how-it-works" class="inline-flex items-center px-8 py-4 font-headline text-sm text-limber-cream border-2 border-limber-cream hover:border-limber-vibe hover:text-limber-vibe rounded-full transition-colors">
@@ -75,7 +75,7 @@ import { trialReviews } from '../../data/reviews';
       </h2>
 
       <!-- Horizontal scroll on mobile, 5-col grid on desktop -->
-      <div class="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory lg:grid lg:grid-cols-5 lg:overflow-visible lg:pb-0" style="scrollbar-width: none;">
+      <div class="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 -mx-4 sm:-mx-6 lg:mx-0 pl-4 sm:pl-6 lg:pl-0 [scroll-padding-left:1rem] sm:[scroll-padding-left:1.5rem] lg:grid lg:grid-cols-5 lg:overflow-visible lg:pb-0" style="scrollbar-width: none;">
         {[
           {
             n: '01',
@@ -103,7 +103,7 @@ import { trialReviews } from '../../data/reviews';
             body: 'You do your classes, we check in regularly. You\'re never just left to figure it out alone.',
           },
         ].map((step) => (
-          <div class="snap-start flex-shrink-0 w-[72vw] sm:w-[44vw] lg:w-auto flex flex-col bg-limber-cream border-2 border-limber-green rounded-2xl p-6">
+          <div class="snap-start flex-shrink-0 w-[80vw] sm:w-[45vw] lg:w-auto flex flex-col bg-limber-cream border-2 border-limber-green rounded-2xl p-6 last:mr-4 sm:last:mr-6">
             <span class="font-headline text-xs text-limber-tericotta mb-6">{step.n}</span>
             <p class="font-headline text-base text-limber-green leading-snug mb-3 flex-1">{step.title}</p>
             <p class="font-sans text-base text-limber-brown/60 leading-relaxed">{step.body}</p>

@@ -74,7 +74,8 @@ h3 .font-display {
   line-height: 0.95;
 }
 
-/* On mobile: heading spans flow inline so they naturally sit on one line */
+
+/* Mobile: inline flow + baseline alignment + center everything */
 @media (max-width: 1023px) {
   h1 .font-headline,
   h1 .font-display,
@@ -83,6 +84,37 @@ h3 .font-display {
   h3 .font-headline,
   h3 .font-display {
     display: inline;
+    vertical-align: text-bottom;
+  }
+
+  /* Center all text on mobile */
+  h1, h2, h3, p, li, a {
+    text-align: center;
+  }
+
+  /* CTA slice headings stay on separate lines */
+  .cta-heading .font-headline,
+  .cta-heading .font-display {
+    display: block !important;
+  }
+
+  /* CTA card text stays centered on mobile */
+  .cta-card p,
+  .cta-card li,
+  .cta-card a {
+    text-align: center;
+  }
+
+  /* Keep card/blockquote content left-aligned */
+  blockquote p,
+  blockquote li,
+  blockquote a,
+  [class*="rounded-2xl"] p,
+  [class*="rounded-2xl"] li,
+  [class*="rounded-2xl"] a,
+  [class*="rounded-xl"] p,
+  [class*="rounded-xl"] a {
+    text-align: left;
   }
 }
 

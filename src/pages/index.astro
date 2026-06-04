@@ -19,8 +19,8 @@ const classesTaster = [
  { name: 'Limber Power Flow', description: '"Power" says it all: Vinyasa flow that works the whole body and mind.', image: '/images/classes/power_yoga_1.jpg' },
  { name: 'Limber Unfurl', description: 'The art of doing less to go deeper. Long holds, deep connective tissue work and an hour to unwind.', image: '/images/classes/unfurel_yin_yoga.jpg' },
  { name: 'Limboogie', nameSplit: ['Lim', 'Boogie'], description: 'Cardio so disguised in fun you won\'t even notice you\'re working out. The most joy you\'ll have exercising. No experience (or coordination) required.', image: '/images/Limber_April26_112.jpg' },
- { name: 'Limber Live Music', description: 'Live music sessions in our yoga classes. Immersive, grounding and a little magic.', image: '/images/limber_live_music.jpg' },
  { name: 'Limber Breathe', description: 'Two distinct breathwork experiences — rebirthing with Ali Logan or dynamic with Sam Bennett. Both 60 minutes.', image: '/images/breathwork.jpg' },
+ { name: 'Limber Live Music', description: 'Live music sessions in our yoga classes. Immersive, grounding and a little magic.', image: '/images/limber_live_music.jpg' },
 ];
 ---
 
@@ -66,12 +66,12 @@ const classesTaster = [
      src="/images/stickers/flower.svg"
      alt=""
      aria-hidden="true"
-     class="absolute bottom-16 right-4 lg:right-0 w-24 h-24 lg:w-32 lg:h-32 rotate-[12deg] pointer-events-none"
-     style="filter: brightness(0) saturate(100%) invert(66%) sepia(62%) saturate(625%) hue-rotate(338deg) brightness(1.05);"
+     class="absolute lg:right-0 lg:bottom-0 w-24 h-24 lg:w-32 lg:h-32 rotate-[12deg] pointer-events-none"
+     style="right: calc(var(--spacing) * -9); bottom: calc(var(--spacing) * -23); filter: brightness(0) saturate(100%) invert(66%) sepia(62%) saturate(625%) hue-rotate(338deg) brightness(1.05);"
     />
    </div>
 
-   <div class="flex flex-wrap gap-4 mb-12 mt-8">
+   <div class="flex flex-wrap justify-center lg:justify-start gap-4 mb-12 mt-8">
     <a
      href="/pricing/trial"
      class="inline-flex items-center px-8 py-4 font-headline text-sm text-limber-green bg-limber-vibe hover:bg-limber-bright border-2 border-limber-vibe rounded-full transition-colors"
@@ -86,7 +86,7 @@ const classesTaster = [
     </a>
    </div>
   </div>
-  <div class="grid grid-cols-3 gap-4 mt-12 px-4 sm:px-6 lg:px-8">
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-12 px-4 sm:px-6 lg:px-8">
    <!-- Image 1 -->
    <div class="rounded-2xl border-2 border-limber-vibe overflow-hidden h-72 lg:h-[480px]">
     <img
@@ -119,11 +119,10 @@ const classesTaster = [
 
     <!-- Left: copy -->
     <div>
-     <h2 class="leading-tight mb-6">
-      <span class="block text-4xl md:text-5xl lg:text-6xl">
-       <span class="font-headline uppercase text-limber-vibe">new around here? </span><span class="font-display italic font-medium text-limber-cream">we've got</span>
-      </span>
-      <span class="font-display italic font-medium text-4xl md:text-5xl lg:text-6xl text-limber-cream lg:block">something for you</span>
+     <h2 class="leading-none mb-6">
+      <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-vibe block leading-none -mb-1">new around here?</span>
+      <span class="font-display italic font-medium text-4xl md:text-5xl lg:text-6xl text-limber-cream block leading-none -mb-1">We have got</span>
+      <span class="font-display italic font-medium text-4xl md:text-5xl lg:text-6xl text-limber-cream block leading-none">something for you</span>
      </h2>
      <p class="font-display text-xl italic text-limber-vibe mb-6">
       The Limber Way: $99 · 21 days · unlimited classes
@@ -131,7 +130,7 @@ const classesTaster = [
      <p class="font-sans text-limber-cream/80 leading-relaxed mb-10">
       New to movement, or just new to us. Hi, we've been waiting for you. 21 days, unlimited classes, a personalised plan, and a real human checking in on you the whole way. This is where your limber story begins.
      </p>
-     <div class="flex flex-wrap gap-4">
+     <div class="flex flex-wrap justify-center lg:justify-start gap-4">
       <a
        href="/pricing/trial"
        class="inline-flex items-center px-8 py-4 font-headline text-sm text-limber-green bg-limber-vibe hover:bg-limber-bright border-2 border-limber-vibe rounded-full transition-colors"
@@ -193,8 +192,8 @@ const classesTaster = [
 
     <!-- Right: heading + copy + CTA -->
     <div>
-     <h2 class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-brown leading-tight mb-8">
-      to help people <span class="font-display italic normal-case font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream">feel at home <span class="whitespace-nowrap">in their bodies</span></span>
+     <h2 class="leading-none mb-8">
+      <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream">To help people </span><span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-brown">feel at home</span><span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream"> in their bodies</span>
      </h2>
      <div class="space-y-4 mb-10">
       <p class="font-sans text-limber-brown/80 leading-relaxed">
@@ -210,12 +209,14 @@ const classesTaster = [
        Because movement should make you feel better than before you walked in the door.
       </p>
      </div>
-     <a
-      href="/about/our-vibe"
-      class="inline-flex items-center px-8 py-4 font-headline text-sm text-limber-cream bg-limber-brown hover:bg-limber-tericotta border-2 border-limber-brown rounded-full transition-colors"
-     >
-      Learn what we're actually about
-     </a>
+     <div class="flex justify-center lg:justify-start">
+      <a
+       href="/about/our-vibe"
+       class="inline-flex items-center px-8 py-4 font-headline text-sm text-limber-cream bg-limber-brown hover:bg-limber-tericotta border-2 border-limber-brown rounded-full transition-colors"
+      >
+       Learn what we're actually about
+      </a>
+     </div>
     </div>
 
    </div>
@@ -228,37 +229,13 @@ const classesTaster = [
 
    <!-- Header row -->
    <div class="mb-6">
-    <div class="flex items-end justify-between">
-     <h2>
-      <span class="flex items-baseline gap-[0.2em] leading-none">
-       <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-brown">The</span>
-       <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-brown">LIMBER</span>
-       <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-brown">lineup</span>
-      </span>
-     </h2>
-     <!-- Arrows — desktop only inline -->
-     <div class="hidden sm:flex gap-2 flex-shrink-0 ml-6">
-      <button id="carousel-prev" type="button" aria-label="Previous class"
-       class="w-10 h-10 rounded-full bg-limber-brown border-2 border-limber-brown flex items-center justify-center text-limber-vibe hover:bg-limber-green hover:border-limber-green transition-colors cursor-pointer">
-       <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-      </button>
-      <button id="carousel-next" type="button" aria-label="Next class"
-       class="w-10 h-10 rounded-full bg-limber-brown border-2 border-limber-brown flex items-center justify-center text-limber-vibe hover:bg-limber-green hover:border-limber-green transition-colors cursor-pointer">
-       <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-      </button>
-     </div>
-    </div>
-    <!-- Arrows — mobile below heading -->
-    <div class="flex sm:hidden gap-2 mt-4">
-     <button id="carousel-prev-mobile" type="button" aria-label="Previous class"
-      class="w-10 h-10 rounded-full bg-limber-brown border-2 border-limber-brown flex items-center justify-center text-limber-vibe hover:bg-limber-green hover:border-limber-green transition-colors cursor-pointer">
-      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-     </button>
-     <button id="carousel-next-mobile" type="button" aria-label="Next class"
-      class="w-10 h-10 rounded-full bg-limber-brown border-2 border-limber-brown flex items-center justify-center text-limber-vibe hover:bg-limber-green hover:border-limber-green transition-colors cursor-pointer">
-      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-     </button>
-    </div>
+    <h2>
+     <span class="flex items-baseline gap-[0.2em] leading-none">
+      <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-brown">The</span>
+      <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-brown">LIMBER</span>
+      <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-brown">lineup</span>
+     </span>
+    </h2>
    </div>
 
    <!-- Carousel track — negative margins extend to viewport edges, left padding only for inset -->
@@ -358,17 +335,13 @@ const classesTaster = [
    />
    <div class="bg-limber-brown rounded-2xl border-2 border-limber-brown overflow-hidden lg:flex items-stretch">
 
-    <!-- Left: image -->
-    <div class="lg:w-2/5 flex-shrink-0 flex items-center px-8 lg:px-12 py-12 lg:py-14 lg:pr-0">
-     <img
-      src="/images/Limber_April26_170.jpg"
-      alt="Limber app"
-      class="w-full h-64 lg:h-80 object-cover rounded-xl border-2 border-limber-bright"
-     />
+    <!-- Image first on mobile -->
+    <div class="lg:hidden px-6 pt-8 pb-0">
+     <img src="/images/Limber_April26_170.jpg" alt="Limber app" class="w-full h-56 object-cover rounded-xl border-2 border-limber-bright" />
     </div>
 
-    <!-- Right: copy + buttons -->
-    <div class="flex flex-col justify-center px-8 lg:px-12 py-12 lg:py-14 flex-1">
+    <!-- Copy + buttons -->
+    <div class="flex flex-col items-center lg:items-start justify-center px-6 lg:px-12 py-8 lg:py-14 flex-1 text-center lg:text-left">
      <h2 class="mb-4">
       <span class="font-headline uppercase text-3xl md:text-4xl lg:text-5xl text-limber-bright block leading-none -mb-1">limber in</span>
       <span class="font-display italic font-medium text-4xl md:text-5xl lg:text-6xl text-limber-cream block leading-none">your pocket</span>
@@ -376,15 +349,15 @@ const classesTaster = [
      <p class="font-sans text-limber-cream/70 leading-relaxed mb-8 max-w-sm">
       Book classes, manage your membership, and check the timetable, all from your phone.
      </p>
-
-     <div class="flex flex-wrap gap-3">
-      <a href="#" class="inline-flex items-center px-6 py-3 font-headline text-sm text-limber-brown bg-limber-bright hover:bg-limber-vibe border-2 border-limber-bright rounded-full transition-colors">
-       App Store
-      </a>
-      <a href="#" class="inline-flex items-center px-6 py-3 font-headline text-sm text-limber-cream border-2 border-limber-cream hover:border-limber-bright hover:text-limber-bright rounded-full transition-colors">
-       Google Play
-      </a>
+     <div class="flex flex-wrap justify-center lg:justify-start gap-3">
+      <a href="#" class="inline-flex items-center px-6 py-3 font-headline text-sm text-limber-brown bg-limber-bright hover:bg-limber-vibe border-2 border-limber-bright rounded-full transition-colors">App Store</a>
+      <a href="#" class="inline-flex items-center px-6 py-3 font-headline text-sm text-limber-cream border-2 border-limber-cream hover:border-limber-bright hover:text-limber-bright rounded-full transition-colors">Google Play</a>
      </div>
+    </div>
+
+    <!-- Image on desktop (right) -->
+    <div class="hidden lg:flex lg:w-2/5 flex-shrink-0 items-center px-12 py-14 lg:pr-0">
+     <img src="/images/Limber_April26_170.jpg" alt="Limber app" class="w-full h-64 lg:h-80 object-cover rounded-xl border-2 border-limber-bright" />
     </div>
 
    </div>

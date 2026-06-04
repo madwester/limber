@@ -112,7 +112,7 @@ const faqs = [
               </li>
             ))}
           </ul>
-          <a href="https://momence.com/m/405119" class="block w-full text-center px-6 py-3.5 font-headline text-sm text-limber-brown bg-limber-bright hover:bg-limber-vibe border-2 border-limber-bright rounded-full transition-colors">Buy now</a>
+          <a href="https://momence.com/m/405119" target="_blank" rel="noopener noreferrer" class="block w-full text-center px-6 py-3.5 font-headline text-sm text-limber-brown bg-limber-bright hover:bg-limber-vibe border-2 border-limber-bright rounded-full transition-colors">Buy now</a>
           <a href="https://momence.com/m/405119?g=gift" target="_blank" rel="noopener noreferrer" class="block w-full text-center px-6 py-3.5 font-headline text-sm text-limber-brown border-2 border-limber-brown hover:bg-limber-brown hover:text-limber-cream rounded-full transition-colors mt-2">Gift to someone</a>
         </div>
 
@@ -133,7 +133,7 @@ const faqs = [
               </li>
             ))}
           </ul>
-          <a href="https://momence.com/m/405118" class="block w-full text-center px-6 py-3.5 font-headline text-sm text-limber-brown bg-limber-bright hover:bg-limber-vibe border-2 border-limber-bright rounded-full transition-colors">Buy now</a>
+          <a href="https://momence.com/m/405118" target="_blank" rel="noopener noreferrer" class="block w-full text-center px-6 py-3.5 font-headline text-sm text-limber-brown bg-limber-bright hover:bg-limber-vibe border-2 border-limber-bright rounded-full transition-colors">Buy now</a>
           <a href="https://momence.com/m/405118?g=gift" target="_blank" rel="noopener noreferrer" class="block w-full text-center px-6 py-3.5 font-headline text-sm text-limber-bright border-2 border-limber-bright hover:bg-limber-bright hover:text-limber-brown rounded-full transition-colors mt-2">Gift to someone</a>
         </div>
 
@@ -154,7 +154,7 @@ const faqs = [
               </li>
             ))}
           </ul>
-          <a href="https://momence.com/m/405120" class="block w-full text-center px-6 py-3.5 font-headline text-sm text-limber-brown bg-limber-bright hover:bg-limber-vibe border-2 border-limber-bright rounded-full transition-colors">Buy now</a>
+          <a href="https://momence.com/m/405120" target="_blank" rel="noopener noreferrer" class="block w-full text-center px-6 py-3.5 font-headline text-sm text-limber-brown bg-limber-bright hover:bg-limber-vibe border-2 border-limber-bright rounded-full transition-colors">Buy now</a>
           <a href="https://momence.com/m/405120?g=gift" target="_blank" rel="noopener noreferrer" class="block w-full text-center px-6 py-3.5 font-headline text-sm text-limber-brown border-2 border-limber-brown hover:bg-limber-brown hover:text-limber-cream rounded-full transition-colors mt-2">Gift to someone</a>
         </div>
 
@@ -175,7 +175,7 @@ const faqs = [
               </li>
             ))}
           </ul>
-          <a href="https://momence.com/m/405137" class="block w-full text-center px-6 py-3.5 font-headline text-sm text-limber-brown bg-limber-bright hover:bg-limber-vibe border-2 border-limber-bright rounded-full transition-colors">Buy now</a>
+          <a href="https://momence.com/m/405137" target="_blank" rel="noopener noreferrer" class="block w-full text-center px-6 py-3.5 font-headline text-sm text-limber-brown bg-limber-bright hover:bg-limber-vibe border-2 border-limber-bright rounded-full transition-colors">Buy now</a>
           <a href="https://momence.com/m/405137?g=gift" target="_blank" rel="noopener noreferrer" class="block w-full text-center px-6 py-3.5 font-headline text-sm text-limber-bright border-2 border-limber-bright hover:bg-limber-bright hover:text-limber-brown rounded-full transition-colors mt-2">Gift to someone</a>
         </div>
 
@@ -185,17 +185,28 @@ const faqs = [
   <!-- ── FAQs ── -->
   <section class="bg-limber-brown py-20 lg:py-28">
     <div class="px-4 sm:px-6 lg:px-8">
+      <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-start">
+        <div>
       <h2 class="mb-12">
         <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-bright block leading-none -mb-1">frequently</span>
         <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none">asked questions</span>
       </h2>
-      <div class="max-w-2xl">
+      <div>
         {faqs.map((item) => (
           <div class="py-6 border-b border-limber-bright/20 last:border-0">
             <p class="font-headline text-sm text-limber-bright mb-2">{item.q}</p>
             <p class="font-sans text-base text-limber-cream/80 leading-relaxed">{item.a}</p>
           </div>
         ))}
+      </div>
+        </div>
+        <div class="mt-12 lg:mt-0">
+          <img
+            src="/images/Limber_April26_136.jpg"
+            alt="Limber studio"
+            class="w-full h-72 lg:h-[480px] object-cover rounded-2xl border-2 border-limber-bright"
+          />
+        </div>
       </div>
     </div>
   </section>

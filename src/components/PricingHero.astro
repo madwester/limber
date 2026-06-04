@@ -41,14 +41,14 @@ const bodyClass = bodyItalic
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
     <!-- Left: heading + body + buttons -->
-    <div class="flex flex-col">
+    <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
       <div class="mb-6">
         <slot />
       </div>
       <p class:list={['mb-8 max-w-md', bodyClass]}>
         {body}
       </p>
-      <div class="flex flex-wrap gap-3">
+      <div class="flex flex-wrap justify-center lg:justify-start gap-3">
         {buttons.map((btn) => (
           <a
             class:list={[
