@@ -11,8 +11,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- ── HERO ── -->
   <section class="bg-limber-green border-b-2 border-neutral-900 px-8 lg:px-14 py-16 lg:py-24">
     <h1 class="mb-4">
-      <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-cream block leading-none mb-1">terms +</span>
-      <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-vibe block leading-none">conditions.</em>
+      <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-cream block leading-none -mb-1">terms +</span>
+      <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-vibe block leading-none">conditions</span>
     </h1>
     <p class="font-sans text-sm text-limber-cream/50">Last updated: 2026</p>
   </section>
@@ -26,8 +26,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div>
           <h2 class="font-headline uppercase text-2xl text-limber-green mb-4">1. intro offers</h2>
           <div class="space-y-3">
-            <p>the limber way intro offer is for new clients only. valid for 21 days from your first booking. non-refundable and non-transferable.</p>
-            <p>clients found purchasing the intro offer more than once will have their account suspended and will be charged for any additional sessions used.</p>
+            <p>The Limber Way intro offer is for new clients only. Valid for 21 days from your first booking. Non-refundable and non-transferable.</p>
+            <p>Clients found purchasing the intro offer more than once will have their account suspended and will be charged for any additional sessions used.</p>
           </div>
         </div>
 
@@ -37,18 +37,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="space-y-3">
             <ul class="space-y-2 pl-1">
               {[
-                '5 Class Pack — valid for 3 months from purchase date',
-                '10 Class Pack — valid for 6 months from purchase date',
-                'Lunch Express 10 Class Pack — valid for 6 months from purchase date',
-                'Semi-Private 5 Pack — valid for 3 months from purchase date',
+                '5 Class Pack: valid for 3 months from purchase date',
+                '10 Class Pack: valid for 6 months from purchase date',
+                'Lunch Express 10 Class Pack: valid for 6 months from purchase date',
+                'Semi-Private 5 Pack: valid for 3 months from purchase date',
               ].map(item => (
                 <li class="flex gap-3"><span class="text-limber-tericotta flex-shrink-0">—</span>{item}</li>
               ))}
             </ul>
-            <p>packs activate on the date of purchase and are not auto-renewable. you'll be prompted to repurchase when your pack runs low.</p>
-            <p>extensions are available for injury or illness only, with a medical certificate from a GP or physiotherapist. extension requests must be made before the expiry date.</p>
-            <p>all packs are non-refundable, non-transferable and for single client use only.</p>
-            <p>credits are returned if class is cancelled at least 3 hours before start time (12 hours on weekends and public holidays).</p>
+            <p>Packs activate on the date of purchase and are not auto-renewable. You'll be prompted to repurchase when your pack runs low.</p>
+            <p>Extensions are available for injury or illness only, with a medical certificate from a GP or physiotherapist. Extension requests must be made before the expiry date.</p>
+            <p>All packs are non-refundable, non-transferable and for single client use only.</p>
+            <p>Credits are returned if class is cancelled at least 3 hours before start time (12 hours on weekends and public holidays).</p>
           </div>
         </div>
 
@@ -56,10 +56,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div>
           <h2 class="font-headline uppercase text-2xl text-limber-green mb-4">3. memberships</h2>
           <div class="space-y-4">
-            <p>all memberships have a minimum 12 week commitment period. cancellations and pauses are only available after this period.</p>
+            <p>All memberships have a minimum 12 week commitment period. Cancellations and pauses are only available after this period.</p>
 
             <div>
-              <p class="font-headline text-xs text-limber-tericotta mb-2">limber club (unlimited)</p>
+              <p class="font-headline text-xs text-limber-tericotta mb-2">Limber club (unlimited)</p>
               <ul class="space-y-1 pl-1">
                 {[
                   'auto-renewed and charged fortnightly',
@@ -73,7 +73,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </div>
 
             <div>
-              <p class="font-headline text-xs text-limber-tericotta mb-2">limber compact</p>
+              <p class="font-headline text-xs text-limber-tericotta mb-2">Limber compact</p>
               <ul class="space-y-1 pl-1">
                 {[
                   '2 group classes per week plus 1 Lunch Express or Limber Up class',
@@ -87,7 +87,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </div>
 
             <div>
-              <p class="font-headline text-xs text-limber-tericotta mb-2">limber combo</p>
+              <p class="font-headline text-xs text-limber-tericotta mb-2">Limber combo</p>
               <ul class="space-y-1 pl-1">
                 {[
                   '1 semi-private, 1 group class and 1 Lunch Express or Limber Up class per week',
@@ -100,7 +100,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </div>
 
             <div>
-              <p class="font-headline text-xs text-limber-tericotta mb-2">limber chill</p>
+              <p class="font-headline text-xs text-limber-tericotta mb-2">Limber chill</p>
               <ul class="space-y-1 pl-1">
                 {[
                   '1 class per week',
@@ -119,13 +119,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div>
           <h2 class="font-headline uppercase text-2xl text-limber-green mb-4">4. pausing your membership</h2>
           <div class="space-y-3">
-            <p>you can pause your membership after your 12 week minimum commitment period for holidays, long-term illness or injury.</p>
+            <p>You can pause your membership after your 12 week minimum commitment period for holidays, long-term illness or injury.</p>
             <ul class="space-y-2 pl-1">
               {[
                 'minimum pause: 7 days',
                 'maximum pause: 8 weeks per year, free of charge',
                 "a doctor's note may be required for illness or injury pauses",
-                'pausing mid-cycle is fine — your billing will be prorated on your return',
+                'pausing mid-cycle is fine. Your billing will be prorated on your return',
                 'request via the Limber Co app with at least 7 days notice',
               ].map(item => (
                 <li class="flex gap-3"><span class="text-limber-tericotta flex-shrink-0">—</span>{item}</li>
@@ -138,7 +138,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div>
           <h2 class="font-headline uppercase text-2xl text-limber-green mb-4">5. cancelling your membership</h2>
           <div class="space-y-3">
-            <p>to cancel your membership email <a href="mailto:hello@limberco.com.au" class="text-limber-tericotta hover:text-limber-brown transition-colors">hello@limberco.com.au</a>. we'll call you to process the cancellation.</p>
+            <p>To cancel your membership, email <a href="mailto:hello@limberco.com.au" class="text-limber-tericotta hover:text-limber-brown transition-colors">hello@limberco.com.au</a>. We'll call you to process the cancellation.</p>
             <ul class="space-y-2 pl-1">
               {[
                 'cancellations can only be processed after your 12 week commitment period',
@@ -156,8 +156,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div>
           <h2 class="font-headline uppercase text-2xl text-limber-green mb-4">6. late cancellations + no shows</h2>
           <div class="space-y-3">
-            <p>cancel at least 3 hours before class to retain your credit. weekends and public holidays require 12 hours notice.</p>
-            <p>two late cancels or no shows within a 7 day period will result in a $10 fee and a temporary account block.</p>
+            <p>Cancel at least 3 hours before class to retain your credit. Weekends and public holidays require 12 hours notice.</p>
+            <p>Two late cancels or no shows within a 7-day period will result in a $10 fee and a temporary account block.</p>
           </div>
         </div>
 
@@ -165,8 +165,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div>
           <h2 class="font-headline uppercase text-2xl text-limber-green mb-4">7. courses + workshops</h2>
           <div class="space-y-3">
-            <p>cancel at least 24 hours before start time to receive a credit or refund.</p>
-            <p>for multi-week courses such as limber mammas, missed sessions can be made up by attending a regular class. credits are non-transferable and cannot be refunded for change of mind, illness or other personal reasons.</p>
+            <p>Cancel at least 24 hours before start time to receive a credit or refund.</p>
+            <p>For multi-week courses such as Limber Mammas, missed sessions can be made up by attending a regular class. credits are non-transferable and cannot be refunded for change of mind, illness or other personal reasons.</p>
           </div>
         </div>
 
@@ -174,8 +174,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div>
           <h2 class="font-headline uppercase text-2xl text-limber-green mb-4">8. bookings</h2>
           <div class="space-y-3">
-            <p>book via the limber co app or website up to 14 days in advance.</p>
-            <p>late arrivals of 5 or more minutes may be refused entry and will forfeit their session.</p>
+            <p>Book via the Limber Co app or website up to 14 days in advance.</p>
+            <p>Late arrivals of 5 or more minutes may be refused entry and will forfeit their session.</p>
           </div>
         </div>
 
@@ -183,7 +183,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div>
           <h2 class="font-headline uppercase text-2xl text-limber-green mb-4">9. waitlists</h2>
           <div class="space-y-3">
-            <p>up to 4 clients per waitlist. notifications sent via the app and email. the first person on the waitlist is automatically added when a spot becomes available. you may be added up to 1 hour before class start. standard cancellation rules apply to all waitlist bookings.</p>
+            <p>Up to 4 clients per waitlist. Notifications sent via the app and email. The first person on the waitlist is automatically added when a spot becomes available. you may be added up to 1 hour before class start. standard cancellation rules apply to all waitlist bookings.</p>
           </div>
         </div>
 
@@ -191,30 +191,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div>
           <h2 class="font-headline uppercase text-2xl text-limber-green mb-4">10. transactions</h2>
           <div class="space-y-3">
-            <p>memberships are billed by direct debit fortnightly or weekly depending on membership type.</p>
-            <p>failed payments will be retried up to 3 times. if unsuccessful your account will be restricted.</p>
-            <p>transaction fees: 2% for direct debit, 3.5% for credit card. all prices include GST.</p>
+            <p>Memberships are billed by direct debit fortnightly or weekly depending on membership type.</p>
+            <p>Failed payments will be retried up to 3 times. If unsuccessful your account will be restricted.</p>
+            <p>Transaction fees: 2% for direct debit, 3.5% for credit card. all prices include GST.</p>
           </div>
         </div>
 
         <!-- 11. Discounts -->
         <div>
           <h2 class="font-headline uppercase text-2xl text-limber-green mb-4">11. discounts</h2>
-          <p>a 10% discount is available for full-time students, health care card holders and clients aged 60 and over. valid ID or proof required. email <a href="mailto:hello@limberco.com.au" class="text-limber-tericotta hover:text-limber-brown transition-colors">hello@limberco.com.au</a> to get set up.</p>
+          <p>A 10% discount is available for full-time students, health care card holders and clients aged 60 and over. valid ID or proof required. email <a href="mailto:hello@limberco.com.au" class="text-limber-tericotta hover:text-limber-brown transition-colors">hello@limberco.com.au</a> to get set up.</p>
         </div>
 
         <!-- 12. Refunds -->
         <div>
           <h2 class="font-headline uppercase text-2xl text-limber-green mb-4">12. refunds</h2>
-          <p>refunds are not available for change of mind, unused sessions, or circumstances unforeseen by or external to the business, in line with NSW consumer policy. sessions cannot be transferred to another person. all members must hold their own account for safety and insurance purposes.</p>
+          <p>Refunds are not available for change of mind, unused sessions, or circumstances unforeseen by or external to the business, in line with NSW consumer policy. Sessions cannot be transferred to another person. All members must hold their own account for safety and insurance purposes.</p>
         </div>
 
         <!-- 13. Photography + Communications -->
         <div>
           <h2 class="font-headline uppercase text-2xl text-limber-green mb-4">13. photography + communications</h2>
           <div class="space-y-3">
-            <p>by signing up you agree to receive limber co emails and updates. you can unsubscribe at any time.</p>
-            <p>please let us know if you do not wish to be featured in studio photography or video content.</p>
+            <p>By signing up you agree to receive Limber Co emails and updates. You can unsubscribe at any time.</p>
+            <p>Please let us know if you do not wish to be featured in studio photography or video content.</p>
           </div>
         </div>
 
@@ -222,8 +222,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div>
           <h2 class="font-headline uppercase text-2xl text-limber-green mb-4">14. health declaration</h2>
           <div class="space-y-3">
-            <p>by booking a class at limber co you confirm that you are in good health and have disclosed any injuries, health conditions, pregnancy or postnatal recovery prior to attending.</p>
-            <p>limber co and its teachers take all reasonable care to provide safe, appropriate instruction. participation is at your own risk. we strongly recommend consulting your GP or treating practitioner before commencing any new exercise program.</p>
+            <p>By booking a class at Limber Co you confirm that you are in good health and have disclosed any injuries, health conditions, pregnancy or postnatal recovery prior to attending.</p>
+            <p>Limber Co and its teachers take all reasonable care to provide safe, appropriate instruction. Participation is at your own risk. We strongly recommend consulting your GP or treating practitioner before commencing any new exercise program.</p>
           </div>
         </div>
 
@@ -231,20 +231,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div>
           <h2 class="font-headline uppercase text-2xl text-limber-green mb-4">15. general terms</h2>
           <div class="space-y-3">
-            <p>limber co reserves the right to change teachers, classes, timetables and events without notice.</p>
-            <p>these terms may be updated at any time. continued participation implies agreement with the current terms.</p>
+            <p>Limber Co reserves the right to change teachers, classes, timetables and events without notice.</p>
+            <p>These terms may be updated at any time. continued participation implies agreement with the current terms.</p>
           </div>
         </div>
 
         <!-- 16. Privacy -->
         <div>
           <h2 class="font-headline uppercase text-2xl text-limber-green mb-4">16. privacy</h2>
-          <p>your personal information is stored securely and will not be shared with third parties without your consent. for our full privacy policy see <a href="/privacy" class="text-limber-tericotta hover:text-limber-brown transition-colors">limberco.com.au/privacy</a>.</p>
+          <p>Your personal information is stored securely and will not be shared with third parties without your consent. for our full privacy policy see <a href="/privacy" class="text-limber-tericotta hover:text-limber-brown transition-colors">limberco.com.au/privacy</a>.</p>
         </div>
 
         <!-- Acknowledgement -->
         <div class="pt-6 border-t border-neutral-900/10">
-          <p class="text-limber-brown/50 italic">we acknowledge the dharawal people as the traditional custodians of this land. we pay respect to elders past, present and emerging.</p>
+          <p class="text-limber-brown/50 italic">We acknowledge the Dharawal people as the traditional custodians of this land. We pay respect to elders past, present and emerging.</p>
         </div>
 
       </div>

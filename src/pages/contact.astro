@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import FullBleedHero from '../components/FullBleedHero.astro';
 ---
 
 <BaseLayout
@@ -8,48 +9,44 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 >
 
   <!-- ── HERO ── -->
-  <section class="bg-limber-cream border-b-2 border-neutral-900 px-8 lg:px-14 pt-8 lg:pt-14 pb-8 lg:pb-14">
-    <div class="relative overflow-hidden rounded-2xl border-2 border-neutral-900" style="height: 480px;">
-      <img
-        src="/images/Limber_April26_176.jpg"
-        alt="Limber studio"
-        class="absolute inset-0 w-full h-full object-cover object-center"
-      />
-      <!-- overlay -->
-      <div class="absolute inset-0 bg-neutral-900/30"></div>
-      <!-- text -->
-      <div class="relative h-full flex flex-col items-center justify-center text-center">
-        <h1 class="mb-0">
-          <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none mb-1">get in</span>
-          <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-vibe block leading-none">touch</em>
-        </h1>
-      </div>
-    </div>
-  </section>
+  <FullBleedHero
+    bgColor="bg-limber-brown"
+    borderColor="border-limber-bright"
+    image="/images/Limber_April26_141.jpg"
+    sectionBorderColor="border-limber-bright"
+    imageAlt="Limber studio"
+    imageHeight="h-[480px]"
+    contentPadding="px-4 sm:px-6 lg:px-8 py-10 lg:py-14"
+  >
+    <h1 class="mb-0">
+      <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none -mb-1"><span class="font-headline not-italic uppercase text-4xl md:text-5xl lg:text-6xl text-limber-bright">love</span> to</span>
+      <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none">hear from <span class="font-headline not-italic uppercase text-4xl md:text-5xl lg:text-6xl text-limber-bright">you</span></span>
+    </h1>
+  </FullBleedHero>
 
   <!-- ── BODY ── -->
-  <section class="bg-limber-cream-bg py-16 lg:py-24 border-b-2 border-neutral-900">
+  <section class="bg-limber-brown py-16 lg:py-24 border-b-2 border-limber-bright">
     <div class="px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
 
         <!-- Left: info -->
         <div class="space-y-4">
 
-          <div class="p-6 rounded-2xl bg-limber-cream border-2 border-neutral-900">
-            <p class="font-headline text-xs text-limber-tericotta mb-2">studio address</p>
+          <div class="p-6 rounded-2xl bg-limber-cream border-2 border-limber-bright">
+            <p class="font-headline text-xs text-limber-bright mb-2">Studio address</p>
             <p class="font-sans text-base text-limber-brown/80 leading-relaxed">Shop 17 / 282–298 Lawrence Hargrave Drive<br />Thirroul NSW</p>
-            <p class="font-sans text-sm text-limber-brown/40 italic mt-1">next to Coles. parking is a vibe.</p>
+            <p class="font-sans text-sm text-limber-brown/40 italic mt-1">Next to Coles. parking is a vibe.</p>
           </div>
 
-          <div class="p-6 rounded-2xl bg-limber-cream border-2 border-neutral-900">
-            <p class="font-headline text-xs text-limber-tericotta mb-2">email</p>
-            <a href="mailto:hello@limberco.com.au" class="font-sans text-base text-limber-brown/80 hover:text-limber-tericotta transition-colors">
+          <div class="p-6 rounded-2xl bg-limber-cream border-2 border-limber-bright">
+            <p class="font-headline text-xs text-limber-bright mb-2">Email</p>
+            <a href="mailto:hello@limberco.com.au" class="font-sans text-base text-limber-brown/80 hover:text-limber-bright transition-colors">
               hello@limberco.com.au
             </a>
           </div>
 
-          <div class="p-6 rounded-2xl bg-limber-cream border-2 border-neutral-900">
-            <p class="font-headline text-xs text-limber-tericotta mb-2">studio hours</p>
+          <div class="p-6 rounded-2xl bg-limber-cream border-2 border-limber-bright">
+            <p class="font-headline text-xs text-limber-bright mb-2">Studio hours</p>
             <table class="font-sans text-base text-limber-brown/80 w-full">
               <tbody>
                 <tr><td class="pr-6 py-1">Monday – Thursday</td><td>6:00am – 8:30pm</td></tr>
@@ -60,7 +57,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </table>
           </div>
 
-
         </div>
 
         <!-- Right: form -->
@@ -70,72 +66,72 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
-                <label for="firstName" class="block font-headline text-xs text-limber-green mb-2">
-                  first name <span class="text-limber-tericotta" aria-hidden="true">*</span>
+                <label for="firstName" class="block font-headline text-xs text-limber-cream mb-2">
+                  first name <span class="text-limber-bright" aria-hidden="true">*</span>
                 </label>
                 <input
                   type="text" id="firstName" name="firstName" required
                   autocomplete="given-name"
                   placeholder="Jane"
-                  class="w-full px-4 py-3 rounded-xl border-2 border-neutral-900/20 bg-limber-cream text-limber-brown placeholder:text-limber-brown/30 focus:outline-none focus:border-limber-tericotta transition font-sans text-base"
+                  class="w-full px-4 py-3 rounded-xl border-2 border-limber-bright/30 bg-limber-cream text-limber-brown placeholder:text-limber-brown/30 focus:outline-none focus:border-limber-bright transition font-sans text-base"
                 />
               </div>
               <div>
-                <label for="lastName" class="block font-headline text-xs text-limber-green mb-2">
-                  last name <span class="text-limber-tericotta" aria-hidden="true">*</span>
+                <label for="lastName" class="block font-headline text-xs text-limber-cream mb-2">
+                  last name <span class="text-limber-bright" aria-hidden="true">*</span>
                 </label>
                 <input
                   type="text" id="lastName" name="lastName" required
                   autocomplete="family-name"
                   placeholder="Smith"
-                  class="w-full px-4 py-3 rounded-xl border-2 border-neutral-900/20 bg-limber-cream text-limber-brown placeholder:text-limber-brown/30 focus:outline-none focus:border-limber-tericotta transition font-sans text-base"
+                  class="w-full px-4 py-3 rounded-xl border-2 border-limber-bright/30 bg-limber-cream text-limber-brown placeholder:text-limber-brown/30 focus:outline-none focus:border-limber-bright transition font-sans text-base"
                 />
               </div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
-                <label for="email" class="block font-headline text-xs text-limber-green mb-2">
-                  email <span class="text-limber-tericotta" aria-hidden="true">*</span>
+                <label for="email" class="block font-headline text-xs text-limber-cream mb-2">
+                  email <span class="text-limber-bright" aria-hidden="true">*</span>
                 </label>
                 <input
                   type="email" id="email" name="email" required
                   autocomplete="email"
                   placeholder="jane@example.com"
-                  class="w-full px-4 py-3 rounded-xl border-2 border-neutral-900/20 bg-limber-cream text-limber-brown placeholder:text-limber-brown/30 focus:outline-none focus:border-limber-tericotta transition font-sans text-base"
+                  class="w-full px-4 py-3 rounded-xl border-2 border-limber-bright/30 bg-limber-cream text-limber-brown placeholder:text-limber-brown/30 focus:outline-none focus:border-limber-bright transition font-sans text-base"
                 />
               </div>
               <div>
-                <label for="phoneNumber" class="block font-headline text-xs text-limber-green mb-2">
-                  phone <span class="text-limber-tericotta" aria-hidden="true">*</span>
+                <label for="phoneNumber" class="block font-headline text-xs text-limber-cream mb-2">
+                  phone <span class="text-limber-bright" aria-hidden="true">*</span>
                 </label>
                 <input
                   type="tel" id="phoneNumber" name="phoneNumber" required
                   autocomplete="tel"
                   placeholder="04XX XXX XXX"
-                  class="w-full px-4 py-3 rounded-xl border-2 border-neutral-900/20 bg-limber-cream text-limber-brown placeholder:text-limber-brown/30 focus:outline-none focus:border-limber-tericotta transition font-sans text-base"
+                  class="w-full px-4 py-3 rounded-xl border-2 border-limber-bright/30 bg-limber-cream text-limber-brown placeholder:text-limber-brown/30 focus:outline-none focus:border-limber-bright transition font-sans text-base"
                 />
               </div>
             </div>
 
             <div>
-              <label for="enquiry" class="block font-headline text-xs text-limber-green mb-2">
-                what's your enquiry? <span class="text-limber-tericotta" aria-hidden="true">*</span>
+              <label for="enquiry" class="block font-headline text-xs text-limber-cream mb-2">
+                what's your enquiry? <span class="text-limber-bright" aria-hidden="true">*</span>
               </label>
               <textarea
                 id="enquiry" name="enquiry" required rows="5"
-                placeholder="how can we help?"
-                class="w-full px-4 py-3 rounded-xl border-2 border-neutral-900/20 bg-limber-cream text-limber-brown placeholder:text-limber-brown/30 focus:outline-none focus:border-limber-tericotta transition resize-none font-sans text-base"
+                placeholder="How can we help?"
+                class="w-full px-4 py-3 rounded-xl border-2 border-limber-bright/30 bg-limber-cream text-limber-brown placeholder:text-limber-brown/30 focus:outline-none focus:border-limber-bright transition resize-none font-sans text-base"
               ></textarea>
             </div>
 
             <div id="form-error" class="hidden px-4 py-3 rounded-xl bg-red-50 border border-red-200">
-              <p class="font-sans text-sm text-red-700">something went wrong — please try again or email <a href="mailto:hello@limberco.com.au" class="underline">hello@limberco.com.au</a> directly.</p>
+              <p class="font-sans text-sm text-red-700">Something went wrong. Please try again or email <a href="mailto:hello@limberco.com.au" class="underline">hello@limberco.com.au</a> directly.</p>
             </div>
 
             <button
               type="submit" id="submit-btn"
-              class="inline-flex items-center gap-2 px-8 py-4 font-headline text-sm text-limber-cream bg-limber-tericotta hover:bg-limber-brown border-2 border-neutral-900 rounded-full transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              class="inline-flex items-center gap-2 px-8 py-4 font-headline text-sm text-limber-brown bg-limber-bright hover:bg-limber-vibe border-2 border-limber-bright rounded-full transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <span id="btn-label">send message</span>
             </button>
@@ -143,9 +139,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </form>
 
           <!-- Success state -->
-          <div id="contact-success" class="hidden p-10 rounded-2xl bg-limber-green border-2 border-neutral-900 text-center">
-            <em class="font-display uppercase not-italic italic font-medium text-4xl text-limber-vibe block leading-none mb-4">thank you.</em>
-            <p class="font-sans text-base text-limber-cream/80 leading-relaxed">we'll be in touch within 1–2 business days.</p>
+          <div id="contact-success" class="hidden p-10 rounded-2xl bg-limber-cream border-2 border-limber-bright text-center">
+            <span class="font-display italic font-medium text-4xl text-limber-bright block leading-none mb-4">thank you</span>
+            <p class="font-sans text-base text-limber-brown/80 leading-relaxed">We'll be in touch within 1–2 business days.</p>
           </div>
 
         </div>
@@ -155,68 +151,3 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </section>
 
 </BaseLayout>
-
-<script>
-  const ENDPOINT = 'https://api.momence.com/integrations/customer-leads/46474/collect';
-  const TOKEN    = 'WZ8Y3x5jDd';
-
-  const form    = document.getElementById('contact-form') as HTMLFormElement | null;
-  const success = document.getElementById('contact-success');
-  const errBox  = document.getElementById('form-error');
-  const btn     = document.getElementById('submit-btn') as HTMLButtonElement | null;
-  const btnLabel = document.getElementById('btn-label');
-
-  // Format Australian mobile numbers to international format (+61...)
-  function formatPhone(raw: string): string {
-    const digits = raw.replace(/\D/g, '');
-    if (digits.startsWith('0') && digits.length === 10) {
-      return '+61' + digits.slice(1);
-    }
-    if (digits.startsWith('61') && digits.length === 11) {
-      return '+' + digits;
-    }
-    return raw; // pass through if already formatted or unknown
-  }
-
-  form?.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    if (!btn || !btnLabel) return;
-
-    errBox?.classList.add('hidden');
-    btn.disabled = true;
-    btnLabel.textContent = 'sending…';
-
-    const get = (id: string) =>
-      (document.getElementById(id) as HTMLInputElement | HTMLTextAreaElement)?.value.trim() ?? '';
-
-    const payload = {
-      firstName:   get('firstName'),
-      lastName:    get('lastName'),
-      email:       get('email'),
-      phoneNumber: formatPhone(get('phoneNumber')),
-      enquiry:     get('enquiry'),
-      token:       TOKEN,
-      _t:          Math.round(performance.now()),
-    };
-
-    try {
-      const res = await fetch(ENDPOINT, {
-        method:  'POST',
-        headers: { 'Content-Type': 'application/json', 'accept': 'application/json' },
-        body:    JSON.stringify(payload),
-      });
-
-      if (res.ok) {
-        form.classList.add('hidden');
-        success?.classList.remove('hidden');
-        success?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      } else {
-        throw new Error(`${res.status}`);
-      }
-    } catch {
-      btn.disabled = false;
-      btnLabel.textContent = 'send message';
-      errBox?.classList.remove('hidden');
-    }
-  });
-</script>

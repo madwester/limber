@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CtaSlice from '../../components/CtaSlice.astro';
+import FullBleedHero from '../../components/FullBleedHero.astro';
 ---
 
 <BaseLayout
@@ -8,132 +9,128 @@ import CtaSlice from '../../components/CtaSlice.astro';
   description="What Limber is really about — joyful movement, real community, and a place to feel at home in your body."
 >
 
-  <!-- ── OUR VIBE — split hero ── -->
-  <section class="border-b-2 border-neutral-900 lg:flex" style="min-height: 80vh;">
+  <!-- ── OUR VIBE — full-bleed image + content ── -->
+  <FullBleedHero
+    bgColor="bg-limber-green"
+    borderColor="border-limber-vibe"
+    image="/images/Limber_April26_102.jpg"
+    sectionBorderColor="border-limber-vibe"
+    imageAlt="Limber studio"
+    contentPadding="px-8 lg:px-14 py-16 lg:py-20"
+  >
+    <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-start">
+    <div>
+    <h1 class="flex items-end gap-[0.25em] leading-none mb-10">
+      <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-vibe">our</span>
+      <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream">vibe</span>
+    </h1>
 
-    <!-- Left: heading + copy + pillars -->
-    <div class="lg:w-1/2 bg-limber-green flex flex-col justify-center px-8 lg:px-14 py-16 lg:py-20">
-      <h1 class="leading-tight mb-10">
-        <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-cream block leading-none mb-1">our</span>
-        <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-vibe block leading-none">vibe.</em>
-      </h1>
+    <p class="font-display italic text-2xl lg:text-3xl text-limber-cream leading-snug mb-8">
+      A place that knows you. That celebrates loudly.<br />Where community actually means something?<br /><span class="text-xl lg:text-2xl font-bold">You just found your people.</span>
+    </p>
 
-      <p class="font-display italic text-xl text-limber-vibe leading-snug mb-4">
-        looking for a place that genuinely knows you, celebrates the wins big and small embarrassingly loud, and where community actually means something?
+    <div class="space-y-4 mb-8 max-w-lg">
+      <p class="font-sans text-limber-cream/80 leading-relaxed">
+        When we opened Limber, we wanted to bring movement back to what it should be. Something you love, not a chore. Not something to measure, or use as a tool to punish yourself with. A place where community is genuinely valued and not just a word on a website.
       </p>
-      <p class="font-headline text-xl text-limber-cream mb-6">you just found your people…</p>
-
-      <div class="space-y-4 mb-8">
-        <p class="font-sans text-limber-cream/70 leading-relaxed">
-          when we opened limber, we wanted to bring movement back to what it should be — something you love, not a chore, not a thing to always measure or a tool to punish.
-        </p>
-        <p class="font-sans text-limber-cream/70 leading-relaxed">
-          a place where community is genuinely valued and not just a word on a website.
-        </p>
-        <p class="font-sans text-limber-cream/70 leading-relaxed">
-          no pressure. no expectations. just space to move in a way that feels good for you.
-        </p>
-        <p class="font-sans text-limber-cream/70 leading-relaxed">
-          because movement isn't just exercise — it's a moment of joy, connection, and a gift.
-        </p>
-      </div>
-
-      <div class="flex flex-wrap gap-6 items-center pt-6 border-t border-limber-cream/20 mb-8">
-        {[
-          { sticker: 'sticker-1.svg', text: 'Belonging.', rotate: '-rotate-6' },
-          { sticker: 'sticker-2.svg', text: 'Joyful movement.', rotate: 'rotate-6' },
-          { sticker: 'sticker-3.svg', text: 'Embodied wellbeing.', rotate: '-rotate-3' },
-        ].map((item) => (
-          <div class="flex items-center gap-3">
-            <img src={`/images/stickers/${item.sticker}`} alt={item.text} class:list={['w-14 h-14 flex-shrink-0', item.rotate]} />
-            <p class="font-display italic text-xl text-limber-cream/80">{item.text}</p>
-          </div>
-        ))}
-      </div>
-
+      <p class="font-sans text-limber-cream/80 leading-relaxed">
+        No pressure, no expectations. Just space to move in a way that feels good for you.
+      </p>
     </div>
 
+    <div class="flex flex-wrap gap-6 items-center pt-6 border-t border-limber-vibe/30 mb-8">
+      {[
+        { sticker: 'sticker-1.svg', text: 'Belonging.', rotate: '-rotate-6' },
+        { sticker: 'sticker-2.svg', text: 'Joyful movement.', rotate: 'rotate-6' },
+        { sticker: 'sticker-3.svg', text: 'Embodied wellbeing.', rotate: '-rotate-3' },
+      ].map((item) => (
+        <div class="flex items-center gap-3">
+          <div
+            aria-hidden="true"
+            class:list={['w-14 h-14 flex-shrink-0', item.rotate]}
+            style={`background-color: var(--color-limber-vibe); -webkit-mask-image: url('/images/stickers/${item.sticker}'); mask-image: url('/images/stickers/${item.sticker}'); -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-position: center; mask-position: center;`}
+          ></div>
+          <p class="font-display italic text-xl text-limber-cream">{item.text}</p>
+        </div>
+      ))}
+    </div>
+    </div>{/* end left col */}
+
     <!-- Right: image -->
-    <div class="lg:w-1/2 flex-shrink-0">
+    <div class="mt-12 lg:mt-0">
       <img
-        src="/images/Limber_April26_102.jpg"
+        src="/images/Limber_April26_137.jpg"
         alt="Limber studio"
-        class="w-full h-64 lg:h-full object-cover border-t-2 lg:border-t-0 lg:border-l-2 border-neutral-900"
+        class="w-full h-[480px] lg:h-[560px] object-cover rounded-2xl border-2 border-limber-vibe"
       />
     </div>
 
+    </div>{/* end grid */}
+  </FullBleedHero>
+
+  <!-- ── MISSION ── -->
+  <section class="bg-limber-green py-20 lg:py-28 border-b-2 border-limber-vibe">
+    <div class="px-4 sm:px-6 lg:px-8">
+      <div class="relative text-center">
+        <h2 class="leading-none mx-auto max-w-3xl">
+          <p class="font-display italic text-xl text-limber-cream mb-3">Our mission</p>
+          <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream">To help people </span><span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-vibe">feel at home</span><span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream"> in their bodies</span>
+        </h2>
+        <img
+          src="/images/stickers/green-sticker-3.svg"
+          alt=""
+          aria-hidden="true"
+          class="absolute top-0 right-0 w-28 h-28 lg:w-40 lg:h-40 rotate-[10deg] pointer-events-none hidden lg:block"
+          style="filter: brightness(0) saturate(100%) invert(66%) sepia(62%) saturate(625%) hue-rotate(338deg) brightness(1.05);"
+        />
+      </div>
+    </div>
   </section>
 
   <!-- ── THE STARTING POINT ── -->
-  <section class="bg-limber-cream py-20 lg:py-28 border-b-2 border-neutral-900">
+  <section class="bg-limber-green py-20 lg:py-28 border-b-2 border-limber-vibe">
     <div class="px-4 sm:px-6 lg:px-8">
+      <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
 
-      <!-- Heading -->
-      <h2 class="mb-12">
-        <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-green block leading-none mb-1">the starting</span>
-        <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-tericotta block leading-none">point</em>
-      </h2>
+        <!-- Quote -->
+        <blockquote class="border-l-4 border-limber-vibe pl-8">
+          <p class="font-display italic text-2xl lg:text-3xl text-limber-cream leading-snug mb-6">
+            "I danced professionally for years. It made me fall completely out of love with movement. Pilates gave me the joy back. And that's exactly what I wanted to build here. Limber exists to give people what movement is actually supposed to be. Joyful, healing, freeing."
+          </p>
+          <footer class="flex items-center gap-3 mb-8">
+            <span class="font-headline text-sm text-limber-vibe">Lily, </span>
+            <span class="font-display italic text-lg text-limber-cream">Founder</span>
+          </footer>
+          <a href="/journal/the-people-are-why-we-stayed" class="font-headline text-sm text-limber-vibe hover:text-limber-cream transition-colors">
+            Read more about our story →
+          </a>
+        </blockquote>
 
-      <!-- Letter + photo -->
-      <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-start">
-
-        <!-- Letter -->
-        <div class="space-y-5">
-          <p class="font-sans text-limber-brown/80 leading-relaxed">
-            before this studio had walls, it had a pub. a surf club. a library. a railway hall. honestly, the list goes on.
-          </p>
-          <p class="font-sans text-limber-brown/80 leading-relaxed">
-            for two years i taught as limber with lily across whatever spaces would have me — building from one class to fifteen, person by person. i was new to the area, still finding my feet. and if i'm really honest, i was trying to build a community for myself just as much as anyone else.
-          </p>
-          <p class="font-sans text-limber-brown/80 leading-relaxed">
-            in 2024 a spot came up in thirroul plaza. a little old, a little tired, with a bit of a reputation.
-          </p>
-          <p class="font-display italic text-xl text-limber-tericotta leading-snug">
-            i saw potential. was i crazy? maybe. my gut said otherwise. boy, i'm glad i listened.
-          </p>
-          <p class="font-sans text-limber-brown/80 leading-relaxed">
-            i danced professionally for years. and honestly — it made me fall completely out of love with movement. i spent so long measuring myself, competing, being judged. my body became something to manage, not something to live in.
-          </p>
-          <p class="font-sans text-limber-brown/80 leading-relaxed">
-            when i found pilates i fell back in love with movement. properly. it healed me. but it also gave me a completely different lens — movement stopped being something to compete with or be judged on. it became simply mine.
-          </p>
-          <p class="font-sans text-limber-brown/80 leading-relaxed">
-            i looked at the fitness industry around me and saw the same patterns playing out. people comparing, picking themselves apart, chasing an aesthetic that — trust me, i know from personal experience — won't make them happy when they reach it.
-          </p>
-          <p class="font-display italic text-xl text-limber-tericotta leading-snug">
-            i never wanted to create a studio that did that. if i had, i would have failed.
-          </p>
-          <p class="font-sans text-limber-brown/80 leading-relaxed">
-            limber exists to give people back what movement is actually supposed to be — joyful, healing, freeing. a place to stop the head noise. to be present. to stop wasting energy tearing yourself down.
-          </p>
-
-          <!-- Sign-off -->
-          <p class="font-headline text-sm text-limber-tericotta pt-4">lily, founder 🖤</p>
-        </div>
-
-        <!-- Lily photo -->
-        <div class="mt-12 lg:mt-0 lg:sticky lg:top-28">
+        <!-- Photo -->
+        <div class="mt-12 lg:mt-0">
           <img
             src="/images/Limber_April26_168.jpg"
             alt="Lily, founder of Limber"
-            class="w-full h-[480px] lg:h-[600px] object-cover rounded-2xl border-2 border-neutral-900"
+            class="w-full h-72 lg:h-96 object-cover object-[center_25%] rounded-2xl border-2 border-limber-vibe"
           />
         </div>
 
       </div>
-
     </div>
   </section>
 
   <CtaSlice
-    headingLine1="ready to"
-    headingLine2="find your people?"
-    body="come say hi, book a class, or just have a nosy around. we'd love to have you."
+    headingLine1="Ready to find"
+    headingLine2="your people?"
+    body="Come say hi, book a class, or just have a nosy around. We'd love to have you."
     image="/images/Limber_April26_176.jpg"
     imageAlt="Limber community"
+    accentColor="text-limber-bright"
+    primaryBtn="text-limber-brown bg-limber-bright hover:bg-limber-vibe border-limber-bright"
+    sectionBg="bg-limber-cream"
     buttons={[
-      { label: 'meet our tribe', href: '/about/our-tribe' },
-      { label: 'see our classes', href: '/classes/our-classes', variant: 'outline' },
+      { label: 'View memberships', href: '/pricing/memberships' },
+      { label: 'See our classes', href: '/classes/our-classes', variant: 'outline' },
     ]}
   />
 

@@ -13,6 +13,12 @@ interface Props {
   buttons: Button[];
   image: string;
   imageAlt?: string;
+  sectionBg?: string;
+  accentColor?: string;
+  primaryBtn?: string;
+  showBorder?: boolean;
+  cardBg?: string;
+  imagePosition?: string;
 }
 
 const {
@@ -23,19 +29,25 @@ const {
   buttons,
   image,
   imageAlt = '',
+  sectionBg = 'bg-limber-vibe',
+  accentColor = 'text-limber-bright',
+  primaryBtn = 'text-limber-brown bg-limber-bright hover:bg-limber-vibe border-limber-bright',
+  showBorder = true,
+  cardBg = 'bg-limber-brown border-limber-brown',
+  imagePosition = 'object-center',
 } = Astro.props;
 ---
 
-<section class="bg-limber-cream py-12 lg:py-16 border-t-2 border-neutral-900">
+<section class:list={[sectionBg, 'py-12 lg:py-16', showBorder && 'border-t-2 border-limber-green']}>
   <div class="px-4 sm:px-6 lg:px-8">
-    <div class="bg-limber-tericotta rounded-2xl border-2 border-neutral-900 overflow-hidden lg:flex items-stretch">
+    <div class:list={['rounded-2xl border-2 overflow-hidden lg:flex items-stretch', cardBg]}>
 
       <!-- Left: content -->
-      <div class="flex flex-col justify-center px-8 lg:px-12 py-12 lg:py-14 flex-1">
+      <div class="flex flex-col justify-center px-6 lg:px-8 py-8 lg:py-10 flex-1">
         <h2 class="mb-3">
-          <span class="font-headline uppercase text-3xl md:text-4xl lg:text-5xl text-limber-cream block leading-none mb-1">{headingLine1}</span>
-          <em class="font-display uppercase not-italic italic font-medium text-4xl md:text-5xl lg:text-6xl text-limber-cream block leading-none" class:list={[headingLine3 ? 'mb-1' : '']}>{headingLine2}</em>
-          {headingLine3 && <em class="font-display uppercase not-italic italic font-medium text-4xl md:text-5xl lg:text-6xl text-limber-cream block leading-none">{headingLine3}</em>}
+          <span class:list={['font-headline uppercase text-3xl md:text-4xl lg:text-5xl block leading-none -mb-1', accentColor]}>{headingLine1}</span>
+          <span class="font-display italic font-medium text-4xl md:text-5xl lg:text-6xl text-limber-cream block leading-none" class:list={[headingLine3 ? 'mb-1' : '']}>{headingLine2}</span>
+          {headingLine3 && <span class="font-display italic font-medium text-4xl md:text-5xl lg:text-6xl text-limber-cream block leading-none">{headingLine3}</span>}
         </h2>
         <p class="font-sans text-limber-cream/70 leading-relaxed mb-8 max-w-sm">{body}</p>
         <div class="flex flex-wrap gap-3">
@@ -43,10 +55,10 @@ const {
             <a
               href={btn.href}
               class:list={[
-                'inline-flex items-center px-6 py-3 font-headline text-sm border-2 border-neutral-900 rounded-full transition-colors',
+                'inline-flex items-center px-6 py-3 font-headline text-sm border-2 rounded-full transition-colors',
                 btn.variant === 'outline'
-                  ? 'text-limber-cream hover:border-limber-cream'
-                  : 'text-limber-green bg-limber-vibe hover:bg-limber-bright',
+                  ? 'text-limber-cream border-limber-cream hover:border-limber-tericotta hover:text-limber-tericotta'
+                  : primaryBtn,
               ]}
             >
               {btn.label}
@@ -56,11 +68,11 @@ const {
       </div>
 
       <!-- Right: image -->
-      <div class="lg:w-2/5 flex-shrink-0 flex items-center px-8 lg:px-12 py-12 lg:py-14 lg:pl-0">
+      <div class="lg:w-2/5 flex-shrink-0 flex items-center px-6 lg:px-8 py-8 lg:py-10 lg:pl-0">
         <img
           src={image}
           alt={imageAlt}
-          class="w-full h-64 lg:h-80 object-cover rounded-xl border-2 border-neutral-900"
+          class:list={['w-full h-64 lg:h-80 object-cover rounded-xl border-2 border-limber-vibe', imagePosition]}
         />
       </div>
 

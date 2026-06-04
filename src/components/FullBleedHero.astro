@@ -1,0 +1,43 @@
+---
+interface Props {
+  image: string;
+  imageAlt?: string;
+  imageHeight?: string;
+  imagePosition?: string;
+  bgColor?: string;
+  borderColor?: string;
+  sectionBorderColor?: string;
+  contentPadding?: string;
+}
+
+const {
+  image,
+  imageAlt = '',
+  imageHeight = 'h-[480px] lg:h-[600px]',
+  imagePosition = 'object-center',
+  bgColor = 'bg-limber-green',
+  borderColor = 'border-limber-vibe',
+  sectionBorderColor,
+  contentPadding = 'px-4 sm:px-6 lg:px-8 py-10 lg:py-14',
+} = Astro.props;
+---
+
+<section class:list={[bgColor, sectionBorderColor ? 'border-b-2' : '', sectionBorderColor ?? '']}>
+  {Astro.slots.has('above') && (
+    <div class={contentPadding}>
+      <slot name="above" />
+    </div>
+  )}
+  <div class:list={[imageHeight, 'overflow-hidden border-b-2', borderColor]}>
+    <img
+      src={image}
+      alt={imageAlt}
+      class:list={['w-full h-full object-cover', imagePosition]}
+    />
+  </div>
+  {Astro.slots.has('default') && (
+    <div class={contentPadding}>
+      <slot />
+    </div>
+  )}
+</section>

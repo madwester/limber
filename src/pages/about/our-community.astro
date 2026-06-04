@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import FullBleedHero from '../../components/FullBleedHero.astro';
 ---
 
 <BaseLayout
@@ -7,41 +8,199 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   description="Meet the Limber community — the people who show up, support each other, and move together."
 >
 
-  <!-- ── LIMBER LEGENDS ── -->
-  <section class="bg-limber-cream py-20 lg:py-28 border-b-2 border-neutral-900">
-    <div class="px-4 sm:px-6 lg:px-8">
-      <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+  <!-- ── HERO ── -->
+  <FullBleedHero
+    bgColor="bg-limber-brown"
+    borderColor="border-limber-bright"
+    image="/images/Limber_April26_169.jpg"
+    sectionBorderColor="border-limber-bright"
+    imageAlt="Limber community"
+    imagePosition="object-[center_66%]"
+    contentPadding="px-4 sm:px-6 lg:px-8 py-16 lg:py-20"
+  >
+    <div class="lg:grid lg:grid-cols-2 lg:gap-20 items-start">
+      <div>
+        <h1 class="mb-10">
+          <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-bright block leading-none -mb-1">our</span>
+          <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none">community</span>
+        </h1>
+      </div>
+      <div class="space-y-5">
+        <p class="font-sans text-limber-cream/80 leading-relaxed">
+          When we say community is at the heart of everything we do, we mean it. Movement might have been the reason we started, but the people are why we've stayed.
+        </p>
+        <p class="font-sans text-limber-cream/80 leading-relaxed">
+          Most of us have walked into a gym or a class and felt like we didn't quite belong. Too intimidated to ask, too overwhelmed to enjoy it. Limber was built to be the opposite of that. A space where you're welcome from the moment you walk in, not once you've earned your spot.
+        </p>
+        <p class="font-sans text-limber-cream/80 leading-relaxed">
+          That's why what happens beyond the studio matters just as much as what happens in it. We celebrate consistency, show up for milestones, and find every excuse to bring people together. Because the best part of Limber has never been the classes. It's who you do them with.
+        </p>
+      </div>
+    </div>
+  </FullBleedHero>
 
-        <!-- Copy -->
+  <!-- ── LIMBER LEGENDS ── -->
+  <section class="bg-limber-brown py-20 lg:py-28 border-b-2 border-limber-bright">
+    <div class="px-4 sm:px-6 lg:px-8">
+      <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-start">
+
         <div>
-          <h1 class="mb-8">
-            <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-green block leading-none mb-1">limber</span>
-            <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-tericotta block leading-none">legends</em>
-          </h1>
-          <p class="font-sans text-limber-brown/80 leading-relaxed mb-4">
-            we celebrate showing up. loudly. once a month we gather the whole community together to celebrate the legends who keep turning up for themselves. free coffees, handmade badges, a spot on the milestone legend wall, and a limber gift at every stage of the journey.
+          <h2 class="mb-8">
+            <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-bright block leading-none -mb-1">limber</span>
+            <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none">legends</span>
+          </h2>
+          <p class="font-sans text-limber-cream/80 leading-relaxed mb-6">
+            We celebrate showing up, and loudly. Once a month we gather the whole community together to celebrate the legends who keep turning up for themselves. Free coffees, handmade badges, a spot on the milestone legend wall, and a Limber gift at every stage of the journey.
           </p>
-          <p class="font-display italic text-xl text-limber-tericotta leading-snug mb-8">
-            only the most dorky, confetti-filled, badge-wearing morning of the month. we'd honestly do it every day if we could.
-          </p>
-          <a
-            href="/reviews"
-            class="inline-flex items-center px-8 py-4 font-headline text-sm text-limber-cream bg-limber-tericotta hover:bg-limber-brown border-2 border-neutral-900 rounded-full transition-colors"
-          >
-            meet our community
-          </a>
+          <a href="https://www.instagram.com/p/DW0pd0HmBmh/?igsh=MTBlNDNqdXZrYTdxcA==" target="_blank" rel="noopener noreferrer" class="font-headline text-xs text-limber-bright hover:text-limber-cream transition-colors">See it on Instagram →</a>
         </div>
 
-        <!-- Image -->
-        <div class="mt-12 lg:mt-0">
-          <img
-            src="/images/Limber_April26_169.jpg"
-            alt="Limber community celebration"
-            class="w-full h-72 lg:h-96 object-cover rounded-2xl border-2 border-neutral-900"
-          />
+        <div class="mt-12 lg:mt-0 grid grid-cols-2 gap-3">
+          <img src="/images/limber_legends_1.JPEG" alt="Limber Legends" class="w-full h-48 lg:h-64 object-cover rounded-2xl border-2 border-limber-bright col-span-2" />
+          <img src="/images/limber_legends_2.JPEG" alt="Limber Legends" class="w-full h-40 lg:h-52 object-cover rounded-2xl border-2 border-limber-bright" />
+          <img src="/images/limber_legends_.JPEG"  alt="Limber Legends" class="w-full h-40 lg:h-52 object-cover rounded-2xl border-2 border-limber-bright" />
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- ── LIT WITH LIMBER ── -->
+  <section class="bg-limber-brown py-20 lg:py-28 border-b-2 border-limber-bright">
+    <div class="px-4 sm:px-6 lg:px-8">
+      <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-start">
+
+        <div class="lg:order-2">
+          <h2 class="mb-8">
+            <span class="flex items-baseline gap-[0.2em] leading-none -mb-1">
+              <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-bright">LIT</span>
+              <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream">with</span>
+            </span>
+            <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-bright block leading-none">LIMBER</span>
+          </h2>
+<div class="space-y-4 mb-6">
+            <p class="font-sans text-limber-cream/80 leading-relaxed">Our monthly book club for those who love a good read and an even better chat.</p>
+            <p class="font-sans text-limber-cream/80 leading-relaxed">Each month we choose a new book, gather somewhere cosy, pour some drinks, eat snacks, and spend a night connecting beyond the studio walls. No pressure. No deep literary analysis required.</p>
+            <p class="font-sans text-limber-cream/80 leading-relaxed">Just community, conversation, and slowing down together.</p>
+          </div>
+          <a href="https://www.instagram.com/p/DYbj2zdmGul/?igsh=MXU3b3Y2MTkycXJvZw==" target="_blank" rel="noopener noreferrer" class="font-headline text-xs text-limber-bright hover:text-limber-cream transition-colors">See it on Instagram →</a>
+        </div>
+
+        <div class="mt-12 lg:mt-0 lg:order-1 grid grid-cols-2 gap-3">
+          <img src="/images/book_club_1.JPEG" alt="Lit with Limber" class="w-full h-48 lg:h-64 object-cover rounded-2xl border-2 border-limber-bright col-span-2" />
+          <img src="/images/book_club_2.JPEG" alt="Lit with Limber" class="w-full h-40 lg:h-52 object-cover rounded-2xl border-2 border-limber-bright" />
+          <img src="/images/book_club_3.JPEG" alt="Lit with Limber" class="w-full h-40 lg:h-52 object-cover rounded-2xl border-2 border-limber-bright" />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LIMBER FEST ── -->
+  <section class="bg-limber-brown py-20 lg:py-28 border-b-2 border-limber-bright">
+    <div class="px-4 sm:px-6 lg:px-8">
+
+      <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-start mb-10">
+        <div>
+          <h2 class="mb-8">
+            <span class="flex items-end gap-[0.2em] leading-none">
+              <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-bright">limber</span>
+              <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream">fest</span>
+            </span>
+          </h2>
+          <p class="font-sans text-limber-cream/80 leading-relaxed mb-6">
+            Limber Fest is our yearly day of festivities. A celebration of movement, music, creativity, and community. Outdoor classes, dancing, creative workshops, good food, live music, and the kind of energy that reminds you life should be full of joyful moments with community.
+          </p>
+          <a href="https://www.instagram.com/p/DWf-uNvmObb/?igsh=MWIzZHJibjh2eGpuMA==" target="_blank" rel="noopener noreferrer" class="font-headline text-xs text-limber-bright hover:text-limber-cream transition-colors">See it on Instagram →</a>
+        </div>
+      </div>
+
+      <!-- 5-image grid -->
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-3">
+        <img src="/images/limber_fest_1.JPG" alt="Limber Fest" class="w-full h-56 lg:h-72 object-cover rounded-2xl border-2 border-limber-bright lg:col-span-2" />
+        <img src="/images/limber_fest_2.JPG" alt="Limber Fest" class="w-full h-56 lg:h-72 object-cover rounded-2xl border-2 border-limber-bright" />
+        <img src="/images/limber_fest_3.JPG" alt="Limber Fest" class="w-full h-56 lg:h-72 object-cover rounded-2xl border-2 border-limber-bright" />
+        <img src="/images/limber_fest_4.JPG" alt="Limber Fest" class="w-full h-56 lg:h-72 object-cover rounded-2xl border-2 border-limber-bright" />
+        <img src="/images/limber_fest_5.JPG" alt="Limber Fest" class="w-full h-56 lg:h-72 object-cover rounded-2xl border-2 border-limber-bright" />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── LIMBER OUTSIDE ── -->
+  <section class="bg-limber-brown py-20 lg:py-28 border-b-2 border-limber-bright">
+    <div class="px-4 sm:px-6 lg:px-8">
+      <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-start">
+
+        <div class="lg:order-2">
+          <h2 class="mb-8">
+            <span class="flex items-baseline gap-[0.2em] leading-none -mb-1">
+              <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-bright">LACE</span>
+              <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream">up</span>
+            </span>
+            <span class="flex items-baseline gap-[0.2em] leading-none">
+              <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream">with</span>
+              <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-bright">LIMBER</span>
+            </span>
+          </h2>
+          <p class="font-sans text-limber-cream/80 leading-relaxed mb-6">
+            From beach classes and bush walks to swims, pop-ups, hikes, and slow mornings in nature. Lace up with Limber is our way of bringing movement and community beyond the studio walls. A reminder that movement can feel playful, grounding, social, and freeing.
+          </p>
+          <a href="https://www.instagram.com/reel/DSniWLTj7EA/?igsh=eTZpMTd2eHFtODJy" target="_blank" rel="noopener noreferrer" class="font-headline text-xs text-limber-bright hover:text-limber-cream transition-colors">See it on Instagram →</a>
+        </div>
+
+        <div class="mt-12 lg:mt-0 lg:order-1 grid grid-cols-2 gap-3">
+          <img src="/images/lace-it-1.jpg" alt="Lace up with Limber" class="w-full h-48 lg:h-64 object-cover object-bottom rounded-2xl border-2 border-limber-bright" />
+          <img src="/images/lace-it-2.jpg" alt="Lace up with Limber" class="w-full h-48 lg:h-64 object-cover rounded-2xl border-2 border-limber-bright" />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LOVE CLUB NOTES ── -->
+  <section class="bg-limber-brown py-20 lg:py-28">
+    <div class="px-4 sm:px-6 lg:px-8">
+
+      <div class="lg:grid lg:grid-cols-2 lg:gap-20 items-start mb-14">
+        <div>
+          <h2 class="mb-6">
+            <span class="flex items-baseline gap-[0.2em] leading-none">
+              <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-bright">LOVE</span>
+              <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream">club</span>
+            </span>
+          </h2>
+          <p class="font-sans text-limber-cream/80 leading-relaxed mb-4">
+            In the studio, we leave handwritten notes for our community. And they write them back. It's become one of our favourite things.
+          </p>
+          <p class="font-sans text-limber-cream/80 leading-relaxed mb-8">
+            Want to leave one? We'd love that.
+          </p>
+          <a
+            href="https://share.google/zi99bemSSC5ZumvDm"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="font-headline text-sm text-limber-bright hover:text-limber-cream transition-colors"
+          >
+            → Leave a love note
+          </a>
+        </div>
+      </div>
+
+      <!-- 3 testimonials -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {[
+          { body: 'Limber is about movement and connection, a truly inclusive pilates and yoga studio with a beautiful community.', name: 'Athena C.' },
+          { body: 'Limber Co provides a beautiful, safe and supportive environment to the Thirroul community. The instructors are so well skilled and offer endless adjustments. The studio is also gorgeous!', name: 'Brooke H.' },
+          { body: 'Love attending Limber! Such a great, welcoming studio with friendly, knowledgeable and supportive teachers. Would highly recommend!', name: 'Lauren C.' },
+        ].map((r, i) => (
+          <div class:list={['p-7 rounded-2xl border-2 flex flex-col', i === 1 ? 'bg-limber-green border-limber-vibe' : 'bg-limber-vibe border-limber-green']}>
+            <p class:list={['font-display text-lg leading-relaxed flex-1 mb-5', i === 1 ? 'text-limber-cream/90' : 'text-limber-brown/90']}>"{r.body}"</p>
+            <p class:list={['font-headline text-xs', i === 1 ? 'text-limber-cream/60' : 'text-limber-brown/60']}>— {r.name}</p>
+          </div>
+        ))}
+      </div>
+
     </div>
   </section>
 

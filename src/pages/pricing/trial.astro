@@ -12,90 +12,66 @@ import { trialReviews } from '../../data/reviews';
 >
 
   <!-- ── HERO ── -->
-  <PricingHero
-    body="new here? this is for you."
-    bodyItalic={true}
-    buttons={[
-      { label: 'claim your limber way — $99', href: '/book-now' },
-      { label: 'tell me more first', href: '#how-it-works', variant: 'outline' },
-    ]}
-    image="/images/Limber_April26_106.jpg"
-    imageAlt="Limber studio"
-  >
-    <h1 class="mb-0">
-      <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none mb-1">the limber</span>
-      <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-vibe block leading-none">way trial</em>
-    </h1>
-  </PricingHero>
-
-  <!-- ── TICKER BANNER ── -->
-  <div class="bg-limber-vibe border-b-2 border-neutral-900 overflow-hidden py-4">
-    <div class="flex animate-ticker whitespace-nowrap">
-      {Array.from({ length: 8 }).map(() => (
-        ['unlimited classes', 'personalised guidance', 'regular check-ins', '21 days', '$99'].map((item) => (
-          <span class="inline-flex items-center gap-8 pl-10">
-            <span class="font-headline text-base text-limber-green">{item}</span>
-            <span class="text-limber-green/30 text-lg">✦</span>
-          </span>
-        ))
-      ))}
+  <section class="bg-limber-green border-b-2 border-limber-vibe">
+    <div class="h-[520px] lg:h-[640px] overflow-hidden border-b-2 border-limber-vibe">
+      <img
+        src="/images/Limber_April26_173.jpg"
+        alt="Limber studio"
+        class="w-full h-full object-cover object-[center_53%]"
+        style="transform: scale(1.15); transform-origin: center 53%;"
+      />
     </div>
-  </div>
-
-  <!-- ── WHAT IS THE LIMBER WAY ── -->
-  <section class="bg-limber-cream py-20 lg:py-28 border-b-2 border-neutral-900">
-    <div class="px-4 sm:px-6 lg:px-8">
-      <div class="lg:grid lg:grid-cols-2 lg:gap-20 items-start">
-
+    <div class="px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
+      <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-end">
+        <!-- Left: heading + CTAs -->
         <div>
-          <h2 class="mb-10">
-            <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-green block leading-none mb-1">what is the</span>
-            <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-tericotta block leading-none">limber way?</em>
-          </h2>
-
-          <div class="space-y-5 mb-10">
-            <p class="font-display italic text-xl text-limber-tericotta leading-snug">
-              it's not just an intro pass. it's a proper welcome.
-            </p>
-            <p class="font-sans text-limber-brown/80 leading-relaxed">
-              21 days of unlimited classes, a personalised plan built around you, and a real human in your corner the whole way.
-            </p>
-            <p class="font-sans text-limber-brown/80 leading-relaxed">
-              no wandering in and hoping for the best. no guessing which class to try first. no "good luck in there."
-            </p>
-            <p class="font-display italic text-xl text-limber-tericotta leading-snug">
-              just a genuinely supported start — the limber way.
-            </p>
+          <h1 class="mb-8">
+            <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none -mb-1">Welcome to the</span>
+            <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-vibe block leading-none">Limber way</span>
+          </h1>
+          <div class="space-y-4 mb-8 max-w-md">
+            <p class="font-display italic text-xl text-limber-vibe leading-snug">It's not just an intro pass. It's a proper welcome.</p>
+            <p class="font-sans text-limber-cream/80 leading-relaxed">21 days of unlimited classes, a personalised plan built around you, and a real human in your corner the whole way.</p>
+            <p class="font-sans text-limber-cream/80 leading-relaxed">No wandering in and hoping for the best. No guessing which class to try first. No "good luck in there."</p>
+            <p class="font-display italic text-xl text-limber-vibe leading-snug">Just a genuinely supported start: the Limber way.</p>
           </div>
-
-          <a
-            href="/book-now"
-            class="inline-flex items-center px-8 py-4 font-headline text-sm text-limber-cream bg-limber-tericotta hover:bg-limber-brown border-2 border-neutral-900 rounded-full transition-colors"
-          >
-            claim your limber way — $99
-          </a>
+          <div class="flex flex-wrap gap-3">
+            <a href="https://momence.com/Limber-Co/membership/The-Limber-way-reset---21-day-programme-/411175" class="inline-flex items-center px-8 py-4 font-headline text-sm text-limber-green bg-limber-vibe hover:bg-limber-bright border-2 border-limber-vibe rounded-full transition-colors">
+              Start for $99
+            </a>
+            <a href="#how-it-works" class="inline-flex items-center px-8 py-4 font-headline text-sm text-limber-cream border-2 border-limber-cream hover:border-limber-vibe hover:text-limber-vibe rounded-full transition-colors">
+              Tell me more
+            </a>
+          </div>
         </div>
 
-        <!-- Right: image -->
-        <div class="mt-16 lg:mt-0 lg:sticky lg:top-28">
-          <img
-            src="/images/Limber_April26_176.jpg"
-            alt="Limber community"
-            class="w-full h-[420px] lg:h-[560px] object-cover rounded-2xl border-2 border-neutral-900"
-          />
+        <!-- Right: what's included card -->
+        <div class="mt-8 lg:mt-0">
+          <div class="bg-limber-cream rounded-2xl border-2 border-limber-green p-8">
+            <p class="font-headline text-xs text-limber-brown mb-6">What's included</p>
+            <ul class="space-y-3">
+              {['Unlimited classes for 21 days', 'Personalised plan', 'Regular check-ins', 'A real human in your corner'].map((spec) => (
+                <li class="flex items-center gap-3 border-b border-limber-green/10 pb-3 last:border-0 last:pb-0">
+                  <span class="w-1.5 h-1.5 rounded-full bg-limber-brown flex-shrink-0"></span>
+                  <p class="font-display not-italic text-lg text-limber-brown">{spec}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- ── HOW IT WORKS ── -->
-  <section id="how-it-works" class="bg-limber-cream py-20 lg:py-28 border-b-2 border-neutral-900">
+  <section id="how-it-works" class="bg-limber-green py-20 lg:py-28 border-b-2 border-limber-vibe">
     <div class="px-4 sm:px-6 lg:px-8">
 
       <h2 class="mb-16">
-        <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-green block leading-none mb-1">how it</span>
-        <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-tericotta block leading-none">works</em>
+        <span class="flex items-baseline gap-[0.2em] leading-none -mb-1">
+          <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-vibe">HOW</span>
+          <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream">it works</span>
+        </span>
       </h2>
 
       <!-- Horizontal scroll on mobile, 5-col grid on desktop -->
@@ -103,31 +79,31 @@ import { trialReviews } from '../../data/reviews';
         {[
           {
             n: '01',
-            title: 'you claim your spot',
-            body: 'grab your limber way for $99 and we\'ll be in touch straight away.',
+            title: 'You claim your spot',
+            body: 'Grab your Limber way for $99 and we\'ll be in touch straight away.',
           },
           {
             n: '02',
-            title: 'we have a proper chat',
-            body: 'your studio lead will reach out and set up a call or catch up. no awkward formalities — just a real conversation.',
+            title: 'We have a proper chat',
+            body: 'Your studio lead will reach out and set up a call or catch up. No awkward formalities, just a real conversation.',
           },
           {
             n: '03',
-            title: 'your welcome ritual card',
-            body: 'we\'ll go through your why, your goals, and whether you\'d like extra support. this isn\'t a form. it\'s the starting point.',
+            title: 'Your welcome ritual card',
+            body: 'We\'ll go through your why, your goals, and whether you\'d like extra support. This isn\'t a form. It\'s the starting point.',
           },
           {
             n: '04',
-            title: 'your personalised plan',
-            body: 'your studio lead maps out exactly which classes to start with and helps you get your first bookings sorted.',
+            title: 'Your personalised plan',
+            body: 'Your studio lead maps out exactly which classes to start with and helps you get your first bookings sorted.',
           },
           {
             n: '05',
-            title: 'you show up, we check in',
-            body: 'you do your classes, we check in regularly. you\'re never just left to figure it out alone.',
+            title: 'You show up, we check in',
+            body: 'You do your classes, we check in regularly. You\'re never just left to figure it out alone.',
           },
         ].map((step) => (
-          <div class="snap-start flex-shrink-0 w-[72vw] sm:w-[44vw] lg:w-auto flex flex-col bg-limber-cream-bg border-2 border-neutral-900 rounded-2xl p-6">
+          <div class="snap-start flex-shrink-0 w-[72vw] sm:w-[44vw] lg:w-auto flex flex-col bg-limber-cream border-2 border-limber-green rounded-2xl p-6">
             <span class="font-headline text-xs text-limber-tericotta mb-6">{step.n}</span>
             <p class="font-headline text-base text-limber-green leading-snug mb-3 flex-1">{step.title}</p>
             <p class="font-sans text-base text-limber-brown/60 leading-relaxed">{step.body}</p>
@@ -139,74 +115,77 @@ import { trialReviews } from '../../data/reviews';
   </section>
 
   <!-- ── LOVE NOTES ── -->
-  <section class="bg-limber-cream py-20 lg:py-28 border-b-2 border-neutral-900">
+  <section class="bg-limber-green py-20 lg:py-28 border-b-2 border-limber-vibe">
     <div class="px-4 sm:px-6 lg:px-8">
 
       <h2 class="mb-14">
-        <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-green block leading-none mb-1">what people say about</span>
-        <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-tericotta block leading-none">starting the limber way</em>
+        <span class="flex items-baseline gap-[0.2em] leading-none -mb-1">
+          <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-vibe">WHAT</span>
+          <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream">people</span>
+        </span>
+        <span class="flex items-baseline gap-[0.2em] leading-none">
+          <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream">are</span>
+          <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-vibe">SAYING</span>
+        </span>
       </h2>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
         {trialReviews.map((item, i) => (
           <div class:list={[
-            'p-7 rounded-2xl border-2 border-neutral-900',
-            i === 0 ? 'bg-limber-cream-bg' : i === 1 ? 'bg-limber-vibe' : 'bg-limber-tericotta',
+            'p-7 rounded-2xl border-2',
+            i === 0 ? 'bg-limber-cream border-limber-green' : i === 1 ? 'bg-limber-vibe border-limber-green' : 'bg-limber-cream border-limber-green',
           ]}>
             <p class:list={[
               'font-display italic text-lg leading-relaxed mb-5',
-              i === 2 ? 'text-limber-cream/90' : 'text-limber-brown/80',
+              'text-limber-brown/80',
             ]}>
               "{item.body}"
             </p>
-            <p class:list={[
-              'font-headline text-xs',
-              i === 2 ? 'text-limber-cream/60' : 'text-limber-brown/50',
-            ]}>
+            <p class="font-headline text-xs text-limber-brown/50">
               — {item.name}
             </p>
           </div>
         ))}
       </div>
 
-      <a href="/reviews" class="inline-flex items-center px-6 py-3 font-headline text-sm text-limber-cream bg-limber-tericotta hover:bg-limber-brown border-2 border-neutral-900 rounded-full transition-colors">
-        read all the love notes
+      <a href="/reviews" class="inline-flex items-center px-6 py-3 font-headline text-sm text-limber-green bg-limber-vibe hover:bg-limber-bright border-2 border-limber-vibe rounded-full transition-colors">
+        Read more
       </a>
 
     </div>
   </section>
 
   <!-- ── FAQs ── -->
-  <section class="bg-limber-cream-bg py-20 lg:py-28 border-b-2 border-neutral-900">
+  <section class="bg-limber-cream pt-20 lg:pt-28 pb-8 lg:pb-10">
     <div class="px-4 sm:px-6 lg:px-8">
 
       <h2 class="mb-12">
-        <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-green block leading-none mb-1">frequently</span>
-        <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-tericotta block leading-none">asked questions</em>
+        <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-green block leading-none -mb-1">frequently</span>
+        <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-brown block leading-none">asked questions</span>
       </h2>
 
       <div class="max-w-2xl space-y-0">
         {[
           {
-            q: 'is the limber way for new members only?',
-            a: 'yes — it\'s designed specifically for people joining limber for the first time.',
+            q: 'Is the Limber way for new members only?',
+            a: 'Yes, it\'s designed specifically for people joining Limber for the first time.',
           },
           {
-            q: 'what if i\'ve done the limber way before?',
-            a: 'once per client i\'m afraid. but we\'d love to chat about the best membership option for you.',
+            q: 'What if I\'ve done the Limber way before?',
+            a: 'Once per client I\'m afraid. But we\'d love to chat about the best membership option for you.',
           },
           {
-            q: 'when can i start?',
-            a: 'whenever you\'re ready. there\'s no set start date — your 21 days begins the moment you claim your spot.',
+            q: 'When can I start?',
+            a: 'Whenever you\'re ready. There\'s no set start date. Your 21 days begins the moment you claim your spot.',
           },
           {
-            q: 'can i pause my limber way?',
-            a: 'the limber way runs as a continuous 21 days and can\'t be paused. if you have questions just get in touch.',
+            q: 'Can I pause my Limber way?',
+            a: 'The Limber way runs as a continuous 21 days and can\'t be paused. If you have questions just get in touch.',
           },
         ].map((item) => (
-          <div class="py-6 border-b border-neutral-900/10 last:border-0">
+          <div class="py-6 border-b border-limber-green/20 last:border-0">
             <p class="font-headline text-sm text-limber-green mb-2">{item.q}</p>
-            <p class="font-sans text-base text-limber-brown/70 leading-relaxed">{item.a}</p>
+            <p class="font-sans text-base text-limber-brown/80 leading-relaxed">{item.a}</p>
           </div>
         ))}
       </div>
@@ -215,14 +194,17 @@ import { trialReviews } from '../../data/reviews';
   </section>
 
   <CtaSlice
-    headingLine1="ready to start"
-    headingLine2="properly?"
-    body="pilates obsessive, total movement newbie, yoga devotee, or someone who's been watching from afar — hi. we've been waiting for you 😉"
-    image="/images/Limber_April26_176.jpg"
+    headingLine1="ready to"
+    headingLine2="start properly?"
+    sectionBg="bg-limber-cream"
+    showBorder={false}
+    body="Pilates obsessive, total movement newbie, yoga devotee, or someone who's been watching from afar. Hi. We've been waiting for you."
+    image="/images/Communtity1.jpg"
+    imagePosition="object-[center_25%]"
     imageAlt="Limber community"
     buttons={[
-      { label: 'claim your limber way — $99', href: '/book-now' },
-      { label: 'have a question? get in touch', href: '/contact', variant: 'outline' },
+      { label: 'Start for $99', href: 'https://momence.com/Limber-Co/membership/The-Limber-way-reset---21-day-programme-/411175' },
+      { label: 'Get in touch', href: '/contact', variant: 'outline' },
     ]}
   />
 

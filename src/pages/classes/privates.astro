@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CtaSlice from '../../components/CtaSlice.astro';
+import PricingHero from '../../components/PricingHero.astro';
 
 const serviceSchema = {
   '@context': 'https://schema.org',
@@ -17,56 +18,37 @@ const serviceSchema = {
   schema={serviceSchema}
 >
 
-  <!-- ── INTRO ── -->
-  <section class="bg-limber-cream py-16 lg:py-20 border-b-2 border-neutral-900">
-    <div class="px-4 sm:px-6 lg:px-8">
-
-      <!-- Centered heading -->
-      <div class="text-center mb-10">
-        <h1>
-          <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-green block leading-none mb-1">privates +</span>
-          <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-tericotta block leading-none">semi-privates</em>
-        </h1>
-      </div>
-
-      <!-- Photo -->
-      <div class="mb-12">
-        <img
-          src="/images/Limber_April26_79.jpg"
-          alt="Limber private session"
-          class="w-full h-80 lg:h-[520px] object-cover rounded-2xl border-2 border-neutral-900"
-        />
-      </div>
-
-      <!-- Body copy -->
-      <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-start">
-        <div class="space-y-4">
-          <p class="font-sans text-limber-brown/80 leading-relaxed">
-            whether you're recovering from injury, navigating pregnancy or the postnatal period, working through something specific, or just want to go more personalised than a group class allows — our private and semi-private sessions are built for exactly that.
-          </p>
-          <p class="font-display italic text-xl text-limber-tericotta leading-snug">
-            expert attention. your pace. your goals.
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </section>
+  <!-- ── HERO ── -->
+  <PricingHero
+    body="Whether you're recovering from injury, navigating pregnancy, working through something specific, or just want more personalised movement than a group class allows. Our private and semi-private sessions are built for exactly that."
+    buttons={[
+      { label: 'Book a private', href: '/book-now' },
+      { label: 'View pricing', href: '#privates', variant: 'outline' },
+    ]}
+    image="/images/privates-1.jpg"
+    imageAlt="Limber private session"
+    imagePosition="object-center"
+  >
+    <h1 class="mb-0">
+      <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-vibe block leading-none -mb-1">privates</span>
+      <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none">&amp; semi-privates</span>
+    </h1>
+  </PricingHero>
 
   <!-- ── ONE-ON-ONE ── -->
-  <section class="bg-limber-cream-bg py-16 lg:py-24 border-b-2 border-neutral-900">
+  <section class="bg-limber-green py-16 lg:py-24 border-b-2 border-limber-vibe">
     <div class="px-4 sm:px-6 lg:px-8">
       <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-start">
 
         <div>
           <h2 class="mb-6">
-            <span class="font-headline uppercase text-4xl md:text-5xl text-limber-green block leading-none mb-1">one-on-one</span>
-            <em class="font-display uppercase not-italic italic font-medium text-4xl md:text-5xl text-limber-tericotta block leading-none">privates</em>
+            <span class="font-headline uppercase text-4xl md:text-5xl text-limber-vibe block leading-none -mb-1">one-on-one</span>
+            <span class="font-display italic font-medium text-4xl md:text-5xl text-limber-cream block leading-none">privates</span>
           </h2>
-          <p class="font-sans text-limber-brown/80 leading-relaxed mb-6">
-            the most personalised experience we offer. just you and one of our highly trained teachers — 55 minutes designed entirely around what your body needs right now.
+          <p class="font-sans text-limber-cream/80 leading-relaxed mb-6">
+            The most personalised experience we offer. Just you and one of our highly trained teachers: 55 minutes designed entirely around what your body needs right now.
           </p>
-          <p class="font-headline text-xs text-limber-tericotta mb-3">perfect for</p>
+          <p class="font-headline text-xs text-limber-vibe mb-3">Perfect for</p>
           <ul class="space-y-3 mb-8">
             {[
               'post-injury recovery',
@@ -74,38 +56,38 @@ const serviceSchema = {
               'building foundations before joining group classes',
               'anyone who wants focused, individual attention',
             ].map((item) => (
-              <li class="font-sans text-base text-limber-brown/80 flex gap-3">
-                <span class="text-limber-tericotta flex-shrink-0">—</span>
+              <li class="font-sans text-base text-limber-cream/80 flex gap-3">
+                <span class="text-limber-vibe flex-shrink-0">—</span>
                 {item}
               </li>
             ))}
           </ul>
-          <p class="font-sans text-sm text-limber-brown/60 leading-relaxed italic">
-            our teachers are diploma-trained with a minimum of a comprehensive year-long program behind them, years of hands-on experience, and a genuine commitment to ongoing education. you're in excellent hands.
+          <p class="font-sans text-sm text-limber-cream/60 leading-relaxed italic">
+            Our teachers are diploma-trained with a minimum of a comprehensive year-long program behind them, years of hands-on experience, and a genuine commitment to ongoing education. You're in excellent hands.
           </p>
         </div>
 
         <!-- Pricing card -->
         <div class="mt-10 lg:mt-0 self-start">
-          <div class="p-8 lg:p-10 rounded-2xl bg-limber-cream border-2 border-neutral-900">
-            <p class="font-headline text-xs text-limber-tericotta mb-2">initial consult</p>
+          <div class="p-8 lg:p-10 rounded-2xl bg-limber-cream border-2 border-limber-green">
+            <p class="font-display italic text-lg text-limber-tericotta mb-2">Initial consult</p>
             <p class="font-headline text-5xl text-limber-green mb-1">$120</p>
             <p class="font-sans text-sm text-limber-brown/60 italic mb-6">55 minutes</p>
             <p class="font-sans text-sm text-limber-brown/80 leading-relaxed mb-8">
-              your first session is your introduction to limber. we'll get to know your body, your history and your goals — and work out the best path forward together. we will chat, move and set you up for success.
+              Your first session is your introduction to limber. We'll get to know your body, your history and your goals, and work out the best path forward together. We will chat, move and set you up for success.
             </p>
             <div class="space-y-3">
               <a
                 href="mailto:hello@limberco.com.au"
                 class="flex items-center gap-2 font-headline text-sm text-limber-brown hover:text-limber-tericotta transition-colors"
               >
-                → book your first session — hello@limberco.com.au
+                → Book your first session: hello@limberco.com.au
               </a>
               <a
                 href="tel:0475779651"
                 class="flex items-center gap-2 font-headline text-sm text-limber-brown hover:text-limber-tericotta transition-colors"
               >
-                → or call us — 0475 779 651
+                → Or call us: 0475 779 651
               </a>
             </div>
           </div>
@@ -116,49 +98,53 @@ const serviceSchema = {
   </section>
 
   <!-- ── SEMI-PRIVATES ── -->
-  <section class="bg-limber-green py-16 lg:py-24 border-b-2 border-neutral-900">
+  <section class="bg-limber-green py-16 lg:py-24 border-b-2 border-limber-vibe">
     <div class="px-4 sm:px-6 lg:px-8">
+
       <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-start">
 
         <div>
           <h2 class="mb-6">
-            <span class="font-headline uppercase text-4xl md:text-5xl text-limber-cream block leading-none mb-1">ongoing</span>
-            <em class="font-display uppercase not-italic italic font-medium text-4xl md:text-5xl text-limber-vibe block leading-none">semi-privates</em>
+            <span class="font-headline uppercase text-4xl md:text-5xl text-limber-vibe block leading-none -mb-1">ongoing</span>
+            <span class="font-display italic font-medium text-4xl md:text-5xl text-limber-cream block leading-none">semi-privates</span>
           </h2>
           <p class="font-sans text-limber-cream/80 leading-relaxed mb-4">
-            all the benefits of personalised attention — in a small, intimate group of up to four people.
+            All the benefits of personalised attention, in a small, intimate group of up to four people.
           </p>
           <p class="font-sans text-limber-cream/80 leading-relaxed mb-4">
-            semi-privates are our most focused group experience. small enough that your teacher genuinely knows what you need. supportive enough that you're not doing it alone.
+            Semi-privates are our most focused group experience. Small enough that your teacher genuinely knows what you need. Supportive enough that you're not doing it alone.
           </p>
           <p class="font-sans text-limber-cream/80 leading-relaxed">
-            you will work individually on your own programme which will progress and adapt each season depending on your needs and goals.
+            You will work individually on your own programme which will progress and adapt each season depending on your needs and goals.
           </p>
-          <p class="font-display italic text-xl text-limber-vibe leading-snug mt-8">55 minutes.</p>
+          <p class="font-display italic text-xl text-limber-vibe leading-snug mt-8">55 minutes</p>
         </div>
 
         <div class="mt-10 lg:mt-0">
           <img
-            src="/images/Limber_April26_140.jpg"
+            src="/images/studio-2.png"
             alt="Limber semi-private session"
-            class="w-full h-64 lg:h-80 object-cover rounded-2xl border-2 border-neutral-900"
+            class="w-full rounded-2xl border-2 border-limber-vibe"
           />
         </div>
 
       </div>
+
     </div>
   </section>
 
   <!-- ── CTA SLICE ── -->
   <CtaSlice
-    headingLine1="ready to get"
-    headingLine2="started?"
-    body="get in touch and we'll match you with the right teacher and format for where you're at right now."
+    headingLine1="ready to"
+    headingLine2="get started?"
+    sectionBg="bg-limber-cream"
+    showBorder={false}
+    body="Get in touch and we'll match you with the right teacher and format for where you're at right now."
     buttons={[
-      { label: 'email us', href: 'mailto:hello@limberco.com.au', variant: 'primary' },
-      { label: 'call us — 0475 779 651', href: 'tel:0475779651', variant: 'outline' },
+      { label: 'Email us', href: 'mailto:hello@limberco.com.au', variant: 'primary' },
+      { label: 'Call us: 0475 779 651', href: 'tel:0475779651', variant: 'outline' },
     ]}
-    image="/images/Limber_April26_151.jpg"
+    image="/images/privates-2.webp"
     imageAlt="Limber private session"
   />
 

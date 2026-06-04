@@ -3,14 +3,17 @@ import Logo from './Logo.astro';
 
 interface Props {
  showBanner?: boolean;
+ bannerBg?: string;
+ bannerText?: string;
+ bannerTextAccent?: string;
 }
-const { showBanner = false } = Astro.props;
+const { showBanner = false, bannerBg = 'bg-limber-brown hover:bg-limber-brown', bannerText = 'text-limber-cream', bannerTextAccent = 'text-limber-bright' } = Astro.props;
 
 const navItems = [
  {
  label: 'About',
  href: '/about',
- image: '/images/limber_studio_3_dancing.jpg',
+ image: '/images/Limber_April26_99.jpg',
  children: [
  { label: 'Our Vibe', href: '/about/our-vibe' },
  { label: 'Our Tribe', href: '/about/our-tribe' },
@@ -39,7 +42,7 @@ const navItems = [
  ],
  },
  { label: 'Journal', href: '/journal' },
- { label: 'Love Wall', href: '/reviews' },
+ { label: 'Love Club', href: '/reviews' },
  { label: 'Contact', href: '/contact' },
 ];
 
@@ -50,20 +53,20 @@ const currentPath = Astro.url.pathname;
  {showBanner && (
   <a
    href="/pricing/trial"
-   class="block bg-limber-tericotta border-b-2 border-neutral-900 px-4 py-2.5 text-center hover:bg-limber-brown transition-colors"
+   class:list={[bannerBg, 'block border-b-2 border-limber-brown px-4 py-2.5 text-center transition-colors']}
   >
-   <span class="font-sans text-sm text-limber-cream">new here? </span>
-   <span class="font-headline text-sm text-limber-cream">the limber way — 21 days unlimited for $99</span>
-   <span class="font-sans text-sm text-limber-cream ml-2">→</span>
+   <span class:list={['font-sans text-sm', bannerText]}>New here? </span>
+   <span class:list={['font-headline text-sm', bannerTextAccent]}>21 days unlimited for $99</span>
+   <span class:list={['font-sans text-sm ml-2', bannerTextAccent]}>→</span>
   </a>
  )}
-<header class="bg-limber-cream border-b-2 border-neutral-900">
+<header class="bg-limber-green border-b-2 border-limber-vibe">
  <div class="px-4 sm:px-6 lg:px-8">
- <div class="flex items-center h-16 lg:h-20">
+ <div class="flex items-center h-16 lg:h-20 py-3 lg:py-4">
 
  <!-- Logo — left aligned -->
  <a href="/" class="flex-shrink-0" aria-label="Limber — home">
-    <Logo class="h-9 lg:h-12 w-auto" color="var(--color-limber-green)" />
+    <Logo class="h-9 lg:h-12 w-auto" color="var(--color-limber-cream)" />
  </a>
 
  <!-- Desktop nav — right-aligned -->
@@ -77,10 +80,10 @@ const currentPath = Astro.url.pathname;
  type="button"
  data-dropdown-trigger
  class:list={[
- 'font-headline text-sm transition-colors hover:text-limber-tericotta cursor-pointer',
+ 'font-display not-italic text-xl capitalize transition-colors hover:text-limber-vibe cursor-pointer',
  currentPath.startsWith(item.href)
- ? 'text-limber-tericotta'
- : 'text-neutral-900',
+ ? 'text-limber-vibe'
+ : 'text-limber-cream',
  ]}
  >
  {item.label}
@@ -88,7 +91,7 @@ const currentPath = Astro.url.pathname;
  <!-- Full-width panel: links on the left at page padding, image on the right -->
  <div
  data-dropdown-panel
- class:list={["hidden fixed left-0 right-0 -mt-[2px] bg-limber-cream border-b-2 border-neutral-900 z-[51]", showBanner ? "top-[106px] lg:top-[122px]" : "top-16 lg:top-20"]}
+ class:list={["hidden fixed left-0 right-0 -mt-[2px] bg-limber-green border-b-2 border-limber-brown z-[51]", showBanner ? "top-[106px] lg:top-[122px]" : "top-16 lg:top-20"]}
  style="height: 200px;"
  >
  <div class="h-full flex items-center justify-between px-4 sm:px-6 lg:px-8 py-5">
@@ -97,10 +100,10 @@ const currentPath = Astro.url.pathname;
  <a
  href={child.href}
  class:list={[
- 'block px-3 py-2 font-headline text-sm transition-colors hover:text-limber-tericotta',
+ 'block px-3 py-2 font-display not-italic text-xl capitalize transition-colors hover:text-limber-vibe',
  currentPath === child.href
- ? 'text-limber-tericotta'
- : 'text-neutral-900',
+ ? 'text-limber-vibe'
+ : 'text-limber-cream',
  ]}
  >
  {child.label}
@@ -110,7 +113,7 @@ const currentPath = Astro.url.pathname;
  <img
  src={item.image}
  alt={item.label}
- class="h-40 w-64 object-cover rounded-2xl border-2 border-neutral-900 flex-shrink-0"
+ class="h-40 w-64 object-cover rounded-2xl border-2 border-limber-vibe flex-shrink-0"
  />
  </div>
  </div>
@@ -120,10 +123,10 @@ const currentPath = Astro.url.pathname;
  href={item.href}
  data-plain-link
  class:list={[
- 'font-headline text-sm transition-colors hover:text-limber-tericotta',
+ 'font-display not-italic text-xl capitalize transition-colors hover:text-limber-vibe',
  currentPath.startsWith(item.href)
- ? 'text-limber-tericotta'
- : 'text-neutral-900',
+ ? 'text-limber-vibe'
+ : 'text-limber-cream',
  ]}
  >
  {item.label}
@@ -136,7 +139,7 @@ const currentPath = Astro.url.pathname;
  <a
  href="/book-now"
  data-plain-link
- class="font-headline text-sm text-neutral-900 border-2 border-neutral-900 rounded-full px-5 py-2 hover:bg-neutral-900 hover:text-limber-cream transition-colors"
+ class="font-headline text-sm text-limber-green bg-limber-vibe border-2 border-limber-vibe rounded-full px-5 py-2 hover:bg-limber-bright hover:border-limber-bright transition-colors"
  >
  Book Now
  </a>
@@ -146,65 +149,63 @@ const currentPath = Astro.url.pathname;
  <div class="flex items-center ml-auto lg:hidden">
  <button
  id="mobile-menu-btn"
- class="p-2 rounded-md text-limber-green hover:bg-limber-green hover:text-limber-cream transition-colors"
+ class="p-2 text-limber-cream hover:text-limber-vibe transition-colors flex flex-col justify-center gap-[5px] w-8 h-8"
  aria-label="Open menu"
  aria-expanded="false"
  aria-controls="mobile-menu"
  >
- <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
- <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
- </svg>
+  <span class="burger-bar block h-[2px] w-6 bg-current transition-all duration-300 origin-center"></span>
+  <span class="burger-bar block h-[2px] w-6 bg-current transition-all duration-300 origin-center"></span>
+  <span class="burger-bar block h-[2px] w-6 bg-current transition-all duration-300 origin-center"></span>
  </button>
  </div>
 
  </div>
  </div>
 
- <!-- Mobile menu -->
- <div id="mobile-menu" class="hidden lg:hidden border-t-2 border-neutral-900 bg-limber-cream">
- <div class="px-4 py-4 space-y-0.5">
- <a href="/" class="block px-3 py-2.5 font-headline text-xs text-limber-green hover:text-limber-cream hover:bg-limber-green rounded-lg transition-colors">
- Home
- </a>
- {
- navItems.map((item) => (
- <div>
- {item.children ? (
- <p class="block px-3 py-2.5 font-headline text-xs text-limber-green/50">
- {item.label}
- </p>
- ) : (
- <a
- href={item.href}
- class="block px-3 py-2.5 font-headline text-xs text-limber-green hover:text-limber-cream hover:bg-limber-green rounded-lg transition-colors"
- >
- {item.label}
- </a>
- )}
- {item.children && (
- <div class="pl-4 space-y-0.5 mb-1">
- {item.children.map((child) => (
- <a
- href={child.href}
- class="block px-3 py-2 font-headline text-xs text-limber-green/70 hover:text-limber-cream hover:bg-limber-green rounded-lg transition-colors"
- >
- {child.label}
- </a>
- ))}
- </div>
- )}
- </div>
- ))
- }
- <div class="pt-3 pb-2">
- <a
- href="/book-now"
- class="block w-full text-center px-5 py-3 font-headline text-xs text-limber-cream bg-limber-tericotta hover:bg-limber-brown border-2 border-neutral-900 rounded-full transition-colors"
- >
- Book Now
- </a>
- </div>
- </div>
+ <!-- Mobile menu — full screen -->
+ <div id="mobile-menu" class="hidden lg:hidden fixed inset-0 z-[200] bg-limber-green overflow-y-auto">
+  <!-- Mirror the header row: logo left, close button right -->
+  <div class="flex items-center h-16 px-4 sm:px-6 border-b-2 border-limber-vibe">
+   <a href="/" aria-label="Limber — home" class="flex-shrink-0">
+    <Logo class="h-9 w-auto" color="var(--color-limber-cream)" />
+   </a>
+   <button id="mobile-menu-close" class="ml-auto p-2 text-limber-cream hover:text-limber-vibe transition-colors flex flex-col justify-center gap-[5px] w-8 h-8">
+    <span class="block h-[2px] w-6 bg-current rotate-45 translate-y-[7px]"></span>
+    <span class="block h-[2px] w-6 bg-current opacity-0"></span>
+    <span class="block h-[2px] w-6 bg-current -rotate-45 -translate-y-[7px]"></span>
+   </button>
+  </div>
+
+  <div class="flex flex-col px-8 py-8">
+   <!-- Links -->
+   <nav class="flex flex-col gap-1 flex-1">
+    <a href="/" class="font-display italic text-2xl text-limber-cream hover:text-limber-vibe transition-colors py-2">Home</a>
+    {navItems.map((item) => (
+     <div>
+      {item.children ? (
+       <p class="font-display italic text-lg text-limber-cream/40 py-1 mt-3">{item.label}</p>
+      ) : (
+       <a href={item.href} class="font-display italic text-2xl text-limber-cream hover:text-limber-vibe transition-colors py-2 block">{item.label}</a>
+      )}
+      {item.children && (
+       <div class="pl-4 flex flex-col gap-0.5">
+        {item.children.map((child) => (
+         <a href={child.href} class="font-display italic text-xl text-limber-cream/80 hover:text-limber-vibe transition-colors py-1.5 block">{child.label}</a>
+        ))}
+       </div>
+      )}
+     </div>
+    ))}
+   </nav>
+
+   <!-- Book now -->
+   <div class="pt-8 pb-4">
+    <a href="/book-now" class="block w-full text-center px-5 py-4 font-headline text-sm text-limber-green bg-limber-vibe hover:bg-limber-bright border-2 border-limber-vibe rounded-full transition-colors">
+     Book Now
+    </a>
+   </div>
+  </div>
  </div>
 </header>
 </div>
@@ -216,11 +217,33 @@ const currentPath = Astro.url.pathname;
  // ── Mobile menu ──
  const mobileBtn = document.getElementById('mobile-menu-btn');
  const mobileMenu = document.getElementById('mobile-menu');
- mobileBtn?.addEventListener('click', () => {
- const nowHidden = mobileMenu?.classList.toggle('hidden');
- mobileBtn.setAttribute('aria-expanded', String(!nowHidden));
- mobileBtn.setAttribute('aria-label', nowHidden ? 'Open menu' : 'Close menu');
- });
+ const mobileClose = document.getElementById('mobile-menu-close');
+
+ const bars = mobileBtn?.querySelectorAll('.burger-bar') as NodeListOf<HTMLElement>;
+
+ function openMenu() {
+  mobileMenu?.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+  mobileBtn?.setAttribute('aria-expanded', 'true');
+  if (bars) {
+   bars[0].style.transform = 'rotate(45deg) translate(4px, 4px)';
+   bars[1].style.opacity = '0';
+   bars[2].style.transform = 'rotate(-45deg) translate(4px, -4px)';
+  }
+ }
+ function closeMenu() {
+  mobileMenu?.classList.add('hidden');
+  document.body.style.overflow = '';
+  mobileBtn?.setAttribute('aria-expanded', 'false');
+  if (bars) {
+   bars[0].style.transform = '';
+   bars[1].style.opacity = '';
+   bars[2].style.transform = '';
+  }
+ }
+
+ mobileBtn?.addEventListener('click', openMenu);
+ mobileClose?.addEventListener('click', closeMenu);
 
  // ── Desktop dropdowns ──
  // Uses a short timeout so the mouse can travel from the trigger down into the

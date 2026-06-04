@@ -23,30 +23,25 @@ const blogSchema = {
 >
 
   <!-- ── HERO ── -->
-  <section class="bg-limber-cream border-b-2 border-neutral-900 px-8 lg:px-14 pt-8 lg:pt-14 pb-8 lg:pb-14">
-    <div class="relative overflow-hidden rounded-2xl border-2 border-neutral-900" style="height: 480px;">
-      <img
-        src="/images/limber_in_studio_2025.webp"
-        alt="Limber studio"
-        class="absolute inset-0 w-full h-full object-cover object-center"
-      />
-      <div class="absolute inset-0 bg-neutral-900/30"></div>
-      <div class="relative h-full flex flex-col items-center justify-center text-center">
+  <section class="bg-limber-green border-b-2 border-limber-vibe">
+    <div class="relative h-[480px] overflow-hidden border-b-2 border-limber-vibe">
+      <img src="/images/Limber_April26_118.jpg" alt="Limber studio" class="absolute inset-0 w-full h-full object-cover object-center" />
+      <div class="relative h-full flex items-center justify-center text-center">
         <h1 class="mb-0">
-          <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none mb-1">limber</span>
-          <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-vibe block leading-none">journal</em>
+          <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none -mb-1">limber</span>
+          <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none">journal</span>
         </h1>
       </div>
     </div>
   </section>
 
   <!-- ── POSTS ── -->
-  <section class="bg-limber-cream-bg py-16 lg:py-24 border-b-2 border-neutral-900">
+  <section class="bg-limber-brown py-16 lg:py-24 border-b-2 border-limber-bright">
     <div class="px-4 sm:px-6 lg:px-8">
       {posts.length === 0 ? (
         <div class="text-center py-24">
-          <p class="font-headline text-2xl text-limber-green mb-2">nothing here yet</p>
-          <p class="font-sans text-sm text-limber-brown/60">check back soon — we're working on it.</p>
+          <p class="font-headline text-2xl text-limber-green mb-2">Nothing here yet</p>
+          <p class="font-sans text-sm text-limber-green/60">Check back soon. We're working on it.</p>
         </div>
       ) : (
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -59,10 +54,10 @@ const blogSchema = {
             return (
               <a
                 href={`/journal/${post.slug}`}
-                class:list={['group p-7 rounded-2xl border-2 border-neutral-900 flex flex-col gap-5 hover:shadow-md transition-shadow', bg]}
+                class:list={['group p-7 rounded-2xl border-2 border-limber-green flex flex-col gap-5 hover:shadow-md transition-shadow', bg]}
               >
                 {image && (
-                  <div class="rounded-xl overflow-hidden border border-neutral-900/10 aspect-[4/3]">
+                  <div class="rounded-xl overflow-hidden border border-limber-green/10 aspect-[4/3]">
                     <img
                       src={image.src}
                       alt={image.alt}

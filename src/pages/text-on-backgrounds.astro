@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const combos = [
+  // bg, heading, body, solidBtn bg, solidBtn text, outlineBtn
+  { bg: 'bg-limber-green',     h: 'text-limber-vibe',      body: 'text-limber-cream/80',  solid: 'bg-limber-vibe text-limber-green',        outline: 'text-limber-cream border-limber-cream',        label: 'Green / Vibe' },
+  { bg: 'bg-limber-green',     h: 'text-limber-cream',     body: 'text-limber-cream/80',  solid: 'bg-limber-cream text-limber-green',       outline: 'text-limber-vibe border-limber-vibe',          label: 'Green / Cream' },
+  { bg: 'bg-limber-green',     h: 'text-limber-tericotta', body: 'text-limber-cream/80',  solid: 'bg-limber-tericotta text-limber-cream',   outline: 'text-limber-cream border-limber-cream',        label: 'Green / Tericotta' },
+  { bg: 'bg-limber-green',     h: 'text-limber-bright',    body: 'text-limber-cream/80',  solid: 'bg-limber-bright text-limber-brown',      outline: 'text-limber-cream border-limber-cream',        label: 'Green / Bright' },
+  { bg: 'bg-limber-green',     h: 'text-limber-brown',     body: 'text-limber-cream/80',  solid: 'bg-limber-brown text-limber-vibe',        outline: 'text-limber-cream border-limber-cream',        label: 'Green / Brown' },
+
+  { bg: 'bg-limber-vibe',      h: 'text-limber-green',     body: 'text-limber-green/80',  solid: 'bg-limber-green text-limber-vibe',        outline: 'text-limber-green border-limber-green',        label: 'Vibe / Green' },
+  { bg: 'bg-limber-vibe',      h: 'text-limber-brown',     body: 'text-limber-brown/80',  solid: 'bg-limber-brown text-limber-vibe',        outline: 'text-limber-brown border-limber-brown',        label: 'Vibe / Brown' },
+  { bg: 'bg-limber-vibe',      h: 'text-limber-cream',     body: 'text-limber-brown/80',  solid: 'bg-limber-cream text-limber-green',       outline: 'text-limber-brown border-limber-brown',        label: 'Vibe / Cream' },
+  { bg: 'bg-limber-vibe',      h: 'text-limber-tericotta', body: 'text-limber-brown/80',  solid: 'bg-limber-tericotta text-limber-cream',   outline: 'text-limber-brown border-limber-brown',        label: 'Vibe / Tericotta' },
+  { bg: 'bg-limber-vibe',      h: 'text-limber-bright',    body: 'text-limber-brown/80',  solid: 'bg-limber-bright text-limber-brown',      outline: 'text-limber-brown border-limber-brown',        label: 'Vibe / Bright' },
+
+  { bg: 'bg-limber-cream',     h: 'text-limber-green',     body: 'text-limber-brown/80',  solid: 'bg-limber-green text-limber-vibe',        outline: 'text-limber-green border-limber-green',        label: 'Cream / Green' },
+  { bg: 'bg-limber-cream',     h: 'text-limber-brown',     body: 'text-limber-brown/80',  solid: 'bg-limber-brown text-limber-cream',       outline: 'text-limber-brown border-limber-brown',        label: 'Cream / Brown' },
+  { bg: 'bg-limber-cream',     h: 'text-limber-tericotta', body: 'text-limber-brown/80',  solid: 'bg-limber-tericotta text-limber-cream',   outline: 'text-limber-tericotta border-limber-tericotta',label: 'Cream / Tericotta' },
+  { bg: 'bg-limber-cream',     h: 'text-limber-vibe',      body: 'text-limber-brown/80',  solid: 'bg-limber-vibe text-limber-green',        outline: 'text-limber-brown border-limber-brown',        label: 'Cream / Vibe' },
+  { bg: 'bg-limber-cream',     h: 'text-limber-bright',    body: 'text-limber-brown/80',  solid: 'bg-limber-bright text-limber-brown',      outline: 'text-limber-brown border-limber-brown',        label: 'Cream / Bright' },
+
+  { bg: 'bg-limber-tericotta', h: 'text-limber-cream',     body: 'text-limber-cream/80',  solid: 'bg-limber-cream text-limber-tericotta',   outline: 'text-limber-cream border-limber-cream',        label: 'Tericotta / Cream' },
+  { bg: 'bg-limber-tericotta', h: 'text-limber-brown',     body: 'text-limber-brown/80',  solid: 'bg-limber-brown text-limber-vibe',        outline: 'text-limber-brown border-limber-brown',        label: 'Tericotta / Brown' },
+  { bg: 'bg-limber-tericotta', h: 'text-limber-vibe',      body: 'text-limber-cream/80',  solid: 'bg-limber-vibe text-limber-brown',        outline: 'text-limber-cream border-limber-cream',        label: 'Tericotta / Vibe' },
+  { bg: 'bg-limber-tericotta', h: 'text-limber-green',     body: 'text-limber-cream/80',  solid: 'bg-limber-green text-limber-vibe',        outline: 'text-limber-cream border-limber-cream',        label: 'Tericotta / Green' },
+  { bg: 'bg-limber-tericotta', h: 'text-limber-bright',    body: 'text-limber-cream/80',  solid: 'bg-limber-bright text-limber-brown',      outline: 'text-limber-cream border-limber-cream',        label: 'Tericotta / Bright' },
+
+  { bg: 'bg-limber-brown',     h: 'text-limber-cream',     body: 'text-limber-cream/80',  solid: 'bg-limber-cream text-limber-brown',       outline: 'text-limber-cream border-limber-cream',        label: 'Brown / Cream' },
+  { bg: 'bg-limber-brown',     h: 'text-limber-vibe',      body: 'text-limber-cream/80',  solid: 'bg-limber-vibe text-limber-brown',        outline: 'text-limber-cream border-limber-cream',        label: 'Brown / Vibe' },
+  { bg: 'bg-limber-brown',     h: 'text-limber-tericotta', body: 'text-limber-cream/80',  solid: 'bg-limber-tericotta text-limber-cream',   outline: 'text-limber-cream border-limber-cream',        label: 'Brown / Tericotta' },
+  { bg: 'bg-limber-brown',     h: 'text-limber-bright',    body: 'text-limber-cream/80',  solid: 'bg-limber-bright text-limber-brown',      outline: 'text-limber-cream border-limber-cream',        label: 'Brown / Bright' },
+  { bg: 'bg-limber-brown',     h: 'text-limber-green',     body: 'text-limber-cream/80',  solid: 'bg-limber-green text-limber-vibe',        outline: 'text-limber-cream border-limber-cream',        label: 'Brown / Green' },
+
+  { bg: 'bg-limber-bright',    h: 'text-limber-brown',     body: 'text-limber-brown/80',  solid: 'bg-limber-brown text-limber-vibe',        outline: 'text-limber-brown border-limber-brown',        label: 'Bright / Brown' },
+  { bg: 'bg-limber-bright',    h: 'text-limber-green',     body: 'text-limber-brown/80',  solid: 'bg-limber-green text-limber-vibe',        outline: 'text-limber-green border-limber-green',        label: 'Bright / Green' },
+  { bg: 'bg-limber-bright',    h: 'text-limber-cream',     body: 'text-limber-brown/80',  solid: 'bg-limber-cream text-limber-brown',       outline: 'text-limber-brown border-limber-brown',        label: 'Bright / Cream' },
+  { bg: 'bg-limber-bright',    h: 'text-limber-tericotta', body: 'text-limber-brown/80',  solid: 'bg-limber-tericotta text-limber-cream',   outline: 'text-limber-brown border-limber-brown',        label: 'Bright / Tericotta' },
+  { bg: 'bg-limber-bright',    h: 'text-limber-vibe',      body: 'text-limber-brown/80',  solid: 'bg-limber-vibe text-limber-brown',        outline: 'text-limber-brown border-limber-brown',        label: 'Bright / Vibe' },
+];
+---
+
+<BaseLayout
+  title="Text on Backgrounds"
+  description="Colour combo testing page"
+  noindex={true}
+  hideBanner={true}
+>
+  <section class="bg-limber-green py-10 border-b-2 border-limber-vibe">
+    <div class="px-4 sm:px-6 lg:px-8">
+      <h1 class="font-headline uppercase text-3xl text-limber-vibe mb-1">Text on backgrounds</h1>
+      <p class="font-sans text-limber-cream/50 text-sm">{combos.length} combos — noindex</p>
+    </div>
+  </section>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
+    {combos.map((c) => (
+      <div class:list={[c.bg, 'p-10 border border-black/10']}>
+
+        <p class="font-sans text-[10px] uppercase tracking-widest opacity-40 mb-5">{c.label}</p>
+
+        <h2 class="mb-4">
+          <span class:list={['font-headline uppercase text-3xl lg:text-4xl block leading-none -mb-1', c.h]}>feel good</span>
+          <span class:list={['font-display italic font-medium text-4xl lg:text-5xl block leading-none', c.h]}>move better</span>
+        </h2>
+
+        <p class:list={['font-sans text-sm leading-relaxed mb-6 max-w-xs', c.body]}>
+          Movement should feel genuinely good — not punishing, not performative. Just yours.
+        </p>
+
+        <div class="flex flex-wrap gap-2">
+          <span class:list={['inline-flex px-4 py-2 font-headline text-xs rounded-full', c.solid]}>
+            book now
+          </span>
+          <span class:list={['inline-flex px-4 py-2 font-headline text-xs rounded-full border-2', c.outline]}>
+            learn more
+          </span>
+        </div>
+
+      </div>
+    ))}
+  </div>
+
+</BaseLayout>

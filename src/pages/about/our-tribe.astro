@@ -8,143 +8,314 @@ const teamSchema = {
   '@type': 'ItemList',
   name: 'Limber Team',
   itemListElement: [
-    {
-      '@type': 'ListItem',
-      position: 1,
-      item: {
-        '@type': 'Person',
-        name: 'Lily',
-        jobTitle: 'Founder',
-        worksFor: { '@type': 'Organization', name: 'Limber' },
-      },
-    },
-    {
-      '@type': 'ListItem',
-      position: 2,
-      item: {
-        '@type': 'Person',
-        name: 'Maddy',
-        jobTitle: 'Studio Lead',
-        worksFor: { '@type': 'Organization', name: 'Limber' },
-      },
-    },
+    { '@type': 'ListItem', position: 1, item: { '@type': 'Person', name: 'Courtney', jobTitle: 'Teacher', worksFor: { '@type': 'Organization', name: 'Limber' } } },
+    { '@type': 'ListItem', position: 2, item: { '@type': 'Person', name: 'Maddy', jobTitle: 'Studio Lead', worksFor: { '@type': 'Organization', name: 'Limber' } } },
+    { '@type': 'ListItem', position: 3, item: { '@type': 'Person', name: 'Naomi', jobTitle: 'Teacher', worksFor: { '@type': 'Organization', name: 'Limber' } } },
+    { '@type': 'ListItem', position: 4, item: { '@type': 'Person', name: 'Lily', jobTitle: 'Founder', worksFor: { '@type': 'Organization', name: 'Limber' } } },
   ],
 };
+
+const team = [
+  {
+    name: 'Lily',
+    role: 'Founder',
+    image: '/images/tribe/Limber_April26_164.jpg',
+    imageAlt: 'Lily, founder of Limber',
+    photoSide: 'right',
+    bg: 'bg-limber-green',
+    border: 'border-limber-vibe',
+    nameColor: 'text-limber-vibe',
+    roleColor: 'text-limber-tericotta',
+    bodyColor: 'text-limber-cream/80',
+    qColor: 'text-limber-vibe',
+    imgBorder: 'border-limber-vibe',
+    qa: [
+      { q: "What's your daily joyful ritual?", a: "Walking to my local coffee shop post school drop off with my dog every morning. He gets the treats. I get the coffee. Honestly, we both win." },
+      { q: "What would we find you doing outside of work?", a: "Bush walks, getting crafty, family runs, and finding little ways to slow down. Something I'm still mastering." },
+      { q: "What does movement mean to you?", a: "A gift. Full stop. Something that healed me, changed how I see myself, and gave me back a good relationship with my body. I never take it for granted." },
+      { q: "What do you want people to feel when they leave your class?", a: "Like their cup has been filled up. Yes they've worked. I love a fiery class, you'll find out. But they leave smiling, feeling alive and in an absolutely epic mood." },
+    ],
+  },
+  {
+    name: 'Maddy',
+    role: 'Studio Lead & Teacher',
+    image: '/images/tribe/Maddy.jpg',
+    imageAlt: 'Maddy, studio lead at Limber',
+    photoSide: 'left',
+    bg: 'bg-limber-vibe',
+    border: 'border-limber-green',
+    nameColor: 'text-limber-green',
+    roleColor: 'text-limber-tericotta',
+    bodyColor: 'text-limber-green/80',
+    qColor: 'text-limber-brown',
+    imgBorder: 'border-limber-green',
+    qa: [
+      { q: "What's your daily joyful ritual?", a: "My morning matcha. Obvious, I know. And whenever I get to pull out my junk journal and get properly crafty." },
+      { q: "What would we find you doing outside of work?", a: "At the gym, on the couch watching reality TV, bouldering with family, or on a spontaneous city outing. Usually one extreme or the other." },
+      { q: "What does movement mean to you?", a: "At this stage of life: compassion. It's a tool, a practice, a source of joy. A place to keep learning about myself." },
+      { q: "What do you want people to feel when they leave your class?", a: "Like they moved in a way that honoured where they were at that day. No performance, no pressure. Just fully tuned in to themselves." },
+    ],
+  },
+  {
+    name: 'Naomi',
+    role: 'Teacher & Semi-Private Lead',
+    image: '/images/tribe/Naomi.jpg',
+    imageAlt: 'Naomi, teacher at Limber',
+    photoSide: 'right',
+    bg: 'bg-limber-green',
+    border: 'border-limber-vibe',
+    nameColor: 'text-limber-vibe',
+    roleColor: 'text-limber-tericotta',
+    bodyColor: 'text-limber-cream/80',
+    qColor: 'text-limber-vibe',
+    imgBorder: 'border-limber-vibe',
+    qa: [
+      { q: "What's your daily joyful ritual?", a: "Movement, in any form. It might sound obvious coming from me, but it's a genuine constant that brings me real joy every single day." },
+      { q: "What would we find you doing outside of work?", a: "Running my two very active boys around, collaborating with my husband on photography, or still working as a makeup artist. When I get a moment, I'm with my people." },
+      { q: "What does movement mean to you?", a: "A non-negotiable. While fitness plays a role, it goes so much deeper than that. To move is to feel well, physically and mentally. It's what led me to teaching in the first place." },
+      { q: "What do you want people to feel when they leave your class?", a: "Strong, accomplished and connected. Like they truly worked. Calm enough and inspired enough to want to come back." },
+    ],
+  },
+  {
+    name: 'Katie',
+    role: 'Teacher',
+    image: '/images/tribe/Katie.jpg',
+    imageAlt: 'Katie, teacher at Limber',
+    photoSide: 'left',
+    bg: 'bg-limber-vibe',
+    border: 'border-limber-green',
+    nameColor: 'text-limber-green',
+    roleColor: 'text-limber-tericotta',
+    bodyColor: 'text-limber-green/80',
+    qColor: 'text-limber-brown',
+    imgBorder: 'border-limber-green',
+    qa: [
+      { q: "What's your daily joyful ritual?", a: "Coming soon." },
+      { q: "What would we find you doing outside of work?", a: "Coming soon." },
+      { q: "What does movement mean to you?", a: "Coming soon." },
+      { q: "What do you want people to feel when they leave your class?", a: "Coming soon." },
+    ],
+  },
+  {
+    name: 'Courtney',
+    role: 'Teacher',
+    image: '/images/tribe/Courtney.jpg',
+    imageAlt: 'Courtney, teacher at Limber',
+    photoSide: 'right',
+    bg: 'bg-limber-green',
+    border: 'border-limber-vibe',
+    nameColor: 'text-limber-vibe',
+    roleColor: 'text-limber-tericotta',
+    bodyColor: 'text-limber-cream/80',
+    qColor: 'text-limber-vibe',
+    imgBorder: 'border-limber-vibe',
+    qa: [
+      { q: "What's your daily joyful ritual?", a: "A coffee from Opus near my house. Started as early postpartum survival. Now it's one of my favourite parts of the day." },
+      { q: "What would we find you doing outside of work?", a: "Studying, training, reading fantasy romance novels, or slowing down with my husband, daughter and our dog. The novels hit different after a big week." },
+      { q: "What does movement mean to you?", a: "Everything. I've been moving since I was four. It's shaped who I am: my confidence, my resilience, my sense of self." },
+      { q: "What do you want people to feel when they leave your class?", a: "Good. Like they stepped out of their head and back into their body. Supported, seen, and part of something special." },
+    ],
+  },
+  {
+    name: 'Jaz',
+    role: 'Teacher',
+    image: '/images/tribe/Jaz.jpg',
+    imageAlt: 'Jaz, teacher at Limber',
+    photoSide: 'left',
+    bg: 'bg-limber-vibe',
+    border: 'border-limber-green',
+    nameColor: 'text-limber-green',
+    roleColor: 'text-limber-tericotta',
+    bodyColor: 'text-limber-green/80',
+    qColor: 'text-limber-brown',
+    imgBorder: 'border-limber-green',
+    qa: [
+      { q: "What's your daily joyful ritual?", a: "Coming soon." },
+      { q: "What would we find you doing outside of work?", a: "Coming soon." },
+      { q: "What does movement mean to you?", a: "Coming soon." },
+      { q: "What do you want people to feel when they leave your class?", a: "Coming soon." },
+    ],
+  },
+];
 ---
 
 <BaseLayout
   title="Our Tribe"
-  description="Meet the humans behind Limber — Lily, founder, and Maddy, studio lead."
+  description="Meet the humans behind Limber — passionate, qualified teachers who genuinely love what they do."
   schema={teamSchema}
 >
 
   <!-- ── HERO ── -->
   <PricingHero
+    body="Passionate, qualified, and genuinely here for you. Every class, every session, every check-in. We show up because we love what we do."
+    buttons={[
+      { label: 'Book a class', href: '/book-now' },
+      { label: 'View timetable', href: '/classes/timetable', variant: 'outline' },
+    ]}
     image="/images/Limber_team.jpg"
     imageAlt="The Limber team"
     imagePosition="object-center"
-    body="passionate, qualified, and genuinely here for you. every class, every session, every check-in — we show up because we love what we do."
-    buttons={[{ label: 'book a class', href: '/book-now' }]}
-    bgColor="bg-limber-cream"
-    onDark={false}
+    sticker="/images/stickers/flower.svg"
   >
-    <p class="font-display italic text-xl text-limber-tericotta mb-4">the humans behind limber.</p>
-    <h1 class="mb-0">
-      <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-green block leading-none mb-1">our</span>
-      <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-tericotta block leading-none">tribe.</em>
+    <h1 class="flex items-end gap-[0.25em] leading-none mb-0">
+      <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-vibe">our</span>
+      <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream">tribe</span>
     </h1>
   </PricingHero>
 
-  <!-- ── LILY ── -->
-  <section class="bg-limber-cream py-20 lg:py-28 border-b-2 border-neutral-900">
+  <!-- ── TEAM GRID ── -->
+  <section class="bg-limber-green py-20 lg:py-28 border-b-2 border-limber-vibe">
     <div class="px-4 sm:px-6 lg:px-8">
-      <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-start">
 
-        <!-- Photo -->
-        <div class="mb-12 lg:mb-0 lg:sticky lg:top-28">
-          <img
-            src="/images/Limber_Lily.jpg"
-            alt="Lily, founder of Limber"
-            class="w-full h-[480px] lg:h-[600px] object-cover rounded-2xl border-2 border-neutral-900"
-          />
-        </div>
+      <h2 class="mb-10">
+        <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-vibe block leading-none -mb-1">the humans</span>
+        <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none">behind Limber</span>
+      </h2>
 
-        <!-- Bio -->
-        <div>
-          <p class="font-headline text-xs text-limber-tericotta mb-3">meet the founder</p>
-          <h2 class="mb-8">
-            <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-green block leading-none">lily.</em>
-          </h2>
-          <div class="space-y-5">
-            <p class="font-sans text-limber-brown/80 leading-relaxed">
-              from her early years to a thriving professional dance career, lily's love for movement has been at the heart of everything she does. after her dance career, she naturally discovered a passion for teaching, where she seamlessly blends her expertise to create movement that's not only effective but truly enjoyable.
-            </p>
-            <p class="font-display italic text-xl text-limber-tericotta leading-snug">
-              for lily, movement is more than just a passion — it's a lifelong companion.
-            </p>
-            <p class="font-sans text-limber-brown/80 leading-relaxed">
-              one that's supported her through every stage of life, from her dance career to embracing motherhood.
-            </p>
-            <p class="font-sans text-limber-brown/80 leading-relaxed">
-              lily is dedicated to building a community where movement goes beyond physical well-being, serving as a powerful tool for self-discovery. she envisions limber as a welcoming space where prosperity flourishes, fuelled by the shared love for movement.
-            </p>
+      {(() => {
+        const img1 = { name: '', role: '', image: '/images/background/1.jpg', qa: [], placeholder: true };
+        const img28 = { name: '', role: '', image: '/images/background/28.jpg', qa: [], placeholder: true };
+        // order: Lily, Maddy, 1.jpg, Katie, Courtney, Jaz, Naomi, 28.jpg
+        const cards = [team[0], team[1], team[3], team[4], team[2], team[5], img1, img28];
+
+        const cardBgs = ['bg-limber-green', 'bg-limber-vibe', 'bg-limber-bright', 'bg-limber-vibe', 'bg-limber-green', 'bg-limber-cream', 'bg-limber-cream', 'bg-limber-cream'];
+        const cardTexts = ['text-limber-vibe', 'text-limber-green', 'text-limber-brown', 'text-limber-green', 'text-limber-vibe', 'text-limber-brown/40', 'text-limber-brown/40', 'text-limber-brown/40'];
+        const heights = ['h-[420px]', 'h-[360px]', 'h-[440px]', 'h-[340px]', 'h-[360px]', 'h-[420px]', 'h-[340px]', 'h-[440px]'];
+        const offsets = ['', '', '', '', '', '', '', ''];
+
+        return (
+          <div id="tribe-masonry" style="column-gap: 1rem; columns: 2;">
+            {cards.map((member, i) => (
+              <div class="break-inside-avoid mb-4">
+                <button
+                  class:list={[
+                    `tribe-card ${(member as any).placeholder ? '' : 'group cursor-pointer'} w-full rounded-2xl border-2 border-limber-vibe/20 flex items-center justify-center relative overflow-hidden`,
+                    cardBgs[i], heights[i],
+                    (member as any).placeholder ? 'cursor-default' : '',
+                  ]}
+                  data-index={i}
+                  aria-label={`Learn more about ${member.name}`}
+                  disabled={(member as any).placeholder}
+                >
+                  {member.image && (
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      class="absolute inset-0 w-full h-full object-cover object-top"
+                    loading="lazy"
+                    />
+                  )}
+                  <div class="absolute inset-0 bg-limber-bright/0 group-hover:bg-limber-bright/25 backdrop-blur-[0px] group-hover:backdrop-blur-sm transition-all duration-700 ease-in-out"></div>
+                  <span class:list={['relative font-headline uppercase text-xl lg:text-2xl text-center px-4', member.image ? 'text-limber-cream' : cardTexts[i]]}>
+                    {member.name}
+                  </span>
+                </button>
+              </div>
+            ))}
           </div>
-        </div>
+        );
+      })()}
 
-      </div>
     </div>
   </section>
 
-  <!-- ── MADDY ── -->
-  <section class="bg-limber-cream-bg py-20 lg:py-28 border-b-2 border-neutral-900">
-    <div class="px-4 sm:px-6 lg:px-8">
-      <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-start">
+  <!-- ── MODAL ── -->
+  <div id="tribe-modal" class="fixed inset-0 z-[100] hidden">
+    <div class="absolute inset-0 bg-limber-brown/80" id="tribe-modal-backdrop"></div>
+    <div class="relative h-full flex items-center justify-center p-4 lg:p-8">
+      <div class="bg-limber-green rounded-2xl border-2 border-limber-vibe w-full max-w-3xl max-h-[90vh] overflow-y-auto">
 
-        <!-- Bio -->
-        <div class="order-2 lg:order-1">
-          <p class="font-headline text-xs text-limber-tericotta mb-3">meet the studio lead</p>
-          <h2 class="mb-8">
-            <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-green block leading-none">maddy.</em>
-          </h2>
-          <div class="space-y-5">
-            <p class="font-sans text-limber-brown/80 leading-relaxed">
-              yoga first found maddy in her teenage years as a way to tend to an aching body, then as a quiet refuge for her heart and mind. through seasons of recovery, anxiety, and healing, she discovered that yoga is not about striving, but softening — not about fixing, but listening.
-            </p>
-            <p class="font-display italic text-xl text-limber-tericotta leading-snug">
-              in time, this practice became her way of holding space for others to come home to themselves.
-            </p>
-            <p class="font-sans text-limber-brown/80 leading-relaxed">
-              maddy specialises in pre and postnatal yoga and has pursued further training in pranayama, creative sequencing, and pelvic floor and women's health education. her classes offer a blend of strong, flowing movement and deeply grounding stillness. supporting each student to meet themselves with care, curiosity, and strength, no matter their season of life.
-            </p>
-            <p class="font-sans text-limber-brown/80 leading-relaxed">
-              rooted in presence over perfection, her teaching honours the shifting nature of every body and every journey. whether guiding someone through early parenthood, returning from injury, or simply seeking connection, maddy invites students to trust their inner knowing, move with intention, and feel held just as they are.
-            </p>
+        <!-- Close -->
+        <div class="flex justify-end p-6 pb-0">
+          <button id="tribe-modal-close" class="font-headline text-xs text-limber-vibe hover:text-limber-cream transition-colors uppercase tracking-widest">
+            Close ✕
+          </button>
+        </div>
+
+        <div class="lg:grid lg:grid-cols-2 gap-8 p-6 lg:p-10 items-start">
+
+          <!-- Photo -->
+          <div id="modal-photo-wrap" class="mb-8 lg:mb-0">
+            <img id="modal-photo" src="" alt="" class="w-full h-52 lg:h-64 object-cover object-top rounded-xl border-2 border-limber-vibe" />
           </div>
-        </div>
 
-        <!-- Photo -->
-        <div class="order-1 lg:order-2 mb-12 lg:mb-0 lg:sticky lg:top-28">
-          <img
-            src="/images/Limber_Maddy.jpg"
-            alt="Maddy, studio lead at Limber"
-            class="w-full h-[480px] lg:h-[600px] object-cover rounded-2xl border-2 border-neutral-900"
-          />
-        </div>
+          <!-- Info -->
+          <div>
+            <h2 id="modal-name" class="font-headline uppercase text-5xl text-limber-vibe block leading-none -mb-1"></h2>
+            <p id="modal-role" class="font-display italic text-2xl text-limber-cream mt-3 mb-8"></p>
+            <div id="modal-qa" class="space-y-6"></div>
+          </div>
 
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+
+  <script define:vars={{ teamData: team }}>
+    // Responsive columns
+    const masonry = document.getElementById('tribe-masonry');
+    function setColumns() {
+      if (masonry) masonry.style.columns = window.innerWidth >= 1024 ? '4' : '2';
+    }
+    setColumns();
+    window.addEventListener('resize', setColumns);
+
+    const modal = document.getElementById('tribe-modal');
+    const backdrop = document.getElementById('tribe-modal-backdrop');
+    const closeBtn = document.getElementById('tribe-modal-close');
+    const modalPhoto = document.getElementById('modal-photo');
+    const modalPhotoWrap = document.getElementById('modal-photo-wrap');
+    const modalName = document.getElementById('modal-name');
+    const modalRole = document.getElementById('modal-role');
+    const modalQA = document.getElementById('modal-qa');
+
+    document.querySelectorAll('.tribe-card:not([disabled])').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const name = btn.getAttribute('data-name');
+        const member = teamData.find((m) => m.name === name);
+        if (!member) return;
+
+        modalName.textContent = member.name;
+        modalRole.textContent = member.role;
+        modalPhoto.src = member.image;
+        modalPhoto.alt = member.imageAlt || member.name;
+        modalPhotoWrap.style.display = member.image ? '' : 'none';
+
+        modalQA.innerHTML = member.qa.map((item) => `
+          <div>
+            <p class="font-headline text-xs uppercase tracking-widest text-limber-vibe mb-2">${item.q}</p>
+            <p class="font-sans leading-relaxed text-limber-cream/80">${item.a}</p>
+          </div>
+        `).join('');
+
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeModal() {
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', closeModal);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
 
   <CtaSlice
-    headingLine1="come move"
-    headingLine2="with us."
-    body="book a class, start your intro trial, or just come say hi. we'd love to meet you."
-    image="/images/Limber_April26_176.jpg"
-    imageAlt="Limber community"
+    headingLine1="Join our"
+    headingLine2="Limber tribe"
+    sectionBg="bg-limber-cream"
+    accentColor="text-limber-bright"
+    primaryBtn="text-limber-brown bg-limber-bright hover:bg-limber-vibe border-limber-bright"
+    body="We're always on the lookout for passionate, qualified movement teachers and warm humans who genuinely align with what we're building here. If that sounds like you, we'd love to hear from you."
+    image="/images/Limber_April26_169.jpg"
+    imageAlt="The Limber team"
     buttons={[
-      { label: 'book a class', href: '/book-now' },
-      { label: 'start the limber way — $99', href: '/pricing/trial', variant: 'outline' },
+      { label: 'limber.collab@gmail.com', href: 'mailto:limber.collab@gmail.com' },
     ]}
   />
+
 
 </BaseLayout>

@@ -60,7 +60,7 @@ export const reviews: Review[] = [
   },
   {
     name: 'Jo B.',
-    body: "My first class. Let's of fun. Easy workout and I found myself smiling a lot ❤️🙏",
+    body: "My first class. Let's of fun. Easy workout and I found myself smiling a lot",
     rating: 5,
     date: '2026-04-24',
     class: 'Limboogie',
@@ -68,14 +68,14 @@ export const reviews: Review[] = [
   },
   {
     name: 'Jo B.',
-    body: "I've loved this power class in the middle of the day with Maddy. She's a great instructor and it's just enough to make me warm up, stretch, and move and get away from my desk for half an hour or an hour. ❤️🙏",
+    body: "I've loved this power class in the middle of the day with Maddy. She's a great instructor and it's just enough to make me warm up, stretch, and move and get away from my desk for half an hour or an hour.",
     rating: 5,
     date: '2026-04-22',
     class: 'Lunch express - Power yoga with Maddy Holden',
   },
   {
     name: 'Jo B.',
-    body: "Katie is a phenomenal yoga instructor. I love her classes. She really pushes my mind and body into new places, which is what I want to achieve, and she's just got a lovely personality. Her instruction style is so clear and so easy to follow. Thank you so much ❤️🙏",
+    body: "Katie is a phenomenal yoga instructor. I love her classes. She really pushes my mind and body into new places, which is what I want to achieve, and she's just got a lovely personality. Her instruction style is so clear and so easy to follow. Thank you so much",
     rating: 5,
     date: '2026-04-11',
     class: 'Limber Power Flow - Vin with Katie Mahoney',
@@ -218,7 +218,7 @@ export const reviews: Review[] = [
   },
   {
     name: 'Chloe Aroutsidis',
-    body: "Lily is absolutely amazing! She's guided me through rehabilitating my knee after injury, worked alongside my physios and given me the best options for me to pursue an active lifestyle. The range of classes are great and the atmosphere is both calming and welcoming ❤️",
+    body: "Lily is absolutely amazing! She's guided me through rehabilitating my knee after injury, worked alongside my physios and given me the best options for me to pursue an active lifestyle. The range of classes are great and the atmosphere is both calming and welcoming",
     rating: 5,
     date: '2025-05-17',
     class: '',

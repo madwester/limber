@@ -46,20 +46,20 @@ const semiPackTerms = [
 
 const faqs = [
   {
-    q: 'can i share my pack with a friend?',
-    a: 'packs are single client use only — they\'re linked to your account and can\'t be transferred.',
+    q: 'Can I share my pack with a friend?',
+    a: 'Packs are single client use only. They\'re linked to your account and can\'t be transferred.',
   },
   {
-    q: 'what if i get injured?',
-    a: 'we can extend your pack with a medical certificate from a doctor or physio. just get in touch.',
+    q: 'What if I get injured?',
+    a: 'We can extend your pack with a medical certificate from a doctor or physio. Just get in touch.',
   },
   {
-    q: 'can i use my pack for any class?',
-    a: 'group packs are valid for all group classes. lunch express packs are valid for lunch express classes only. semi-private packs are for semi-private sessions only.',
+    q: 'Can I use my pack for any class?',
+    a: 'Group packs are valid for all group classes. Lunch express packs are valid for lunch express classes only. Semi-private packs are for semi-private sessions only.',
   },
   {
-    q: 'do packs auto-renew?',
-    a: 'no — packs are a one-off purchase. you\'ll be prompted to repurchase when yours runs low.',
+    q: 'Do packs auto-renew?',
+    a: 'No, packs are a one-off purchase. You\'ll be prompted to repurchase when yours runs low.',
   },
 ];
 ---
@@ -71,195 +71,134 @@ const faqs = [
 
   <!-- ── HERO ── -->
   <PricingHero
-    body="perfect if you like flexibility, travel a lot, or just want to try a few different classes before committing. pick your pack, book when it suits you, and move at your own pace."
+    body="Perfect if you like flexibility, travel a lot, or just want to try a few different classes before committing. Pick your pack, book when it suits you, and move at your own pace."
     buttons={[{ label: 'see all packs', href: '#packs' }]}
-    image="/images/Limber_April26_96.jpg"
+    image="/images/limber_studio_3_girls.jpg"
     imageAlt="Limber studio"
     imagePosition="object-center"
   >
     <h1 class="mb-0">
-      <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none mb-1">packs +</span>
-      <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-vibe block leading-none">gift cards</em>
+      <span class="flex items-baseline gap-[0.2em] leading-none -mb-1">
+        <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-vibe">PACKS</span>
+        <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream">&amp;</span>
+      </span>
+      <span class="flex items-baseline gap-[0.2em] leading-none">
+        <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-vibe">GIFT</span>
+        <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream">cards</span>
+      </span>
     </h1>
   </PricingHero>
 
   <!-- ── PACKS ── -->
-  <section id="packs" class="bg-limber-cream py-20 lg:py-28 border-b-2 border-neutral-900">
+  <section id="packs" class="bg-limber-green py-20 lg:py-28 border-b-2 border-limber-vibe">
     <div class="px-4 sm:px-6 lg:px-8">
-
-      <h2 class="mb-10">
-        <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-green block leading-none mb-1">class</span>
-        <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-tericotta block leading-none">packs</em>
-      </h2>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
 
-        <!-- 5 Class Pack — white -->
-        <div class="rounded-2xl border-2 border-neutral-900 p-7 bg-limber-cream flex flex-col">
-          <p class="font-headline text-xs text-limber-brown/40 mb-3">group classes</p>
-          <p class="font-headline text-2xl text-limber-brown mb-4">5 Class Pack</p>
-          <div class="border-t border-neutral-900/10 mb-5"></div>
-          <p class="font-headline text-5xl text-limber-brown mb-1">$145</p>
-          <p class="font-display italic text-base text-limber-brown/70 leading-snug mb-5">$29 per class.</p>
-          <div class="border-t border-neutral-900/10 mb-5"></div>
-          <p class="font-sans text-sm text-limber-brown/70 mb-4">valid for 3 months from date of purchase</p>
+        <!-- 5 Class Pack — cream -->
+        <div class="rounded-2xl border-2 border-limber-brown p-7 bg-limber-cream flex flex-col" id="5-class-pack">
+          <p class="font-display italic text-lg text-limber-brown/40 mb-3">Group classes</p>
+          <p class="font-headline text-2xl text-limber-green mb-4">5 Class Pack</p>
+          <div class="border-t border-limber-brown/10 mb-5"></div>
+          <p class="font-headline text-5xl text-limber-green mb-1">$145</p>
+          <p class="font-sans text-sm text-limber-brown/70 leading-snug mb-5">$29 per class</p>
+          <div class="border-t border-limber-brown/10 mb-5"></div>
+          <p class="font-sans text-sm text-limber-brown/70 mb-4">Valid for 3 months from date of purchase</p>
           <ul class="space-y-2 mb-8 flex-1">
             {groupPackTerms.map((term) => (
               <li class="font-sans text-sm text-limber-brown/60 flex gap-2">
-                <span class="text-limber-tericotta flex-shrink-0">—</span>
+                <span class="text-limber-brown/40 flex-shrink-0">—</span>
                 {term}
               </li>
             ))}
           </ul>
-          <a
-            href="/book-now"
-            class="block w-full text-center px-6 py-3.5 font-headline text-sm text-limber-cream bg-neutral-900 hover:bg-limber-green border-2 border-neutral-900 rounded-full transition-colors"
-          >
-            buy now
-          </a>
+          <a href="https://momence.com/m/405119" class="block w-full text-center px-6 py-3.5 font-headline text-sm text-limber-brown bg-limber-bright hover:bg-limber-vibe border-2 border-limber-bright rounded-full transition-colors">Buy now</a>
+          <a href="https://momence.com/m/405119?g=gift" target="_blank" rel="noopener noreferrer" class="block w-full text-center px-6 py-3.5 font-headline text-sm text-limber-cream border-2 border-limber-brown hover:bg-limber-brown rounded-full transition-colors mt-2">Gift to someone</a>
         </div>
 
-        <!-- 10 Class Pack — orange -->
-        <div class="rounded-2xl border-2 border-neutral-900 p-7 bg-limber-tericotta flex flex-col">
-          <p class="font-headline text-xs text-limber-cream/50 mb-3">group classes</p>
+        <!-- 10 Class Pack — brown -->
+        <div class="rounded-2xl border-2 border-limber-bright p-7 bg-limber-brown flex flex-col">
+          <p class="font-display italic text-lg text-limber-cream/50 mb-3">Group classes</p>
           <p class="font-headline text-2xl text-limber-cream mb-4">10 Class Pack</p>
-          <div class="border-t border-neutral-900/10 mb-5"></div>
-          <p class="font-headline text-5xl text-limber-cream mb-1">$270</p>
-          <p class="font-display italic text-base text-limber-cream/80 leading-snug mb-5">$27 per class. that's a very good deal and we know it.</p>
-          <div class="border-t border-neutral-900/10 mb-5"></div>
-          <p class="font-sans text-sm text-limber-cream/80 mb-4">valid for 6 months from date of purchase</p>
+          <div class="border-t border-limber-bright/20 mb-5"></div>
+          <p class="font-headline text-5xl text-limber-bright mb-1">$270</p>
+          <p class="font-sans text-sm text-limber-cream/80 leading-snug mb-5">$27 per class. That's a very good deal and we know it.</p>
+          <div class="border-t border-limber-bright/20 mb-5"></div>
+          <p class="font-sans text-sm text-limber-cream/80 mb-4">Valid for 6 months from date of purchase</p>
           <ul class="space-y-2 mb-8 flex-1">
             {groupPackTerms.map((term) => (
               <li class="font-sans text-sm text-limber-cream/70 flex gap-2">
-                <span class="flex-shrink-0">—</span>
+                <span class="text-limber-cream/40 flex-shrink-0">—</span>
                 {term}
               </li>
             ))}
           </ul>
-          <a
-            href="/book-now"
-            class="block w-full text-center px-6 py-3.5 font-headline text-sm text-limber-cream bg-neutral-900 hover:bg-limber-green border-2 border-neutral-900 rounded-full transition-colors"
-          >
-            buy now
-          </a>
+          <a href="https://momence.com/m/405118" class="block w-full text-center px-6 py-3.5 font-headline text-sm text-limber-brown bg-limber-bright hover:bg-limber-vibe border-2 border-limber-bright rounded-full transition-colors">Buy now</a>
+          <a href="https://momence.com/m/405118?g=gift" target="_blank" rel="noopener noreferrer" class="block w-full text-center px-6 py-3.5 font-headline text-sm text-limber-cream border-2 border-limber-cream hover:bg-limber-cream/10 rounded-full transition-colors mt-2">Gift to someone</a>
         </div>
 
-        <!-- Lunch Express Pack — yellow -->
-        <div class="rounded-2xl border-2 border-neutral-900 p-7 bg-limber-vibe flex flex-col">
-          <p class="font-headline text-xs text-limber-brown/50 mb-3">lunch express</p>
-          <p class="font-headline text-2xl text-limber-brown mb-4">Lunch Express 10 Class Pack</p>
-          <div class="border-t border-neutral-900/10 mb-5"></div>
-          <p class="font-headline text-5xl text-limber-brown mb-1">$220</p>
-          <p class="font-display italic text-base text-limber-brown/80 leading-snug mb-5">$22 a class. cheaper than most lunches. better for you too. (we said what we said.)</p>
-          <div class="border-t border-neutral-900/10 mb-5"></div>
-          <p class="font-sans text-sm text-limber-brown/80 mb-4">valid for 6 months from date of purchase</p>
+        <!-- Lunch Express Pack — cream -->
+        <div class="rounded-2xl border-2 border-limber-brown p-7 bg-limber-cream flex flex-col">
+          <p class="font-display italic text-lg text-limber-brown/40 mb-3">Lunch express</p>
+          <p class="font-headline text-2xl text-limber-green mb-4">Lunch Express 10 Class Pack</p>
+          <div class="border-t border-limber-brown/10 mb-5"></div>
+          <p class="font-headline text-5xl text-limber-green mb-1">$220</p>
+          <p class="font-sans text-sm text-limber-brown/70 leading-snug mb-5">$22 a class. Cheaper than most lunches. Better for you too. (We said what we said.)</p>
+          <div class="border-t border-limber-brown/10 mb-5"></div>
+          <p class="font-sans text-sm text-limber-brown/70 mb-4">Valid for 6 months from date of purchase</p>
           <ul class="space-y-2 mb-8 flex-1">
             {lunchPackTerms.map((term) => (
-              <li class="font-sans text-sm text-limber-brown/70 flex gap-2">
-                <span class="flex-shrink-0">—</span>
+              <li class="font-sans text-sm text-limber-brown/60 flex gap-2">
+                <span class="text-limber-brown/40 flex-shrink-0">—</span>
                 {term}
               </li>
             ))}
           </ul>
-          <a
-            href="/book-now"
-            class="block w-full text-center px-6 py-3.5 font-headline text-sm text-limber-cream bg-neutral-900 hover:bg-limber-green border-2 border-neutral-900 rounded-full transition-colors"
-          >
-            buy now
-          </a>
+          <a href="https://momence.com/m/405120" class="block w-full text-center px-6 py-3.5 font-headline text-sm text-limber-brown bg-limber-bright hover:bg-limber-vibe border-2 border-limber-bright rounded-full transition-colors">Buy now</a>
+          <a href="https://momence.com/m/405120?g=gift" target="_blank" rel="noopener noreferrer" class="block w-full text-center px-6 py-3.5 font-headline text-sm text-limber-cream border-2 border-limber-brown hover:bg-limber-brown rounded-full transition-colors mt-2">Gift to someone</a>
         </div>
 
-        <!-- Semi-Private Pack — green -->
-        <div class="rounded-2xl border-2 border-neutral-900 p-7 bg-limber-green flex flex-col">
-          <p class="font-headline text-xs text-limber-cream/50 mb-3">semi-private</p>
+        <!-- Semi-Private Pack — brown -->
+        <div class="rounded-2xl border-2 border-limber-bright p-7 bg-limber-brown flex flex-col">
+          <p class="font-display italic text-lg text-limber-cream/50 mb-3">Semi-private</p>
           <p class="font-headline text-2xl text-limber-cream mb-4">Semi-Private 5 Pack</p>
-          <div class="border-t border-neutral-900/10 mb-5"></div>
-          <p class="font-headline text-5xl text-limber-cream mb-1">$250</p>
-          <p class="font-display italic text-base text-limber-cream/80 leading-snug mb-5">$50 per session. private attention without the private price tag.</p>
-          <div class="border-t border-neutral-900/10 mb-5"></div>
-          <p class="font-sans text-sm text-limber-cream/80 mb-4">valid for 3 months from date of purchase</p>
+          <div class="border-t border-limber-bright/20 mb-5"></div>
+          <p class="font-headline text-5xl text-limber-bright mb-1">$250</p>
+          <p class="font-sans text-sm text-limber-cream/80 leading-snug mb-5">$50 per session. Private attention without the private price tag.</p>
+          <div class="border-t border-limber-bright/20 mb-5"></div>
+          <p class="font-sans text-sm text-limber-cream/80 mb-4">Valid for 3 months from date of purchase</p>
           <ul class="space-y-2 mb-8 flex-1">
             {semiPackTerms.map((term) => (
               <li class="font-sans text-sm text-limber-cream/70 flex gap-2">
-                <span class="flex-shrink-0">—</span>
+                <span class="text-limber-cream/40 flex-shrink-0">—</span>
                 {term}
               </li>
             ))}
           </ul>
-          <a
-            href="/book-now"
-            class="block w-full text-center px-6 py-3.5 font-headline text-sm text-limber-green bg-limber-vibe hover:bg-limber-bright border-2 border-neutral-900 rounded-full transition-colors"
-          >
-            buy now
-          </a>
+          <a href="https://momence.com/m/405137" class="block w-full text-center px-6 py-3.5 font-headline text-sm text-limber-brown bg-limber-bright hover:bg-limber-vibe border-2 border-limber-bright rounded-full transition-colors">Buy now</a>
+          <a href="https://momence.com/m/405137?g=gift" target="_blank" rel="noopener noreferrer" class="block w-full text-center px-6 py-3.5 font-headline text-sm text-limber-cream border-2 border-limber-brown hover:bg-limber-brown rounded-full transition-colors mt-2">Gift to someone</a>
         </div>
 
-    </div>
-  </section>
-
-  <!-- ── GIFT CARDS ── -->
-  <section class="bg-limber-vibe py-20 lg:py-28 border-b-2 border-neutral-900">
-    <div class="px-4 sm:px-6 lg:px-8">
-      <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
-        <div>
-          <h2 class="mb-6">
-            <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-green block leading-none mb-1">gift</span>
-            <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-brown block leading-none">cards</em>
-          </h2>
-          <p class="font-sans text-limber-brown/80 leading-relaxed mb-4">
-            because sometimes the best gift is genuinely good movement.
-          </p>
-          <p class="font-sans text-limber-brown/80 leading-relaxed mb-8">
-            gift cards are available in any amount and never expire. perfect for birthdays, new mums, the friend who keeps saying they want to try pilates, or honestly just because.
-          </p>
-          <a
-            href="/book-now"
-            class="inline-flex items-center px-8 py-4 font-headline text-sm text-limber-cream bg-neutral-900 hover:bg-limber-green border-2 border-neutral-900 rounded-full transition-colors"
-          >
-            buy a gift card
-          </a>
-        </div>
-        <div class="mt-12 lg:mt-0">
-          <img
-            src="/images/Limber_April26_168.jpg"
-            alt="Limber studio"
-            class="w-full h-64 lg:h-80 object-cover rounded-2xl border-2 border-neutral-900"
-          />
-        </div>
-      </div>
     </div>
   </section>
 
   <!-- ── FAQs ── -->
-  <section class="bg-limber-cream-bg py-20 lg:py-28 border-b-2 border-neutral-900">
+  <section class="bg-limber-brown py-20 lg:py-28">
     <div class="px-4 sm:px-6 lg:px-8">
       <h2 class="mb-12">
-        <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-green block leading-none mb-1">frequently</span>
-        <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-tericotta block leading-none">asked questions</em>
+        <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-bright block leading-none -mb-1">frequently</span>
+        <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none">asked questions</span>
       </h2>
       <div class="max-w-2xl">
         {faqs.map((item) => (
-          <div class="py-6 border-b border-neutral-900/10 last:border-0">
-            <p class="font-headline text-sm text-limber-green mb-2">{item.q}</p>
-            <p class="font-sans text-base text-limber-brown/70 leading-relaxed">{item.a}</p>
+          <div class="py-6 border-b border-limber-bright/20 last:border-0">
+            <p class="font-headline text-sm text-limber-bright mb-2">{item.q}</p>
+            <p class="font-sans text-base text-limber-cream/80 leading-relaxed">{item.a}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- ── CTA ── -->
-  <CtaSlice
-    headingLine1="not sure which"
-    headingLine2="option is"
-    headingLine3="right for you?"
-    body="we're genuinely happy to help. or if you're ready to commit — check out our memberships."
-    image="/images/Limber_April26_174.jpg"
-    imageAlt="Limber studio"
-    buttons={[
-      { label: 'get in touch', href: '/contact' },
-      { label: 'see memberships', href: '/pricing/memberships', variant: 'outline' },
-    ]}
-  />
 
 </BaseLayout>

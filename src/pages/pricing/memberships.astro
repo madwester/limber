@@ -5,105 +5,106 @@ import PricingHero from '../../components/PricingHero.astro';
 
 const memberships = [
   {
+    id: 'club',
+    name: 'Limber Club',
+    freq: 'The whole studio is yours',
+    price: '$60',
+    period: 'per week',
+    note: '$8.50 a day. Unlimited classes. We\'ll let you do the maths.',
+    description: 'For the Limber devotee who wants to show up as much as they want, whenever they want.',
+    popular: true,
+    details: [
+      'Unlimited classes',
+      'Up to 2 classes per day (1 pilates/barre + 1 yoga)',
+      'Weekends: 1 class per day',
+      'Auto-renewed fortnightly',
+      '12 week minimum commitment',
+      '20% off your first Aura Sweat session 💦',
+    ],
+    cta: 'Join unlimited',
+    bg: 'bg-limber-brown',
+    textColor: 'text-limber-cream',
+    subColor: 'text-limber-bright/80',
+    descColor: 'text-limber-cream/90',
+    ctaClass: 'text-limber-brown bg-limber-bright hover:bg-limber-vibe border-limber-bright',
+  },
+  {
+    id: 'compact',
+    name: 'Limber Compact',
+    freq: '2 classes per week + 1 lunch/Limber up',
+    price: '$48',
+    period: 'per week',
+    note: '$16 per class. A steal.',
+    description: 'For the regular mover who likes a little variety.',
+    details: [
+      '2 group classes per week',
+      'Plus 1 lunch express or Limber up class',
+      'Credits last 7 days and don\'t roll over',
+      'Auto-renewed weekly',
+      '12 week minimum commitment',
+    ],
+    cta: 'Join compact',
+    bg: 'bg-limber-cream',
+    textColor: 'text-limber-green',
+    subColor: 'text-limber-brown/70',
+    descColor: 'text-limber-brown/80',
+    ctaClass: 'text-limber-brown bg-limber-bright hover:bg-limber-vibe border-limber-bright',
+  },
+  {
     id: 'chill',
     name: 'Limber Chill',
     freq: '1 class per week',
     price: '$25',
     period: 'per week',
-    note: 'that\'s one marg. we know which one your body will thank you for.',
-    description: 'for when you want to dip your toes in and find your rhythm.',
+    note: 'That\'s one marg. We know which one your body will thank you for.',
+    description: 'For when you want to dip your toes in and find your rhythm.',
     details: [
       '1 class per week',
-      'credits don\'t roll over',
-      'auto-renewed weekly',
+      'Credits don\'t roll over',
+      'Auto-renewed weekly',
       '12 week minimum commitment',
     ],
-    cta: 'join limber chill',
-    bg: 'bg-limber-cream-bg',
+    cta: 'Join Limber chill',
+    bg: 'bg-limber-cream',
     textColor: 'text-limber-green',
     subColor: 'text-limber-brown/70',
     descColor: 'text-limber-brown/80',
-    ctaClass: 'text-limber-cream bg-neutral-900 hover:bg-limber-green',
-  },
-  {
-    id: 'compact',
-    name: 'Limber Compact',
-    freq: '2 classes per week + 1 lunch/limber up',
-    price: '$48',
-    period: 'per week',
-    note: '$16 per class. a steal.',
-    description: 'for the regular mover who likes a little variety.',
-    details: [
-      '2 group classes per week',
-      'plus 1 lunch express or limber up class',
-      'credits last 7 days and don\'t roll over',
-      'auto-renewed weekly',
-      '12 week minimum commitment',
-    ],
-    cta: 'join compact',
-    bg: 'bg-limber-vibe',
-    textColor: 'text-limber-green',
-    subColor: 'text-limber-green/80',
-    descColor: 'text-limber-green/90',
-    ctaClass: 'text-limber-cream bg-neutral-900 hover:bg-limber-green',
+    ctaClass: 'text-limber-brown bg-limber-bright hover:bg-limber-vibe border-limber-bright',
   },
   {
     id: 'combo',
     name: 'Limber Combo',
-    freq: 'semi-private + group + stretch weekly',
+    freq: 'Semi-private + group + stretch weekly',
     price: '$60',
     period: 'per week',
-    note: 'one drop in class costs the same. have we gone mad?!',
-    description: 'for the person who wants a little more personalised attention alongside their group classes.',
+    note: 'One drop in class costs the same. Have we gone mad?!',
+    description: 'For the person who wants a little more personalised attention alongside their group classes.',
     details: [
       '1-on-1 needed first',
       '1 semi-private session per week',
       '1 group class per week',
-      '1 lunch express or limber up class per week',
-      'auto-renewed fortnightly',
+      '1 lunch express or Limber up class per week',
+      'Auto-renewed fortnightly',
       '12 week minimum commitment',
     ],
-    cta: 'join combo',
-    bg: 'bg-limber-tericotta',
-    textColor: 'text-limber-cream',
-    subColor: 'text-limber-cream/80',
-    descColor: 'text-limber-cream/90',
-    ctaClass: 'text-limber-cream bg-neutral-900 hover:bg-limber-green',
-  },
-  {
-    id: 'club',
-    name: 'Limber Club',
-    freq: 'the whole studio is yours',
-    price: '$60',
-    period: 'per week',
-    note: '$8.50 a day. unlimited classes. we\'ll let you do the maths.',
-    description: 'for the limber devotee who wants to show up as much as they want, whenever they want.',
-    details: [
-      'unlimited classes',
-      'up to 2 classes per day (1 pilates/barre + 1 yoga)',
-      'weekends: 1 class per day',
-      'auto-renewed fortnightly',
-      '12 week minimum commitment',
-      '20% off your first aura sweat session 💦',
-    ],
-    cta: 'join unlimited',
-    bg: 'bg-limber-green',
-    textColor: 'text-limber-cream',
-    subColor: 'text-limber-cream/80',
-    descColor: 'text-limber-cream/90',
-    ctaClass: 'text-limber-cream bg-neutral-900 hover:bg-limber-green',
+    cta: 'Join combo',
+    bg: 'bg-limber-cream',
+    textColor: 'text-limber-green',
+    subColor: 'text-limber-brown/70',
+    descColor: 'text-limber-brown/80',
+    ctaClass: 'text-limber-brown bg-limber-bright hover:bg-limber-vibe border-limber-bright',
   },
 ];
 
 const perks = [
-  { icon: '🎁', title: 'welcome bag', body: 'tea, incense, a limber sticker and a few other good things to get you started.' },
-  { icon: '👯', title: 'bring a friend', body: 'one free guest pass per month. share the love.' },
-  { icon: '🌿', title: 'community events', body: 'book club, hiking club, craft club and more. all free. all yours.' },
-  { icon: '🏷️', title: 'workshop discounts', body: 'members get discounted access to special events and workshops.' },
-  { icon: '💦', title: 'aura sweat', body: 'unlimited members get 20% off your first session. code sent via email after joining.' },
-  { icon: '📱', title: 'limber app access', body: 'timetable, bookings, member perks — all in your pocket.' },
-  { icon: '💬', title: 'limber community whatsapp', body: 'the moment you join you\'re added to our member community. real conversations, real people, zero spam.' },
-  { icon: '👀', title: 'we notice when you\'re not here', body: 'if we haven\'t seen you in a while, we\'ll reach out. not to guilt trip — just because we genuinely care.' },
+  { icon: '🎁', title: 'Welcome bag', body: 'Tea, incense, a Limber sticker and a few other good things to get you started.' },
+  { icon: '👯', title: 'Bring a friend', body: 'One free guest pass per month. Share the love.' },
+  { icon: '🎉', title: 'Community events', body: 'Book club, hiking club, craft club and more. All free. All yours.' },
+  { icon: '🏷️', title: 'Workshop discounts', body: 'Members get discounted access to special events and workshops.' },
+  { icon: '💦', title: 'Aura sweat', body: 'Unlimited members get 20% off your first session. Code sent via email after joining.' },
+  { icon: '📱', title: 'Limber app access', body: 'Timetable, bookings, member perks, all in your pocket.' },
+  { icon: '💬', title: 'Limber community WhatsApp', body: 'The moment you join you\'re added to our member community. Real conversations, real people, zero spam.' },
+  { icon: '👀', title: 'We notice when you\'re not here', body: 'If we haven\'t seen you in a while, we\'ll reach out. Not to guilt trip, just because we genuinely care.' },
 ];
 ---
 
@@ -114,33 +115,37 @@ const perks = [
 
   <!-- ── HERO ── -->
   <PricingHero
-    body="we don't just take your membership fee and hope for the best. if you're stuck, overwhelmed, or just haven't found your groove yet — we'll help you get unstuck. that's what we're here for."
-    buttons={[{ label: 'find your membership', href: '#memberships' }]}
-    image="/images/Limber_April26_151.jpg"
+    body="We don't just take your membership fee and hope for the best. If you're stuck, overwhelmed, or just haven't found your groove yet, we'll help you get unstuck. That's what we're here for."
+    buttons={[{ label: 'Find yours', href: '#memberships' }]}
+    image="/images/turn-around.jpg"
     imageAlt="Limber studio"
+    imagePosition="object-center"
   >
     <h1 class="mb-0">
-      <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none mb-1">memberships</span>
-      <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-vibe block leading-none mb-1">make limber</em>
-      <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-vibe block leading-none">your thing</em>
+      <p class="font-display italic text-2xl text-limber-cream mb-3">Memberships</p>
+      <span class="flex items-baseline gap-[0.35em] leading-none -mb-1">
+        <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream">Make</span>
+        <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-vibe">LIMBER</span>
+      </span>
+      <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none">your thing</span>
     </h1>
   </PricingHero>
 
   <!-- ── WHAT EVERY MEMBER GETS ── -->
-  <section class="bg-limber-cream py-20 lg:py-28 border-b-2 border-neutral-900">
+  <section class="bg-limber-green py-20 lg:py-28 border-b-2 border-limber-vibe">
     <div class="px-4 sm:px-6 lg:px-8">
 
       <h2 class="mb-4">
-        <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-green block leading-none mb-1">what every</span>
-        <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-tericotta block leading-none">member gets</em>
+        <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-vibe block leading-none -mb-1">what every</span>
+        <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none">member gets</span>
       </h2>
-      <p class="font-sans text-limber-brown/60 leading-relaxed mb-14 max-w-lg">
-        because being part of limber is more than just classes.
+      <p class="font-sans text-limber-cream/70 leading-relaxed mb-14 max-w-lg">
+        Because being part of Limber is more than just classes.
       </p>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {perks.map((perk) => (
-          <div class="bg-limber-cream-bg rounded-2xl border-2 border-neutral-900 p-6">
+          <div class="bg-limber-cream rounded-2xl border-2 border-limber-green p-6">
             <span class="text-2xl block mb-4">{perk.icon}</span>
             <p class="font-headline text-sm text-limber-green mb-2">{perk.title}</p>
             <p class="font-sans text-sm text-limber-brown/70 leading-relaxed">{perk.body}</p>
@@ -152,26 +157,29 @@ const perks = [
   </section>
 
   <!-- ── MEMBERSHIPS ── -->
-  <section id="memberships" class="bg-limber-cream-bg py-20 lg:py-28 border-b-2 border-neutral-900">
+  <section id="memberships" class="bg-limber-green py-20 lg:py-28 border-b-2 border-limber-vibe">
     <div class="px-4 sm:px-6 lg:px-8">
 
       <h2 class="mb-14">
-        <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-green block leading-none mb-1">find your</span>
-        <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-tericotta block leading-none">membership</em>
+        <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-vibe block leading-none -mb-1">find your</span>
+        <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none">membership</span>
       </h2>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {memberships.map((m) => (
-          <div class:list={['rounded-2xl border-2 border-neutral-900 p-7 flex flex-col', m.bg]}>
+          <div class:list={['rounded-2xl border-2 p-7 flex flex-col relative', m.bg, (m as any).popular ? 'border-limber-bright' : 'border-limber-brown']}>
+            {(m as any).popular && (
+              <span class="absolute -top-3 left-1/2 -translate-x-1/2 font-headline text-xs text-limber-brown bg-limber-bright px-3 py-1 rounded-full whitespace-nowrap">Most popular</span>
+            )}
             <p class:list={['font-headline text-2xl leading-none mb-1', m.textColor]}>{m.name}</p>
-            <p class:list={['font-headline text-xs mb-6', m.subColor]}>{m.freq}</p>
-            <div class="border-t border-neutral-900/10 mb-6"></div>
+            <p class:list={['font-sans text-base h-14 mb-4', m.subColor]}>{m.freq}</p>
+            <div class="border-t border-limber-green/10 mb-6"></div>
             <div class="flex items-baseline gap-1 mb-1">
               <span class:list={['font-headline text-5xl', m.textColor]}>{m.price}</span>
               <span class:list={['font-sans text-xs', m.subColor]}>{m.period}</span>
             </div>
-            <p class:list={['font-display italic text-sm leading-snug mb-5', m.subColor]}>{m.note}</p>
-            <div class="border-t border-neutral-900/10 mb-5"></div>
+            <p class:list={['font-sans text-sm leading-snug h-14 mb-5', m.subColor]}>{m.note}</p>
+            <div class="border-t border-limber-green/10 mb-5"></div>
             <p class:list={['font-sans text-sm leading-relaxed mb-4', m.descColor]}>{m.description}</p>
             <ul class="space-y-2 mb-8 flex-1">
               {m.details.map((d) => (
@@ -184,7 +192,7 @@ const perks = [
             <a
               href="/book-now"
               class:list={[
-                'block text-center px-5 py-3 font-headline text-xs border-2 border-neutral-900 rounded-full transition-colors',
+                'block text-center px-5 py-3 font-headline text-xs border-2 rounded-full transition-colors',
                 m.ctaClass,
               ]}
             >
@@ -194,24 +202,147 @@ const perks = [
         ))}
       </div>
 
-      <p class="mt-8 font-sans text-xs text-limber-brown/50 max-w-2xl">
-        all memberships are billed via direct debit and auto-renew as noted above. a 12 week minimum commitment applies to all memberships. see our <a href="/terms-and-conditions" class="underline hover:text-limber-brown/80 transition-colors">terms & conditions</a> for full details.
+      <p class="mt-8 font-sans text-xs text-limber-cream/50 max-w-2xl">
+        All memberships are billed via direct debit and auto-renew as noted above. A 12 week minimum commitment applies to all memberships. see our <a href="/terms-and-conditions" class="underline hover:text-limber-cream/80 transition-colors">terms & conditions</a> for full details.
       </p>
 
     </div>
   </section>
 
-  <!-- ── NOT SURE ── -->
+  <!-- ── HUMANS OF LIMBER ── -->
+  <section class="bg-limber-green py-20 lg:py-28 border-b-2 border-limber-vibe">
+    <div class="px-4 sm:px-6 lg:px-8 mb-12">
+      <h2 class="mb-2">
+        <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-vibe block leading-none -mb-1">humans</span>
+        <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none">of Limber</span>
+      </h2>
+      <p class="font-sans text-limber-cream/70 leading-relaxed max-w-lg mt-4">Real people. Real stories. This is who you move with.</p>
+    </div>
+
+    <!-- Filmstrip -->
+    <div class="overflow-hidden">
+    <div class="flex items-end gap-2 px-4 sm:px-6 lg:px-8 overflow-x-auto lg:overflow-visible py-6" style="scrollbar-width: none;">
+      {[
+        { src: '/images/members/Donna.jpg',      name: 'Donna',  h: 420, rotate: 'rotate-2',   z: 'z-10', bg: false, hasStory: true  },
+        { src: '/images/members/Athena.jpg',     name: 'Athena', h: 460, rotate: '-rotate-3',  z: 'z-20', bg: false, hasStory: true  },
+        { src: '/images/members/Elise.jpg',      name: 'Elise',  h: 400, rotate: 'rotate-1',   z: 'z-10', bg: false, hasStory: true  },
+        { src: '/images/background/2.jpg',       name: '',       h: 435, rotate: '-rotate-2',  z: 'z-10', bg: true,  hasStory: false },
+        { src: '/images/members/Selen.jpg',      name: 'Selen',  h: 440, rotate: '-rotate-2',  z: 'z-30', bg: false, hasStory: true  },
+        { src: '/images/members/Chan.jpg',       name: 'Chan',   h: 410, rotate: 'rotate-3',   z: 'z-20', bg: false, hasStory: false },
+        { src: '/images/members/Laura.jpg',      name: 'Laura',  h: 450, rotate: '-rotate-1',  z: 'z-10', bg: false, hasStory: false },
+        { src: '/images/members/Matt.jpg',       name: 'Matt',   h: 395, rotate: 'rotate-2',   z: 'z-20', bg: false, hasStory: false },
+        { src: '/images/background/19.jpg',      name: '',       h: 420, rotate: '-rotate-2',  z: 'z-20', bg: true,  hasStory: false },
+        { src: '/images/members/Drew.jpg',       name: 'Drew',   h: 430, rotate: '-rotate-2',  z: 'z-10', bg: false, hasStory: false },
+        { src: '/images/members/Helen.jpg',      name: 'Helen',  h: 415, rotate: 'rotate-1',   z: 'z-30', bg: false, hasStory: false },
+      ].map((m) => (
+        <button
+          class:list={[
+            `${m.bg ? 'hidden lg:block lg:flex-1' : 'flex-shrink-0 w-[60vw] sm:w-[40vw] lg:flex-1 lg:w-auto'} member-card rounded-2xl border-2 border-limber-vibe overflow-hidden shadow-xl ${m.hasStory ? 'cursor-pointer group' : ''} transition-transform duration-150 ${m.hasStory ? 'hover:scale-105 hover:border-limber-cream' : ''} relative`,
+            m.rotate, m.z,
+          ]}
+          style={`height: ${m.h}px;`}
+          data-name={m.name}
+          disabled={!(m as any).hasStory}
+        >
+          <img src={m.src} alt={m.name} class="w-full h-full object-cover object-top" loading="lazy" style="will-change: transform;" />
+          {m.hasStory && <p class="absolute inset-0 flex items-center justify-center font-headline uppercase text-sm text-limber-cream opacity-0 group-hover:opacity-100 transition-opacity duration-150">{m.name}</p>}
+        </button>
+      ))}
+    </div>
+    </div>
+  </section>
+
+  <!-- ── MEMBER MODAL ── -->
+  <div id="member-modal" class="fixed inset-0 z-[100] hidden">
+    <div class="absolute inset-0 bg-limber-brown/80" id="member-modal-backdrop"></div>
+    <div class="relative h-full flex items-center justify-center p-4 lg:p-8">
+      <div class="bg-limber-green rounded-2xl border-2 border-limber-vibe w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+        <div class="flex justify-end p-6 pb-0">
+          <button id="member-modal-close" class="font-headline text-xs text-limber-vibe hover:text-limber-cream transition-colors uppercase tracking-widest cursor-pointer">Close ✕</button>
+        </div>
+        <div class="lg:grid lg:grid-cols-[200px_1fr] gap-8 p-6 lg:p-10 items-start">
+          <img id="member-photo" src="" alt="" class="w-full h-56 lg:h-64 object-cover object-top rounded-xl border-2 border-limber-vibe" />
+          <div>
+            <h2 id="member-name" class="font-headline uppercase text-4xl text-limber-vibe block leading-none mb-6"></h2>
+            <div id="member-qa" class="space-y-6"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script define:vars={{ membersData: [
+    { name: 'Donna', qa: [
+      { q: 'Before you found something that worked — what got in the way?', a: 'Stress and expectation got in the way. I put so much focus on end results instead of finding a sustainable regime. There is empowerment in letting go and accepting.' },
+      { q: 'What did movement feel like back then?', a: "It all worked ok, till it didn't. The classic case of that children's book 'Who Sank the Boat' — I used to end up injured a lot because I did not pay attention to the warnings." },
+      { q: 'What does home feel like in your body?', a: "I'm over 60 and so happy to still be doing regular Pilates and strength training. A few years ago I had a life-changing health scare. Accepting and celebrating what I can do instead of focussing on what I can no longer achieve has been a game changer." },
+    ]},
+    { name: 'Athena', qa: [
+      { q: 'Before you found something that worked — what got in the way?', a: "I used the unrelenting busyness of motherhood as an excuse. Movement felt like a luxury, or a chore on a to-do list I didn't have the capacity to action." },
+      { q: 'What does home feel like in your body?', a: "Being at home in my body means feeling strong and capable whilst still feeling safe and nurtured. Motherhood and hormonal shifts have brought many changes — but I've just been feeling very thankful for being in my healthy body right now." },
+      { q: 'Where do you find joy in movement now?', a: "These days I find joy in ocean swimming, surfing, riding my bike, and in the chair, strength and cardio dance classes at Limber." },
+    ]},
+    { name: 'Elise', qa: [
+      { q: 'I stopped trying to be good at movement and started…', a: 'Seeing it as a form of devotion to myself. A way for my mind and body to harmonise as one. I leave a class with a sense of accomplishment, and an even greater sense of appreciation for myself.' },
+      { q: 'What does a genuinely good day look like for you?', a: 'A genuinely good day feels like being able to hold a steady undercurrent of grace in all that I encounter. I add kindling to keep it alive — often in the form of movement, presence, connection, and gratitude.' },
+    ]},
+    { name: 'Selen', qa: [
+      { q: 'Before you found something that worked — what got in the way?', a: "Movement felt very all-or-nothing. I was always chasing routines that looked 'perfect' instead of listening to what my body actually needed. Through pregnancy and postpartum, movement became more about feeling strong, grounded, and like myself again." },
+      { q: 'What does home feel like in your body?', a: "Home in my body feels calm, capable, and connected. It's being able to move without punishing myself or feeling like I have to earn rest. I appreciate my body so much more now for what it can do, not just how it looks." },
+      { q: 'Where do you find joy in movement now?', a: 'The best moments are when I leave feeling lighter mentally, stronger physically, and more present in myself. Sometimes it\'s as simple as finishing a class feeling energised instead of depleted.' },
+    ]},
+    { name: 'Chan', qa: [] },
+    { name: 'Laura', qa: [{ q: '', a: 'Story coming soon.' }] },
+    { name: 'Matt', qa: [{ q: '', a: 'Story coming soon.' }] },
+    { name: 'Drew', qa: [{ q: '', a: 'Story coming soon.' }] },
+    { name: 'Helen', qa: [{ q: '', a: 'Story coming soon.' }] },
+  ]}}>
+    const modal = document.getElementById('member-modal');
+    const backdrop = document.getElementById('member-modal-backdrop');
+    const closeBtn = document.getElementById('member-modal-close');
+    const photo = document.getElementById('member-photo');
+    const nameEl = document.getElementById('member-name');
+    const qaEl = document.getElementById('member-qa');
+
+    document.querySelectorAll('.member-card').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const name = btn.getAttribute('data-name');
+        const member = membersData.find((m) => m.name === name);
+        if (!member) return;
+        photo.src = `/images/members/${name}.jpg`;
+        photo.alt = name;
+        nameEl.textContent = name;
+        qaEl.innerHTML = member.qa.length
+          ? member.qa.map((item) => `
+              <div>
+                ${item.q ? `<p class="font-headline text-xs uppercase tracking-widest text-limber-vibe mb-2">${item.q}</p>` : ''}
+                <p class="font-sans leading-relaxed text-limber-cream/80">${item.a}</p>
+              </div>`).join('')
+          : '<p class="font-sans text-limber-cream/60">Story coming soon.</p>';
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function close() { modal.classList.add('hidden'); document.body.style.overflow = ''; }
+    closeBtn.addEventListener('click', close);
+    backdrop.addEventListener('click', close);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+  </script>
+
+  <!-- ── COMMUNITY ── -->
   <CtaSlice
-    headingLine1="not sure which"
-    headingLine2="membership is"
-    headingLine3="right for you?"
-    body="we're genuinely happy to help. no pushy sales chat — just an honest conversation about what works for you."
-    image="/images/Limber_April26_137.jpg"
+    headingLine1="more than"
+    headingLine2="a membership"
+    body="When you join Limber, you're not just booking classes. You're joining a community that shows up for each other, inside the studio and beyond it."
+    image="/images/Limber_April26_169.jpg"
     imageAlt="Limber community"
+    sectionBg="bg-limber-cream"
+    accentColor="text-limber-bright"
+    primaryBtn="text-limber-brown bg-limber-bright hover:bg-limber-vibe border-limber-bright"
+    showBorder={false}
     buttons={[
-      { label: 'get in touch', href: '/contact' },
-      { label: 'start with the limber way — $99', href: '/pricing/trial', variant: 'outline' },
+      { label: 'Our community →', href: '/about/our-community' },
     ]}
   />
 

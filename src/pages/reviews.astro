@@ -28,76 +28,93 @@ const aggregateSchema = {
 };
 
 const cardStyles = [
-  { bg: 'bg-limber-cream-bg', text: 'text-limber-brown/80',  name: 'text-limber-brown',   sub: 'text-limber-brown/40',  star: 'text-limber-tericotta' },
-  { bg: 'bg-limber-vibe',     text: 'text-limber-brown/80',  name: 'text-limber-brown',   sub: 'text-limber-brown/50',  star: 'text-limber-tericotta' },
-  { bg: 'bg-limber-tericotta',text: 'text-limber-cream/90',  name: 'text-limber-cream',   sub: 'text-limber-cream/50',  star: 'text-limber-cream/80'  },
-  { bg: 'bg-limber-cream',    text: 'text-limber-brown/80',  name: 'text-limber-brown',   sub: 'text-limber-brown/40',  star: 'text-limber-tericotta' },
-  { bg: 'bg-limber-green',    text: 'text-limber-cream/90',  name: 'text-limber-cream',   sub: 'text-limber-cream/50',  star: 'text-limber-vibe'      },
-  { bg: 'bg-limber-vibe',     text: 'text-limber-brown/80',  name: 'text-limber-brown',   sub: 'text-limber-brown/50',  star: 'text-limber-tericotta' },
+  { bg: 'bg-limber-brown', text: 'text-limber-cream/90',  name: 'text-limber-bright',  sub: 'text-limber-cream/50',  star: 'text-limber-bright' },
+  { bg: 'bg-limber-green', text: 'text-limber-cream/90',  name: 'text-limber-cream',  sub: 'text-limber-cream/50',  star: 'text-limber-cream'  },
 ];
 ---
 
 <BaseLayout
-  title="Love Wall"
+  title="Love Club"
   description="See what the Limber community says — real love from real members."
   schema={aggregateSchema}
 >
 
   <!-- ── HERO ── -->
   <PricingHero
-    body="real words from real humans who just wanted to tell us how they felt. in the studio we write love notes to our community and they write them back to us. it's a very wholesome thing."
+    body="Real words from real humans who just wanted to tell us how they felt. In the studio we write love notes to our community and they write them back to us. It's a very wholesome thing."
     buttons={[{ label: 'leave us some love', href: 'https://share.google/zi99bemSSC5ZumvDm', target: '_blank', variant: 'outline' }]}
-    image="/images/Limber_April26_112.jpg"
+    image="/images/Limber_April26_176.jpg"
     imageAlt="Limber studio love wall"
     imagePosition="object-center"
   >
     <h1 class="mb-0">
-      <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none mb-1">love</span>
-      <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-vibe block leading-none">wall</em>
+      <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-bright block leading-none -mb-1">love</span>
+      <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none">Club</span>
     </h1>
   </PricingHero>
 
   <!-- ── CARDS ── -->
-  <section class="bg-limber-cream-bg pt-16 lg:pt-24 pb-16 lg:pb-24 border-b-2 border-neutral-900">
+  <section class="bg-limber-cream pt-16 lg:pt-24 pb-16 lg:pb-24">
     <div class="px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {reviews.map((r, i) => {
-          const s = cardStyles[i % cardStyles.length];
-          return (
-            <blockquote class:list={['p-7 rounded-2xl border-2 border-neutral-900 flex flex-col', s.bg]}>
-              <div class:list={['flex gap-1 mb-5', s.star]} aria-label={`${r.rating} out of 5 stars`}>
-                {Array.from({ length: r.rating }).map(() => (
-                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
-              </div>
-              <p class:list={['font-display italic text-lg leading-relaxed flex-1 mb-6', s.text]}>"{r.body}"</p>
-              <footer class="flex items-end justify-between gap-4">
-                <div>
-                  <strong class:list={['font-headline text-xs block', s.name]}>{r.name}</strong>
-                  <span class:list={['font-sans text-xs block mt-0.5 leading-snug', s.sub]}>{r.class}</span>
-                </div>
-                <time class:list={['font-sans text-xs flex-shrink-0', s.sub]} datetime={r.date}>
-                  {new Date(r.date).toLocaleDateString('en-AU', { month: 'short', year: 'numeric' })}
-                </time>
-              </footer>
-            </blockquote>
-          );
-        })}
-      </div>
+      {(() => {
+        const imageMap = new Map([
+          [3,  '/images/drew-flower.jpg'],
+          [10, '/images/Limber_April26_174.jpg'],
+          [18, '/images/Communtity1.jpg'],
+          [26, '/images/Limber_April26_128.jpg'],
+          [33, '/images/Limber_April26_137.jpg'],
+        ]);
+        return (
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {reviews.map((r, i) => {
+              if (imageMap.has(i)) {
+                const src = imageMap.get(i);
+                return (
+                  <div class="rounded-2xl overflow-hidden border-2 border-limber-green h-72">
+                    <img src={src} alt="" aria-hidden="true" class:list={['w-full h-full object-cover', src?.includes('128') ? 'object-[center_30%]' : 'object-center']} />
+                  </div>
+                );
+              }
+              const s = cardStyles[i % cardStyles.length];
+              return (
+                <blockquote class:list={['p-7 rounded-2xl border-2 flex flex-col', s.bg, s.bg === 'bg-limber-brown' ? 'border-limber-bright' : 'border-limber-vibe']}>
+                  <div class:list={['flex gap-1 mb-5', s.star]} aria-label={`${r.rating} out of 5 stars`}>
+                    {Array.from({ length: r.rating }).map(() => (
+                      <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <p class:list={['font-display text-lg leading-relaxed flex-1 mb-6', s.text]}>"{r.body}"</p>
+                  <footer class="flex items-end justify-between gap-4">
+                    <div>
+                      <strong class:list={['font-headline text-xs block', s.name]}>{r.name}</strong>
+                      <span class:list={['font-sans text-xs block mt-0.5 leading-snug', s.sub]}>{r.class}</span>
+                    </div>
+                    <time class:list={['font-sans text-xs flex-shrink-0', s.sub]} datetime={r.date}>
+                      {new Date(r.date).toLocaleDateString('en-AU', { month: 'short', year: 'numeric' })}
+                    </time>
+                  </footer>
+                </blockquote>
+              );
+            })}
+          </div>
+        );
+      })()}
     </div>
   </section>
 
   <CtaSlice
     headingLine1="come experience"
     headingLine2="it yourself"
-    body="pilates obsessive, total movement newbie, yoga devotee, or someone who's been watching from afar — hi. we've been waiting for you 😉"
-    image="/images/Limber_April26_176.jpg"
+    body="Pilates obsessive, total movement newbie, yoga devotee, or someone who's been watching from afar. Hi. We've been waiting for you."
+    image="/images/Limber_April26_134.jpg"
     imageAlt="Limber community"
+    sectionBg="bg-limber-cream"
+    showBorder={false}
     buttons={[
-      { label: 'start with the limber way — $99', href: '/pricing/trial' },
-      { label: 'view memberships', href: '/pricing/memberships', variant: 'outline' },
+      { label: 'Start for $99', href: '/pricing/trial' },
+      { label: 'View memberships', href: '/pricing/memberships', variant: 'outline' },
     ]}
   />
 

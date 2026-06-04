@@ -10,13 +10,13 @@ interface ClassEntry {
   time?: string;
 }
 
-const typeStyles: Record<ClassType, { bg: string; text: string; note: string }> = {
-  pilates:    { bg: 'bg-limber-cream',     text: 'text-limber-brown',  note: 'text-limber-brown/50'  },
-  yoga:       { bg: 'bg-limber-vibe',      text: 'text-limber-brown',  note: 'text-limber-brown/60'  },
-  barre:      { bg: 'bg-limber-tericotta', text: 'text-limber-cream',  note: 'text-limber-cream/60'  },
-  express:    { bg: 'bg-limber-green',     text: 'text-limber-cream',  note: 'text-limber-cream/60'  },
-  breathwork: { bg: 'bg-neutral-900',      text: 'text-limber-vibe',   note: 'text-limber-cream/50'  },
-  other:      { bg: 'bg-limber-cream-bg',  text: 'text-limber-brown',  note: 'text-limber-brown/50'  },
+const typeStyles: Record<ClassType, { bg: string; text: string; note: string; border: string }> = {
+  pilates:    { bg: 'bg-limber-cream',     text: 'text-limber-green',  note: 'text-limber-green/50',  border: 'border-limber-green/40'  },
+  yoga:       { bg: 'bg-limber-brown',     text: 'text-limber-cream',  note: 'text-limber-cream/60',  border: 'border-limber-brown/10'  },
+  barre:      { bg: 'bg-limber-vibe',      text: 'text-limber-green',  note: 'text-limber-green/60',  border: 'border-limber-green/10'  },
+  express:    { bg: 'bg-limber-bright',    text: 'text-limber-brown',  note: 'text-limber-brown/60',  border: 'border-limber-bright/10' },
+  breathwork: { bg: 'bg-limber-tericotta', text: 'text-limber-cream',  note: 'text-limber-cream/60',  border: 'border-limber-tericotta/10' },
+  other:      { bg: 'bg-limber-tericotta', text: 'text-limber-cream',  note: 'text-limber-cream/60',  border: 'border-limber-tericotta/10' },
 };
 
 // Columns: [Mon, Tue, Wed, Thu, Fri, Sat, Sun]
@@ -24,6 +24,15 @@ const typeStyles: Record<ClassType, { bg: string; text: string; note: string }> 
 const allDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
 const allSlots: Array<{ time: string; classes: (ClassEntry | null)[] }> = [
+  { time: '5am', classes: [
+    null,
+    null,
+    null,
+    { name: 'Signature pilates', type: 'pilates' },
+    null,
+    null,
+    null,
+  ]},
   { time: '6am', classes: [
     { name: 'Strength pilates',  type: 'pilates' },
     { name: 'Chair pilates',     type: 'pilates' },
@@ -34,7 +43,7 @@ const allSlots: Array<{ time: string; classes: (ClassEntry | null)[] }> = [
     null,
   ]},
   { time: '7am', classes: [
-    { name: 'Power yoga',        type: 'yoga'    },
+    { name: 'Power flow yoga',   type: 'yoga'    },
     { name: 'Strength pilates',  type: 'pilates' },
     { name: 'Signature pilates', type: 'pilates' },
     { name: 'Signature pilates', type: 'pilates' },
@@ -45,7 +54,7 @@ const allSlots: Array<{ time: string; classes: (ClassEntry | null)[] }> = [
   { time: '8am', classes: [
     { name: 'Strength pilates',  type: 'pilates' },
     { name: 'Signature pilates', type: 'pilates' },
-    { name: 'Limber up',         type: 'other'   },
+    { name: 'Power flow yoga',   type: 'yoga'    },
     { name: 'Strength pilates',  type: 'pilates' },
     { name: 'Chair pilates',     type: 'pilates' },
     { name: 'Chair pilates',     type: 'pilates', time: '8:30am' },
@@ -57,58 +66,58 @@ const allSlots: Array<{ time: string; classes: (ClassEntry | null)[] }> = [
     { name: 'Strength pilates',  type: 'pilates' },
     { name: 'Limbarre',          type: 'barre'   },
     { name: 'Strength pilates',  type: 'pilates' },
-    { name: 'Power yoga',        type: 'yoga',    time: '9:30am' },
+    { name: 'Power flow yoga',   type: 'yoga',    time: '9:30am' },
     { name: 'Strength pilates',  type: 'pilates', time: '9:30am' },
   ]},
   { time: '10:15am', classes: [
-    { name: 'Power flow',        type: 'pilates', note: 'babies welcome 👶' },
-    { name: 'Limbarre',          type: 'barre'                              },
-    { name: 'Signature pilates', type: 'pilates', note: 'babies welcome 👶' },
-    { name: 'Chair pilates',     type: 'pilates'                            },
-    { name: 'Limboogie',         type: 'other',   note: 'dance cardio'      },
     null,
-    { name: 'Power yoga',        type: 'yoga',    time: '10:30am'           },
+    { name: 'Limbarre',          type: 'barre'                              },
+    { name: 'Signature pilates', type: 'pilates', note: 'Babies welcome 👶' },
+    { name: 'Chair pilates',     type: 'pilates'                            },
+    { name: 'Limboogie',         type: 'other',   note: 'Babies welcome'   },
+    null,
+    null,
   ]},
   { time: '12:15pm', classes: [
-    { name: 'Signature pilates', type: 'express', note: 'express · 30 min' },
+    { name: 'Signature pilates', type: 'pilates', note: 'Express · 30 min' },
     null,
-    { name: 'Power yoga',        type: 'express', note: 'express · 30 min' },
+    { name: 'Power flow yoga',   type: 'yoga',    note: 'Express · 30 min' },
     null,
-    { name: 'Limbarre',          type: 'express', note: 'express · 30 min' },
+    { name: 'Limbarre',          type: 'barre',   note: 'Express · 30 min' },
     null, null,
   ]},
   { time: '4:30pm', classes: [
-    { name: 'Limbarre',          type: 'barre'                                },
-    { name: 'Welcome induction', type: 'other'                                },
-    { name: 'Chair pilates',     type: 'pilates'                              },
+    { name: 'Limbarre',          type: 'barre',   note: 'Babies welcome 👶' },
+    { name: 'Signature pilates', type: 'pilates'                             },
+    { name: 'Chair pilates',     type: 'pilates'                             },
     null,
-    { name: 'Power yoga',        type: 'yoga',    time: '5pm'                 },
-    { name: 'Vin to yin yoga',   type: 'yoga',    time: '4pm'                 },
+    { name: 'Power flow yoga',   type: 'yoga',    time: '5pm'               },
+    null,
     null,
   ]},
   { time: '5:30pm', classes: [
     { name: 'Chair pilates',     type: 'pilates'                },
-    { name: 'Signature pilates', type: 'pilates'                },
+    { name: 'Strength pilates',  type: 'pilates'                },
     { name: 'Signature pilates', type: 'pilates'                },
     { name: 'Strength pilates',  type: 'pilates'                },
-    { name: 'Yin yoga',          type: 'yoga',    time: '6pm'  },
+    { name: 'Unfurl yin yoga',   type: 'yoga',    time: '6pm'  },
     null,
-    { name: 'Yin yoga',          type: 'yoga',    time: '5pm'  },
+    { name: 'Unfurl yin yoga',   type: 'yoga',    time: '5pm'  },
   ]},
   { time: '6:30pm', classes: [
-    { name: 'Signature pilates', type: 'pilates'                                               },
-    { name: 'Limber up',         type: 'other'                                                 },
-    { name: 'Strength pilates',  type: 'pilates'                                               },
-    { name: 'Signature pilates', type: 'pilates'                                               },
-    { name: 'Breathwork',        type: 'breathwork', time: '7:15pm', note: '2nd fri · Alice'  },
+    { name: 'Signature pilates', type: 'pilates' },
+    { name: 'Limber up',         type: 'yoga'    },
+    { name: 'Strength pilates',  type: 'pilates' },
+    { name: 'Signature pilates', type: 'pilates' },
+    { name: 'Breathwork',        type: 'other',  time: '7:15pm', note: '2nd & last Friday of the month' },
     null, null,
   ]},
   { time: '7:30pm', classes: [
-    { name: 'Limber up',         type: 'other'                                                         },
-    { name: 'Yin yoga',          type: 'yoga'                                                          },
-    { name: 'Limber up',         type: 'other'                                                         },
-    { name: 'Yin yoga',          type: 'yoga'                                                          },
-    { name: 'Breathwork',        type: 'breathwork', time: '7:15pm', note: 'last fri · Jackson or Sam' },
+    { name: 'Limber up',         type: 'yoga'    },
+    { name: 'Unfurl yin yoga',   type: 'yoga'    },
+    { name: 'Limber up',         type: 'yoga'    },
+    { name: 'Unfurl yin yoga',   type: 'yoga'    },
+    null,
     null, null,
   ]},
 ];
@@ -117,8 +126,6 @@ const legendItems: Array<{ label: string; type: ClassType }> = [
   { label: 'Pilates',    type: 'pilates'    },
   { label: 'Yoga',       type: 'yoga'       },
   { label: 'Barre',      type: 'barre'      },
-  { label: 'Express',    type: 'express'    },
-  { label: 'Breathwork', type: 'breathwork' },
   { label: 'Other',      type: 'other'      },
 ];
 ---
@@ -129,34 +136,34 @@ const legendItems: Array<{ label: string; type: ClassType }> = [
 >
 
   <!-- ── HERO ── -->
-  <section class="bg-limber-cream border-b-2 border-neutral-900 px-8 lg:px-14 py-16 lg:py-24">
+  <section class="bg-limber-green border-b-2 border-limber-vibe px-8 lg:px-14 py-16 lg:py-24">
     <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
       <h1>
-        <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-green block leading-none mb-1">timetable</span>
-        <em class="font-display uppercase not-italic italic font-medium text-6xl md:text-7xl lg:text-8xl text-limber-tericotta block leading-none">find your class</em>
+        <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-vibe block leading-none -mb-1">timetable</span>
+        <span class="font-display italic font-medium text-6xl md:text-7xl lg:text-8xl text-limber-cream block leading-none">find your flow</span>
       </h1>
       <div class="lg:pb-2 space-y-4 max-w-sm">
-        <p class="font-sans text-limber-brown/70 leading-relaxed">
-          7 days a week. pilates, yoga, barre and more. find a time that works for you and book your spot in seconds.
+        <p class="font-sans text-limber-cream/80 leading-relaxed">
+          7 days a week. Pilates, yoga, barre and more. Find a time that works for you and book your spot in seconds.
         </p>
         <a
           href="/book-now"
-          class="inline-flex items-center px-8 py-4 font-headline text-sm text-limber-cream bg-limber-tericotta hover:bg-limber-brown border-2 border-neutral-900 rounded-full transition-colors"
+          class="inline-flex items-center px-8 py-4 font-headline text-sm text-limber-cream border-2 border-limber-cream hover:bg-limber-cream hover:text-limber-green rounded-full transition-colors"
         >
-          book now
+          Book now
         </a>
       </div>
     </div>
   </section>
 
   <!-- ── TIMETABLE ── -->
-  <section class="bg-limber-cream-bg py-16 lg:py-24 border-b-2 border-neutral-900">
+  <section class="bg-limber-cream py-16 lg:py-24 border-b-2 border-limber-green">
     <div class="px-4 sm:px-6 lg:px-8">
 
       <!-- Legend -->
       <div class="flex flex-wrap gap-2 mb-12">
         {legendItems.map((item) => (
-          <div class:list={['inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-900/10', typeStyles[item.type].bg]}>
+          <div class:list={['inline-flex items-center gap-2 px-4 py-2 rounded-full border', typeStyles[item.type].bg, typeStyles[item.type].border]}>
             <span class:list={['font-headline text-xs', typeStyles[item.type].text]}>{item.label}</span>
           </div>
         ))}
@@ -172,7 +179,7 @@ const legendItems: Array<{ label: string; type: ClassType }> = [
             {allDays.map((day, i) => (
               <div class:list={[
                 'font-headline text-xs uppercase tracking-wide px-3',
-                i >= 5 ? 'text-limber-tericotta/70' : 'text-limber-green/50',
+                i >= 5 ? 'text-limber-tericotta/70' : 'text-limber-green/70',
               ]}>{day}</div>
             ))}
           </div>
@@ -181,12 +188,12 @@ const legendItems: Array<{ label: string; type: ClassType }> = [
           {allSlots.map((slot) => (
             <div class="grid gap-2 mb-2" style="grid-template-columns: 76px repeat(7, 1fr);">
               <div class="flex items-start pt-3.5 pr-2">
-                <span class="font-headline text-xs text-limber-brown/40 whitespace-nowrap">{slot.time}</span>
+                <span class="font-headline text-xs text-limber-green/60 whitespace-nowrap">{slot.time}</span>
               </div>
               {slot.classes.map((entry) => (
                 <div style="min-height: 80px;">
                   {entry ? (
-                    <div class:list={['h-full rounded-xl px-3 py-3 flex flex-col border border-neutral-900/[0.07]', typeStyles[entry.type].bg]}>
+                    <div class:list={['h-full rounded-xl px-3 py-3 flex flex-col border', typeStyles[entry.type].bg, typeStyles[entry.type].border]}>
                       {entry.time && (
                         <span class:list={['font-headline text-xs leading-none mb-1 opacity-60', typeStyles[entry.type].text]}>{entry.time}</span>
                       )}
@@ -196,7 +203,7 @@ const legendItems: Array<{ label: string; type: ClassType }> = [
                       )}
                     </div>
                   ) : (
-                    <div class="h-full rounded-xl border border-dashed border-neutral-900/10" style="min-height: 80px;"></div>
+                    <div class="h-full rounded-xl border border-dashed border-limber-green/10" style="min-height: 80px;"></div>
                   )}
                 </div>
               ))}
@@ -210,31 +217,59 @@ const legendItems: Array<{ label: string; type: ClassType }> = [
   </section>
 
   <!-- ── GOOD TO KNOW ── -->
-  <section class="bg-limber-cream py-16 lg:py-24">
+  <section class="bg-limber-brown py-16 lg:py-24">
     <div class="px-4 sm:px-6 lg:px-8">
 
-      <h2 class="mb-10">
-        <span class="font-headline uppercase text-3xl md:text-4xl lg:text-5xl text-limber-green block leading-none mb-1">good to</span>
-        <em class="font-display uppercase not-italic italic font-medium text-4xl md:text-5xl lg:text-6xl text-limber-tericotta block leading-none">know</em>
+      <h2 class="mb-8">
+        <span class="font-headline uppercase text-3xl md:text-4xl lg:text-5xl text-limber-bright block leading-none -mb-1">good to</span>
+        <span class="font-display italic font-medium text-4xl md:text-5xl lg:text-6xl text-limber-cream block leading-none">know</span>
       </h2>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {[
-          { title: 'booking', body: 'Classes can be booked up to [X] days in advance. We recommend booking early — spots fill fast.', link: null },
-          { title: 'cancellations', body: 'Cancel up to [X] hours before class to avoid a late cancel fee. See our full policy in the T&Cs.', link: null },
-          { title: 'new to limber?', body: 'First time? Start with The Limber Way — 21 days of unlimited classes, a personalised plan, and a real human in your corner. $99.', link: { label: 'learn more', href: '/pricing/trial' } },
-        ].map(({ title, body, link }) => (
-          <div class="p-6 rounded-2xl bg-limber-cream-bg border-2 border-neutral-900 flex flex-col">
-            <p class="font-headline text-sm text-limber-green mb-3">{title}</p>
-            <p class="font-sans text-base text-limber-brown/70 leading-relaxed flex-1">{body}</p>
-            {link && (
-              <a href={link.href} class="font-headline text-xs text-limber-tericotta hover:text-limber-brown transition-colors mt-4">
-                {link.label} →
-              </a>
-            )}
+      <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-start">
+
+        <!-- Cards -->
+        <div class="order-1">
+
+      <div class="grid grid-cols-1 gap-4">
+
+        <!-- Bookings + cancellations -->
+        <div class="p-6 rounded-2xl border-2 bg-limber-brown border-limber-bright flex flex-col">
+          <p class="font-headline text-sm text-limber-bright mb-3">Bookings &amp; cancellations</p>
+          <p class="font-sans text-base text-limber-cream/80 leading-relaxed flex-1">Classes can be booked up to two weeks in advance. Spots fill fast so book early. On the waitlist? You can be added up to 45 minutes before class.<br /><br />Cancel up to 3 hours before class to avoid a late cancel fee. See our full policy in the T&Cs.</p>
+        </div>
+
+        <!-- New to Limber -->
+        <div class="p-6 rounded-2xl border-2 bg-limber-brown border-limber-bright flex flex-col">
+          <p class="font-headline text-sm text-limber-bright mb-3">New to Limber?</p>
+          <p class="font-sans text-base text-limber-cream/80 leading-relaxed flex-1">First time? Start with The Limber Way: 21 days of unlimited classes, a personalised plan, and a real human in your corner. $99.</p>
+          <a href="/pricing/trial" class="font-headline text-xs text-limber-bright hover:text-limber-vibe transition-colors mt-4">Learn more →</a>
+        </div>
+
+        <!-- App buttons -->
+        <div class="p-6 rounded-2xl border-2 bg-limber-brown border-limber-bright flex flex-col justify-between">
+          <div>
+            <p class="font-headline text-sm text-limber-bright mb-3">Limber in your pocket</p>
+            <p class="font-sans text-base text-limber-cream/80 leading-relaxed mb-6">Book classes, manage your membership, and check the timetable, all from your phone.</p>
           </div>
-        ))}
-      </div>
+          <div class="flex flex-wrap gap-3">
+            <a href="#" class="inline-flex items-center px-5 py-2.5 font-headline text-sm text-limber-brown bg-limber-bright hover:bg-limber-vibe border-2 border-limber-bright rounded-full transition-colors">App Store</a>
+            <a href="#" class="inline-flex items-center px-5 py-2.5 font-headline text-sm text-limber-cream border-2 border-limber-cream hover:border-limber-bright hover:text-limber-bright rounded-full transition-colors">Google Play</a>
+          </div>
+        </div>
+
+        </div>{/* end cards */}
+        </div>{/* end cards col */}
+
+        <!-- Image -->
+        <div class="order-2 mt-12 lg:mt-0">
+          <img
+            src="/images/Limber_April26_170.jpg"
+            alt="Limber studio"
+            class="w-full h-72 lg:h-[520px] object-cover rounded-2xl border-2 border-limber-bright"
+          />
+        </div>
+
+      </div>{/* end two-col grid */}
 
     </div>
   </section>

@@ -53,6 +53,37 @@
     text-transform: uppercase;
     letter-spacing: 0.03em;
   }
+
+  /* Cormorant Garamond — upright in headings, italic only when explicitly set */
+  .font-display {
+    font-style: normal;
+  }
+
+}
+
+/* Tight line-heights for heading typography — outside @layer so they beat Tailwind utilities */
+h1 .font-headline,
+h2 .font-headline,
+h3 .font-headline {
+  line-height: 0.95;
+}
+
+h1 .font-display,
+h2 .font-display,
+h3 .font-display {
+  line-height: 0.95;
+}
+
+/* On mobile: heading spans flow inline so they naturally sit on one line */
+@media (max-width: 1023px) {
+  h1 .font-headline,
+  h1 .font-display,
+  h2 .font-headline,
+  h2 .font-display,
+  h3 .font-headline,
+  h3 .font-display {
+    display: inline;
+  }
 }
 
 @keyframes ticker {

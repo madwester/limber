@@ -15,6 +15,8 @@ interface Props {
   buttons: Button[];
   bgColor?: string;
   onDark?: boolean;
+  sticker?: string;
+  imageStyle?: string;
 }
 
 const {
@@ -26,6 +28,8 @@ const {
   buttons,
   bgColor = 'bg-limber-green',
   onDark = true,
+  sticker,
+  imageStyle,
 } = Astro.props;
 
 const bodyClass = bodyItalic
@@ -33,7 +37,7 @@ const bodyClass = bodyItalic
   : `font-sans leading-relaxed ${onDark ? 'text-limber-cream/80' : 'text-limber-brown/80'}`;
 ---
 
-<section class:list={[bgColor, 'border-b-2 border-neutral-900 px-8 lg:px-14 py-16 lg:py-24']}>
+<section class:list={[bgColor, 'border-b-2 px-4 sm:px-6 lg:px-8 py-16 lg:py-24', bgColor === 'bg-limber-green' ? 'border-limber-vibe' : 'border-limber-green']}>
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
     <!-- Left: heading + body + buttons -->
@@ -48,10 +52,12 @@ const bodyClass = bodyItalic
         {buttons.map((btn) => (
           <a
             class:list={[
-              'inline-flex items-center px-8 py-4 font-headline text-sm border-2 border-neutral-900 rounded-full transition-colors flex-shrink-0',
+              'inline-flex items-center px-8 py-4 font-headline text-sm border-2 rounded-full transition-colors flex-shrink-0',
               btn.variant === 'outline'
-                ? onDark ? 'text-limber-cream hover:bg-neutral-900' : 'text-limber-brown hover:bg-neutral-900 hover:text-limber-cream'
-                : 'text-limber-green bg-limber-vibe hover:bg-limber-bright',
+                ? onDark
+                  ? 'text-limber-cream border-limber-cream hover:bg-limber-brown hover:border-limber-vibe'
+                  : 'text-limber-brown border-limber-green hover:bg-limber-green hover:text-limber-cream'
+                : 'text-limber-green bg-limber-vibe hover:bg-limber-bright border-limber-vibe',
             ]}
             href={btn.href}
             target={btn.target}
@@ -64,12 +70,24 @@ const bodyClass = bodyItalic
     </div>
 
     <!-- Right: image -->
-    <div>
-      <img
-        alt={imageAlt}
-        class:list={['w-full h-72 lg:h-[420px] object-cover rounded-2xl border-2 border-neutral-900', imagePosition]}
-        src={image}
-      />
+    <div class="relative">
+      <div class="overflow-hidden rounded-2xl">
+        <img
+          alt={imageAlt}
+          class:list={['w-full h-72 lg:h-[420px] object-cover rounded-2xl border-2', imagePosition, bgColor === 'bg-limber-green' ? 'border-limber-vibe' : 'border-limber-green']}
+          style={imageStyle}
+          src={image}
+        />
+      </div>
+      {sticker && (
+        <img
+          src={sticker}
+          alt=""
+          aria-hidden="true"
+          class="absolute -top-6 -left-12 w-28 h-28 lg:w-32 lg:h-32 rotate-[-15deg] pointer-events-none z-10"
+          style="filter: brightness(0) saturate(100%) invert(66%) sepia(62%) saturate(625%) hue-rotate(338deg) brightness(1.05);"
+        />
+      )}
     </div>
 
   </div>

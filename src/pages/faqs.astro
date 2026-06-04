@@ -1,17 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaSlice from '../components/CtaSlice.astro';
 
-// TODO: Replace with real FAQs
 const faqs = [
  { q: 'Do I need experience to join a class?', a: 'Not at all. Most of our classes are suitable for complete beginners. If you\'re unsure, start with our intro trial or reach out and we\'ll point you in the right direction.' },
- { q: 'What should I wear?', a: 'Comfortable, form-fitting activewear works best. Grip socks are recommended for reformer classes — we sell them in studio if you don\'t have a pair.' },
- { q: 'What should I bring?', a: 'Just yourself and a water bottle. We provide all equipment including reformers, mats, and props.' },
- { q: 'How do I book a class?', a: 'All bookings are made online via Momence — use the Book Now page on this site or download the Momence app. New members can start with our intro trial.' },
- { q: 'What is your cancellation policy?', a: 'You can cancel or reschedule up to [X] hours before your class without charge. Late cancellations and no-shows may incur a fee. See our full Terms & Conditions.' },
- { q: 'Can I pause or cancel my membership?', a: 'Yes. Memberships can be paused or cancelled with [X] days notice. See our Terms & Conditions for the full membership policy.' },
- { q: 'Do you offer privates for injury rehab?', a: 'Absolutely. Our instructors are experienced in working with a wide range of injuries and conditions. Enquire via our Private Sessions page.' },
- { q: 'Do you offer corporate wellness programs?', a: 'Yes — we offer both in-studio and on-site corporate wellness programs. Head to our Corporates page or get in touch.' },
- { q: 'Is parking available?', a: '[Parking details — e.g. street parking available on X Street, or paid carpark at X.]' },
+ { q: 'What should I wear?', a: 'Comfortable, form-fitting activewear works best. Grip socks are recommended for chair pilates. We sell them in studio if you don\'t have a pair.' },
+ { q: 'What should I bring?', a: 'Just yourself and a water bottle. We provide all equipment including mats and props.' },
+ { q: 'Where is Limber located?', a: 'We\'re at Shop 17, 282–298 Lawrence Hargrave Drive, Thirroul NSW, in Thirroul Plaza next to Coles. We\'re conveniently located for the Northern Illawarra community — a short drive from Austinmer, Coledale, Bulli, Woonona, Corrimal, Stanwell Park and Wollongong. Street parking is available nearby.' },
+ { q: 'How do I book a class?', a: 'All bookings are made online via the Limber app or website. New members can start with our Limber way intro trial.' },
+ { q: 'What is your cancellation policy?', a: 'You can cancel up to 3 hours before your class without charge. Late cancellations and no-shows may incur a fee. See our full Terms & Conditions for details.' },
+ { q: 'Can I pause or cancel my membership?', a: 'Yes. Memberships can be paused or cancelled after the 12 week minimum commitment. See our Terms & Conditions for the full policy.' },
+ { q: 'Do you offer privates for injury rehab?', a: 'Absolutely. Our teachers are experienced in working with a wide range of injuries and conditions. Head to our Private Sessions page or get in touch.' },
+ { q: 'Do you offer corporate wellness programs?', a: 'Yes. Head to our Corporates page to learn about The Workplace Reset, or get in touch and we\'ll tailor something for your team.' },
+ { q: 'What makes Limber different from other pilates studios?', a: 'We put community and joy first. Our classes are designed to feel genuinely good — not punishing, not performative. We offer pilates, yoga, barre, strength and dance, taught by qualified teachers who genuinely care. Every new member gets a personalised start through our Limber Way intro trial.' },
+ { q: 'Is parking available?', a: 'We\'re in Thirroul Plaza, next to Coles. Street parking is available nearby. Parking is a vibe.' },
  { q: 'Where can I buy a gift card?', a: 'Gift cards can be purchased online via our Packs & Gift Cards page. They\'re delivered instantly by email and never expire.' },
 ];
 
@@ -19,9 +21,9 @@ const faqSchema = {
  '@context': 'https://schema.org',
  '@type': 'FAQPage',
  mainEntity: faqs.map(({ q, a }) => ({
- '@type': 'Question',
- name: q,
- acceptedAnswer: { '@type': 'Answer', text: a },
+  '@type': 'Question',
+  name: q,
+  acceptedAnswer: { '@type': 'Answer', text: a },
  })),
 };
 ---
@@ -31,75 +33,64 @@ const faqSchema = {
  description="Frequently asked questions about Limber — bookings, cancellations, what to wear, memberships, and more."
  schema={faqSchema}
 >
- <section class="bg-limber-green py-24 lg:py-36">
- <div class=" px-4 sm:px-6 lg:px-8">
- <p class="font-headline text-xs text-limber-vibe mb-4">FAQs</p>
- <h1 class="mb-6">
-   <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-cream block leading-none mb-1">a few things</span>
-   <em class="font-display uppercase not-italic italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-vibe block leading-none">worth knowing</em>
- </h1>
- <p class="font-sans text-lg text-limber-cream/80">
- Everything you need to know. Can't find what you're looking for?
- <a href="/contact" class="text-limber-vibe hover:underline">Get in touch</a>.
- </p>
- </div>
+
+ <!-- ── HERO ── -->
+ <section class="bg-limber-green py-20 lg:py-28 border-b-2 border-limber-vibe">
+  <div class="px-4 sm:px-6 lg:px-8">
+   <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-start">
+
+    <div>
+     <p class="font-display italic text-xl text-limber-cream mb-4">Frequently asked questions</p>
+     <h1 class="mb-6">
+      <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none -mb-1">A few things</span>
+      <span class="flex items-baseline gap-[0.2em] leading-none">
+        <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-vibe">WORTH</span>
+        <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream">knowing</span>
+      </span>
+     </h1>
+     <p class="font-sans text-limber-cream/80 leading-relaxed max-w-sm">
+      Can't find what you're looking for? <a href="/contact" class="text-limber-vibe hover:text-limber-cream transition-colors">Get in touch</a>.
+     </p>
+    </div>
+
+   </div>
+  </div>
  </section>
 
- <section class="py-16 bg-limber-cream-bg">
- <div class=" px-4 sm:px-6 lg:px-8">
- <dl class="space-y-3">
- {
- faqs.map(({ q, a }, i) => (
- <div class="rounded-2xl bg-limber-cream border-2 border-limber-green/20 overflow-hidden">
- <dt>
- <button
- type="button"
- class="w-full flex items-center justify-between gap-4 px-6 py-5 text-left hover:bg-limber-green/5 transition-colors"
- aria-expanded="false"
- aria-controls={`faq-answer-${i}`}
- data-faq-toggle
- >
- <span class="font-headline text-base text-limber-green">{q}</span>
- <svg
- class="w-5 h-5 text-limber-tericotta flex-shrink-0 transition-transform duration-200"
- fill="none" viewBox="0 0 24 24" stroke="currentColor"
- aria-hidden="true" data-faq-icon
- >
- <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
- </svg>
- </button>
- </dt>
- <dd id={`faq-answer-${i}`} class="hidden px-6 pb-5 font-sans text-sm text-limber-brown/80 leading-relaxed">
- {a}
- </dd>
- </div>
- ))
- }
- </dl>
- </div>
+ <!-- ── FAQs ── -->
+ <section class="bg-limber-green py-16 lg:py-24">
+  <div class="px-4 sm:px-6 lg:px-8">
+   <div id="faq-masonry" style="columns: 2; column-gap: 1rem;">
+    {faqs.map(({ q, a }) => (
+     <div class="break-inside-avoid mb-4">
+      <div class="bg-limber-cream rounded-2xl p-6 border-2 border-limber-vibe">
+       <p class="font-headline uppercase text-sm text-limber-green mb-3">{q}</p>
+       <p class="font-sans text-sm text-limber-brown/80 leading-relaxed">{a}</p>
+      </div>
+     </div>
+    ))}
+   </div>
+  </div>
  </section>
 
- <section class="bg-limber-tericotta py-20">
- <div class=" px-4 sm:px-6 text-center">
- <h2 class="font-headline text-4xl text-limber-cream mb-3">Still have questions?</h2>
- <p class="font-sans text-limber-cream/80 mb-8">We're happy to help — reach out and we'll get back to you quickly.</p>
- <a href="/contact" class="inline-flex items-center px-7 py-3.5 font-headline text-sm text-limber-tericotta bg-limber-cream hover:bg-limber-bright border-2 border-neutral-900 rounded-full transition-colors">
- Contact Us
- </a>
- </div>
- </section>
+ <CtaSlice
+  headingLine1="still have"
+  headingLine2="questions?"
+  body="We're happy to help. Reach out and we'll get back to you quickly."
+  image="/images/Limber_April26_176.jpg"
+  imageAlt="Limber studio"
+  sectionBg="bg-limber-cream"
+  showBorder={false}
+  buttons={[
+   { label: 'Get in touch', href: '/contact' },
+   { label: 'Community guidelines', href: '/community-guidelines', variant: 'outline' },
+  ]}
+ />
+
 </BaseLayout>
 
 <script>
- document.querySelectorAll('[data-faq-toggle]').forEach((btn) => {
- btn.addEventListener('click', () => {
- const expanded = btn.getAttribute('aria-expanded') === 'true';
- const answerId = btn.getAttribute('aria-controls')!;
- const answer = document.getElementById(answerId);
- const icon = btn.querySelector('[data-faq-icon]');
- btn.setAttribute('aria-expanded', String(!expanded));
- answer?.classList.toggle('hidden', expanded);
- icon?.classList.toggle('rotate-180', !expanded);
- });
- });
+ const m = document.getElementById('faq-masonry');
+ function setCols() { if (m) m.style.columns = window.innerWidth >= 1024 ? '3' : window.innerWidth >= 640 ? '2' : '1'; }
+ setCols(); window.addEventListener('resize', setCols);
 </script>

@@ -5,10 +5,12 @@ interface Props {
   bgColor?: string;
 }
 
-const { image, imageAlt, bgColor = 'bg-limber-cream' } = Astro.props;
+const { image, imageAlt, bgColor = 'bg-limber-green' } = Astro.props;
+
+const borderColor = bgColor === 'bg-limber-green' ? 'border-limber-vibe' : 'border-limber-green';
 ---
 
-<section class:list={['split-hero border-b-2 border-neutral-900 lg:flex', bgColor]}>
+<section class:list={['split-hero border-b-2 lg:flex', bgColor, borderColor]}>
 
   <!-- Left: content via slot -->
   <div class:list={['lg:w-1/2 flex flex-col justify-start px-8 lg:px-14 py-16 lg:py-20', bgColor]}>
@@ -20,7 +22,7 @@ const { image, imageAlt, bgColor = 'bg-limber-cream' } = Astro.props;
     <img
       src={image}
       alt={imageAlt}
-      class="w-full h-64 lg:h-full object-cover object-center border-t-2 lg:border-t-0 lg:border-l-2 border-neutral-900"
+      class:list={['w-full h-64 lg:h-full object-cover object-center border-t-2 lg:border-t-0 lg:border-l-2', borderColor]}
     />
   </div>
 

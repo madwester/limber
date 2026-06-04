@@ -10,6 +10,9 @@ interface Props {
  schema?: object | object[];
  noindex?: boolean;
  hideBanner?: boolean;
+ bannerBg?: string;
+ bannerText?: string;
+ bannerTextAccent?: string;
 }
 
 const {
@@ -19,6 +22,9 @@ const {
  schema,
  noindex = false,
  hideBanner = false,
+ bannerBg,
+ bannerText,
+ bannerTextAccent,
 } = Astro.props;
 
 const siteUrl = 'https://limberco.com.au';
@@ -63,7 +69,7 @@ const localBusinessSchema = {
 ---
 
 <!doctype html>
-<html lang="en-AU">
+<html lang="en-AU" class="bg-limber-green" style="overflow-x: clip;">
  <head>
  <meta charset="UTF-8" />
  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -118,14 +124,14 @@ const localBusinessSchema = {
  />
  </head>
  <!-- body bg is Cream 30% per brand guide; text is Limber Brown -->
- <body class="bg-limber-cream-bg text-limber-brown font-sans antialiased">
+ <body class="bg-limber-green text-limber-brown font-sans antialiased" style="overflow-x: clip;">
  <a
  href="#main-content"
  class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-limber-tericotta focus:text-limber-cream focus:px-4 focus:py-2 focus:rounded-md"
  >
  Skip to content
  </a>
- <Header showBanner={!hideBanner} />
+ <Header bannerTextAccent={bannerTextAccent} showBanner={!hideBanner} bannerBg={bannerBg} bannerText={bannerText} />
  <main id="main-content">
  <slot />
  </main>
