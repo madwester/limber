@@ -100,6 +100,12 @@ h3 .font-display {
     display: block !important;
   }
 
+  /* Headings that should stack on mobile (not flow inline) */
+  .stacked-heading .font-headline,
+  .stacked-heading .font-display {
+    display: block !important;
+  }
+
   /* CTA card text stays centered on mobile */
   .cta-card p,
   .cta-card li,

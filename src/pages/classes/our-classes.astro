@@ -181,10 +181,10 @@ const classes = [
 
     <!-- Heading -->
     <div class="mb-10">
-      <h1 class="mb-0">
-        <span class="flex items-end justify-center lg:justify-start gap-[0.2em] leading-none">
-          <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-bright">move</span>
-          <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream">your way</span>
+      <h1 class="mb-0 stacked-heading">
+        <span class="lg:flex lg:items-end lg:justify-start lg:gap-[0.2em] leading-none">
+          <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-bright block leading-none">move</span>
+          <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none">your way</span>
         </span>
       </h1>
     </div>
@@ -284,7 +284,7 @@ const classes = [
     <!-- Shared class sections -->
     <div class="flex-1 bg-limber-cream divide-y-2 divide-limber-green">
       {classes.map((cls) => (
-        <section id={cls.id} data-class-section class="p-5 sm:p-6 lg:p-10 xl:p-12 scroll-mt-[106px] lg:scroll-mt-[122px]">
+        <section id={cls.id} data-class-section class="p-5 sm:p-6 lg:p-10 xl:p-12 scroll-mt-[170px] lg:scroll-mt-[122px]">
 
           <!-- Heading + book -->
           <div class="mb-4">
@@ -302,11 +302,16 @@ const classes = [
                   );
                 })()}
               </h2>
-              <a
-                href="/book-now"
-                class="flex-shrink-0 inline-flex items-center px-4 lg:px-6 py-2.5 lg:py-3 font-headline text-xs text-limber-cream bg-limber-tericotta hover:bg-limber-brown border-2 border-limber-green rounded-full transition-colors"
-              >
-                book this class
+              <a href="/book-now" class="flex-shrink-0 group">
+                {/* Mobile: mixed-font heading style */}
+                <span class="lg:hidden flex items-baseline gap-[0.1em] leading-none">
+                  <span class="font-headline uppercase text-xl text-limber-tericotta group-hover:text-limber-brown transition-colors">Book a</span>
+                  <span class="font-display italic font-medium text-2xl text-limber-tericotta group-hover:text-limber-brown transition-colors">class</span>
+                </span>
+                {/* Desktop: pill button */}
+                <span class="hidden lg:inline-flex items-center px-6 py-3 font-headline text-xs text-limber-cream bg-limber-tericotta group-hover:bg-limber-brown border-2 border-limber-green rounded-full transition-colors">
+                  book this class
+                </span>
               </a>
             </div>
           </div>
@@ -347,7 +352,7 @@ const classes = [
               <!-- Meta card -->
               <div class:list={['grid gap-px bg-limber-green/10 rounded-2xl overflow-hidden border-2 border-limber-green mb-5 grid-cols-1', cls.soundsLike && cls.soundsLike !== '#' ? 'sm:grid-cols-3' : 'sm:grid-cols-2']}>
                 <div class="bg-limber-cream p-4">
-                  <p class="font-headline text-xs text-limber-tericotta mb-1">Spotlight on</p>
+                  <p class="font-headline text-xs text-limber-tericotta mb-1">Spotlight On</p>
                   <p class="font-sans text-xs text-limber-brown/80 leading-snug">{cls.spotlight}</p>
                 </div>
                 <div class="bg-limber-cream p-4">
@@ -356,7 +361,7 @@ const classes = [
                 </div>
                 {cls.soundsLike && cls.soundsLike !== '#' && (
                   <div class="bg-limber-cream p-4">
-                    <p class="font-headline text-xs text-limber-tericotta mb-1">Sounds like</p>
+                    <p class="font-headline text-xs text-limber-tericotta mb-1">Sounds Like</p>
                     <a href={cls.soundsLike} target="_blank" rel="noopener noreferrer" class="font-sans text-xs text-limber-tericotta hover:text-limber-brown transition-colors">playlist →</a>
                   </div>
                 )}
