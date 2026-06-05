@@ -220,7 +220,7 @@ const classes = [
   <!-- ── CLASSES ── -->
 
   <!-- Mobile: sticky tab bar -->
-  <div class="lg:hidden sticky top-[106px] z-10 bg-limber-tericotta border-b-2 border-limber-green overflow-x-auto" style="scrollbar-width: none;">
+  <div class="lg:hidden sticky top-[112px] z-10 bg-limber-tericotta border-b-2 border-limber-green overflow-x-auto" style="scrollbar-width: none;">
     <nav class="flex min-w-max" aria-label="Class list">
       {classes.map((cls, i) => (
         <button
@@ -289,7 +289,7 @@ const classes = [
           <!-- Heading + book -->
           <div class="mb-4">
             <div class="lg:flex lg:items-start lg:justify-between lg:gap-4 mb-3">
-              <h2 class="flex items-baseline justify-center lg:justify-start gap-[0.15em] leading-none mb-3 lg:mb-0">
+              <h2 class="flex items-baseline justify-start gap-[0.15em] leading-none mb-3 lg:mb-0">
                 {(() => {
                   const [first, rest] = cls.nameSplit
                     ? cls.nameSplit
@@ -304,7 +304,7 @@ const classes = [
               </h2>
               <a
                 href="/book-now"
-                class="flex-shrink-0 inline-flex items-center justify-center w-full lg:w-auto px-4 lg:px-6 py-2.5 lg:py-3 font-headline text-xs text-limber-cream bg-limber-tericotta hover:bg-limber-brown border-2 border-limber-green rounded-full transition-colors"
+                class="flex-shrink-0 inline-flex items-center px-4 lg:px-6 py-2.5 lg:py-3 font-headline text-xs text-limber-cream bg-limber-tericotta hover:bg-limber-brown border-2 border-limber-green rounded-full transition-colors"
               >
                 book this class
               </a>

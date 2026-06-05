@@ -158,14 +158,10 @@ const legendItems: Array<{ label: string; type: ClassType }> = [
 
   <!-- ── EXPLORE CLASSES ── -->
   <section class="bg-limber-green py-10 lg:py-14 border-b-2 border-limber-vibe">
-    <div class="px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-      <div>
-        <p class="font-display italic text-xl text-limber-cream mb-1">Not sure what to book?</p>
-        <p class="font-sans text-sm text-limber-cream/70">Explore every class we offer — what it is, who it's for, and what to expect.</p>
-      </div>
-      <a href="/classes/our-classes" class="flex-shrink-0 inline-flex items-center px-6 py-3 font-headline text-sm text-limber-green bg-limber-vibe hover:bg-limber-bright border-2 border-limber-vibe rounded-full transition-colors">
-        Explore our classes →
-      </a>
+    <div class="px-4 sm:px-6 lg:px-8">
+      <p class="font-display italic text-xl text-limber-cream mb-1">Not sure what to book?</p>
+      <p class="font-sans text-sm text-limber-cream/70 mb-3">Explore every class we offer — what it is, who it's for, and what to expect.</p>
+      <a href="/classes/our-classes" class="font-headline text-xs text-limber-vibe hover:text-limber-bright transition-colors">Explore our classes →</a>
     </div>
   </section>
 
@@ -258,15 +254,20 @@ const legendItems: Array<{ label: string; type: ClassType }> = [
           <a href="/pricing/trial" class="font-headline text-xs text-limber-bright hover:text-limber-vibe transition-colors mt-4">Learn more →</a>
         </div>
 
+        <!-- Not sure what to book -->
+        <div class="p-6 rounded-2xl border-2 bg-limber-brown border-limber-bright flex flex-col">
+          <p class="font-headline text-sm text-limber-bright mb-3">Not sure what to book?</p>
+          <p class="font-sans text-base text-limber-cream/80 leading-relaxed flex-1">Explore every class we offer — what it is, who it&apos;s for, and what to expect.</p>
+          <a href="/classes/our-classes" class="font-headline text-xs text-limber-bright hover:text-limber-vibe transition-colors mt-4">Explore our classes →</a>
+        </div>
+
         <!-- App buttons -->
-        <div class="p-6 rounded-2xl border-2 bg-limber-brown border-limber-bright flex flex-col justify-between">
-          <div>
-            <p class="font-headline text-sm text-limber-bright mb-3">Limber in your pocket</p>
-            <p class="font-sans text-base text-limber-cream/80 leading-relaxed mb-6">Book classes, manage your membership, and check the timetable, all from your phone.</p>
-          </div>
-          <div class="flex flex-wrap justify-center lg:justify-start gap-3">
-            <a href="#" class="inline-flex items-center px-5 py-2.5 font-headline text-sm text-limber-brown bg-limber-bright hover:bg-limber-vibe border-2 border-limber-bright rounded-full transition-colors">App Store</a>
-            <a href="#" class="inline-flex items-center px-5 py-2.5 font-headline text-sm text-limber-cream border-2 border-limber-cream hover:border-limber-bright hover:text-limber-bright rounded-full transition-colors">Google Play</a>
+        <div class="p-6 rounded-2xl border-2 bg-limber-brown border-limber-bright flex flex-col">
+          <p class="font-headline text-sm text-limber-bright mb-3">Limber in your pocket</p>
+          <p class="font-sans text-base text-limber-cream/80 leading-relaxed flex-1">Book classes, manage your membership, and check the timetable, all from your phone.</p>
+          <div class="flex gap-6 mt-4">
+            <a href="https://apps.apple.com/au/app/limber-co/id6744895425" target="_blank" rel="noopener noreferrer" class="font-headline text-xs text-limber-bright hover:text-limber-vibe transition-colors">App Store →</a>
+            <a href="https://play.google.com/store/apps/details?id=com.ribbon.mobileApp&hl=en_AU" target="_blank" rel="noopener noreferrer" class="font-headline text-xs text-limber-bright hover:text-limber-vibe transition-colors">Google Play →</a>
           </div>
         </div>
 
