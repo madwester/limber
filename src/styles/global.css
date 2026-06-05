@@ -110,7 +110,7 @@ h3 .font-display {
   .cta-card p,
   .cta-card li,
   .cta-card a {
-    text-align: center;
+    text-align: center !important;
   }
 
   /* Journal post cards stay left-aligned */
@@ -131,6 +131,12 @@ h3 .font-display {
   [class*="rounded-xl"] p,
   [class*="rounded-xl"] a {
     text-align: left;
+  }
+
+  /* Full-width block buttons inside cards should stay centered */
+  [class*="rounded-2xl"] a.block,
+  [class*="rounded-xl"] a.block {
+    text-align: center;
   }
 }
 
