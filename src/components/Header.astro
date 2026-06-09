@@ -167,9 +167,9 @@ const currentPath = Astro.url.pathname;
  <div id="mobile-menu" class:list={["hidden lg:hidden fixed left-0 right-0 bottom-0 z-[200] bg-limber-green overflow-y-auto border-t-2 border-limber-vibe", showBanner ? "top-[108px]" : "top-[66px]"]}>
   <div class="flex flex-col px-8 py-8">
    <!-- Links -->
-   <nav class="flex flex-col gap-1 flex-1 items-center text-center">
+   <nav class="flex flex-col gap-1 flex-1 mobile-nav">
     {navItems.map((item) => (
-     <div class="w-full text-center">
+     <div>
       {item.children ? (
        <p class="font-display italic text-lg text-limber-cream/40 py-1 mt-3">{item.label}</p>
       ) : (

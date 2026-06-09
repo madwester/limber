@@ -24,7 +24,7 @@ const {
 
 <section class:list={[bgColor, sectionBorderColor ? 'border-b-2' : '', sectionBorderColor ?? '']}>
   {Astro.slots.has('above') && (
-    <div class:list={[contentPadding, 'text-center lg:text-left']}>
+    <div class:list={[contentPadding, 'text-left']}>
       <slot name="above" />
     </div>
   )}
@@ -36,7 +36,7 @@ const {
     />
   </div>
   {Astro.slots.has('default') && (
-    <div class:list={[contentPadding, 'text-center lg:text-left']}>
+    <div class:list={[contentPadding, 'text-left']}>
       <slot />
     </div>
   )}
