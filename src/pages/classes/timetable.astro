@@ -140,30 +140,30 @@ const legendItems: Array<{ label: string; type: ClassType }> = [
     <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
       <h1>
         <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-vibe block leading-none -mb-1">timetable</span>
-        <span class="font-display italic font-medium text-6xl md:text-7xl lg:text-8xl text-limber-cream block leading-none">find your flow</span>
+        <span class="font-display italic font-medium text-6xl md:text-7xl lg:text-8xl text-limber-cream block leading-none">Find your flow</span>
       </h1>
       <div class="lg:pb-2 space-y-4 max-w-sm">
         <p class="font-sans text-limber-cream/80 leading-relaxed">
           7 days a week. Pilates, yoga, barre and more. Find a time that works for you and book your spot in seconds.
         </p>
-        <a
-          href="/book-now"
-          class="inline-flex items-center px-8 py-4 font-headline text-sm text-limber-cream border-2 border-limber-cream hover:bg-limber-cream hover:text-limber-green rounded-full transition-colors"
-        >
-          <span class="relative top-[2px]">Book now</span>
-        </a>
+        <div class="flex flex-wrap gap-3">
+          <a
+            href="/book-now"
+            class="inline-flex items-center px-8 py-4 font-headline text-sm text-limber-green bg-limber-vibe hover:bg-limber-bright border-2 border-limber-vibe rounded-full transition-colors"
+          >
+            <span class="relative top-[2px]">Book now</span>
+          </a>
+          <a
+            href="/classes/our-classes"
+            class="inline-flex items-center px-8 py-4 font-headline text-sm text-limber-cream border-2 border-limber-cream hover:border-limber-vibe hover:text-limber-vibe rounded-full transition-colors"
+          >
+            <span class="relative top-[2px]">Explore classes</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ── EXPLORE CLASSES ── -->
-  <section class="bg-limber-green py-10 lg:py-14 border-b-2 border-limber-vibe">
-    <div class="px-4 sm:px-6 lg:px-8">
-      <p class="font-display italic text-xl text-limber-cream mb-1">Not sure what to book?</p>
-      <p class="font-sans text-sm text-limber-cream/70 mb-3">Explore every class we offer — what it is, who it's for, and what to expect.</p>
-      <a href="/classes/our-classes" class="font-headline text-xs text-limber-vibe hover:text-limber-bright transition-colors">Explore our classes →</a>
-    </div>
-  </section>
 
   <!-- ── TIMETABLE ── -->
   <section class="bg-limber-cream py-16 lg:py-24 border-b-2 border-limber-green">
@@ -229,9 +229,18 @@ const legendItems: Array<{ label: string; type: ClassType }> = [
   <section class="bg-limber-brown py-16 lg:py-24">
     <div class="px-4 sm:px-6 lg:px-8">
 
+      <!-- Mobile: image above heading -->
+      <div class="lg:hidden mb-8">
+        <img
+          src="/images/Limber_April26_170.jpg"
+          alt="Limber studio"
+          class="w-full h-64 object-cover rounded-2xl border-2 border-limber-bright"
+        />
+      </div>
+
       <h2 class="mb-8">
-        <span class="font-headline uppercase text-3xl md:text-4xl lg:text-5xl text-limber-bright block leading-none -mb-1">good to</span>
-        <span class="font-display italic font-medium text-4xl md:text-5xl lg:text-6xl text-limber-cream block leading-none">know</span>
+        <span class="font-headline uppercase text-3xl md:text-4xl lg:text-5xl text-limber-bright block leading-none -mb-1">Good to</span>
+        <span class="font-display italic font-medium text-4xl md:text-5xl lg:text-6xl text-limber-cream block leading-none">Know</span>
       </h2>
 
       <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-start">
@@ -274,12 +283,12 @@ const legendItems: Array<{ label: string; type: ClassType }> = [
         </div>{/* end cards */}
         </div>{/* end cards col */}
 
-        <!-- Image -->
-        <div class="order-2 mt-12 lg:mt-0">
+        <!-- Image — desktop only -->
+        <div class="order-2 hidden lg:block">
           <img
             src="/images/Limber_April26_170.jpg"
             alt="Limber studio"
-            class="w-full h-72 lg:h-[520px] object-cover rounded-2xl border-2 border-limber-bright"
+            class="w-full h-[520px] object-cover rounded-2xl border-2 border-limber-bright"
           />
         </div>
 

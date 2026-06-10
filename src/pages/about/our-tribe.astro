@@ -159,7 +159,7 @@ const team = [
   >
     <h1 class="flex items-end gap-[0.25em] leading-none mb-0">
       <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-vibe">our</span>
-      <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream">tribe</span>
+      <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream">Tribe</span>
     </h1>
   </PricingHero>
 
@@ -169,7 +169,7 @@ const team = [
 
       <h2 class="mb-10">
         <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-vibe block leading-none -mb-1">the humans</span>
-        <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none">behind Limber</span>
+        <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none">Behind Limber</span>
       </h2>
 
       {(() => {
@@ -221,7 +221,7 @@ const team = [
   </section>
 
   <!-- ── MODAL ── -->
-  <div id="tribe-modal" class="fixed inset-0 z-[100] hidden">
+  <div id="tribe-modal" class="fixed inset-0 z-[400] hidden">
     <div class="absolute inset-0 bg-limber-brown/80" id="tribe-modal-backdrop"></div>
     <div class="relative h-full flex items-center justify-center p-4 lg:p-8">
       <div class="bg-limber-green rounded-2xl border-2 border-limber-vibe w-full max-w-3xl max-h-[90vh] overflow-y-auto">
@@ -237,7 +237,7 @@ const team = [
 
           <!-- Photo -->
           <div id="modal-photo-wrap" class="mb-8 lg:mb-0">
-            <img id="modal-photo" src="" alt="" class="w-full h-52 lg:h-64 object-cover object-top rounded-xl border-2 border-limber-vibe" />
+            <img id="modal-photo" src="" alt="" class="w-full object-cover object-top rounded-xl border-2 border-limber-vibe" style="height: calc(var(--spacing) * 88);" />
           </div>
 
           <!-- Info -->
@@ -290,13 +290,21 @@ const team = [
         `).join('');
 
         modal.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
+        const scrollY = window.scrollY;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollY}px`;
+        document.body.style.width = '100%';
+        document.body.dataset.scrollY = String(scrollY);
       });
     });
 
     function closeModal() {
       modal.classList.add('hidden');
-      document.body.style.overflow = '';
+      const scrollY = parseInt(document.body.dataset.scrollY || '0', 10);
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      window.scrollTo(0, scrollY);
     }
 
     closeBtn.addEventListener('click', closeModal);

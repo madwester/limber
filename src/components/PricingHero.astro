@@ -37,12 +37,12 @@ const bodyClass = bodyItalic
   : `font-sans leading-relaxed ${onDark ? 'text-limber-cream/80' : 'text-limber-brown/80'}`;
 ---
 
-<section class:list={[bgColor, 'border-b-2 px-4 sm:px-6 lg:px-8 py-16 lg:py-24', bgColor === 'bg-limber-green' ? 'border-limber-vibe' : 'border-limber-green']}>
+<section class:list={[bgColor, 'border-b-2 px-4 sm:px-6 lg:px-8 pb-16 lg:py-24', bgColor === 'bg-limber-green' ? 'border-limber-vibe' : 'border-limber-green']} style="padding-top: calc(var(--spacing) * 6);">
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
     <!-- Left: heading + body + buttons -->
-    <div class="flex flex-col items-start">
-      <div class="mb-8 lg:mb-6">
+    <div class="flex flex-col items-start order-2 lg:order-1">
+      <div class="mb-4">
         <slot />
       </div>
       <p class:list={['mb-8 max-w-md', bodyClass]}>
@@ -70,7 +70,7 @@ const bodyClass = bodyItalic
     </div>
 
     <!-- Right: image -->
-    <div class="relative">
+    <div class="relative order-1 lg:order-2">
       <div class="overflow-hidden rounded-2xl">
         <img
           alt={imageAlt}

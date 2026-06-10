@@ -171,14 +171,14 @@ const currentPath = Astro.url.pathname;
     {navItems.map((item) => (
      <div>
       {item.children ? (
-       <p class="font-display italic text-lg text-limber-cream/40 py-1 mt-3">{item.label}</p>
+       <p class="font-display text-lg text-limber-cream/40 py-1 mt-3">{item.label}</p>
       ) : (
-       <a href={item.href} class="font-display italic text-2xl text-limber-cream hover:text-limber-vibe transition-colors py-2 block">{item.label}</a>
+       <a href={item.href} class="font-display text-2xl text-limber-cream hover:text-limber-vibe transition-colors py-2 block">{item.label}</a>
       )}
       {item.children && (
        <div class="flex flex-col gap-0.5">
         {item.children.map((child) => (
-         <a href={child.href} class="font-display italic text-xl text-limber-cream/80 hover:text-limber-vibe transition-colors py-1.5 block">{child.label}</a>
+         <a href={child.href} class="font-display text-xl text-limber-cream/80 hover:text-limber-vibe transition-colors py-1.5 block">{child.label}</a>
         ))}
        </div>
       )}

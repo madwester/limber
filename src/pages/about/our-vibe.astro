@@ -22,19 +22,19 @@ import FullBleedHero from '../../components/FullBleedHero.astro';
     <div>
     <h1 class="flex items-end justify-start gap-[0.25em] leading-none mb-10">
       <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-vibe">our</span>
-      <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream">vibe</span>
+      <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream">Vibe</span>
     </h1>
 
     <p class="font-display italic text-2xl lg:text-3xl text-limber-cream leading-snug mb-8">
-      A place that knows you. That celebrates loudly.<br />Where community actually means something?<br /><span class="text-xl lg:text-2xl font-bold">You just found your people.</span>
+      A place that knows you. That celebrates loudly.<br />Where community actually means something?<br />You just found your people.
     </p>
 
     <div class="space-y-4 mb-8 max-w-lg">
       <p class="font-sans text-limber-cream/80 leading-relaxed">
-        When we opened Limber, we wanted to bring movement back to what it should be. Something you love, not a chore. Not something to measure, or use as a tool to punish yourself with. A place where community is genuinely valued and not just a word on a website.
+        When we opened Limber, we wanted to bring movement back to what it should be. Something you love, not a chore. Not something to measure, or use as a tool to punish yourself with.
       </p>
       <p class="font-sans text-limber-cream/80 leading-relaxed">
-        No pressure, no expectations. Just space to move in a way that feels good for you.
+        After years inside traditional fitness spaces, we saw how often movement became about aesthetics, intensity and burnout. We wanted something different. So we built it. A studio rooted in pilates, yoga and strength training. A space where joy comes first, feeling good is the priority, and community is more than just a word on a website.
       </p>
     </div>
 
@@ -77,7 +77,7 @@ import FullBleedHero from '../../components/FullBleedHero.astro';
         <h2 class="leading-none mx-auto max-w-3xl stacked-heading">
           <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none">To help people</span>
           <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-vibe block leading-none mt-4">feel at home</span>
-          <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none">in their bodies</span>
+          <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none">In their bodies</span>
         </h2>
         <img
           src="/images/stickers/green-sticker-3.svg"
@@ -95,6 +95,15 @@ import FullBleedHero from '../../components/FullBleedHero.astro';
     <div class="px-4 sm:px-6 lg:px-8">
       <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
 
+        <!-- Photo — shows first on mobile -->
+        <div class="mb-10 lg:hidden lg:max-w-[480px] lg:ml-auto">
+          <img
+            src="/images/overlapping/overlapping-lily-jumping.png"
+            alt="Lily, founder of Limber"
+            class="w-full h-72 object-cover object-[center_25%] rounded-2xl border-2 border-limber-vibe"
+          />
+        </div>
+
         <!-- Quote -->
         <blockquote class="border-l-4 border-limber-vibe pl-8">
           <p class="font-display italic text-2xl lg:text-3xl text-limber-cream leading-snug mb-6">
@@ -109,12 +118,12 @@ import FullBleedHero from '../../components/FullBleedHero.astro';
           </a>
         </blockquote>
 
-        <!-- Photo -->
-        <div class="mt-12 lg:mt-0 lg:max-w-[480px] lg:ml-auto">
+        <!-- Photo — desktop only (already shown above on mobile) -->
+        <div class="hidden lg:block lg:max-w-[480px] lg:ml-auto">
           <img
             src="/images/overlapping/overlapping-lily-jumping.png"
             alt="Lily, founder of Limber"
-            class="w-full h-72 lg:h-96 object-cover object-[center_25%] rounded-2xl border-2 border-limber-vibe"
+            class="w-full h-96 object-cover object-[center_25%] rounded-2xl border-2 border-limber-vibe"
           />
         </div>
 
@@ -124,7 +133,7 @@ import FullBleedHero from '../../components/FullBleedHero.astro';
 
   <CtaSlice
     headingLine1="Ready to find"
-    headingLine2="your people?"
+    headingLine2="Your people?"
     body="Come say hi, book a class, or just have a nosy around. We'd love to have you."
     image="/images/Limber_April26_176.jpg"
     imageAlt="Limber community"

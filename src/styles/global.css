@@ -101,6 +101,13 @@ h3 .font-display {
     display: block !important;
   }
 
+  /* CTA slice cards — center everything on mobile */
+  .cta-card p,
+  .cta-card li,
+  .cta-card a {
+    text-align: center !important;
+  }
+
   /* Mobile nav menu stays left-aligned */
   .mobile-nav p,
   .mobile-nav a {
