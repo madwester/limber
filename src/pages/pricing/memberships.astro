@@ -19,7 +19,7 @@ const memberships = [
       'Weekends: 1 class per day',
       'Auto-renewed fortnightly',
       '12 week minimum commitment',
-      '20% off your first Aura Sweat session 💦',
+      '20% off your first Aura Sweat session',
     ],
     cta: 'Join unlimited',
     href: 'https://momence.com/m/405108',
@@ -28,6 +28,7 @@ const memberships = [
     subColor: 'text-limber-bright/80',
     descColor: 'text-limber-cream/90',
     ctaClass: 'text-limber-brown bg-limber-bright hover:bg-limber-vibe border-limber-bright',
+    dividerColor: 'border-limber-cream/20',
   },
   {
     id: 'compact',
@@ -40,7 +41,7 @@ const memberships = [
     details: [
       '2 group classes per week',
       'Plus 1 lunch express or Limber up class',
-      'Credits last 7 days and don\'t roll over',
+      'Credits don\'t roll over',
       'Auto-renewed weekly',
       '12 week minimum commitment',
     ],
@@ -87,6 +88,7 @@ const memberships = [
       '1 semi-private session per week',
       '1 group class per week',
       '1 lunch express or Limber up class per week',
+      'Credits don\'t roll over',
       'Auto-renewed fortnightly',
       '12 week minimum commitment',
     ],
@@ -101,14 +103,14 @@ const memberships = [
 ];
 
 const perks = [
-  { icon: '🎁', title: 'Welcome bag', body: 'Tea, incense, a Limber sticker and a few other good things to get you started.' },
-  { icon: '👯', title: 'Bring a friend', body: 'One free guest pass per month. Share the love.' },
-  { icon: '🎉', title: 'Community events', body: 'Book club, hiking club, craft club and more. All free. All yours.' },
-  { icon: '🏷️', title: 'Workshop discounts', body: 'Members get discounted access to special events and workshops.' },
-  { icon: '💦', title: 'Aura sweat', body: 'Unlimited members get 20% off your first session. Code sent via email after joining.' },
-  { icon: '📱', title: 'Limber app access', body: 'Timetable, bookings, member perks, all in your pocket.' },
-  { icon: '💬', title: 'Limber community WhatsApp', body: 'The moment you join you\'re added to our member community. Real conversations, real people, zero spam.' },
-  { icon: '👀', title: 'We notice when you\'re not here', body: 'If we haven\'t seen you in a while, we\'ll reach out. Not to guilt trip, just because we genuinely care.' },
+  { title: 'Welcome bag', body: 'Tea, incense, a Limber sticker, a goal tracker card so you can keep growing, and a few other good things to get you started.' },
+  { title: 'Bring a friend', body: 'One free guest pass per month. Share the love.' },
+  { title: 'Community events', body: 'Book club, hiking club, craft club and more. All free. All yours.' },
+  { title: 'Workshop discounts', body: 'Members get discounted access to special events and workshops.' },
+  { title: 'Aura sweat', body: 'Unlimited members get 20% off your first session. Code sent via email after joining.' },
+  { title: 'Limber app access', body: 'Timetable, bookings, member perks, all in your pocket.' },
+  { title: 'Limber community WhatsApp', body: 'The moment you join you\'re added to our member community. Real conversations, real people, zero spam.' },
+  { title: 'We notice when you\'re not here', body: 'If we haven\'t seen you in a while, we\'ll reach out. Not to guilt trip, just because we genuinely care.' },
 ];
 ---
 
@@ -119,19 +121,18 @@ const perks = [
 
   <!-- ── HERO ── -->
   <PricingHero
-    body="We don't just take your membership fee and hope for the best. If you're stuck, overwhelmed, or just haven't found your groove yet, we'll help you get unstuck. That's what we're here for."
-    buttons={[{ label: 'Find yours', href: '#memberships' }, { label: 'New? Start for $99', href: '/pricing/trial', variant: 'outline' }]}
+    body="However you like to move, there's a membership that fits. We've designed our options to be flexible, accessible and easy to change as your life does. No long term lock-ins or guesswork. And if you're ever unsure where to start, we'll help you figure it out. We're here to help you find your groove."
+    buttons={[{ label: 'Find yours', href: '#memberships' }, { label: 'New here? Start our intro', href: '/pricing/trial', variant: 'outline' }]}
     image="/images/turn-around.jpg"
     imageAlt="Limber studio"
     imagePosition="object-center"
   >
     <h1 class="mb-0">
-      <p class="font-display italic text-2xl text-limber-cream mb-6">Memberships</p>
       <span class="flex items-baseline gap-[0.35em] leading-none -mb-1">
         <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream">Make</span>
         <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-vibe">LIMBER</span>
       </span>
-      <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none">your thing</span>
+      <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none">Your thing</span>
     </h1>
   </PricingHero>
 
@@ -150,7 +151,6 @@ const perks = [
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {perks.map((perk) => (
           <div class="bg-limber-cream rounded-2xl border-2 border-limber-green p-6">
-            <span class="text-2xl block mb-4">{perk.icon}</span>
             <p class="font-headline text-sm text-limber-green mb-2">{perk.title}</p>
             <p class="font-sans text-sm text-limber-brown/70 leading-relaxed">{perk.body}</p>
           </div>
@@ -165,7 +165,9 @@ const perks = [
     <div class="px-4 sm:px-6 lg:px-8">
 
       <h2 class="mb-14">
-        <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-vibe block leading-none -mb-1">find your</span>
+        <span class="block leading-none -mb-1">
+          <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-vibe">find </span><span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream">Your</span>
+        </span>
         <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none">membership</span>
       </h2>
 
@@ -175,17 +177,17 @@ const perks = [
             {(m as any).popular && (
               <span class="absolute -top-3 left-1/2 -translate-x-1/2 font-headline text-xs text-limber-brown bg-limber-bright px-3 py-1 rounded-full whitespace-nowrap">Most popular</span>
             )}
-            <p class:list={['font-headline text-2xl leading-none mb-1', m.textColor]}>{m.name}</p>
-            <p class:list={['font-sans text-base h-14 mb-4', m.subColor]}>{m.freq}</p>
-            <div class="border-t border-limber-green/10 mb-6"></div>
+            <p class:list={['font-headline text-2xl leading-none mb-1 lg:min-h-[3.5rem]', m.textColor]}>{m.name}</p>
+            <p class:list={['font-sans text-base lg:min-h-[5rem] mb-4', m.subColor]}>{m.freq}</p>
+            <div class:list={['border-t mb-6', (m as any).dividerColor || 'border-limber-green/10']}></div>
             <div class="flex items-baseline gap-1 mb-1">
-              <span class:list={['font-sans text-2xl', m.textColor]}>{m.price.slice(0, 1)}</span>
-              <span class:list={['font-headline text-5xl', m.textColor]}>{m.price.slice(1)}</span>
+              <span class:list={['font-sans text-5xl', m.textColor]}>{m.price.slice(0, 1)}</span>
+              <span class:list={['font-sans text-5xl font-bold', m.textColor]}>{m.price.slice(1)}</span>
               <span class:list={['font-sans text-xs', m.subColor]}>{m.period}</span>
             </div>
-            <p class:list={['font-sans text-sm leading-snug h-14 mb-5', m.subColor]}>{m.note}</p>
-            <div class="border-t border-limber-green/10 mb-5"></div>
-            <p class:list={['font-sans text-sm leading-relaxed mb-4', m.descColor]}>{m.description}</p>
+            <p class:list={['font-sans text-sm leading-snug lg:min-h-[3.5rem] mb-5', m.subColor]}>{m.note}</p>
+            <div class:list={['border-t mb-5', (m as any).dividerColor || 'border-limber-green/10']}></div>
+            <p class:list={['font-sans text-sm leading-relaxed lg:min-h-[4rem] mb-4', m.descColor]}>{m.description}</p>
             <ul class="space-y-2 mb-8 flex-1">
               {m.details.map((d) => (
                 <li class:list={['flex items-start gap-2 font-sans text-xs', m.subColor]}>
@@ -219,11 +221,11 @@ const perks = [
   <!-- ── HUMANS OF LIMBER ── -->
   <section class="bg-limber-green py-20 lg:py-28 border-b-2 border-limber-vibe">
     <div class="px-4 sm:px-6 lg:px-8 mb-12">
-      <h2 class="mb-2">
-        <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-vibe block leading-none -mb-1">humans</span>
-        <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none">of Limber</span>
+      <h2 class="mb-4 stacked-heading">
+        <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none">Meet the</span>
+        <span class="font-headline uppercase text-3xl md:text-5xl lg:text-6xl text-limber-vibe block leading-none">humans of limber</span>
       </h2>
-      <p class="font-sans text-limber-cream/70 leading-relaxed max-w-lg mt-4">Real people. Real stories. This is who you move with.</p>
+      <p class="font-sans text-limber-cream/70 leading-relaxed">Real people. Real stories.</p>
     </div>
 
     <!-- Filmstrip -->
@@ -260,18 +262,20 @@ const perks = [
   </section>
 
   <!-- ── MEMBER MODAL ── -->
-  <div id="member-modal" class="fixed inset-0 z-[100] hidden">
+  <div id="member-modal" class="fixed inset-0 z-[400] hidden">
     <div class="absolute inset-0 bg-limber-brown/80" id="member-modal-backdrop"></div>
     <div class="relative h-full flex items-center justify-center p-4 lg:p-8">
-      <div class="bg-limber-green rounded-2xl border-2 border-limber-vibe w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+      <div class="bg-limber-green rounded-2xl border-2 border-limber-vibe w-full max-w-3xl max-h-[90vh] overflow-y-auto">
         <div class="flex justify-end p-6 pb-0">
           <button id="member-modal-close" class="font-headline text-xs text-limber-vibe hover:text-limber-cream transition-colors uppercase tracking-widest cursor-pointer">Close ✕</button>
         </div>
-        <div class="lg:grid lg:grid-cols-[200px_1fr] gap-8 p-6 lg:p-10 items-start">
-          <img id="member-photo" src="" alt="" class="w-full h-56 lg:h-64 object-cover object-top rounded-xl border-2 border-limber-vibe" />
+        <div class="lg:grid lg:grid-cols-2 gap-8 p-6 lg:p-10 items-start">
+          <div id="member-photo-wrap" class="mb-8 lg:mb-0">
+            <img id="member-photo" src="" alt="" class="w-full object-cover object-top rounded-xl border-2 border-limber-vibe" style="height: calc(var(--spacing) * 88);" />
+          </div>
           <div>
-            <h2 id="member-name" class="font-headline uppercase text-4xl text-limber-vibe block leading-none mb-6"></h2>
-            <div id="member-qa" class="space-y-6"></div>
+            <h2 id="member-name" class="font-headline uppercase text-5xl text-limber-vibe block leading-none -mb-1"></h2>
+            <div id="member-qa" class="space-y-6 mt-8"></div>
           </div>
         </div>
       </div>
@@ -308,6 +312,7 @@ const perks = [
     const backdrop = document.getElementById('member-modal-backdrop');
     const closeBtn = document.getElementById('member-modal-close');
     const photo = document.getElementById('member-photo');
+    const photoWrap = document.getElementById('member-photo-wrap');
     const nameEl = document.getElementById('member-name');
     const qaEl = document.getElementById('member-qa');
 
@@ -327,11 +332,22 @@ const perks = [
               </div>`).join('')
           : '<p class="font-sans text-limber-cream/60">Story coming soon.</p>';
         modal.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
+        const scrollY = window.scrollY;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollY}px`;
+        document.body.style.width = '100%';
+        document.body.dataset.scrollY = String(scrollY);
       });
     });
 
-    function close() { modal.classList.add('hidden'); document.body.style.overflow = ''; }
+    function close() {
+      modal.classList.add('hidden');
+      const scrollY = parseInt(document.body.dataset.scrollY || '0', 10);
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      window.scrollTo(0, scrollY);
+    }
     closeBtn.addEventListener('click', close);
     backdrop.addEventListener('click', close);
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });

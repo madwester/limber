@@ -55,7 +55,7 @@ const currentPath = Astro.url.pathname;
    href="/pricing/trial"
    class:list={[bannerBg, 'block border-b-2 border-limber-brown px-4 py-2.5 text-center transition-colors']}
   >
-   <span class:list={['font-sans text-sm', bannerText]}>New here? </span>
+   <span class:list={['font-display italic text-lg', bannerText]}>New here? </span>
    <span class:list={['font-headline text-sm', bannerTextAccent]}>21 days unlimited for $99</span>
    <span class:list={['font-sans text-sm ml-2', bannerTextAccent]}>→</span>
   </a>
@@ -178,7 +178,7 @@ const currentPath = Astro.url.pathname;
       {item.children && (
        <div class="flex flex-col gap-0.5">
         {item.children.map((child) => (
-         <a href={child.href} class="font-display text-xl text-limber-cream/80 hover:text-limber-vibe transition-colors py-1.5 block">{child.label}</a>
+         <a href={child.href} class="font-display text-2xl text-limber-cream/80 hover:text-limber-vibe transition-colors py-1.5 block">{child.label}</a>
         ))}
        </div>
       )}

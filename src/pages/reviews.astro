@@ -41,14 +41,14 @@ const cardStyles = [
 
   <!-- ── HERO ── -->
   <PricingHero
-    body="Real words from real humans who just wanted to tell us how they felt. In the studio we write love notes to our community and they write them back to us. It's a very wholesome thing."
+    body="Here's what our community has to say about us."
     buttons={[{ label: 'leave us some love', href: 'https://share.google/zi99bemSSC5ZumvDm', target: '_blank', variant: 'outline' }]}
     image="/images/Limber_April26_176.jpg"
     imageAlt="Limber studio love wall"
     imagePosition="object-center"
   >
     <h1 class="mb-0">
-      <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-bright block leading-none -mb-1">love</span>
+      <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-vibe block leading-none -mb-1">love</span>
       <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none">Club</span>
     </h1>
   </PricingHero>
@@ -70,7 +70,7 @@ const cardStyles = [
               if (imageMap.has(i)) {
                 const src = imageMap.get(i);
                 return (
-                  <div class="rounded-2xl overflow-hidden border-2 border-limber-green h-72">
+                  <div class="rounded-2xl overflow-hidden border-2 border-limber-green">
                     <img src={src} alt="" aria-hidden="true" class:list={['w-full h-full object-cover', src?.includes('128') ? 'object-[center_30%]' : 'object-center']} />
                   </div>
                 );
@@ -113,9 +113,15 @@ const cardStyles = [
     sectionBg="bg-limber-cream"
     showBorder={false}
     buttons={[
-      { label: 'Start for $99', href: '/pricing/trial' },
+      { label: 'Start our intro', href: '/pricing/trial' },
       { label: 'View memberships', href: '/pricing/memberships', variant: 'outline' },
     ]}
-  />
+  >
+    <h2 slot="heading" class="mb-0">
+      <span class="font-display italic font-medium text-4xl md:text-5xl lg:text-6xl text-limber-cream block leading-none mb-1">Come</span>
+      <span class="font-headline uppercase text-3xl md:text-4xl lg:text-5xl text-limber-bright block leading-none -mb-1">experience</span>
+      <span class="font-display italic font-medium text-4xl md:text-5xl lg:text-6xl text-limber-cream block leading-none">It yourself</span>
+    </h2>
+  </CtaSlice>
 
 </BaseLayout>

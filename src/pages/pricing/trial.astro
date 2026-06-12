@@ -30,17 +30,12 @@ import { trialReviews } from '../../data/reviews';
             <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-vibe block leading-none">Limber way</span>
           </h1>
           <div class="space-y-4 mb-8 max-w-md">
-            <p class="font-display italic text-xl text-limber-vibe leading-snug">It's not just an intro pass. It's a proper welcome.</p>
-            <p class="font-sans text-limber-cream/80 leading-relaxed">21 days of unlimited classes, a personalised plan built around you, and a real human in your corner the whole way.</p>
-            <p class="font-sans text-limber-cream/80 leading-relaxed">No wandering in and hoping for the best. No guessing which class to try first. No "good luck in there."</p>
-            <p class="font-display italic text-xl text-limber-vibe leading-snug">Just a genuinely supported start: the Limber way.</p>
+            <p class="font-display italic text-xl text-limber-cream leading-snug">It's not just an intro pass. It's a proper welcome.</p>
+            <p class="font-sans text-limber-cream leading-relaxed">21 days of unlimited classes, a personalised plan built around you, and a real human in your corner the whole way.</p>
           </div>
           <div class="flex flex-wrap justify-start gap-3">
             <a href="https://momence.com/m/411175" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-8 py-4 font-headline text-sm text-limber-green bg-limber-vibe hover:bg-limber-bright border-2 border-limber-vibe rounded-full transition-colors">
               <span class="relative top-[2px]">Start for $99</span>
-            </a>
-            <a href="#how-it-works" class="inline-flex items-center px-8 py-4 font-headline text-sm text-limber-cream border-2 border-limber-cream hover:border-limber-vibe hover:text-limber-vibe rounded-full transition-colors">
-              <span class="relative top-[2px]">Tell me more</span>
             </a>
           </div>
         </div>
@@ -50,7 +45,7 @@ import { trialReviews } from '../../data/reviews';
           <div class="bg-limber-cream rounded-2xl border-2 border-limber-green p-8">
             <p class="font-headline text-xs text-limber-brown mb-6">What's included</p>
             <ul class="space-y-3">
-              {['Unlimited classes for 21 days', 'Personalised plan', 'Regular check-ins', 'A real human in your corner'].map((spec) => (
+              {['Unlimited classes for 21 days', 'Personalised plan', 'Regular check-ins'].map((spec) => (
                 <li class="flex items-center gap-3 border-b border-limber-green/10 pb-3 last:border-0 last:pb-0">
                   <span class="w-1.5 h-1.5 rounded-full bg-limber-brown flex-shrink-0"></span>
                   <p class="font-display not-italic text-lg text-limber-brown">{spec}</p>
@@ -84,7 +79,7 @@ import { trialReviews } from '../../data/reviews';
           },
           {
             n: '02',
-            title: 'We have a proper chat',
+            title: 'Our studio lead',
             body: 'Your studio lead will reach out and set up a call or catch up. No awkward formalities, just a real conversation.',
           },
           {
@@ -201,7 +196,7 @@ import { trialReviews } from '../../data/reviews';
 
   <CtaSlice
     headingLine1="ready to"
-    headingLine2="start properly?"
+    headingLine2="Start properly?"
     sectionBg="bg-limber-cream"
     showBorder={false}
     body="Pilates obsessive, total movement newbie, yoga devotee, or someone who's been watching from afar. Hi. We've been waiting for you."
@@ -209,7 +204,7 @@ import { trialReviews } from '../../data/reviews';
     imagePosition="object-[center_25%]"
     imageAlt="Limber community"
     buttons={[
-      { label: 'Start for $99', href: 'https://momence.com/m/411175' },
+      { label: 'Start intro', href: 'https://momence.com/m/411175' },
       { label: 'Get in touch', href: '/contact', variant: 'outline' },
     ]}
   />

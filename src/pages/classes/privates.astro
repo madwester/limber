@@ -20,18 +20,16 @@ const serviceSchema = {
 
   <!-- ── HERO ── -->
   <PricingHero
-    body="Whether you're recovering from injury, navigating pregnancy, working through something specific, or just want more personalised movement than a group class allows. Our private and semi-private sessions are built for exactly that."
+    body="Are you recovering from injury, navigating pregnancy, have specific goals? Then our private and semi-privates sessions will be perfect for you."
     buttons={[
-      { label: 'Book a private', href: '/book-now' },
-      { label: 'View pricing', href: '#privates', variant: 'outline' },
+      { label: 'Book a private', href: 'mailto:hello@limberco.com.au' },
     ]}
     image="/images/privates-1.jpg"
     imageAlt="Limber private session"
     imagePosition="object-center"
   >
     <h1 class="mb-0">
-      <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-vibe block leading-none -mb-1">privates</span>
-      <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none">&amp; semi-privates</span>
+      <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-vibe block leading-none -mb-1">privates <span class="font-display not-uppercase italic font-medium text-limber-cream">&amp;</span> semi-privates</span>
     </h1>
   </PricingHero>
 
@@ -45,10 +43,13 @@ const serviceSchema = {
             <span class="font-headline uppercase text-4xl md:text-5xl text-limber-vibe block leading-none -mb-1">one-on-one</span>
             <span class="font-display italic font-medium text-4xl md:text-5xl text-limber-cream block leading-none">privates</span>
           </h2>
+          <p class="font-sans text-limber-cream/80 leading-relaxed mb-4">
+            Each new client wanting to join us for semi-privates will need to undergo 1 private session with us. This is where goals, bodily needs and a short dynamic assessment will be held so we can ensure you have a personalised plan moving into semi-privates.
+          </p>
           <p class="font-sans text-limber-cream/80 leading-relaxed mb-6">
             The most personalised experience we offer. Just you and one of our highly trained teachers: 55 minutes designed entirely around what your body needs right now.
           </p>
-          <p class="font-headline text-xs text-limber-vibe mb-3">Perfect for</p>
+          <p class="font-headline text-xs text-limber-vibe mb-3">Privates are great for</p>
           <ul class="space-y-3 mb-8">
             {[
               'post-injury recovery',
@@ -105,8 +106,7 @@ const serviceSchema = {
 
         <div>
           <h2 class="mb-6 stacked-heading">
-            <span class="font-headline uppercase text-4xl md:text-5xl text-limber-vibe block leading-none -mb-1">ongoing</span>
-            <span class="font-display italic font-medium text-4xl md:text-5xl text-limber-cream block leading-none">semi-privates</span>
+            <span class="font-headline uppercase text-4xl md:text-5xl text-limber-vibe block leading-none">semi-privates</span>
           </h2>
           <p class="font-sans text-limber-cream/80 leading-relaxed mb-4">
             All the benefits of personalised attention, in a small, intimate group of up to four people.
@@ -117,7 +117,7 @@ const serviceSchema = {
           <p class="font-sans text-limber-cream/80 leading-relaxed">
             You will work individually on your own programme which will progress and adapt each season depending on your needs and goals.
           </p>
-          <p class="font-display italic text-xl text-limber-vibe leading-snug mt-8">55 minutes</p>
+          <p class="font-display italic text-xl text-limber-vibe leading-snug mt-8">55 minutes · $120</p>
         </div>
 
         <div class="mt-10 lg:mt-0">
@@ -135,8 +135,9 @@ const serviceSchema = {
 
   <!-- ── CTA SLICE ── -->
   <CtaSlice
+    centerContent={true}
     headingLine1="ready to"
-    headingLine2="get started?"
+    headingLine2="Get started?"
     sectionBg="bg-limber-cream"
     showBorder={false}
     body="Get in touch and we'll match you with the right teacher and format for where you're at right now."

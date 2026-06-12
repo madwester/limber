@@ -30,10 +30,9 @@ const serviceSchema = {
   >
     <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
       <div>
-        <p class="font-display italic text-2xl text-limber-cream mb-6">Corporates</p>
-        <h1 class="mb-0 stacked-heading">
-          <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-bright block leading-none -mb-1">reset</span>
-          <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none">your team</span>
+        <h1 class="mb-0">
+          <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-bright block leading-none -mb-1">the <span class="font-display normal-case italic font-medium text-limber-cream relative top-[-0.15em] lg:top-0">Workplace</span></span>
+          <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-bright block leading-none">reset</span>
         </h1>
       </div>
       <!-- Flower sticker on the right -->
@@ -53,24 +52,19 @@ const serviceSchema = {
       <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-start">
         <div class="space-y-4">
           <p class="font-sans text-limber-cream/80 leading-relaxed">
-            Long hours, high cognitive load, nervous systems stuck on "on." It shows up as tight shoulders and stiff hips, but over time it becomes fatigue, irritability, reduced focus and disconnected teams.
+            At Limber, we know that the benefits of movement extend far beyond the body. And in busy workplaces, it's often the first thing to fall away. Yet studies show that improving employee wellbeing through structured wellness programs not only has incredible uplift for the individual, but a reduction to lost productivity by up to 27%. The long hours at desks, high cognitive loads and nervous systems stuck in "on" mode present in more ways than tight shoulders and stiff hips.
           </p>
-          <p class="font-display italic text-xl text-limber-bright leading-snug">
-            The Workplace Reset is Limber's answer to that.
-          </p>
+          <p class="font-sans text-limber-cream/80 leading-relaxed">Over time, we experience:</p>
+          <ul class="space-y-2">
+            {['Fatigue', 'Irritability', 'Reduced focus', 'Disconnected teams'].map((item) => (
+              <li class="font-sans text-limber-cream/80 flex justify-start gap-3">
+                <span class="text-limber-bright flex-shrink-0">•</span>
+                {item}
+              </li>
+            ))}
+          </ul>
           <p class="font-sans text-limber-cream/80 leading-relaxed">
-            A professionally facilitated movement experience designed specifically for modern workplaces. Not a generic fitness class. Just a guided session that brings your team back into their bodies, and back into the room.
-          </p>
-        </div>
-        <div class="mt-8 lg:mt-0">
-          <p class="font-display not-italic text-xl text-limber-bright leading-snug pb-5 border-b border-limber-bright/30">
-            Physically lighter, mentally clearer, more regulated.
-          </p>
-          <p class="font-display not-italic text-xl text-limber-bright leading-snug py-5 border-b border-limber-bright/30">
-            More connected to each other.
-          </p>
-          <p class="font-display not-italic text-xl text-limber-bright leading-snug py-5">
-            After just one session.
+            The Workplace Reset is a simple, professionally facilitated way to interrupt that pattern and bring people back into their bodies, and back into the room.
           </p>
         </div>
       </div>
@@ -87,8 +81,8 @@ const serviceSchema = {
         <!-- Left: heading + text + what's included -->
         <div>
           <h2 class="mb-6">
-            <span class="font-headline uppercase text-4xl md:text-5xl text-limber-bright block leading-none -mb-1">what is the</span>
-            <span class="font-display italic font-medium text-4xl md:text-5xl text-limber-cream block leading-none">workplace reset?</span>
+            <span class="font-headline uppercase text-4xl md:text-5xl text-limber-bright block leading-none -mb-1">what</span>
+            <span class="font-display italic font-medium text-4xl md:text-5xl text-limber-cream block leading-none">exactly is the reset?</span>
           </h2>
           <p class="font-sans text-limber-cream/80 leading-relaxed mb-8">
             A blend of pilates foundations, mobility flow, gentle strength activation and breathwork — releasing desk-bound tension, improving posture, activating underused muscles, supporting spinal health and regulating the nervous system.
@@ -130,8 +124,8 @@ const serviceSchema = {
       <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-start">
         <div>
           <h2 class="mb-6">
-            <span class="font-display italic font-medium text-4xl md:text-5xl text-limber-cream block leading-none -mb-1">Why</span>
-            <span class="font-headline uppercase text-4xl md:text-5xl text-limber-bright block leading-none">LIMBER?</span>
+            <span class="font-headline uppercase text-4xl md:text-5xl text-limber-bright block leading-none -mb-1">why</span>
+            <span class="font-display italic font-medium text-4xl md:text-5xl text-limber-cream block leading-none">Limber?</span>
           </h2>
           <p class="font-sans text-limber-cream/80 leading-relaxed mb-4">
             At Limber, we started with a simple belief: movement should genuinely feel good.
@@ -157,7 +151,7 @@ const serviceSchema = {
   <!-- ── CTA SLICE ── -->
   <CtaSlice
     headingLine1="Ready to reset"
-    headingLine2="your team?"
+    headingLine2="Your team?"
     body="We'd love to learn more about your team and tailor the experience to your workplace. Get in touch and we'll send through our full information pack."
     sectionBg="bg-limber-cream"
     cardBg="bg-limber-green border-limber-vibe"

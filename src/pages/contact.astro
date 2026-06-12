@@ -19,8 +19,8 @@ import FullBleedHero from '../components/FullBleedHero.astro';
     contentPadding="px-4 sm:px-6 lg:px-8 py-10 lg:py-14"
   >
     <h1 class="mb-0">
-      <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none -mb-1"><span class="font-headline not-italic uppercase text-4xl md:text-5xl lg:text-6xl text-limber-bright">love</span> to</span>
-      <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none">hear from <span class="font-headline not-italic uppercase text-4xl md:text-5xl lg:text-6xl text-limber-bright">you</span></span>
+      <span class="block leading-none -mb-1"><span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-bright">love</span><span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream"> to hear</span></span>
+      <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none">From <span class="font-headline not-italic uppercase text-4xl md:text-5xl lg:text-6xl text-limber-bright">you</span></span>
     </h1>
   </FullBleedHero>
 
@@ -30,31 +30,39 @@ import FullBleedHero from '../components/FullBleedHero.astro';
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
 
         <!-- Left: info -->
-        <div class="space-y-4">
+        <div>
 
-          <div class="p-6 rounded-2xl bg-limber-cream border-2 border-limber-bright">
-            <p class="font-headline text-xs text-limber-bright mb-2">Studio address</p>
-            <p class="font-sans text-base text-limber-brown/80 leading-relaxed">Shop 17 / 282–298 Lawrence Hargrave Drive<br />Thirroul NSW</p>
-            <p class="font-sans text-sm text-limber-brown/40 italic mt-1">Next to Coles. parking is a vibe.</p>
-          </div>
+          <div class="p-6 rounded-2xl bg-limber-cream border-2 border-limber-bright space-y-6">
 
-          <div class="p-6 rounded-2xl bg-limber-cream border-2 border-limber-bright">
-            <p class="font-headline text-xs text-limber-bright mb-2">Email</p>
-            <a href="mailto:hello@limberco.com.au" class="font-sans text-base text-limber-brown/80 hover:text-limber-bright transition-colors">
-              hello@limberco.com.au
-            </a>
-          </div>
+            <div>
+              <p class="font-headline text-xs text-limber-bright mb-2">Studio address</p>
+              <p class="font-sans text-base text-limber-brown/80 leading-relaxed">Shop 17 / 282–298 Lawrence Hargrave Drive<br />Thirroul NSW</p>
+              <p class="font-sans text-sm text-limber-brown/40 italic mt-1">Next to Coles. parking is a vibe.</p>
+            </div>
 
-          <div class="p-6 rounded-2xl bg-limber-cream border-2 border-limber-bright">
-            <p class="font-headline text-xs text-limber-bright mb-2">Studio hours</p>
-            <table class="font-sans text-base text-limber-brown/80 w-full">
-              <tbody>
-                <tr><td class="pr-6 py-1">Monday – Thursday</td><td>6:00am – 8:30pm</td></tr>
-                <tr><td class="pr-6 py-1">Friday</td><td>6:00am – 6:30pm</td></tr>
-                <tr><td class="pr-6 py-1">Saturday</td><td>6:30am – 9:30am</td></tr>
-                <tr><td class="pr-6 py-1">Sunday</td><td>8:30am – 7:00pm</td></tr>
-              </tbody>
-            </table>
+            <div class="border-t border-limber-brown/10"></div>
+
+            <div>
+              <p class="font-headline text-xs text-limber-bright mb-2">Email</p>
+              <a href="mailto:hello@limberco.com.au" class="font-sans text-base text-limber-brown/80 hover:text-limber-bright transition-colors">
+                hello@limberco.com.au
+              </a>
+            </div>
+
+            <div class="border-t border-limber-brown/10"></div>
+
+            <div>
+              <p class="font-headline text-xs text-limber-bright mb-2">Studio hours</p>
+              <table class="font-sans text-base text-limber-brown/80 w-full">
+                <tbody>
+                  <tr><td class="pr-6 py-1">Monday – Thursday</td><td>6:00am – 8:30pm</td></tr>
+                  <tr><td class="pr-6 py-1">Friday</td><td>6:00am – 6:30pm</td></tr>
+                  <tr><td class="pr-6 py-1">Saturday</td><td>6:30am – 9:30am</td></tr>
+                  <tr><td class="pr-6 py-1">Sunday</td><td>8:30am – 7:00pm</td></tr>
+                </tbody>
+              </table>
+            </div>
+
           </div>
 
         </div>

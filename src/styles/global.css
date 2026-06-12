@@ -6,11 +6,12 @@
   File available from your brand kit.
 */
 @font-face {
-  font-family: 'Candu';
-  src: url('/fonts/Candu-Regular.woff2') format('woff2'),
-       url('/fonts/Candu-Regular.woff') format('woff'),
-       url('/fonts/Candu-Regular.ttf') format('truetype'),
-       url('/fonts/Candu-Regular.otf') format('opentype');
+  font-family: "Candu";
+  src:
+    url("/fonts/Candu-Regular.woff2") format("woff2"),
+    url("/fonts/Candu-Regular.woff") format("woff"),
+    url("/fonts/Candu-Regular.ttf") format("truetype"),
+    url("/fonts/Candu-Regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -21,22 +22,22 @@
      - font-headline → Candu (headlines, CAPS only per brand guide)
      - font-display  → Cormorant Garamond (subheads & italic emphasis)
      - font-sans     → Lato (body copy only) */
-  --font-headline: 'Candu', 'Arial Black', ui-sans-serif;
-  --font-display: 'Cormorant Garamond', ui-serif, Georgia, serif;
-  --font-sans: 'Lato', ui-sans-serif, system-ui, sans-serif;
+  --font-headline: "Candu", "Arial Black", ui-sans-serif;
+  --font-display: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-sans: "Lato", ui-sans-serif, system-ui, sans-serif;
 
   /* ─── Limber Co. brand colours — Brand Style Guide May 2026 ─── */
 
   /* Primary */
-  --color-limber-green:    #666333;   /* Limber Co. Green  */
-  --color-limber-vibe:     #cbc232;   /* Limber Co. New Vibe Green */
-  --color-limber-cream:    #fff1e4;   /* Limber Co. Cream (replaces white) */
-  --color-limber-cream-bg: #fffaf6;   /* Cream at ~30% — page backgrounds */
+  --color-limber-green: #666333; /* Limber Co. Green  */
+  --color-limber-vibe: #cbc232; /* Limber Co. New Vibe Green */
+  --color-limber-cream: #fff1e4; /* Limber Co. Cream (replaces white) */
+  --color-limber-cream-bg: #fffaf6; /* Cream at ~30% — page backgrounds */
 
   /* Secondary */
-  --color-limber-tericotta: #ba6126;  /* Limber Co. Tericotta */
-  --color-limber-brown:     #733d1a;  /* Limber Co. Brown */
-  --color-limber-bright:    #f79433;  /* Limber Bright Light */
+  --color-limber-tericotta: #ba6126; /* Limber Co. Tericotta */
+  --color-limber-brown: #733d1a; /* Limber Co. Brown */
+  --color-limber-bright: #f79433; /* Limber Bright Light */
 }
 
 @layer base {
@@ -60,7 +61,6 @@
   .font-display {
     font-style: normal;
   }
-
 }
 
 /* Tight line-heights for heading typography — outside @layer so they beat Tailwind utilities */
@@ -75,7 +75,6 @@ h2 .font-display,
 h3 .font-display {
   line-height: 0.95;
 }
-
 
 /* Mobile: inline flow + baseline alignment */
 @media (max-width: 1023px) {
@@ -101,11 +100,11 @@ h3 .font-display {
     display: block !important;
   }
 
-  /* CTA slice cards — center everything on mobile */
+  /* CTA slice cards — left-align on mobile */
   .cta-card p,
   .cta-card li,
   .cta-card a {
-    text-align: center !important;
+    text-align: left !important;
   }
 
   /* Mobile nav menu stays left-aligned */
@@ -142,8 +141,12 @@ h3 .font-display {
 }
 
 @keyframes ticker {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-ticker {

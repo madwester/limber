@@ -28,7 +28,7 @@ Not as a marketing concept. Not as a content strategy. As the actual living, bre
 
 > So much of the fitness and wellness world is built on making you feel like you're not quite there yet. We wanted absolutely no part of it.
 
-I had a conversation recently with someone who reached out wanting to start with us. She'd never done Pilates before. When I asked why she hadn't tried it sooner, she went quiet for a second. Then said — *everywhere else just felt intimidating. Like it wasn't really for her.*
+I had a conversation recently with someone who reached out wanting to start with us. She'd never done Pilates before. When I asked why she hadn't tried it sooner, she went quiet for a second. Then said — _everywhere else just felt intimidating. Like it wasn't really for her._
 
 I've thought about that conversation a lot since.
 
@@ -44,7 +44,7 @@ When it came time to evolve the brand — to make it actually reflect where we a
 
 So we gathered ten of our Limber devotees, some here from the very beginning, some newer to the studio, and spent a day just being together. Moving, laughing, existing in this thing we've all quietly built. At one point I looked around the room and thought:
 
-*Yeah. This is exactly what we built this for.*
+_Yeah. This is exactly what we built this for._
 
 ![Limber community — the people behind the brand](/images/Communtity1.jpg)
 
@@ -60,4 +60,4 @@ And in the process, we found home too.
 
 In our community.
 
-*Lily x*
+_Lily x_
