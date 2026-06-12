@@ -186,7 +186,7 @@ const team = [
         return (
           <div id="tribe-masonry" style="column-gap: 1rem; columns: 2;">
             {cards.map((member, i) => (
-              <div class="break-inside-avoid mb-4">
+              <div class:list={['break-inside-avoid mb-4', (member as any).placeholder ? 'hidden lg:block' : '']}>
                 <button
                   class:list={[
                     `tribe-card ${(member as any).placeholder ? '' : 'group cursor-pointer'} w-full rounded-2xl border-2 border-limber-vibe/20 flex items-center justify-center relative overflow-hidden`,

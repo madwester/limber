@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaSlice from '../components/CtaSlice.astro';
 import Logo from '../components/Logo.astro';
 import { reviews } from '../data/reviews';
 
@@ -234,7 +235,7 @@ const classesTaster = [
     <h2>
      <span class="flex items-baseline gap-[0.2em] leading-none">
       <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-brown">Limber</span>
-      <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-brown">lineup</span>
+      <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-brown">Lineup</span>
      </span>
     </h2>
    </div>
@@ -286,11 +287,11 @@ const classesTaster = [
     <h2>
      <span class="flex items-baseline gap-[0.15em] leading-none -mb-1">
       <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-green">WHAT</span>
-      <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-green">our</span>
+      <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-green">Our</span>
      </span>
      <span class="flex flex-wrap items-baseline gap-x-[0.15em] leading-none mt-4">
       <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-green">COMMUNITY</span>
-      <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-green whitespace-nowrap">is saying</span>
+      <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-green whitespace-nowrap">Is saying</span>
      </span>
     </h2>
    </div>
@@ -330,44 +331,20 @@ const classesTaster = [
  </section>
 
  <!-- ── SECTION 5 — APP DOWNLOAD ── -->
- <section class="bg-limber-cream py-12 lg:py-16">
-  <div class="px-4 sm:px-6 lg:px-8 relative">
-   <img
-    src="/images/stickers/sticker-2.svg"
-    alt=""
-    aria-hidden="true"
-    class="absolute -top-16 right-4 w-28 h-28 lg:w-36 lg:h-36 -rotate-12 z-10"
-   />
-   <div class="bg-limber-brown rounded-2xl border-2 border-limber-brown overflow-hidden lg:flex items-stretch">
-
-    <!-- Image first on mobile -->
-    <div class="lg:hidden px-6 pt-8 pb-0">
-     <img src="/images/Limber_April26_170.jpg" alt="Limber app" class="w-full h-56 object-cover rounded-xl border-2 border-limber-bright" />
-    </div>
-
-    <!-- Copy + buttons -->
-    <div class="flex flex-col items-center lg:items-start justify-center px-6 lg:px-12 py-8 lg:py-14 flex-1 text-center lg:text-left">
-     <h2 class="mb-4 stacked-heading w-full">
-      <span class="font-headline uppercase text-3xl md:text-4xl lg:text-5xl text-limber-bright block leading-none -mb-1">limber in</span>
-      <span class="font-display italic font-medium text-4xl md:text-5xl lg:text-6xl text-limber-cream block leading-none">Your pocket</span>
-     </h2>
-     <p class="font-sans text-limber-cream/70 leading-relaxed mb-8 max-w-sm w-full">
-      Book classes, manage your membership, and check the timetable, all from your phone.
-     </p>
-     <div class="flex flex-wrap justify-center lg:justify-start gap-3">
-      <a href="https://apps.apple.com/au/app/limber-co/id6744895425" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 font-headline text-sm text-limber-brown bg-limber-bright hover:bg-limber-vibe border-2 border-limber-bright rounded-full transition-colors"><span class="relative top-[2px]">App Store</span></a>
-      <a href="https://play.google.com/store/apps/details?id=com.ribbon.mobileApp&hl=en_AU" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 font-headline text-sm text-limber-cream border-2 border-limber-cream hover:border-limber-bright hover:text-limber-bright rounded-full transition-colors"><span class="relative top-[2px]">Google Play</span></a>
-     </div>
-    </div>
-
-    <!-- Image on desktop (right) -->
-    <div class="hidden lg:flex lg:w-2/5 flex-shrink-0 items-center px-12 py-14 lg:pr-0">
-     <img src="/images/Limber_April26_170.jpg" alt="Limber app" class="w-full h-64 lg:h-80 object-cover rounded-xl border-2 border-limber-bright" />
-    </div>
-
-   </div>
-  </div>
- </section>
+ <CtaSlice
+  headingLine1="limber in"
+  headingLine2="Your pocket"
+  body="Book classes, manage your membership, and check the timetable, all from your phone."
+  image="/images/Limber_April26_170.jpg"
+  imageAlt="Limber app"
+  sectionBg="bg-limber-cream"
+  showBorder={false}
+  sticker="/images/stickers/sticker-2.svg"
+  buttons={[
+    { label: 'App Store', href: 'https://apps.apple.com/au/app/limber-co/id6744895425', target: '_blank' },
+    { label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.ribbon.mobileApp&hl=en_AU', target: '_blank', variant: 'outline' },
+  ]}
+ />
 
 
 </BaseLayout>

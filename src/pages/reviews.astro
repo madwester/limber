@@ -70,8 +70,8 @@ const cardStyles = [
               if (imageMap.has(i)) {
                 const src = imageMap.get(i);
                 return (
-                  <div class="rounded-2xl overflow-hidden border-2 border-limber-green">
-                    <img src={src} alt="" aria-hidden="true" class:list={['w-full h-full object-cover', src?.includes('128') ? 'object-[center_30%]' : 'object-center']} />
+                  <div class="rounded-2xl overflow-hidden border-2 border-limber-green relative">
+                    <img src={src} alt="" aria-hidden="true" class:list={['absolute inset-0 w-full h-full object-cover', src?.includes('128') ? 'object-[center_30%]' : 'object-center']} />
                   </div>
                 );
               }

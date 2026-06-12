@@ -3,6 +3,7 @@ interface Button {
   label: string;
   href: string;
   variant?: 'primary' | 'outline'; // primary = vibe yellow, outline = cream border
+  target?: string;
 }
 
 interface Props {
@@ -20,6 +21,7 @@ interface Props {
   cardBg?: string;
   imagePosition?: string;
   centerContent?: boolean;
+  sticker?: string;
 }
 
 const {
@@ -37,11 +39,21 @@ const {
   cardBg = 'bg-limber-brown border-limber-brown',
   imagePosition = 'object-center',
   centerContent = false,
+  sticker,
 } = Astro.props;
 ---
 
 <section class:list={[sectionBg, 'py-12 lg:py-16', showBorder && 'border-t-2 border-limber-green']}>
-  <div class="px-4 sm:px-6 lg:px-8">
+  <div class="px-4 sm:px-6 lg:px-8 relative">
+    {sticker && (
+      <img
+        src={sticker}
+        alt=""
+        aria-hidden="true"
+        class="absolute -top-16 right-4 w-28 h-28 lg:w-36 lg:h-36 -rotate-12 z-10 pointer-events-none"
+        style="filter: brightness(0) saturate(100%) invert(66%) sepia(62%) saturate(625%) hue-rotate(338deg) brightness(1.05);"
+      />
+    )}
     <div class:list={['cta-card rounded-2xl border-2 overflow-hidden lg:flex items-stretch', cardBg]}>
 
       <!-- Image first on mobile -->
@@ -71,6 +83,8 @@ const {
           {buttons.map((btn) => (
             <a
               href={btn.href}
+              target={btn.target}
+              rel={btn.target === '_blank' ? 'noopener noreferrer' : undefined}
               class:list={[
                 'inline-flex items-center px-6 py-3 font-headline text-sm border-2 rounded-full transition-colors',
                 btn.variant === 'outline'
