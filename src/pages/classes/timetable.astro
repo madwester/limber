@@ -181,7 +181,7 @@ const legendItems: Array<{ label: string; type: ClassType }> = [
       <!-- ── ALL 7 DAYS ── -->
       <div class="overflow-x-auto -mx-4 sm:-mx-6 lg:mx-0 px-4 sm:px-6 lg:px-0" style="scrollbar-width: none;">
         <!-- Single grid so all 7 columns share the same track widths across every row -->
-        <div class="grid" style="min-width: 700px; grid-template-columns: repeat(7, minmax(0, 1fr)); column-gap: 8px; row-gap: 8px;">
+        <div class="grid" style="grid-template-columns: repeat(7, minmax(120px, 1fr)); column-gap: 8px; row-gap: 8px;">
 
           <!-- Day headers -->
           {allDays.map((day, i) => (
