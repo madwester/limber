@@ -31,8 +31,9 @@ const blogSchema = {
   <!-- ── POSTS ── -->
   <section class="bg-limber-brown py-16 lg:py-24 border-b-2 border-limber-bright">
     <div class="px-4 sm:px-6 lg:px-8">
-      <h1 class="mb-12 leading-none">
-        <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-bright">limber</span> <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream">Journal</span>
+      <h1 class="flex items-baseline gap-[0.2em] leading-none mb-12">
+        <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-bright">limber</span>
+        <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream">Journal</span>
       </h1>
       {posts.length === 0 ? (
         <div class="text-center py-24">
