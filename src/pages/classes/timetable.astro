@@ -180,38 +180,35 @@ const legendItems: Array<{ label: string; type: ClassType }> = [
 
       <!-- ── ALL 7 DAYS ── -->
       <div class="overflow-x-auto -mx-4 sm:-mx-6 lg:mx-0 px-4 sm:px-6 lg:px-0" style="scrollbar-width: none;">
-        <div style="min-width: 700px;">
+        <!-- Single grid so all 7 columns share the same track widths across every row -->
+        <div class="grid" style="min-width: 700px; grid-template-columns: repeat(7, minmax(0, 1fr)); column-gap: 8px; row-gap: 8px;">
 
           <!-- Day headers -->
-          <div class="grid gap-2 mb-2" style="grid-template-columns: repeat(7, 1fr);">
-            {allDays.map((day, i) => (
-              <div class:list={[
-                'font-headline text-xs uppercase tracking-wide px-3',
-                i >= 5 ? 'text-limber-tericotta/70' : 'text-limber-green/70',
-              ]}>{day}</div>
-            ))}
-          </div>
-
-          <!-- Rows -->
-          {allSlots.map((slot) => (
-            <div class="grid gap-2 mb-2" style="grid-template-columns: repeat(7, 1fr);">
-              {slot.classes.map((entry) => (
-                <div style="min-height: 80px;">
-                  {entry ? (
-                    <div class:list={['h-full rounded-xl px-3 py-3 flex flex-col border', typeStyles[entry.type].bg, typeStyles[entry.type].border]}>
-                      <span class:list={['font-headline text-xs leading-none mb-1 opacity-60', typeStyles[entry.type].text]}>{slot.time}</span>
-                      <p class:list={['font-headline text-sm leading-snug flex-1', typeStyles[entry.type].text]}>{entry.name}</p>
-                      {entry.note && (
-                        <p class:list={['font-sans text-xs leading-snug mt-1.5', typeStyles[entry.type].note]}>{entry.note}</p>
-                      )}
-                    </div>
-                  ) : (
-                    <div class="h-full rounded-xl border border-dashed border-limber-green/10" style="min-height: 80px;"></div>
-                  )}
-                </div>
-              ))}
-            </div>
+          {allDays.map((day, i) => (
+            <div class:list={[
+              'font-headline text-xs uppercase tracking-wide px-3',
+              i >= 5 ? 'text-limber-tericotta/70' : 'text-limber-green/70',
+            ]}>{day}</div>
           ))}
+
+          <!-- Data cells — all slots flattened into the same grid -->
+          {allSlots.map((slot) =>
+            slot.classes.map((entry) => (
+              <div style="min-height: 80px;">
+                {entry ? (
+                  <div class:list={['h-full rounded-xl px-3 py-3 flex flex-col border', typeStyles[entry.type].bg, typeStyles[entry.type].border]}>
+                    <span class:list={['font-headline text-xs leading-none mb-1 opacity-60', typeStyles[entry.type].text]}>{slot.time}</span>
+                    <p class:list={['font-headline text-sm leading-snug flex-1', typeStyles[entry.type].text]}>{entry.name}</p>
+                    {entry.note && (
+                      <p class:list={['font-sans text-xs leading-snug mt-1.5', typeStyles[entry.type].note]}>{entry.note}</p>
+                    )}
+                  </div>
+                ) : (
+                  <div class="h-full rounded-xl border border-dashed border-limber-green/10" style="min-height: 80px;"></div>
+                )}
+              </div>
+            ))
+          )}
 
         </div>
       </div>
