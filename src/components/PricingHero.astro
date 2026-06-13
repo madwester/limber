@@ -48,24 +48,35 @@ const bodyClass = bodyItalic
       <p class:list={['mb-8 max-w-md', bodyClass]}>
         {body}
       </p>
-      <div class="flex flex-wrap justify-start gap-3">
-        {buttons.map((btn) => (
-          <a
-            class:list={[
-              'inline-flex items-center px-8 py-4 font-headline text-sm border-2 rounded-full transition-colors flex-shrink-0',
-              btn.variant === 'outline'
-                ? onDark
-                  ? 'text-limber-cream border-limber-cream hover:bg-limber-brown hover:border-limber-vibe'
-                  : 'text-limber-brown border-limber-green hover:bg-limber-green hover:text-limber-cream'
-                : 'text-limber-green bg-limber-vibe hover:bg-limber-bright border-limber-vibe',
-            ]}
-            href={btn.href}
-            target={btn.target}
-            rel={btn.target === '_blank' ? 'noopener noreferrer' : undefined}
-          >
-            <span class="relative top-[2px]">{btn.label}</span>
-          </a>
-        ))}
+      <div class="flex items-center gap-6">
+        <div class="flex flex-wrap justify-start gap-3">
+          {buttons.map((btn) => (
+            <a
+              class:list={[
+                'inline-flex items-center px-8 py-4 font-headline text-sm border-2 rounded-full transition-colors flex-shrink-0',
+                btn.variant === 'outline'
+                  ? onDark
+                    ? 'text-limber-cream border-limber-cream hover:bg-limber-brown hover:border-limber-vibe'
+                    : 'text-limber-brown border-limber-green hover:bg-limber-green hover:text-limber-cream'
+                  : 'text-limber-green bg-limber-vibe hover:bg-limber-bright border-limber-vibe',
+              ]}
+              href={btn.href}
+              target={btn.target}
+              rel={btn.target === '_blank' ? 'noopener noreferrer' : undefined}
+            >
+              <span class="relative top-[2px]">{btn.label}</span>
+            </a>
+          ))}
+        </div>
+        {sticker && (
+          <img
+            src={sticker}
+            alt=""
+            aria-hidden="true"
+            class="w-20 h-20 rotate-[-15deg] pointer-events-none flex-shrink-0"
+            style="filter: brightness(0) saturate(100%) invert(66%) sepia(62%) saturate(625%) hue-rotate(338deg) brightness(1.05);"
+          />
+        )}
       </div>
     </div>
 
@@ -79,15 +90,6 @@ const bodyClass = bodyItalic
           src={image}
         />
       </div>
-      {sticker && (
-        <img
-          src={sticker}
-          alt=""
-          aria-hidden="true"
-          class="absolute -top-6 -left-12 w-28 h-28 lg:w-32 lg:h-32 rotate-[-15deg] pointer-events-none z-10"
-          style="filter: brightness(0) saturate(100%) invert(66%) sepia(62%) saturate(625%) hue-rotate(338deg) brightness(1.05);"
-        />
-      )}
     </div>
 
   </div>
