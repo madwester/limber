@@ -179,12 +179,11 @@ const legendItems: Array<{ label: string; type: ClassType }> = [
       </div>
 
       <!-- ── ALL 7 DAYS ── -->
-      <div class="overflow-x-auto -mx-4 sm:-mx-6 lg:mx-0 pr-4 sm:pr-6 lg:px-0" style="scrollbar-width: none;">
-        <div style="min-width: 900px;">
+      <div class="overflow-x-auto -mx-4 sm:-mx-6 lg:mx-0 px-4 sm:px-6 lg:px-0" style="scrollbar-width: none;">
+        <div style="min-width: 700px;">
 
           <!-- Day headers -->
-          <div class="grid gap-2 mb-2" style="grid-template-columns: 76px repeat(7, 1fr);">
-            <div class="sticky left-0 bg-limber-cream z-10 pl-4 sm:pl-6 lg:pl-0"></div>
+          <div class="grid gap-2 mb-2" style="grid-template-columns: repeat(7, 1fr);">
             {allDays.map((day, i) => (
               <div class:list={[
                 'font-headline text-xs uppercase tracking-wide px-3',
@@ -195,17 +194,12 @@ const legendItems: Array<{ label: string; type: ClassType }> = [
 
           <!-- Rows -->
           {allSlots.map((slot) => (
-            <div class="grid gap-2 mb-2" style="grid-template-columns: 76px repeat(7, 1fr);">
-              <div class="flex items-start pt-3.5 pr-2 pl-4 sm:pl-6 lg:pl-0 sticky left-0 bg-limber-cream z-10">
-                <span class="font-headline text-xs text-limber-green/60 whitespace-nowrap">{slot.time}</span>
-              </div>
+            <div class="grid gap-2 mb-2" style="grid-template-columns: repeat(7, 1fr);">
               {slot.classes.map((entry) => (
                 <div style="min-height: 80px;">
                   {entry ? (
                     <div class:list={['h-full rounded-xl px-3 py-3 flex flex-col border', typeStyles[entry.type].bg, typeStyles[entry.type].border]}>
-                      {entry.time && (
-                        <span class:list={['font-headline text-xs leading-none mb-1 opacity-60', typeStyles[entry.type].text]}>{entry.time}</span>
-                      )}
+                      <span class:list={['font-headline text-xs leading-none mb-1 opacity-60', typeStyles[entry.type].text]}>{slot.time}</span>
                       <p class:list={['font-headline text-sm leading-snug flex-1', typeStyles[entry.type].text]}>{entry.name}</p>
                       {entry.note && (
                         <p class:list={['font-sans text-xs leading-snug mt-1.5', typeStyles[entry.type].note]}>{entry.note}</p>
