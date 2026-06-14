@@ -19,23 +19,28 @@ import FullBleedHero from '../../components/FullBleedHero.astro';
     contentPadding="px-4 sm:px-6 lg:px-8 py-16 lg:py-20"
   >
     <div class="lg:grid lg:grid-cols-2 lg:gap-20 items-start">
-      <div>
-        <h1 class="stacked-heading mb-10">
-          <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-bright block leading-none -mb-1">our</span>
-          <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none">Community</span>
-        </h1>
-      </div>
-      <div class="space-y-5">
-        <p class="font-sans text-limber-cream/80 leading-relaxed">
-          When we say community is at the heart of everything we do, we mean it. Movement might have been the reason we started, but the people are why we've stayed.
-        </p>
-        <p class="font-sans text-limber-cream/80 leading-relaxed">
-          Most of us have walked into a gym or a class and felt like we didn't quite belong. Too intimidated to ask, too overwhelmed to enjoy it. Limber was built to be the opposite of that. A space where you're welcome from the moment you walk in, not once you've earned your spot.
-        </p>
-        <p class="font-sans text-limber-cream/80 leading-relaxed">
-          That's why what happens beyond the studio matters just as much as what happens in it. We celebrate consistency, show up for milestones, and find every excuse to bring people together. Because the best part of Limber has never been the classes. It's who you do them with.
-        </p>
-      </div>
+        <div class="relative">
+          <h1 class="stacked-heading mb-10">
+            <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-bright block leading-none -mb-1">our</span>
+            <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none">Community</span>
+          </h1>
+          <div
+            aria-hidden="true"
+            class="absolute top-0 right-0 lg:top-full lg:right-auto lg:left-0 lg:mt-2 w-16 h-16 lg:w-20 lg:h-20 rotate-[-8deg] pointer-events-none z-10"
+            style="background-color: var(--color-limber-bright); -webkit-mask-image: url('/images/stickers/green-sticker-2.svg'); mask-image: url('/images/stickers/green-sticker-2.svg'); -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-position: center; mask-position: center;"
+          ></div>
+        </div>
+        <div class="space-y-5">
+          <p class="font-sans text-limber-cream/80 leading-relaxed">
+            When we say community is at the heart of everything we do, we mean it. Movement might have been the reason we started, but the people are why we've stayed.
+          </p>
+          <p class="font-sans text-limber-cream/80 leading-relaxed">
+            Most of us have walked into a gym or a class and felt like we didn't quite belong. Too intimidated to ask, too overwhelmed to enjoy it. Limber was built to be the opposite of that. A space where you're welcome from the moment you walk in, not once you've earned your spot.
+          </p>
+          <p class="font-sans text-limber-cream/80 leading-relaxed">
+            That's why what happens beyond the studio matters just as much as what happens in it. We celebrate consistency, show up for milestones, and find every excuse to bring people together. Because the best part of Limber has never been the classes. It's who you do them with.
+          </p>
+        </div>
     </div>
   </FullBleedHero>
 
@@ -157,7 +162,12 @@ import FullBleedHero from '../../components/FullBleedHero.astro';
   </section>
 
   <!-- ── LOVE CLUB NOTES ── -->
-  <section class="bg-limber-brown py-20 lg:py-28">
+  <section class="bg-limber-brown py-20 lg:py-28 relative">
+    <div
+      aria-hidden="true"
+      class="absolute top-8 right-8 lg:top-12 lg:right-12 w-24 h-24 lg:w-44 lg:h-44 rotate-[60deg] pointer-events-none z-10"
+      style="background-color: var(--color-limber-bright); -webkit-mask-image: url('/images/stickers/sticker-black.svg'); mask-image: url('/images/stickers/sticker-black.svg'); -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-position: center; mask-position: center;"
+    ></div>
     <div class="px-4 sm:px-6 lg:px-8">
 
       <div class="lg:grid lg:grid-cols-2 lg:gap-20 items-start mb-14">
@@ -191,8 +201,8 @@ import FullBleedHero from '../../components/FullBleedHero.astro';
           { body: 'Love attending Limber! Such a great, welcoming studio with friendly, knowledgeable and supportive teachers. Would highly recommend!', name: 'Lauren C.' },
         ].map((r, i) => (
           <div class:list={['p-7 rounded-2xl border-2 flex flex-col', i === 1 ? 'bg-limber-green border-limber-vibe' : 'bg-limber-vibe border-limber-green']}>
-            <p class:list={['font-display text-lg leading-relaxed flex-1 mb-5', i === 1 ? 'text-limber-cream/90' : 'text-limber-brown/90']}>"{r.body}"</p>
-            <p class:list={['font-headline text-xs', i === 1 ? 'text-limber-cream/60' : 'text-limber-brown/60']}>— {r.name}</p>
+            <p class:list={['font-display text-lg leading-relaxed flex-1 mb-5', i === 1 ? 'text-limber-cream/90' : 'text-limber-brown']}>"{r.body}"</p>
+            <p class:list={['font-headline text-xs', i === 1 ? 'text-limber-cream/60' : 'text-limber-brown/70']}>— {r.name}</p>
           </div>
         ))}
       </div>

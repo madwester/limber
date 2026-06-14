@@ -9,29 +9,36 @@ import FullBleedHero from '../components/FullBleedHero.astro';
 >
 
   <!-- ── HERO ── -->
-  <FullBleedHero
-    bgColor="bg-limber-brown"
-    borderColor="border-limber-bright"
-    image="/images/Limber_April26_141.jpg"
-    sectionBorderColor="border-limber-bright"
-    imageAlt="Limber studio"
-    imageHeight="h-[480px]"
-    contentPadding="px-4 sm:px-6 lg:px-8 py-10 lg:py-14"
-  >
-    <h1 class="mb-0">
-      <span class="flex items-baseline gap-[0.2em] leading-none -mb-1">
-        <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-bright">love</span>
-        <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream">to hear</span>
-      </span>
-      <span class="flex items-baseline gap-[0.2em] leading-none">
-        <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream">From</span>
-        <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-bright">you</span>
-      </span>
-    </h1>
-  </FullBleedHero>
+  <div class="relative">
+    <FullBleedHero
+      bgColor="bg-limber-brown"
+      borderColor="border-limber-bright"
+      image="/images/Limber_April26_141.jpg"
+      imageAlt="Limber studio"
+      imageHeight="h-[480px]"
+      contentPadding="px-4 sm:px-6 lg:px-8 py-10 lg:py-14"
+    >
+      <h1 class="mb-0">
+        <span class="flex items-baseline gap-[0.2em] leading-none -mb-1">
+          <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-bright">love</span>
+          <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream">to hear</span>
+        </span>
+        <span class="flex items-baseline gap-[0.2em] leading-none">
+          <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream">From</span>
+          <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-bright">you</span>
+        </span>
+      </h1>
+    </FullBleedHero>
+    <!-- Sticker: 75px below bottom of image (image=480px), 200px from right, desktop only -->
+    <div
+      aria-hidden="true"
+      class="absolute top-[555px] right-8 lg:right-[200px] w-36 h-36 -rotate-6 pointer-events-none z-10"
+      style="background-color: var(--color-limber-bright); -webkit-mask-image: url('/images/stickers/sticker-black.svg'); mask-image: url('/images/stickers/sticker-black.svg'); -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-position: center; mask-position: center;"
+    ></div>
+  </div>
 
   <!-- ── BODY ── -->
-  <section class="bg-limber-brown py-16 lg:py-24 border-b-2 border-limber-bright">
+  <section class="bg-limber-brown pb-16 lg:pb-24 border-b-2 border-limber-bright">
     <div class="px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
 

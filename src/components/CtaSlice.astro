@@ -66,7 +66,7 @@ const {
       </div>
 
       <!-- Content -->
-      <div class:list={['flex flex-col justify-center px-6 lg:px-8 py-8 lg:py-10 flex-1', centerContent ? 'items-center text-center' : 'items-start text-left']}>
+      <div class:list={['flex flex-col justify-center px-6 lg:px-8 py-8 lg:py-10 flex-1 relative', centerContent ? 'items-center text-center' : 'items-start text-left']}>
         {Astro.slots.has('heading') ? (
           <div class:list={['mb-3 cta-heading w-full', centerContent ? 'text-center' : 'text-left']}>
             <slot name="heading" />
@@ -96,10 +96,22 @@ const {
             </a>
           ))}
         </div>
+        <!-- Mobile sticker: to the right of the buttons -->
+        <div
+          aria-hidden="true"
+          class="lg:hidden absolute bottom-8 right-4 w-20 h-20 rotate-[-10deg] pointer-events-none z-10"
+          style="background-color: var(--color-limber-bright); -webkit-mask-image: url('/images/stickers/body-2.svg'); mask-image: url('/images/stickers/body-2.svg'); -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-position: center; mask-position: center;"
+        ></div>
       </div>
 
       <!-- Image on desktop (right side) -->
-      <div class="hidden lg:flex lg:w-2/5 flex-shrink-0 items-center px-8 py-10 lg:pl-0">
+      <div class="hidden lg:flex lg:w-2/5 flex-shrink-0 items-center px-8 py-10 lg:pl-0 relative">
+        <!-- Desktop sticker: 50px to the right of the text column -->
+        <div
+          aria-hidden="true"
+          class="absolute top-1/2 -translate-y-1/2 left-[50px] w-28 h-28 rotate-[12deg] pointer-events-none z-10 lg:hidden"
+          style="background-color: var(--color-limber-bright); -webkit-mask-image: url('/images/stickers/body-2.svg'); mask-image: url('/images/stickers/body-2.svg'); -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-position: center; mask-position: center;"
+        ></div>
         <img
           src={image}
           alt={imageAlt}

@@ -40,18 +40,25 @@ const cardStyles = [
 >
 
   <!-- ── HERO ── -->
-  <PricingHero
-    body="Here's what our community has to say about us."
-    buttons={[{ label: 'leave us some love', href: 'https://share.google/zi99bemSSC5ZumvDm', target: '_blank', variant: 'outline' }]}
-    image="/images/Limber_April26_176.jpg"
-    imageAlt="Limber studio love wall"
-    imagePosition="object-center"
-  >
-    <h1 class="mb-0">
-      <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-vibe block leading-none -mb-1">love</span>
-      <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none">Club</span>
-    </h1>
-  </PricingHero>
+  <div class="relative">
+    <PricingHero
+      body="Here's what our community has to say about us."
+      buttons={[{ label: 'leave us some love', href: 'https://share.google/zi99bemSSC5ZumvDm', target: '_blank', variant: 'outline' }]}
+      image="/images/Limber_April26_176.jpg"
+      imageAlt="Limber studio love wall"
+      imagePosition="object-center"
+    >
+      <h1 class="stacked-heading mb-0">
+        <span class="font-headline uppercase text-5xl md:text-6xl lg:text-7xl text-limber-vibe block leading-none -mb-1">love</span>
+        <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none">Club</span>
+      </h1>
+    </PricingHero>
+    <div
+      aria-hidden="true"
+      class="absolute top-[530px] right-[5%] lg:top-[340px] lg:right-auto lg:left-[340px] w-24 h-24 lg:w-32 lg:h-32 rotate-[12deg] pointer-events-none z-10"
+      style="background-color: var(--color-limber-vibe); -webkit-mask-image: url('/images/stickers/green-sticker-3.svg'); mask-image: url('/images/stickers/green-sticker-3.svg'); -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-position: center; mask-position: center;"
+    ></div>
+  </div>
 
   <!-- ── CARDS ── -->
   <section class="bg-limber-cream pt-16 lg:pt-24 pb-16 lg:pb-24">
@@ -70,7 +77,7 @@ const cardStyles = [
               if (imageMap.has(i)) {
                 const src = imageMap.get(i);
                 return (
-                  <div class="rounded-2xl overflow-hidden border-2 border-limber-green relative">
+                  <div class="rounded-2xl overflow-hidden border-2 border-limber-green relative h-64 lg:h-auto">
                     <img src={src} alt="" aria-hidden="true" class:list={['absolute inset-0 w-full h-full object-cover', src?.includes('128') ? 'object-[center_30%]' : 'object-center']} />
                   </div>
                 );

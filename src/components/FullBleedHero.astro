@@ -8,6 +8,10 @@ interface Props {
   borderColor?: string;
   sectionBorderColor?: string;
   contentPadding?: string;
+  showImageBorder?: boolean;
+  sticker?: string;
+  stickerColor?: string;
+  stickerClass?: string;
 }
 
 const {
@@ -19,6 +23,10 @@ const {
   borderColor = 'border-limber-vibe',
   sectionBorderColor,
   contentPadding = 'px-4 sm:px-6 lg:px-8 py-10 lg:py-14',
+  showImageBorder = true,
+  sticker,
+  stickerColor = '#000',
+  stickerClass = '',
 } = Astro.props;
 ---
 
@@ -28,12 +36,19 @@ const {
       <slot name="above" />
     </div>
   )}
-  <div class:list={[imageHeight, 'overflow-hidden border-b-2', borderColor]}>
+  <div class:list={[imageHeight, 'overflow-hidden relative', { 'border-b-2': showImageBorder }, { [borderColor]: showImageBorder }]}>
     <img
       src={image}
       alt={imageAlt}
       class:list={['w-full h-full object-cover', imagePosition]}
     />
+    {sticker && (
+      <div
+        aria-hidden="true"
+        class:list={['pointer-events-none', stickerClass]}
+        style={`background-color: ${stickerColor}; -webkit-mask-image: url('${sticker}'); mask-image: url('${sticker}'); -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-position: center; mask-position: center;`}
+      ></div>
+    )}
   </div>
   {Astro.slots.has('default') && (
     <div class:list={[contentPadding, 'text-left']}>

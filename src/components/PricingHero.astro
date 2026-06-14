@@ -37,7 +37,7 @@ const bodyClass = bodyItalic
   : `font-sans leading-relaxed ${onDark ? 'text-limber-cream/80' : 'text-limber-brown/80'}`;
 ---
 
-<section class:list={[bgColor, 'border-b-2 px-4 sm:px-6 lg:px-8 pt-6 lg:pt-8 pb-16 lg:pb-24', bgColor === 'bg-limber-green' ? 'border-limber-vibe' : 'border-limber-green']}>
+<section class:list={[bgColor, 'border-b-2 px-4 sm:px-6 lg:px-8 pt-6 lg:pt-8 pb-16 lg:pb-24 mt-[10px]', bgColor === 'bg-limber-green' ? 'border-limber-vibe' : 'border-limber-green']}>
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
     <!-- Left: heading + body + buttons -->
@@ -73,7 +73,7 @@ const bodyClass = bodyItalic
             src={sticker}
             alt=""
             aria-hidden="true"
-            class="w-20 h-20 rotate-[-15deg] pointer-events-none flex-shrink-0"
+            class="lg:hidden w-20 h-20 rotate-[-15deg] pointer-events-none flex-shrink-0"
             style="filter: brightness(0) saturate(100%) invert(66%) sepia(62%) saturate(625%) hue-rotate(338deg) brightness(1.05);"
           />
         )}
@@ -82,6 +82,15 @@ const bodyClass = bodyItalic
 
     <!-- Right: image -->
     <div class="relative order-1 lg:order-2 lg:self-start">
+      {sticker && (
+        <img
+          src={sticker}
+          alt=""
+          aria-hidden="true"
+          class="hidden lg:block absolute -top-6 -left-6 z-10 w-24 h-24 rotate-[-15deg] pointer-events-none"
+          style="filter: brightness(0) saturate(100%) invert(66%) sepia(62%) saturate(625%) hue-rotate(338deg) brightness(1.05);"
+        />
+      )}
       <div class="overflow-hidden rounded-2xl">
         <img
           alt={imageAlt}
