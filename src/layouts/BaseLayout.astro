@@ -13,6 +13,8 @@ interface Props {
  bannerBg?: string;
  bannerText?: string;
  bannerTextAccent?: string;
+ ogType?: string;
+ articleMeta?: { publishedTime: string; author?: string; section?: string };
 }
 
 const {
@@ -25,6 +27,8 @@ const {
  bannerBg,
  bannerText,
  bannerTextAccent,
+ ogType = 'website',
+ articleMeta,
 } = Astro.props;
 
 const siteUrl = 'https://limberco.com.au';
@@ -41,6 +45,7 @@ const localBusinessSchema = {
  '@id': `${siteUrl}/#business`,
  name: 'Limber',
  alternateName: 'Limber Co',
+ description: 'Movement studio in Thirroul, NSW offering Pilates, yoga, barre, strength, dance and breathwork classes. Real community, zero pretension.',
  url: siteUrl,
  logo: `${siteUrl}/images/LIMBERCo-logo.webp`,
  image: ogImage,
@@ -58,6 +63,15 @@ const localBusinessSchema = {
   latitude: -34.3167,
   longitude: 150.9167,
  },
+ areaServed: [
+  { '@type': 'City', name: 'Thirroul' },
+  { '@type': 'City', name: 'Austinmer' },
+  { '@type': 'City', name: 'Wollongong' },
+  { '@type': 'City', name: 'Bulli' },
+  { '@type': 'City', name: 'Coledale' },
+  { '@type': 'City', name: 'Stanwell Park' },
+ ],
+ knowsAbout: ['Pilates', 'Yoga', 'Barre', 'Breathwork', 'Strength Training', 'Dance', 'Wellness', 'Movement'],
  priceRange: '$$',
  currenciesAccepted: 'AUD',
  paymentAccepted: 'Credit Card, Direct Debit',
@@ -75,9 +89,10 @@ const localBusinessSchema = {
  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
  <meta name="theme-color" content="#1a3a2a" />
 
- <!-- Favicon -->
+ <!-- Favicon + manifest -->
  <link rel="icon" type="image/png" href="/images/favicon.png" />
  <link rel="apple-touch-icon" href="/images/favicon.png" />
+ <link rel="manifest" href="/site.webmanifest" />
 
  <!-- Canonical + robots -->
  <link rel="canonical" href={canonicalURL} />
@@ -89,7 +104,7 @@ const localBusinessSchema = {
  <meta name="author" content="Limber" />
 
  <!-- Open Graph -->
- <meta property="og:type" content="website" />
+ <meta property="og:type" content={ogType} />
  <meta property="og:url" content={canonicalURL} />
  <meta property="og:title" content={pageTitle} />
  <meta property="og:description" content={description} />
@@ -99,6 +114,13 @@ const localBusinessSchema = {
  <meta property="og:image:alt" content={pageTitle} />
  <meta property="og:locale" content="en_AU" />
  <meta property="og:site_name" content="Limber" />
+ {articleMeta && (
+  <>
+   <meta property="article:published_time" content={articleMeta.publishedTime} />
+   {articleMeta.author && <meta property="article:author" content={articleMeta.author} />}
+   <meta property="article:section" content={articleMeta.section ?? 'Journal'} />
+  </>
+ )}
 
  <!-- Twitter / X -->
  <meta name="twitter:card" content="summary_large_image" />

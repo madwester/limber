@@ -117,6 +117,24 @@ const perks = [
 <BaseLayout
   title="Memberships"
   description="Find your Limber membership — from 1 class a week to unlimited. Real support, real community, no pushy sales."
+  schema={{
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Limber Memberships',
+    description: 'Weekly membership plans at Limber movement studio in Thirroul, NSW.',
+    itemListElement: memberships.map((m, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'Offer',
+        name: m.name,
+        description: m.description,
+        price: m.price.replace('$', ''),
+        priceCurrency: 'AUD',
+        seller: { '@type': 'Organization', name: 'Limber', url: 'https://limberco.com.au' },
+      },
+    })),
+  }}
 >
 
   <!-- ── HERO ── -->

@@ -166,6 +166,22 @@ const classes = [
 <BaseLayout
   title="Our Classes"
   description="Explore every class at Limber — from mat Pilates to yin yoga, strength, barre, dance, and more."
+  schema={{
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Classes at Limber',
+    description: 'All movement classes at Limber studio in Thirroul, NSW.',
+    itemListElement: classes.map((c, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'Service',
+        name: c.name,
+        description: c.description[0],
+        provider: { '@type': 'LocalBusiness', name: 'Limber', url: 'https://limberco.com.au' },
+      },
+    })),
+  }}
 >
 
   <!-- ── INTRO ── -->

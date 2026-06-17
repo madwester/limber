@@ -9,6 +9,17 @@ import { trialReviews } from '../../data/reviews';
   title="The Limber Way — Intro Trial"
   description="New to Limber? The Limber Way is 21 days of unlimited classes, a personalised plan, and a real human in your corner. $99 for new members."
   hideBanner={true}
+  schema={{
+    '@context': 'https://schema.org',
+    '@type': 'Offer',
+    name: 'The Limber Way — Intro Trial',
+    description: '21 days of unlimited classes, a personalised plan, and a real human in your corner. For new members only.',
+    price: '99',
+    priceCurrency: 'AUD',
+    eligibleCustomerType: 'http://purl.org/goodrelations/v1#NewCustomer',
+    availability: 'https://schema.org/InStock',
+    seller: { '@type': 'Organization', name: 'Limber', url: 'https://limberco.com.au' },
+  }}
 >
 
   <!-- ── HERO ── -->

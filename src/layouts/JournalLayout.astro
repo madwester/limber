@@ -15,15 +15,27 @@ const splitIndex = Math.ceil(titleWords.length / 2);
 const titleMain = titleWords.slice(0, splitIndex).join(' ');
 const titleAccent = titleWords.slice(splitIndex).join(' ');
 
+const siteUrl = 'https://limberco.com.au';
+const canonicalURL = `${siteUrl}${Astro.url.pathname}`;
+
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
   headline: title,
   description,
+  url: canonicalURL,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalURL },
   datePublished: pubDate.toISOString(),
+  dateModified: pubDate.toISOString(),
   author: { '@type': 'Person', name: author ?? 'Limber' },
-  publisher: { '@type': 'Organization', name: 'Limber', url: 'https://limberco.com.au' },
-  ...(image && { image: `https://limberco.com.au${image.src}` }),
+  publisher: {
+    '@type': 'Organization',
+    name: 'Limber',
+    url: siteUrl,
+    logo: { '@type': 'ImageObject', url: `${siteUrl}/images/LIMBERCo-logo.webp` },
+  },
+  ...(image && { image: `${siteUrl}${image.src}` }),
+  ...(tags && tags.length > 0 && { keywords: tags.join(', ') }),
 };
 
 const formattedDate = pubDate.toLocaleDateString('en-AU', {
@@ -31,7 +43,14 @@ const formattedDate = pubDate.toLocaleDateString('en-AU', {
 });
 ---
 
-<BaseLayout title={title} description={description} schema={articleSchema}>
+<BaseLayout
+  title={title}
+  description={description}
+  image={image?.src}
+  schema={articleSchema}
+  ogType="article"
+  articleMeta={{ publishedTime: pubDate.toISOString(), author, section: 'Journal' }}
+>
   <article>
 
     <!-- ── BODY ── -->

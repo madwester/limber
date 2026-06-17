@@ -1,0 +1,17 @@
+{
+  "name": "Limber",
+  "short_name": "Limber",
+  "description": "Movement studio in Thirroul, NSW. Pilates, yoga, barre, strength, dance and breathwork.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#1a3a2a",
+  "theme_color": "#1a3a2a",
+  "icons": [
+    {
+      "src": "/images/favicon.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

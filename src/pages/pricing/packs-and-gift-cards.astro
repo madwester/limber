@@ -67,6 +67,62 @@ const faqs = [
 <BaseLayout
   title="Packs + Gift Cards"
   description="Buy class packs or gift cards at Limber. Group class packs, Lunch Express packs, semi-private packs, and gift cards in any amount."
+  schema={{
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Limber Class Packs',
+    description: 'Class packs and gift cards at Limber movement studio in Thirroul, NSW.',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        item: {
+          '@type': 'Offer',
+          name: '5 Class Pack',
+          description: 'Valid for all group classes. Valid for 3 months from date of purchase.',
+          price: '145',
+          priceCurrency: 'AUD',
+          seller: { '@type': 'Organization', name: 'Limber', url: 'https://limberco.com.au' },
+        },
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        item: {
+          '@type': 'Offer',
+          name: '10 Class Pack',
+          description: 'Valid for all group classes. Valid for 6 months from date of purchase.',
+          price: '270',
+          priceCurrency: 'AUD',
+          seller: { '@type': 'Organization', name: 'Limber', url: 'https://limberco.com.au' },
+        },
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        item: {
+          '@type': 'Offer',
+          name: 'Lunch Express 10 Class Pack',
+          description: 'Valid for lunch express classes only. Valid for 6 months from date of purchase.',
+          price: '220',
+          priceCurrency: 'AUD',
+          seller: { '@type': 'Organization', name: 'Limber', url: 'https://limberco.com.au' },
+        },
+      },
+      {
+        '@type': 'ListItem',
+        position: 4,
+        item: {
+          '@type': 'Offer',
+          name: 'Semi-Private 5 Pack',
+          description: 'Valid for semi-private sessions only. Valid for 3 months from date of purchase.',
+          price: '250',
+          priceCurrency: 'AUD',
+          seller: { '@type': 'Organization', name: 'Limber', url: 'https://limberco.com.au' },
+        },
+      },
+    ],
+  }}
 >
 
   <!-- ── HERO ── -->

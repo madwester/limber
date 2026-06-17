@@ -6,6 +6,26 @@ import FullBleedHero from '../components/FullBleedHero.astro';
 <BaseLayout
   title="Contact"
   description="Get in touch with Limber — questions, feedback, or just a hello. We'd love to hear from you."
+  schema={{
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: 'Contact Limber',
+    description: 'Get in touch with Limber studio.',
+    url: 'https://limberco.com.au/contact',
+    mainEntity: {
+      '@type': 'LocalBusiness',
+      name: 'Limber',
+      email: 'hello@limberco.com.au',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Shop 17/282-298 Lawrence Hargrave Drive',
+        addressLocality: 'Thirroul',
+        addressRegion: 'NSW',
+        postalCode: '2515',
+        addressCountry: 'AU',
+      },
+    },
+  }}
 >
 
   <!-- ── HERO ── -->
