@@ -17,6 +17,8 @@ interface Props {
   onDark?: boolean;
   sticker?: string;
   imageStyle?: string;
+  imageSticker?: string;
+  imageStickerColor?: string;
 }
 
 const {
@@ -30,6 +32,8 @@ const {
   onDark = true,
   sticker,
   imageStyle,
+  imageSticker,
+  imageStickerColor = 'var(--color-limber-bright)',
 } = Astro.props;
 
 const bodyClass = bodyItalic
@@ -99,6 +103,13 @@ const bodyClass = bodyItalic
           src={image}
         />
       </div>
+      {imageSticker && (
+        <div
+          aria-hidden="true"
+          class="absolute bottom-4 right-4 lg:bottom-4 lg:right-auto lg:left-4 w-20 h-20 rotate-[8deg] pointer-events-none z-10"
+          style={`background-color: ${imageStickerColor}; -webkit-mask-image: url('${imageSticker}'); mask-image: url('${imageSticker}'); -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-position: center; mask-position: center;`}
+        ></div>
+      )}
     </div>
 
   </div>

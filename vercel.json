@@ -2,5 +2,22 @@
   "framework": "astro",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "installCommand": "npm install"
+  "installCommand": "npm install",
+  "redirects": [
+    { "source": "/journal", "destination": "/limber-journal", "permanent": true },
+    { "source": "/journal/:path*", "destination": "/limber-journal/:path*", "permanent": true },
+    { "source": "/privacy", "destination": "/privacy-policy", "permanent": true },
+    { "source": "/booknow-1", "destination": "/book-now", "permanent": true },
+    { "source": "/connect-1", "destination": "/contact", "permanent": true },
+    { "source": "/reviews", "destination": "/reviews", "permanent": true },
+    { "source": "/groupclasses-1", "destination": "/classes/our-classes", "permanent": true },
+    { "source": "/collabs-1", "destination": "/classes/our-classes", "permanent": true },
+    { "source": "/privates-1", "destination": "/classes/privates", "permanent": true },
+    { "source": "/limberway", "destination": "/pricing/trial", "permanent": true },
+    { "source": "/memberships", "destination": "/pricing/memberships", "permanent": true },
+    { "source": "/packs", "destination": "/pricing/packs-and-gift-cards", "permanent": true },
+    { "source": "/giftcards", "destination": "/pricing/packs-and-gift-cards", "permanent": true },
+    { "source": "/about-1", "destination": "/about/our-vibe", "permanent": true },
+    { "source": "/terms-conditions", "destination": "/terms-and-conditions", "permanent": true }
+  ]
 }
