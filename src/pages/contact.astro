@@ -103,7 +103,9 @@ import FullBleedHero from '../components/FullBleedHero.astro';
         <!-- Right: form -->
         <div class="sticky top-24 lg:top-28 self-start">
 
-          <form id="contact-form" novalidate class="space-y-5">
+          <form id="contact-form" action="https://formspree.io/f/mbdeepav" method="POST" novalidate class="space-y-5">
+            <input type="text" name="_gotcha" class="hidden" aria-hidden="true" tabindex="-1" />
+            <input type="hidden" name="_subject" value="New enquiry — Limber" />
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
@@ -192,3 +194,34 @@ import FullBleedHero from '../components/FullBleedHero.astro';
   </section>
 
 </BaseLayout>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const success = document.getElementById('contact-success');
+  const errorBox = document.getElementById('form-error');
+  const btn = document.getElementById('submit-btn') as HTMLButtonElement | null;
+  const btnLabel = document.getElementById('btn-label');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!btn || !btnLabel) return;
+    btn.disabled = true;
+    btnLabel.textContent = 'sending…';
+    errorBox?.classList.add('hidden');
+
+    const res = await fetch((form as HTMLFormElement).action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { Accept: 'application/json' },
+    });
+
+    if (res.ok) {
+      form.classList.add('hidden');
+      success?.classList.remove('hidden');
+    } else {
+      btn.disabled = false;
+      btnLabel.textContent = 'send message';
+      errorBox?.classList.remove('hidden');
+    }
+  });
+</script>
