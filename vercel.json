@@ -9,7 +9,6 @@
     { "source": "/privacy", "destination": "/privacy-policy", "permanent": true },
     { "source": "/booknow-1", "destination": "/book-now", "permanent": true },
     { "source": "/connect-1", "destination": "/contact", "permanent": true },
-    { "source": "/reviews", "destination": "/reviews", "permanent": true },
     { "source": "/groupclasses-1", "destination": "/classes/our-classes", "permanent": true },
     { "source": "/collabs-1", "destination": "/classes/our-classes", "permanent": true },
     { "source": "/privates-1", "destination": "/classes/privates", "permanent": true },
