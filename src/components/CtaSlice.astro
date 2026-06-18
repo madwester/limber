@@ -92,7 +92,7 @@ const {
                   : primaryBtn,
               ]}
             >
-              <span class="relative top-[2px]">{btn.label}</span>
+              <span class="relative top-[2px]" set:html={btn.label} />
             </a>
           ))}
         </div>
