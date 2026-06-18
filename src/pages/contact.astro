@@ -103,9 +103,7 @@ import FullBleedHero from '../components/FullBleedHero.astro';
         <!-- Right: form -->
         <div class="sticky top-24 lg:top-28 self-start">
 
-          <form id="contact-form" action="https://formspree.io/f/mbdeepav" method="POST" novalidate class="space-y-5">
-            <input type="text" name="_gotcha" class="hidden" aria-hidden="true" tabindex="-1" />
-            <input type="hidden" name="_subject" value="New enquiry — Limber" />
+          <form id="contact-form" novalidate class="space-y-5">
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
@@ -209,10 +207,19 @@ import FullBleedHero from '../components/FullBleedHero.astro';
     btnLabel.textContent = 'sending…';
     errorBox?.classList.add('hidden');
 
-    const res = await fetch((form as HTMLFormElement).action, {
+    const data = new FormData(form);
+
+    const res = await fetch('https://api.momence.com/integrations/customer-leads/46474/collect', {
       method: 'POST',
-      body: new FormData(form),
-      headers: { Accept: 'application/json' },
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        token: 'WZ8Y3×5jDd',
+        firstName: data.get('firstName'),
+        lastName: data.get('lastName'),
+        email: data.get('email'),
+        phoneNumber: data.get('phoneNumber'),
+        discoveryAnswer: data.get('enquiry'),
+      }),
     });
 
     if (res.ok) {
