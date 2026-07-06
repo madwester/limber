@@ -1,0 +1,337 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FullBleedHero from '../components/FullBleedHero.astro';
+import CtaSlice from '../components/CtaSlice.astro';
+
+const MOMENCE_URL = 'https://momence.com/m/833815';
+
+// Two lockup options — see PDF brief. Default to the arch badge; swap to art-02.svg to compare.
+const LODGE_LOGO = '/images/lodge/art-01.svg';
+
+const inclusions = [
+  'Unlimited classes across the 5-week program',
+  'Entry into the Season Challenge',
+  "Access to the Lodge's full schedule of off-piste community events",
+  'Discount codes across a suite of partners such as Issu, Skin Club Thirroul, Bonfire Sauna, Hangdog, Move Active, and more',
+  'Access to our digital suite of challenge classes',
+  'Weekly nutrition recipe drops',
+  'Guided breathwork sessions + more',
+];
+
+const schedule = [
+  { date: 'Sat 25 Jul', event: 'Season Opener', ticketed: true },
+  { date: 'Fri 31 Jul', event: 'Breathwork' },
+  { date: 'Sat 1 Aug', event: 'Pop-up Limboogie Night' },
+  { date: 'Sat 8 Aug', event: 'Community Hike' },
+  { date: 'Sun 9 Aug', event: 'Breathwork' },
+  { date: 'Fri 14 Aug', event: 'Breathwork' },
+  { date: 'Sat 15 Aug', event: 'Sauna Sessions', ticketed: true },
+  { date: 'Sat 22 Aug', event: 'Scribble Session', ticketed: true },
+  { date: 'Sun 23 Aug', event: 'Outdoor Breathwork + Ocean Swim' },
+  { date: 'Sun 30 Aug', event: 'Season Winddown Celebration' },
+  { date: 'Every Wed', event: 'Run Club at 7am, après coffee and all.' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Event',
+  name: 'The Limber Lodge — Winter Wellbeing Challenge',
+  description: "A 5-week alpine-inspired winter wellbeing challenge, proudly supporting Black Dog Institute.",
+  startDate: '2026-07-27',
+  endDate: '2026-08-30',
+  eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+  location: {
+    '@type': 'Place',
+    name: 'Limber',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Shop 17/282-298 Lawrence Hargrave Drive',
+      addressLocality: 'Thirroul',
+      addressRegion: 'NSW',
+      postalCode: '2515',
+      addressCountry: 'AU',
+    },
+  },
+  organizer: { '@type': 'Organization', name: 'Limber', url: 'https://limberco.com.au' },
+};
+---
+
+<BaseLayout
+  title="The Limber Lodge"
+  description="A 5-week alpine-inspired winter wellbeing challenge at Limber, proudly supporting Black Dog Institute. 27 July - 30 August."
+  image="/images/lodge/hero-image.jpg"
+  schema={schema}
+>
+
+  <!-- ── HERO ── -->
+  <FullBleedHero
+    bgColor="bg-limber-cream"
+    borderColor="border-limber-green"
+    sectionBorderColor="border-limber-green"
+    image="/images/lodge/hero-image.jpg"
+    imageAlt="Four Limber crew members in full 80s ski gear, posed in front of a snowy mountain backdrop"
+    imagePosition="object-[center_15%]"
+    contentPadding="px-4 sm:px-6 lg:px-8 py-16 lg:py-20"
+  >
+    <div class="text-center">
+      <h1 class="mb-6">
+        <span class="font-headline uppercase text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-limber-bright">The Limber Lodge</span>
+      </h1>
+      <p class="font-display font-medium text-2xl text-limber-brown leading-relaxed mb-4 max-w-2xl mx-auto">
+        A 5-week alpine-inspired winter wellbeing challenge, proudly supporting <span class="italic">Black Dog Institute</span>.
+      </p>
+      <p class="font-headline uppercase text-xl text-limber-vibe">
+        27 July &ndash; 30 August
+      </p>
+    </div>
+  </FullBleedHero>
+
+  <!-- ── GOOD FOR THE BOD — CONTENT LEFT, IMAGE RIGHT ── -->
+  <section class="bg-limber-cream py-16 lg:py-24 border-b-2 border-limber-green">
+    <div class="px-4 sm:px-6 lg:px-8">
+      <div class="lg:grid lg:grid-cols-9 lg:gap-16 items-start">
+
+        <!-- Left: heading, text, button -->
+        <div class="relative mb-10 lg:mb-0 lg:col-span-5">
+          <h2 class="mb-6">
+            <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-brown block leading-none">
+              Good For The
+            </span>
+            <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-brown block leading-none mt-2">
+              <span class="text-limber-bright not-italic font-headline uppercase">BOD</span> Better for
+            </span>
+            <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-brown block leading-none mt-2">
+              The <span class="text-limber-bright not-italic font-headline uppercase">NOGGIN</span>
+            </span>
+          </h2>
+          <div class="space-y-4 mb-8">
+            <p class="font-sans text-limber-brown/80 leading-relaxed">
+              Winter has a way of shrinking your world, but this year, we're leaning in. For five weeks this winter, we're turning Limber into The Limber Lodge - an 80s ski lodge built right inside our Thirroul studio, apr&egrave;s glow and all. Scoop up your season pass and hit the mountain for a stacked winter season of themed classes, plus a calendar of events and experiences both inside the studio and well beyond it.
+            </p>
+            <p class="font-sans text-limber-brown/80 leading-relaxed">
+              Our program gives the studio and class timetable an alpine edge, all designed to keep you moving, connecting and feeling good through the stretch of the year when that can feel hardest.
+            </p>
+            <p class="font-sans text-limber-brown/80 leading-relaxed">
+              From sauna, run clubs and hikes to guided breathwork, talks, art therapy, cold plunges, classes and live music - there's something to get you out of the house and moving this chilly season.
+            </p>
+          </div>
+          <a
+            href={MOMENCE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center px-8 py-4 font-headline text-sm text-limber-brown bg-limber-bright hover:bg-limber-vibe border-2 border-limber-bright rounded-full transition-colors"
+          >
+            <span class="relative top-[2px]">Get your Season Pass</span>
+          </a>
+        </div>
+
+        <!-- Right: image -->
+        <div class="lg:col-span-4">
+          <img
+            src="/images/lodge/limber ski - 121.jpg"
+            alt="Limber crew member in a retro ski jacket striking a yoga pose on the slopes"
+            class="w-full h-[440px] lg:h-[560px] object-cover object-top rounded-2xl border-2 border-limber-green"
+          />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHY WE BUILT THIS ── -->
+  <section class="bg-limber-cream py-20 lg:py-28 border-b-2 border-limber-green">
+    <div class="px-4 sm:px-6 lg:px-8">
+      <div class="lg:grid lg:grid-cols-9 lg:gap-16 items-start">
+
+        <!-- Left: heading, text -->
+        <div class="mb-10 lg:mb-0 lg:col-span-5">
+          <h2 class="mb-6 stacked-heading">
+            <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-bright block leading-none -mb-1">Why</span>
+            <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-brown block leading-none">We built this</span>
+          </h2>
+          <div class="space-y-4">
+            <p class="font-sans text-limber-brown/80 leading-relaxed">
+              An Australian study found 42 percent of people see their social life decline over winter, and one in three say they feel more down and depressed once it gets cold (McCrindle, 2023). Exercise tails off at the same time, and gym freeze requests climb. People stop moving and stop seeing one another, right when they need both the most.
+            </p>
+            <p class="font-sans text-limber-brown/80 leading-relaxed">
+              We know the seasonal patterns of our wellbeing. We also know the power that movement, connection and community have to shift them.
+            </p>
+            <p class="font-sans text-limber-brown/80 leading-relaxed">
+              So rather than shy away from the seasonal blues, we wanted to give you a reason to keep returning to the things that support your mental and physical health. Something worth leaving the house for. Something to prove that winter doesn't have to be isolating.
+            </p>
+            <p class="font-sans text-limber-brown/80 leading-relaxed">
+              Proudly supporting Australia's leading mental health research and suicide prevention organisation, 10% of proceeds from all Limber merchandise and ticketed events go to the Black Dog Institute. Their work recognises the link between moving your body and looking after your mind - an ethos at the heart of everything we do.
+            </p>
+            <p class="font-sans text-limber-brown/80 leading-relaxed">
+              When you support Black Dog Institute, you're helping fast-track mental health research and trials, and supporting health professionals, policymakers and everyday Australians to make informed decisions about mental health.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right: image -->
+        <div class="lg:col-span-4">
+          <img
+            src="/images/lodge/limber ski - 247.jpg"
+            alt="Limber crew in full 80s ski gear piled onto a chairlift bench prop"
+            class="w-full h-[440px] lg:h-[560px] object-cover object-top rounded-2xl border-2 border-limber-green"
+          />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── YOUR SEASON PASS ── -->
+  <section class="relative bg-limber-cream py-20 lg:py-28 border-b-2 border-limber-green">
+    <img
+      src="/images/lodge/art-04.svg"
+      alt=""
+      aria-hidden="true"
+      class="absolute right-6 top-5 w-[120px] sm:w-28 lg:right-8 lg:top-16 lg:w-64 pointer-events-none drop-shadow-lg z-10"
+    />
+    <div class="px-4 sm:px-6 lg:px-8">
+      <h2 class="mb-6 stacked-heading">
+        <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-bright block leading-none -mb-1">Your</span>
+        <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-brown block leading-none">Season Pass</span>
+      </h2>
+      <p class="font-sans text-limber-brown/80 leading-relaxed mb-14 max-w-2xl">
+        More affordable than a weekend at the snow, a Season Pass unlocks the full Limber Lodge experience to keep the bod warm, and the noggin' at its best. It includes:
+      </p>
+
+      <!-- Horizontal scroll on mobile, grid on desktop -->
+      <div class="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 -mx-4 sm:-mx-6 lg:mx-0 pl-4 sm:pl-6 lg:pl-0 [scroll-padding-left:1rem] sm:[scroll-padding-left:1.5rem] lg:grid lg:grid-cols-4 lg:overflow-visible lg:pb-0" style="scrollbar-width: none;">
+        {inclusions.map((item, i) => (
+          <div class:list={[
+            'snap-start flex-shrink-0 w-[75vw] sm:w-[40vw] lg:w-auto flex flex-col rounded-2xl border-2 p-6 last:mr-4 sm:last:mr-6 lg:last:mr-0',
+            i % 2 === 0 ? 'bg-limber-vibe border-limber-green' : 'bg-limber-bright border-limber-brown',
+          ]}>
+            <span class:list={['font-headline text-xs mb-4', i % 2 === 0 ? 'text-limber-green/60' : 'text-limber-brown/60']}>{String(i + 1).padStart(2, '0')}</span>
+            <p class:list={['font-display not-italic text-lg leading-snug', i % 2 === 0 ? 'text-limber-green' : 'text-limber-brown']}>{item}</p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── GRAND PRIZE — CONTENT LEFT, IMAGE RIGHT ── -->
+  <section class="bg-limber-cream py-20 lg:py-28 border-b-2 border-limber-green">
+    <div class="px-4 sm:px-6 lg:px-8">
+      <div class="relative lg:grid lg:grid-cols-9 lg:gap-16 items-start">
+        <img
+          src="/images/lodge/art-01.svg"
+          alt=""
+          aria-hidden="true"
+          class="absolute right-6 -top-4 w-[130px] lg:right-auto lg:left-[40.8%] lg:top-[300px] lg:w-56 lg:-translate-x-1/2 pointer-events-none drop-shadow-lg z-10 wiggle-sticker"
+        />
+
+        <div class="lg:col-span-5">
+          <h2 class="stacked-heading mb-6">
+            <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-bright block leading-none -mb-1">What's</span>
+            <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-brown block leading-none">Up for grabs</span>
+          </h2>
+          <p class="font-sans text-limber-brown/80 leading-relaxed mb-8">
+            Stay the course of the challenge and you're in the running for the grand prize: a wilderness cabin stay with Unyoked, plus three months of unlimited classes at Limber. Also up for grabs are Bonfire Sauna experiences, Limber giveaways, merch and much more.
+          </p>
+
+          <p class="font-display italic text-2xl text-limber-tericotta mb-1">
+            Winter Wellbeing Membership:
+          </p>
+          <p class="font-sans text-limber-brown/80 leading-relaxed mb-8">
+            $300 upfront, or $69 per week.
+          </p>
+
+          <a
+            href={MOMENCE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center px-8 py-4 font-headline text-sm text-limber-brown bg-limber-bright hover:bg-limber-vibe border-2 border-limber-bright rounded-full transition-colors"
+          >
+            <span class="relative top-[2px]">Get your Season Pass</span>
+          </a>
+        </div>
+
+        <img
+          src="/images/lodge/3.jpg"
+          alt="Limber crew member in a purple ski suit striking a pose on the mountain"
+          class="w-full h-[440px] lg:h-[560px] object-cover rounded-2xl border-2 border-limber-green mt-10 lg:mt-0 lg:col-span-4"
+        />
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── YOUR SEASON SCHEDULE ── -->
+  <section id="schedule" class="bg-limber-cream py-20 lg:py-28 scroll-mt-[120px] lg:scroll-mt-[140px]">
+    <div class="px-4 sm:px-6 lg:px-8">
+      <h2 class="mb-4 stacked-heading">
+        <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-bright block leading-none -mb-1">Your</span>
+        <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-brown block leading-none">Season Schedule</span>
+      </h2>
+      <p class="font-headline text-xs text-limber-brown/70 mb-12">
+        Monday 27 July &ndash; Sunday 30 August &middot; Winter Wellbeing Studio Program
+      </p>
+
+      <div class="lg:grid lg:grid-cols-9 lg:gap-16 lg:items-stretch">
+
+        <div class="lg:col-span-5 rounded-2xl border-2 border-limber-green overflow-hidden bg-limber-vibe flex flex-col">
+          {schedule.map((row) => (
+            <div class="flex items-center justify-between gap-4 px-6 py-4 bg-limber-vibe border-b border-limber-green/15 last:border-0">
+              <p class="font-headline text-xs text-limber-cream w-28 flex-shrink-0">{row.date}</p>
+              <p class="font-display not-italic text-lg text-limber-brown flex-1">{row.event}</p>
+              {row.ticketed && (
+                <span class="font-headline text-[10px] text-limber-brown bg-limber-bright rounded-full px-3 py-1 flex-shrink-0">Ticketed</span>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <div class="relative h-[440px] lg:h-auto overflow-hidden rounded-2xl border-2 border-limber-green mt-10 lg:mt-0 lg:col-span-4">
+          <img
+            src="/images/lodge/limber ski - 392.jpg"
+            alt="Limber crew laughing together in a retro lounge room, 70s wallpaper behind them"
+            class="w-full h-full object-cover lg:absolute lg:inset-0"
+          />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <CtaSlice
+    headingLine1="Your winter"
+    headingLine2="Starts now"
+    body="Download the Limber app, log in, and book your classes."
+    image="/images/lodge/limber ski - 170.jpg"
+    imageAlt="Two Limber crew members skiing down the mountain together"
+    sectionBg="bg-limber-cream"
+    showBorder={false}
+    cardBg="bg-limber-bright border-limber-bright"
+    accentColor="text-limber-brown"
+    primaryBtn="text-limber-cream bg-limber-brown hover:bg-limber-green border-limber-brown"
+    buttons={[
+      { label: 'App Store', href: 'https://apps.apple.com/au/app/limber-co/id6744895425', target: '_blank' },
+      { label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.ribbon.mobileApp&hl=en_AU', target: '_blank', variant: 'outline' },
+    ]}
+  />
+
+</BaseLayout>
+
+<style>
+  @keyframes wiggle-sticker {
+    0%, 100% { transform: rotate(-8deg); }
+    50% { transform: rotate(8deg); }
+  }
+  .wiggle-sticker {
+    animation: wiggle-sticker 3.5s ease-in-out infinite;
+  }
+  @media (min-width: 1024px) {
+    @keyframes wiggle-sticker-desktop {
+      0%, 100% { transform: translateX(-50%) rotate(-8deg); }
+      50% { transform: translateX(-50%) rotate(8deg); }
+    }
+    .wiggle-sticker {
+      animation-name: wiggle-sticker-desktop;
+    }
+  }
+</style>
