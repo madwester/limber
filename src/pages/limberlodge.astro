@@ -10,24 +10,31 @@ const LODGE_LOGO = '/images/lodge/art-01.svg';
 
 const inclusions = [
   'Unlimited classes across the 5-week program',
+  'Welcome bag of goodies and wellbeing journal',
   'Entry into the Season Challenge',
   "Access to the Lodge's full schedule of off-piste community events",
-  'Discount codes across a suite of partners such as Issu, Skin Club Thirroul, Bonfire Sauna, Hangdog, Move Active, and more',
-  'Access to our digital suite of challenge classes',
   'Weekly nutrition recipe drops',
+  'Access to our digital suite of challenge classes',
   'Guided breathwork sessions + more',
+  'Discount codes across a suite of partners such as Issu, Skin Club Thirroul, Bonfire Sauna, Hangdog, Move Active, and more',
 ];
 
 const schedule = [
   { date: 'Sat 25 Jul', event: 'Season Opener', ticketed: true },
   { date: 'Fri 31 Jul', event: 'Breathwork' },
+  { date: 'Fri 31 Jul', event: 'Yoga with Live Music' },
   { date: 'Sat 1 Aug', event: 'Pop-up Limboogie Night' },
+  { date: 'Tue 4 Aug', event: 'Yoga with Live Music' },
   { date: 'Sat 8 Aug', event: 'Community Hike' },
   { date: 'Sun 9 Aug', event: 'Breathwork' },
   { date: 'Fri 14 Aug', event: 'Breathwork' },
+  { date: 'Fri 14 Aug', event: 'Yoga with Live Music' },
   { date: 'Sat 15 Aug', event: 'Sauna Sessions', ticketed: true },
+  { date: 'Tue 18 Aug', event: 'Yoga with Live Music' },
   { date: 'Sat 22 Aug', event: 'Scribble Session', ticketed: true },
   { date: 'Sun 23 Aug', event: 'Outdoor Breathwork + Ocean Swim' },
+  { date: 'Fri 28 Aug', event: 'Breathwork' },
+  { date: 'Fri 28 Aug', event: 'Yoga with Live Music' },
   { date: 'Sun 30 Aug', event: 'Season Winddown Celebration' },
   { date: 'Every Wed', event: 'Run Club at 7am, après coffee and all.' },
 ];
@@ -194,8 +201,12 @@ const schema = {
         <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-bright block leading-none -mb-1">Your</span>
         <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-brown block leading-none">Season Pass</span>
       </h2>
-      <p class="font-sans text-limber-brown/80 leading-relaxed mb-14 max-w-2xl">
-        More affordable than a weekend at the snow, a Season Pass unlocks the full Limber Lodge experience to keep the bod warm, and the noggin' at its best. It includes:
+      <p class="font-sans text-limber-brown/80 leading-relaxed mb-8 max-w-2xl">
+        More affordable than a weekend at the snow, a Season Pass unlocks the full Limber Lodge experience to keep the bod warm, and the noggin' at its best.
+      </p>
+
+      <p class="font-headline uppercase text-sm text-limber-tericotta mb-6">
+        It includes:
       </p>
 
       <!-- Horizontal scroll on mobile, grid on desktop -->
@@ -206,7 +217,7 @@ const schema = {
             i % 2 === 0 ? 'bg-limber-vibe border-limber-green' : 'bg-limber-bright border-limber-brown',
           ]}>
             <span class:list={['font-headline text-xs mb-4', i % 2 === 0 ? 'text-limber-green/60' : 'text-limber-brown/60']}>{String(i + 1).padStart(2, '0')}</span>
-            <p class:list={['font-display not-italic text-lg leading-snug', i % 2 === 0 ? 'text-limber-green' : 'text-limber-brown']}>{item}</p>
+            <p class:list={['font-headline uppercase text-base leading-snug', i % 2 === 0 ? 'text-limber-green' : 'text-limber-brown']}>{item}</p>
           </div>
         ))}
       </div>
@@ -222,7 +233,7 @@ const schema = {
           src="/images/lodge/art-01.svg"
           alt=""
           aria-hidden="true"
-          class="absolute right-6 -top-4 w-[130px] lg:right-auto lg:left-[40.8%] lg:top-[300px] lg:w-56 lg:-translate-x-1/2 pointer-events-none drop-shadow-lg z-10 wiggle-sticker"
+          class="absolute -right-2 -top-16 w-28 lg:right-auto lg:left-[40.8%] lg:top-[300px] lg:w-56 lg:-translate-x-1/2 pointer-events-none drop-shadow-lg z-10 wiggle-sticker"
         />
 
         <div class="lg:col-span-5">
@@ -234,11 +245,11 @@ const schema = {
             Stay the course of the challenge and you're in the running for the grand prize: a wilderness cabin stay with Unyoked, plus three months of unlimited classes at Limber. Also up for grabs are Bonfire Sauna experiences, Limber giveaways, merch and much more.
           </p>
 
-          <p class="font-display italic text-2xl text-limber-tericotta mb-1">
-            Winter Wellbeing Membership:
+          <p class="font-headline uppercase text-base md:text-lg text-limber-tericotta mb-2">
+            Winter Wellbeing Membership
           </p>
-          <p class="font-sans text-limber-brown/80 leading-relaxed mb-8">
-            $300 upfront, or $69 per week.
+          <p class="font-display not-italic font-semibold text-2xl md:text-3xl text-limber-brown mb-8">
+            $299 upfront, or $69 per week.
           </p>
 
           <a
@@ -274,7 +285,7 @@ const schema = {
         <div class="lg:col-span-5 rounded-2xl border-2 border-limber-green overflow-hidden bg-limber-vibe flex flex-col">
           {schedule.map((row) => (
             <div class="flex items-center justify-between gap-4 px-6 py-4 bg-limber-vibe border-b border-limber-green/15 last:border-0">
-              <p class="font-headline text-xs text-limber-cream w-28 flex-shrink-0">{row.date}</p>
+              <p class="font-headline font-bold text-xs text-limber-cream w-28 flex-shrink-0">{row.date}</p>
               <p class="font-display not-italic text-lg text-limber-brown flex-1">{row.event}</p>
               {row.ticketed && (
                 <span class="font-headline text-[10px] text-limber-brown bg-limber-bright rounded-full px-3 py-1 flex-shrink-0">Ticketed</span>

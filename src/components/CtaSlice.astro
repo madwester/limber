@@ -88,7 +88,7 @@ const {
               target={btn.target}
               rel={btn.target === '_blank' ? 'noopener noreferrer' : undefined}
               class:list={[
-                'inline-flex items-center px-6 py-3 font-headline text-sm border-2 rounded-full transition-colors',
+                'inline-flex items-center flex-shrink-0 whitespace-nowrap px-6 py-3 font-headline text-sm border-2 rounded-full transition-colors',
                 btn.variant === 'outline'
                   ? 'text-limber-cream border-limber-cream hover:border-limber-tericotta hover:text-limber-tericotta'
                   : primaryBtn,
