@@ -223,6 +223,7 @@ import FullBleedHero from '../components/FullBleedHero.astro';
     if (res.ok) {
       form.classList.add('hidden');
       success?.classList.remove('hidden');
+      gtag('event', 'generate_lead');
     } else {
       btn.disabled = false;
       btnLabel.textContent = 'send message';
