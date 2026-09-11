@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FullBleedHero from '../../components/FullBleedHero.astro';
+
+const HERO_IMAGE = '/images/Limber_April26_98.jpg';
+
+const lookingFor = [
+  'Hold relevant qualifications and current insurance',
+  'Have at least 12 months active teaching experience',
+  'Are confident teaching and adapting for different bodies and abilities',
+  'Are warm, reliable and genuinely good with people',
+  'Bring personality to their teaching while being open to feedback and growth',
+  'Care about the human in front of them, not just the movement',
+];
+
+const shareWithUs = [
+  'Share a little about you',
+  'Your qualifications + teaching experience',
+  'What you teach and your availability',
+  'Where you currently teach',
+  "Whether you've experienced Limber before",
+  "What you're looking for: regular teaching, casual cover or future opportunities",
+  'And why Limber?',
+];
+---
+
+<BaseLayout
+  title="Join the Team"
+  description="Teach with Limber — we're always open to meeting warm, qualified pilates, yoga and movement teachers in Thirroul."
+>
+
+  <!-- ── HERO ── -->
+  <FullBleedHero
+    bgColor="bg-limber-green"
+    borderColor="border-limber-vibe"
+    sectionBorderColor="border-limber-vibe"
+    image={HERO_IMAGE}
+    imageAlt="The Limber team gathered outdoors, laughing together"
+    contentPadding="px-4 sm:px-6 lg:px-8 py-16 lg:py-20"
+  >
+    <div class="max-w-2xl">
+      <h1 class="flex items-baseline justify-start gap-[0.25em] leading-none mb-8">
+        <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-vibe">teach</span>
+        <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream">With us</span>
+      </h1>
+      <div class="space-y-4">
+        <p class="font-sans text-limber-cream/80 leading-relaxed">
+          We're always open to meeting brilliant teachers, whether that's for a regular spot on the timetable, casual cover, or something further down the track.
+        </p>
+        <p class="font-sans text-limber-cream/80 leading-relaxed">
+          For us, a great teacher is about more than delivering a great class. We care just as much about how people feel in the room.
+        </p>
+      </div>
+    </div>
+  </FullBleedHero>
+
+  <!-- ── WE'RE LOOKING FOR TEACHERS WHO ── -->
+  <section class="bg-limber-green py-16 lg:py-24 border-b-2 border-limber-vibe">
+    <div class="px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display italic font-medium text-3xl md:text-4xl text-limber-cream leading-snug mb-10">
+        We're looking for teachers who:
+      </h2>
+
+      <ul class="grid grid-cols-1 lg:grid-cols-2 gap-x-10 gap-y-5 max-w-4xl">
+        {lookingFor.map((item) => (
+          <li class="flex items-start gap-3">
+            <span class="w-2 h-2 rounded-full bg-limber-vibe mt-2.5 flex-shrink-0" aria-hidden="true"></span>
+            <span class="font-sans text-limber-cream/80 leading-relaxed">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── IF YOU'RE LOCAL — CONTRASTING CALLOUT ── -->
+  <section class="bg-limber-vibe py-16 lg:py-24 border-b-2 border-limber-green">
+    <div class="px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mx-auto text-center">
+        <p class="font-display italic font-medium text-3xl md:text-4xl text-limber-green leading-snug mb-5">
+          If you're local, come move with us first.
+        </p>
+        <p class="font-sans text-limber-green/80 leading-relaxed">
+          Experience a class, meet the team and get a feel for Limber. It's important to us that the people wanting to join our team genuinely understand what we're about.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SOUND LIKE YOU? ── -->
+  <section class="bg-limber-green py-20 lg:py-28">
+    <div class="px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl">
+        <h2 class="font-display italic font-medium text-3xl md:text-4xl text-limber-cream leading-snug mb-10">
+          Sound like you? Then send us an email at <a href="mailto:lily@limberco.com.au" class="text-limber-vibe hover:text-limber-cream transition-colors">lily@limberco.com.au</a>
+        </h2>
+
+        <ul class="space-y-3 mb-10">
+          {shareWithUs.map((item) => (
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 rounded-full bg-limber-vibe mt-2.5 flex-shrink-0" aria-hidden="true"></span>
+              <span class="font-sans text-limber-cream/80 leading-relaxed">{item}</span>
+            </li>
+          ))}
+        </ul>
+
+        <p class="font-sans text-limber-cream/80 leading-relaxed mb-8">
+          We'll be in touch if we feel there could be a good fit, with the next step being a chat and teaching trial.
+        </p>
+
+        <a
+          href="mailto:lily@limberco.com.au"
+          class="inline-flex items-center px-8 py-4 font-headline text-sm text-limber-brown bg-limber-bright hover:bg-limber-vibe border-2 border-limber-bright rounded-full transition-colors"
+        >
+          <span class="relative top-[2px]">Email us to apply</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
