@@ -210,7 +210,7 @@ const legendItems: Array<{ label: string; type: ClassType }> = [
               <div style="min-height: 80px;">
                 {entry ? (
                   <div class:list={['h-full rounded-xl px-3 py-3 flex flex-col border', typeStyles[entry.type].bg, typeStyles[entry.type].border]}>
-                    <span class:list={['font-headline text-xs leading-none mb-1 opacity-60', typeStyles[entry.type].text]}>{slot.time}</span>
+                    <span class:list={['font-headline text-xs leading-none mb-1 opacity-60', typeStyles[entry.type].text]}>{entry.time ?? slot.time}</span>
                     <p class:list={['font-headline text-sm leading-snug flex-1', typeStyles[entry.type].text]}>{entry.name}</p>
                     {entry.note && (
                       <p class:list={['font-sans text-xs leading-snug mt-1.5', typeStyles[entry.type].note]}>{entry.note}</p>
