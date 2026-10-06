@@ -12,8 +12,9 @@ const { title, description, pubDate, author, image, tags, showCover } = post.dat
 // Split title roughly in half — first half in font-headline, second half in font-display
 const titleWords = title.split(' ');
 const splitIndex = Math.ceil(titleWords.length / 2);
-const titleMain = titleWords.slice(0, splitIndex).join(' ');
-const titleAccent = titleWords.slice(splitIndex).join(' ');
+const titleBreak = title.indexOf(':');
+const titleMain = titleBreak >= 0 ? title.slice(0, titleBreak) : titleWords.slice(0, splitIndex).join(' ');
+const titleAccent = titleBreak >= 0 ? title.slice(titleBreak + 1).trim() : titleWords.slice(splitIndex).join(' ');
 
 const siteUrl = 'https://limberco.com.au';
 const canonicalURL = `${siteUrl}${Astro.url.pathname}`;
