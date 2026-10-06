@@ -7,7 +7,7 @@ interface Props {
 }
 
 const { post } = Astro.props;
-const { title, description, pubDate, author, image, tags } = post.data;
+const { title, description, pubDate, author, image, tags, showCover } = post.data;
 
 // Split title roughly in half — first half in font-headline, second half in font-display
 const titleWords = title.split(' ');
@@ -88,7 +88,7 @@ const formattedDate = pubDate.toLocaleDateString('en-AU', {
         <!-- Article body -->
         <div class="max-w-2xl journal-prose">
           <!-- Cover image at top of content -->
-          {image && (
+          {image && showCover && (
             <img
               src={image.src}
               alt={image.alt}

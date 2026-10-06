@@ -7,6 +7,7 @@ const journal = defineCollection({
     description: z.string(),
     pubDate: z.coerce.date(),
     author: z.string().optional(),
+    showCover: z.boolean().optional().default(true),
     image: z
       .object({
         src: z.string(),
