@@ -1,5 +1,5 @@
 ---
-title: "The Limber Method: Movement That Feels Good"
+title: "Sustainable Movement vs. Pilates Industry Trends: The Limber Method"
 description: "Discover the Limber Method: sustainable movement, thoughtful teaching and a Pilates practice that supports life outside the studio."
 pubDate: 2026-10-06
 tags: ["the Limber Method", "Pilates", "sustainable movement"]
