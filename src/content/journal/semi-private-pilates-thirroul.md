@@ -49,4 +49,4 @@ Our teachers are diploma-trained with a minimum of a comprehensive year-long pro
 
 Ready to experience a personalised pilates class in Thirroul?
 
-[Book your Semi-Private class at Limber](https://www.limberco.com.au/classes/privates)
+<a href="/classes/privates" style="display:inline-block; margin-top:0.5rem; padding:1rem 2rem; font-family:var(--font-headline, 'Arial Black', sans-serif); font-size:0.875rem; line-height:1.25rem; letter-spacing:0.03em; text-transform:uppercase; text-decoration:none; color:var(--color-limber-green, #666333); background:var(--color-limber-vibe, #CBC232); border:2px solid var(--color-limber-vibe, #CBC232); border-radius:9999px;">Explore semi-privates →</a>
