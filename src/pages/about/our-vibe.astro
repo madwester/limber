@@ -92,6 +92,57 @@ import FullBleedHero from '../../components/FullBleedHero.astro';
     </div>
   </section>
 
+  <!-- ── THREE PILLARS ── -->
+  <section class="bg-limber-green py-20 lg:py-28 border-b-2 border-limber-vibe">
+    <div class="px-4 sm:px-6 lg:px-8">
+      <h2 class="stacked-heading mb-12">
+        <span class="font-headline uppercase text-4xl md:text-5xl lg:text-6xl text-limber-vibe block leading-none -mb-1">what makes</span>
+        <span class="font-display italic font-medium text-5xl md:text-6xl lg:text-7xl text-limber-cream block leading-none">Limber, Limber</span>
+      </h2>
+      <div class="grid gap-6 lg:grid-cols-3">
+        {[
+          {
+            title: 'Good company',
+            body: [
+              "You're in good company. Sure, our teachers are brilliant, but the crew in the room might be the best part. Movement may have been why we started, but the people are why we stayed.",
+              "It starts small, with a chat on the mat or a coffee after class. But we've been known to find any excuse to meet outside the studio, from book clubs to our very own festival.",
+              "We pay attention, too. We'll know your name, your niggles and your pet peeves. This place is yours as much as it's ours, and we'd like to think we're the kind of company you'd want to keep.",
+            ],
+            link: { label: 'Meet the team →', href: '/about/our-tribe' },
+          },
+          {
+            title: 'It follows you home',
+            body: [
+              "Yes, you'll be working those glutes. The abs will be on fire too. But we built our practice for your nervous system as much as your muscles.",
+              "The balance Lily went looking for became our own method. We call it the five Fs. Fun, Feeling and Flow are how it feels. Functional and Fire are what it does.",
+              "That feeling follows you home in the best way. It's in the back that holds up the toddler and the head that's a lot quieter by bedtime. That's what we mean by feels good, does good.",
+            ],
+            link: { label: 'Explore our classes →', href: '/classes/our-classes' },
+          },
+          {
+            title: 'We know our stuff',
+            body: [
+              "Wellness is our job, but it's not our entire personality. Keeping up with every new trend wears us out too, so we stick to what actually works.",
+              "We stay across the research, invest in our teachers' training and keep refining how we teach, so it works for all kinds of bodies, not just the bendy few.",
+              "In class, you'll always know why you're doing what you're doing. It's meant to be fun, but it's also meant to challenge you. We know our stuff, and before long so will you.",
+            ],
+            link: { label: 'Start your 21 days →', href: '/pricing/trial' },
+          },
+        ].map((pillar) => (
+          <div class="rounded-2xl border-2 border-limber-vibe/40 p-8 lg:p-10 flex flex-col">
+            <h3 class="font-display italic font-medium text-3xl lg:text-4xl text-limber-cream leading-tight mb-6">{pillar.title}</h3>
+            <div class="space-y-4 mb-8 flex-1">
+              {pillar.body.map((para) => (
+                <p class="font-sans text-limber-cream/80 leading-relaxed">{para}</p>
+              ))}
+            </div>
+            <a href={pillar.link.href} class="font-headline text-sm text-limber-vibe hover:text-limber-cream transition-colors">{pillar.link.label}</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- ── THE STARTING POINT ── -->
   <section class="bg-limber-green py-20 lg:py-28 border-b-2 border-limber-vibe">
     <div class="px-4 sm:px-6 lg:px-8">
