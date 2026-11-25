@@ -124,7 +124,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <h2 class="font-headline uppercase text-2xl text-limber-green mb-4">4. pausing your membership</h2>
           <div class="space-y-3">
             <p>You can pause your membership after your 12 week minimum commitment period for holidays, long-term illness or injury.</p>
-            <p><strong>Summer flex:</strong> if your membership started between 23 November 2026 and 28 February 2027, you can pause it whenever you need until 28 February 2027, with no commitment period required and no minimum pause length. Just request it via the Limber Co app.</p>
+            <p><strong>Summer flex:</strong> if your membership started between 23 November 2026 and 28 February 2027, you can pause it whenever you need until 28 February 2027, with no commitment period required and no minimum pause length. Just request it via the Limber Co app with at least 7 days notice.</p>
             <ul class="space-y-2 pl-1">
               {[
                 'minimum pause: 7 days',
@@ -147,9 +147,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <ul class="space-y-2 pl-1">
               {[
                 'cancellations can only be processed after your 12 week commitment period (except memberships started between 23 November 2026 and 28 February 2027, which have no commitment period)',
-                '2 weeks written notice required',
-                'this equates to 1 fortnightly payment or 2 weekly payments after notice is given',
-                'you can continue to attend classes during that notice period',
+                'after you give written notice, your final payments are 2 more weekly payments or 1 more fortnightly payment, depending on your membership',
+                "your membership stays active until the end of the last period you've paid for, and you can keep attending classes until then",
               ].map(item => (
                 <li class="flex gap-3"><span class="text-limber-tericotta flex-shrink-0">—</span>{item}</li>
               ))}
@@ -177,10 +176,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         <!-- 8. Bookings -->
         <div>
-          <h2 class="font-headline uppercase text-2xl text-limber-green mb-4">8. bookings</h2>
+          <h2 class="font-headline uppercase text-2xl text-limber-green mb-4">8. bookings + what to bring</h2>
           <div class="space-y-3">
             <p>Book via the Limber Co app or website up to 14 days in advance.</p>
             <p>Late arrivals of 5 or more minutes may be refused entry and will forfeit their session.</p>
+            <p>Group classes: please bring your own mat and a sweat/grip towel.</p>
+            <p>Chair classes and semi-privates: please bring your own mat and grip socks.</p>
           </div>
         </div>
 
